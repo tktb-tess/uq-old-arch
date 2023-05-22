@@ -1,9 +1,17 @@
 body {
-	background: #b3ffe6;
+	background: #eaffff;
 	margin: 5px 20px;
 	color: #000000;
 	font-family: 'Arial', 'Helvatica Neue', 'BIZ UDPGothic', 'YuGothic', sans-serif;
 	font-size: 20px;
+}
+
+h1.header {
+	text-align: center;
+	padding-bottom: 5px;
+	border-bottom-style: solid;
+	border-bottom-width: 2px;
+	border-bottom-color: #000000;
 }
 
 table {
@@ -40,4 +48,7 @@ thead {
 	border-bottom: double 3px;
 }
 
+.blank {
+	padding: 50px 0;
+}
 
