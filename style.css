@@ -1,0 +1,43 @@
+body {
+	background: #b3ffe6;
+	margin: 5px 20px;
+	color: #000000;
+	font-family: 'Arial', 'Helvatica Neue', 'BIZ UDPGothic', 'YuGothic', sans-serif;
+	font-size: 20px;
+}
+
+table {
+	text-align: center;
+	border-collapse: collapse;
+}
+
+caption {
+	font-size: 30px;
+	font-weight: bold;
+}
+
+th {
+	border: solid 1px;
+	padding: 5px;
+	background-color: #f0f0fa;
+}
+
+td {
+	border: solid 1px;
+	padding: 5px;
+	background-color: #ffffff;
+}
+
+.hardsoft {
+	font-weight: normal;
+}
+
+.vdbl {
+	border-right: double 3px;
+}
+
+thead {
+	border-bottom: double 3px;
+}
+
+
