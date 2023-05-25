@@ -2,9 +2,9 @@
 
 冶(ラテン文字表記): Jäsnjelnowy
 
-英: Yasnyelic language
+英: Yasnyelic language / Yasnyelic
 
-独: Jäsnjelisch Sprache
+独: Jäsnjelische Sprache / Jäsnjelisch
 
 仏: le yasnyelois
 
