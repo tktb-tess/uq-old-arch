@@ -1,54 +1,16 @@
 body {
-	background: #eaffff;
-	margin: 5px 20px;
-	color: #000000;
-	font-family: 'Arial', 'Helvatica Neue', 'BIZ UDPGothic', 'YuGothic', sans-serif;
-	font-size: 20px;
+    background-color: #dddddd;
+    font-family: 'Times New Roman', 'BIZ UDPMincho', 'Hiragino Mincho ProN', serif;
 }
 
-h1.header {
-	text-align: center;
-	padding-bottom: 5px;
-	border-bottom-style: solid;
-	border-bottom-width: 2px;
-	border-bottom-color: #000000;
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Arial', 'Helvetica Neue', 'Source Han Sans JP', 'BIZ UDPGothic', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', sans-serif;
 }
 
-table {
-	text-align: center;
-	border-collapse: collapse;
+.ipa {
+	font-family: 'Arial', sans-serif;
 }
 
-caption {
-	font-size: 30px;
-	font-weight: bold;
+main > .container {
+    padding-top: 130px;
 }
-
-th {
-	border: solid 1px;
-	padding: 5px;
-	background-color: #f0f0fa;
-}
-
-td {
-	border: solid 1px;
-	padding: 5px;
-	background-color: #ffffff;
-}
-
-.hardsoft {
-	font-weight: normal;
-}
-
-.vdbl {
-	border-right: double 3px;
-}
-
-thead {
-	border-bottom: double 3px;
-}
-
-.blank {
-	padding: 50px 0;
-}
-
