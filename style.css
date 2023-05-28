@@ -27,14 +27,17 @@ table > tbody > tr > td {
     font-size: 20px;
 }
 
-nav > ul > li > a.nav-link,
+nav > a.nav-link,
 nav > ul > li > a.nav-link:visited {
     color: #ffffff!important;
 }
 
-nav > ul > li > a.disabled {
+nav > a.langname {
     font-size: 1.2rem;
 }
-nav > ul > li > a.nav-link:hover {
+nav > a.hometitle {
+    font-size: 1.3rem;
+}
+nav > a.nav-link:hover {
     color: #cccccc!important;
 }
