@@ -1,20 +1,32 @@
+
+/* import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@400;700&family=Zen+Antique&display=swap');
+
+
 body {
     background-color: #e9e9e9;
-    font-family: 'Times New Roman', 'BIZ UDPMincho', 'Hiragino Mincho ProN', serif;
+    font-family: 'Times New Roman', 'Noto Serif JP', sans-serif;
+    font-size: 0.8rem;
 }
 
-
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Arial', 'Helvetica Neue', 'Source Han Sans JP', 'BIZ UDPGothic', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', sans-serif;
+    font-family: 'Arial', 'Noto Sans JP', sans-serif;
+    font-weight: 700;
 }
 
 header > .container-fluid {
-    background-color: #9964a7;
+    background-image: url(./image/milky-way-g.jpg);
+    background-repeat:  no-repeat;
+    background-size: cover;
+    background-position: 0% 50%;
+
 }
 
 header > .container-fluid > h1.titlee {
-    font-family: 'Times New Roman', 'Yu Mincho', 'YuMincho', 'BIZ UDPMincho', 'Hiragino Mincho ProN', serif;
+    font-family: 'Zen Antique', serif;
+    font-weight: 400;
     color: #ffffff!important;
+    font-size: 3rem;
 }
 .ipa {
 	font-family: 'Arial', sans-serif;
@@ -39,7 +51,7 @@ nav > a.nav-link:visited {
 }
 
 nav > a.langname {
-    font-size: 1.2rem;
+    font-size: 1rem;
 }
 nav > a.hometitle {
     font-size: 1.3rem;
