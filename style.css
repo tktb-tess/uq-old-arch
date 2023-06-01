@@ -12,6 +12,31 @@ body {
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Arial', 'Noto Sans JP', sans-serif;
     font-weight: 700;
+    color: #0e1d61;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+}
+
+h3 {
+    font-size: 1.2rem;
+}
+
+h4 {
+    font-size: 1rem;
+}
+
+h5 {
+    font-size: 0.9rem;
+}
+
+h6 {
+    font-size: 0.85rem;
 }
 
 header > .container-fluid {
@@ -22,6 +47,11 @@ header > .container-fluid {
 
 }
 
+main > h1.section-title {
+    font-family: 'Zen Antique', serif;
+    font-weight: 400;
+    font-size: 2rem;
+}
 header > .container-fluid > h1.titlee {
     font-family: 'Zen Antique', serif;
     font-weight: 400;
@@ -58,4 +88,10 @@ nav > a.hometitle {
 }
 nav > a.nav-link:hover {
     color: #cccccc!important;
+}
+
+body > .page-top-button {
+    position: fixed;
+    right: 0;
+    bottom: 0;
 }
