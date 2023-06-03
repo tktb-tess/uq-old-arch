@@ -65,14 +65,15 @@ header > .container-fluid > h1.titlee {
 
 table > thead > tr > th,
 table > tbody > tr > th {
-    font-size: 15px;
+    font-size: 0.6rem;
     text-align: center;
+    font-family: 'Noto Sans JP', sans-serif;
 }
 
 table > tbody > tr > td {
     text-align: center;
     font-family: 'Arial', sans-serif;
-    font-size: 16px;
+    font-size: 0.7rem;
 }
 
 nav > a.nav-link,
@@ -92,6 +93,6 @@ nav > a.nav-link:hover {
 
 body > .page-top-button {
     position: fixed;
-    right: 0;
-    bottom: 0;
+    right: 1.2vw;
+    bottom: 2vh;
 }
