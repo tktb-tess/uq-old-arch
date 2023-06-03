@@ -59,7 +59,7 @@ header > .container-fluid > h1.titlee {
     font-size: 3rem;
 }
 .ipa {
-	font-family: 'Arial', sans-serif;
+	font-family: 'Times New Roman', serif;
     font-size: 0.8rem;
 }
 
@@ -72,7 +72,7 @@ table > tbody > tr > th {
 
 table > tbody > tr > td {
     text-align: center;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Times New Roman', serif;
     font-size: 0.7rem;
 }
 
