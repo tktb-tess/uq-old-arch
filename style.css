@@ -1,6 +1,9 @@
 
 /* import Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@400;700&family=Zen+Antique&display=swap');
+
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@400;700&family=Playfair+Display&family=Zen+Antique&display=swap');
+
 
 
 body {
@@ -44,20 +47,37 @@ header > .container-fluid {
     background-repeat:  no-repeat;
     background-size: cover;
     background-position: 0% 50%;
+    padding: 8vh 0;
 
 }
 
 main > h1.section-title {
-    font-family: 'Zen Antique', serif;
+    font-family: 'Times New Roman', 'Zen Antique', serif;
     font-weight: 400;
     font-size: 2rem;
 }
 header > .container-fluid > h1.titlee {
-    font-family: 'Zen Antique', serif;
+    font-family: 'Times New Roman', 'Zen Antique', serif;
     font-weight: 400;
     color: #ffffff!important;
-    font-size: 3rem;
+    font-size: 3.2rem;
 }
+
+/*
+main > h1.section-title-latin {
+    font-family: 'Times New Roman', serif;
+    font-weight: 400;
+    font-size: 2.2rem;
+}
+
+header > .container-fluid > h1.titlee-latin {
+    font-family: 'Times New Roman', serif;
+    font-weight: 400;
+    color: #ffffff!important;
+    font-size: 3.2rem;
+}
+*/
+
 .ipa {
 	font-family: 'Times New Roman', serif;
     font-size: 0.8rem;
