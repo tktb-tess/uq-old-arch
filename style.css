@@ -54,13 +54,13 @@ header > .container-fluid {
 main > h1.section-title {
     font-family: 'Times New Roman', 'Zen Antique', serif;
     font-weight: 400;
-    font-size: 2rem;
+    font-size: calc(1.5rem + 1.2vw);
 }
 header > .container-fluid > h1.titlee {
     font-family: 'Times New Roman', 'Zen Antique', serif;
     font-weight: 400;
     color: #ffffff!important;
-    font-size: 5vw;
+    font-size: calc(2rem + 2vw);
 }
 
 /*
