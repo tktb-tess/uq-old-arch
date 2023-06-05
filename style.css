@@ -7,7 +7,7 @@
 
 
 body {
-    background-color: #e9e9e9;
+    background-color: #eeeeee;
     font-family: 'Times New Roman', 'Noto Serif JP', sans-serif;
     font-size: 0.8rem;
 }
@@ -60,7 +60,7 @@ header > .container-fluid > h1.titlee {
     font-family: 'Times New Roman', 'Zen Antique', serif;
     font-weight: 400;
     color: #ffffff!important;
-    font-size: 3.2rem;
+    font-size: 5vw;
 }
 
 /*
