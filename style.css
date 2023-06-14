@@ -1,19 +1,16 @@
 
 /* import Google Fonts */
-
-
-@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@400;700&family=Playfair+Display&family=Zen+Antique&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Noto+Serif+JP:wght@400;700&family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Zen+Antique&display=swap');
 
 
 body {
     background-color: #eeeeee;
-    font-family: 'Times New Roman', 'Noto Serif JP', sans-serif;
+    font-family: 'Noto Serif', 'Noto Serif JP', sans-serif;
     font-size: 0.8rem;
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Arial', 'Noto Sans JP', sans-serif;
+    font-family: 'Noto Sans', 'Noto Sans JP', sans-serif;
     font-weight: 700;
     color: #0e1d61;
 }
@@ -65,13 +62,13 @@ header > .container-fluid > h1.titlee {
 
 /*
 main > h1.section-title-latin {
-    font-family: 'Times New Roman', serif;
+    font-family: 'Noto Serif', serif;
     font-weight: 400;
     font-size: 2.2rem;
 }
 
 header > .container-fluid > h1.titlee-latin {
-    font-family: 'Times New Roman', serif;
+    font-family: 'Noto Serif', serif;
     font-weight: 400;
     color: #ffffff!important;
     font-size: 3.2rem;
@@ -80,7 +77,7 @@ header > .container-fluid > h1.titlee-latin {
 
 .ipa {
 	font-family: 'Times New Roman', serif;
-    font-size: 0.8rem;
+    font-size: 0.9rem;
 }
 
 table > thead > tr > th,
@@ -93,15 +90,16 @@ table > tbody > tr > th {
 table > tbody > tr > td {
     text-align: center;
     font-family: 'Times New Roman', serif;
-    font-size: 0.7rem;
+    font-size: 0.8rem;
 }
 
-nav > a.nav-link,
-nav > a.nav-link:visited {
+nav > .nav-link,
+nav > .nav-link:visited,
+nav > span.nav-link:hover {
     color: #ffffff!important;
 }
 
-nav > a.langname {
+nav > span.arti {
     font-size: 1rem;
 }
 nav > a.hometitle {
@@ -113,6 +111,6 @@ nav > a.nav-link:hover {
 
 body > .page-top-button {
     position: fixed;
-    right: 1.2vw;
-    bottom: 2vh;
+    right: 20px;
+    bottom: 20px;
 }
