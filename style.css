@@ -16,27 +16,27 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-    font-size: 2rem;
+    font-size: calc(1.1rem + 1vw);
 }
 
 h2 {
-    font-size: 1.5rem;
+    font-size: calc(1.05rem + 0.35vw);
 }
 
 h3 {
-    font-size: 1.2rem;
+    font-size: 1.05rem;
 }
 
 h4 {
-    font-size: 1rem;
+    font-size: 1.15rem;
 }
 
 h5 {
-    font-size: 0.9rem;
+    font-size: 1rem;
 }
 
 h6 {
-    font-size: 0.85rem;
+    font-size: 1rem;
 }
 
 header > .container-fluid {
@@ -91,6 +91,12 @@ table > tbody > tr > td {
     text-align: center;
     font-family: 'Times New Roman', serif;
     font-size: 0.8rem;
+}
+
+table > tbody > tr > td.bikou {
+    font-size: 0.7rem;
+    text-align: center;
+    font-family: 'Noto Serif', 'Noto Serif JP', serif;
 }
 
 nav > .nav-link,
