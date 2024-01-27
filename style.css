@@ -1,52 +1,50 @@
 
+
 /* import Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Noto+Serif+JP:wght@400;700&family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Zen+Antique&display=swap');
+
+/*
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;200;300;400;500;600;700;800;900&family=Noto+Serif+JP:wght@200;300;400;500;600;700;900&family=UnifrakturMaguntia&family=Zen+Antique&display=swap');
 
 html {
-    font-size: 95%;
+    font-size: 100%;
 }
 
 body {
-    background-color: #f3f3f3;
+    background-color: #f8f9fa;
     font-family: 'Times New Roman', 'Noto Serif JP', serif;
+    color: #220a35;
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Noto Sans', 'Noto Sans JP', sans-serif;
-    font-weight: 700;
-    color: #0d1330;
+    font-family: 'Arial', 'Helvetica Neue', 'Noto Sans JP', sans-serif;
 }
 
 
-header > .container-fluid {
-    background-image: url(./image/milky-way-g.jpg);
-    background-repeat:  no-repeat;
-    background-size: cover;
-    background-position: 0% 50%;
-    padding: 8vh 0;
-
-}
-
-main > h1.section-title {
+.section-title {
     font-family: 'Times New Roman', 'Zen Antique', serif;
     font-weight: 400;
-    font-size: calc(1.3rem + 1.5vw);
+    font-size: calc(1.5rem + 0.3vw);
 }
-header > .container-fluid > h1.titlee {
+
+.titlee {
     font-family: 'Times New Roman', 'Zen Antique', serif;
     font-weight: 400;
-    color: #ffffff!important;
-    font-size: calc(2rem + 2vw);
+    font-size: calc(2rem + 1vw);
 }
 
 .ipa {
 	font-family: 'Arial', 'Helvetica Neue', sans-serif;
 }
 
+.link-light:hover {
+    color: #cbccce!important;
+}
+
 table > thead > tr > th,
 table > tbody > tr > th {
     text-align: center;
     font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 500;
 }
 
 table > tbody > tr > td {
@@ -60,24 +58,9 @@ table > tbody > tr > td.bikou {
     
 }
 
-nav > .nav-link,
-nav > .nav-link:visited,
-nav > span.nav-link:hover {
-    color: #ffffff!important;
-}
-
-nav > span.arti {
-    font-size: 1.2rem;
-}
-nav > a.hometitle {
-    font-size: 1.2rem;
-}
-nav > a.nav-link:hover {
-    color: #cccccc!important;
-}
-
 body > .page-top-button {
     position: fixed;
     right: 20px;
     bottom: 20px;
 }
+*/
