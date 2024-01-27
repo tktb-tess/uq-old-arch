@@ -1,7 +1,3 @@
-
-
-/* import Google Fonts */
-
 /*
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;200;300;400;500;600;700;800;900&family=Noto+Serif+JP:wght@200;300;400;500;600;700;900&family=UnifrakturMaguntia&family=Zen+Antique&display=swap');
 
@@ -19,17 +15,15 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'Arial', 'Helvetica Neue', 'Noto Sans JP', sans-serif;
 }
 
-
 .section-title {
     font-family: 'Times New Roman', 'Zen Antique', serif;
     font-weight: 400;
-    font-size: calc(1.5rem + 0.3vw);
 }
 
 .titlee {
     font-family: 'Times New Roman', 'Zen Antique', serif;
     font-weight: 400;
-    font-size: calc(2rem + 1vw);
+    font-size: calc(1.7rem + 1.4vw);
 }
 
 .ipa {
