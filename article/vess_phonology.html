@@ -49,11 +49,12 @@
 				text-align: center;
 				font-family: 'Noto Sans JP', sans-serif;
 				font-weight: 500;
+				font-size: 75%;
 			}
 
 			table > tbody > tr > td {
 				text-align: center;
-				
+				font-size: 75%;
 			}
 
 			table > tbody > tr > td.bikou {
@@ -104,7 +105,7 @@
 				</div>
                 <div class="col-md-8 col-xl-9 col-xxl-10 py-3">
                     <main>
-						<h1 class="text-center my-4 section-title">音韻論</h1>
+						<h2 class="text-center my-4 section-title">音韻論</h2>
 						<h3 class="ms-1">子音</h3>
 						<h5 class="ms-2">表</h5>
 						<div class="d-flex justify-content-center">
@@ -261,11 +262,11 @@
 						<hr>
 
 						<h3 class="ms-1">母音</h3>
-						<h5 class="ms-2">表</h5>
-						<div class="d-flex justify-content-center">
+						<h5 class="ms-2">単母音</h5>
+						<div class="d-flex justify-content-around">
 							<div class="table-responsive">
 								<table class="table table-bordered table-striped caption-top text-nowrap shadow-sm">
-									<caption class="text-center fw-bold fs-5">母音</caption>
+									<caption class="text-center fw-bold fs-5">口母音</caption>
 									<thead>
 										<tr>
 											<th scope="col" class="px-2 py-1">＼</th>
@@ -277,8 +278,8 @@
 											<th scope="col" class="px-2 py-1"></th>
 											<th scope="col" colspan="2" class="px-2 py-1">非円唇</th>
 											<th scope="col" colspan="2" class="px-2 py-1">円唇</th>
-											<th scope="col" class="px-2 py-1">非円唇</th>
-											<th scope="col" colspan="2" class="px-2 py-1">円唇</th>
+											<th scope="col" class="px-2 py-1"></th>
+											<th scope="col" colspan="2" class="px-2 py-1"></th>
 										</tr>
 										<tr>
 											<th scope="col" class="px-2 py-1"></th>
@@ -286,7 +287,7 @@
 											<th scope="col" class="px-2 py-1">lax</th>
 											<th scope="col" class="px-2 py-1">tense</th>
 											<th scope="col" class="px-2 py-1">lax</th>
-											<th scope="col" class="px-2 py-1"></th>
+											<th scope="col" class="px-2 py-1">lax</th>
 											<th scope="col" class="px-2 py-1">tense</th>
 											<th scope="col" class="px-2 py-1">lax</th>
 											
@@ -305,24 +306,81 @@
 										</tr>
 										<tr>
 											<th scope="row" class="px-2 py-1">半狭</th>
-											<td colspan="2" class="px-2 py-1 ipa">e</td>
-											<td colspan="2" class="px-2 py-1 ipa">ø</td>
-											<td></td>
-											<td colspan="2" class="px-2 py-1 ipa">o</td>
+											<td class="px-2 py-1 ipa">eː</td>
+											<td class="px-2 py-1 ipa">e</td>
+											<td class="px-2 py-1 ipa">øː</td>
+											<td class="px-2 py-1 ipa"></td>
+											<td class="px-2 py-1 ipa"></td>
+											<td class="px-2 py-1 ipa">oː</td>
+											<td class="px-2 py-1 ipa"></td>
 										</tr>
 										<tr>
 											<th scope="row" class="px-2 py-1">半広</th>
-											<td colspan="2" class="px-2 py-1 ipa">ɛ</td>
-											<td colspan="2" class="px-2 py-1 ipa">œ</td>
-											<td></td>
-											<td colspan="2" class="px-2 py-1 ipa">ɔ</td>
+											<td class="px-2 py-1 ipa">ɛː</td>
+											<td class="px-2 py-1 ipa">ɛ</td>
+											<td class="px-2 py-1 ipa"></td>
+											<td class="px-2 py-1 ipa">œ</td>
+											<td class="px-2 py-1 ipa">ɐ</td>
+											<td class="px-2 py-1 ipa"></td>
+											<td class="px-2 py-1 ipa">ɔ</td>
 										</tr>
 										<tr>
 											<th scope="row" class="px-2 py-1">広</th>
-											<td colspan="2" class="px-2 py-1 ipa"></td>
-											<td colspan="2" class="px-2 py-1 ipa"></td>
-											<td class="px-2 py-1 ipa">a</td>
-											<td colspan="2" class="px-2 py-1 ipa"></td>
+											<td class="px-2 py-1 ipa"></td>
+											<td class="px-2 py-1 ipa"></td>
+											<td class="px-2 py-1 ipa"></td>
+											<td class="px-2 py-1 ipa"></td>
+											<td class="px-2 py-1 ipa"></td>
+											<td class="px-2 py-1 ipa">ɑː</td>
+											<td class="px-2 py-1 ipa"></td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<div class="table-responsive">
+								<table class="table table-bordered table-striped caption-top text-nowrap shadow-sm">
+									<caption class="text-center fw-bold fs-5">鼻母音</caption>
+									<thead>
+										<tr>
+											<th scope="col" class="px-2 py-1">＼</th>
+											<th scope="col" colspan="4" class="px-2 py-1">前舌</th>
+											<th scope="col" colspan="2" class="px-2 py-1">後舌</th>
+										</tr>
+										<tr>
+											<th scope="col" class="px-2 py-1"></th>
+											<th scope="col" colspan="2" class="px-2 py-1">非円唇</th>
+											<th scope="col" colspan="2" class="px-2 py-1">円唇</th>
+											<th scope="col" colspan="2" class="px-2 py-1"></th>
+										</tr>
+										<tr>
+											<th scope="col" class="px-2 py-1"></th>
+											<th scope="col" class="px-2 py-1">tense</th>
+											<th scope="col" class="px-2 py-1">lax</th>
+											<th scope="col" class="px-2 py-1">tense</th>
+											<th scope="col" class="px-2 py-1">lax</th>
+											<th scope="col" class="px-2 py-1">tense</th>
+											<th scope="col" class="px-2 py-1">lax</th>
+											
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<th scope="row" class="px-2 py-1">狭</th>
+											<td class="px-2 py-1 ipa">ẽː</td>
+											<td class="px-2 py-1 ipa">ẽ</td>
+											<td class="px-2 py-1 ipa">ø̃ː</td>
+											<td class="px-2 py-1 ipa"></td>
+											<td class="px-2 py-1 ipa">õː</td>
+											<td class="px-2 py-1 ipa"></td>
+										</tr>
+										<tr>
+											<th scope="row" class="px-2 py-1">広</th>
+											<td class="px-2 py-1 ipa">ɛ̃ː</td>
+											<td class="px-2 py-1 ipa">ɛ̃</td>
+											<td class="px-2 py-1 ipa"></td>
+											<td class="px-2 py-1 ipa">œ̃</td>
+											<td class="px-2 py-1 ipa"></td>
+											<td class="px-2 py-1 ipa">ɔ̃</td>
 										</tr>
 									</tbody>
 								</table>
