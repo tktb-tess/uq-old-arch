@@ -1,1 +1,2300 @@
-{"words":[{"entry":{"id":55,"form":"-a"},"translations":[{"title":"接尾辞","forms":[""]}],"tags":["v2.0.0"],"contents":[{"title":"説明","text":"過去時制の接尾辞。","markdown":"過去時制の接尾辞。"},{"title":"Pronunciation","text":"ɑ"}],"variations":[],"relations":[]},{"entry":{"id":65,"form":"-e"},"translations":[{"title":"接尾辞","forms":["〜に"]}],"tags":["格語尾","v2.1.0"],"contents":[{"title":"説明","text":"与格語尾。多くの場合、動詞の間接目的語を標示する。","markdown":"与格語尾。多くの場合、動詞の間接目的語を標示する。"},{"title":"Pronunciation","text":"e"}],"variations":[],"relations":[]},{"entry":{"id":54,"form":"-el"},"translations":[{"title":"接尾辞","forms":[""]}],"tags":["v2.0.0"],"contents":[{"title":"説明","text":"現在時制の接尾辞。\n\n辞書には、動詞はこれがついた現在形の形で載っている。","markdown":"現在時制の接尾辞。\n\n辞書には、動詞はこれがついた現在形の形で載っている。"},{"title":"Pronunciation","text":"el"}],"variations":[],"relations":[]},{"entry":{"id":32,"form":"-khac"},"translations":[{"title":"接尾辞","forms":["～国"]}],"tags":["v2.0.0"],"contents":[{"title":"説明","text":"民族名などにつけて、国名を表す。\n\n硬音語に付く。軟音語には-ljabが使われるが、口蓋調和の規則に従わない外来語には、どちらも使われる。\n\n例. Nipogkhac, Japagkhac (日本)、Ygglkhac (イギリス)","markdown":"民族名などにつけて、国名を表す。\n\n硬音語に付く。軟音語には-ljabが使われるが、口蓋調和の規則に従わない外来語には、どちらも使われる。\n\n例. Nipogkhac, Japagkhac (日本)、Ygglkhac (イギリス)"},{"title":"Pronunciation","text":"kʰɑts"}],"variations":[],"relations":[{"title":"","entry":{"id":31,"form":"khac"}}]},{"entry":{"id":69,"form":"-käy"},"translations":[{"title":"接尾辞","forms":["〜を"]}],"tags":["格語尾","v2.1.0"],"contents":[{"title":"説明","text":"生格語尾。といってもスラヴ語文法の生格とは関係がない。","markdown":"生格語尾。といってもスラヴ語文法の生格とは関係がない。"},{"title":"Pronunciation","text":"kæj"}],"variations":[],"relations":[]},{"entry":{"id":63,"form":"-m"},"translations":[{"title":"接尾辞","forms":["〜を"]}],"tags":["格語尾","v2.1.0"],"contents":[{"title":"説明","text":"対格語尾。多くの場合動詞の直接目的語を標示する。","markdown":"対格語尾。多くの場合動詞の直接目的語を標示する。"},{"title":"Pronunciation","text":"m"}],"variations":[],"relations":[]},{"entry":{"id":27,"form":"-nowy"},"translations":[{"title":"接尾辞","forms":["～語"]}],"tags":[],"contents":[{"title":"説明","text":"国名、民族名などにつけて言語名にする。\n\n例. Niponnowy, Japannowy (日本語)、Ygglnowy (英語)","markdown":"国名、民族名などにつけて言語名にする。\n\n例. Niponnowy, Japannowy (日本語)、Ygglnowy (英語)"},{"title":"Pronunciation","text":"no.wɨ"}],"variations":[],"relations":[{"title":"","entry":{"id":26,"form":"nowy"}}]},{"entry":{"id":71,"form":"-oga"},"translations":[{"title":"接尾辞","forms":["〜よ!"]}],"tags":["格語尾","v2.1.0"],"contents":[{"title":"説明","text":"呼格語尾。主に文語で、人に呼びかける時に使われる。口語ではあまり使われない。","markdown":"呼格語尾。主に文語で、人に呼びかける時に使われる。口語ではあまり使われない。"},{"title":"Pronunciation","text":"o.ŋɑ"}],"variations":[],"relations":[]},{"entry":{"id":70,"form":"-sbo"},"translations":[{"title":"接尾辞","forms":["〜を"]}],"tags":["格語尾","v2.1.0"],"contents":[{"title":"説明","text":"殺格語尾。殺す、破壊するなどの意味の動詞の目的語を標示する。","markdown":"殺格語尾。殺す、破壊するなどの意味の動詞の目的語を標示する。"},{"title":"Pronunciation","text":"s.ɓo"}],"variations":[{"title":"異型","form":"-eþu"}],"relations":[]},{"entry":{"id":68,"form":"-tte"},"translations":[{"title":"接尾辞","forms":["〜へ"]}],"tags":["格語尾","v2.1.0"],"contents":[{"title":"説明","text":"向格語尾。動作の終点、行き先、結果などを標示する。","markdown":"向格語尾。動作の終点、行き先、結果などを標示する。"},{"title":"Pronunciation","text":"t.te"}],"variations":[],"relations":[]},{"entry":{"id":64,"form":"-uy"},"translations":[{"title":"接尾辞","forms":["〜の"]}],"tags":["格語尾","v2.1.0"],"contents":[{"title":"説明","text":"属格語尾。主に人名などに付き、その人が所有していることを標示する。","markdown":"属格語尾。主に人名などに付き、その人が所有していることを標示する。"},{"title":"Pronunciation","text":"uj"}],"variations":[],"relations":[]},{"entry":{"id":66,"form":"-xj"},"translations":[{"title":"接尾辞","forms":["〜で"]}],"tags":["格語尾","v2.1.0"],"contents":[{"title":"説明","text":"処格語尾。場所を標示する。","markdown":"処格語尾。場所を標示する。"},{"title":"Pronunciation","text":"ç"}],"variations":[],"relations":[]},{"entry":{"id":56,"form":"-yþ"},"translations":[{"title":"接尾辞","forms":[""]}],"tags":[],"contents":[{"title":"説明","text":"未来時制の接尾辞。","markdown":"未来時制の接尾辞。"},{"title":"Pronunciation","text":"ɨθ"}],"variations":[],"relations":[]},{"entry":{"id":67,"form":"-šcjo"},"translations":[{"title":"接尾辞","forms":["〜から"]}],"tags":["格語尾","v2.1.0"],"contents":[{"title":"説明","text":"奪格語尾。動作の起点、理由などを標示する。","markdown":"奪格語尾。動作の起点、理由などを標示する。"},{"title":"Pronunciation","text":"ɕ.t͡ɕo"}],"variations":[],"relations":[]},{"entry":{"id":50,"form":"Bgste"},"translations":[{"title":"名詞","forms":["ブングステ"]}],"tags":["v2.2.0","固有名詞"],"contents":[{"title":"説明","text":"名字の一種。","markdown":"名字の一種。"},{"title":"Pronunciation","text":"ˈɓŋ̍ste"}],"variations":[],"relations":[]},{"entry":{"id":74,"form":"Kargalky"},"translations":[],"tags":[],"contents":[{"title":"Pronunciation","text":"kaʁˈŋalkɨ"}],"variations":[],"relations":[]},{"entry":{"id":72,"form":"bnatto"},"translations":[{"title":"名詞","forms":["川"]}],"tags":["v2.2.0"],"contents":[{"title":"階梯","text":"tt-t","markdown":"tt-t"},{"title":"Pronunciation","text":"ˈɓnɑt.to"}],"variations":[],"relations":[]},{"entry":{"id":30,"form":"bog"},"translations":[{"title":"名詞","forms":["イヌ"]}],"tags":["動物"],"contents":[{"title":"Pronunciation","text":"ɓoŋ"}],"variations":[],"relations":[]},{"entry":{"id":22,"form":"choflu"},"translations":[{"title":"名詞","forms":["オレンジ"]}],"tags":["色"],"contents":[{"title":"Pronunciation","text":"ˈʈʂʰof.lu"}],"variations":[],"relations":[]},{"entry":{"id":20,"form":"félé"},"translations":[{"title":"名詞","forms":["黄"]}],"tags":["色"],"contents":[{"title":"Pronunciation","text":"ˈfeː.ʎe"}],"variations":[],"relations":[]},{"entry":{"id":35,"form":"g"},"translations":[{"title":"冠詞","forms":["その","the"]}],"tags":[],"contents":[{"title":"説明","text":"定冠詞。名詞の前に置き、定性(definiteness)を標示する。","markdown":"定冠詞。名詞の前に置き、定性(definiteness)を標示する。"},{"title":"Pronunciation","text":"ŋ̍"}],"variations":[],"relations":[]},{"entry":{"id":39,"form":"goš"},"translations":[{"title":"代名詞","forms":["これ","この"]}],"tags":[],"contents":[{"title":"説明","text":"近称の指示代名詞。こそあどの「こ」と大体同じ。","markdown":"近称の指示代名詞。こそあどの「こ」と大体同じ。"},{"title":"Pronunciation","text":"ŋoʂ"}],"variations":[],"relations":[{"title":"","entry":{"id":40,"form":"loš"}},{"title":"","entry":{"id":41,"form":"toš"}}]},{"entry":{"id":58,"form":"harpy"},"translations":[{"title":"名詞","forms":["数","数字","番号"]}],"tags":[],"contents":[{"title":"数詞について","text":"","markdown":""},{"title":"Pronunciation","text":"ˈhɑʕpɨ"}],"variations":[],"relations":[{"title":"","entry":{"id":59,"form":"čjulni"}},{"title":"","entry":{"id":61,"form":"womfl"}}]},{"entry":{"id":18,"form":"hauk"},"translations":[{"title":"名詞","forms":["黒"]}],"tags":["色"],"contents":[{"title":"Pronunciation","text":"hɑwk"}],"variations":[],"relations":[]},{"entry":{"id":33,"form":"hârjú"},"translations":[{"title":"名詞","forms":["山"]}],"tags":["v2.2.0"],"contents":[{"title":"Pronunciation","text":"ˈçæːɾʲu"}],"variations":[],"relations":[]},{"entry":{"id":6,"form":"hét"},"translations":[{"title":"名詞","forms":["手"]}],"tags":["身体"],"contents":[{"title":"Pronunciation","text":"çetsʲ"}],"variations":[],"relations":[]},{"entry":{"id":31,"form":"khac"},"translations":[{"title":"名詞","forms":["国"]}],"tags":["v2.2.0"],"contents":[{"title":"Pronunciation","text":"kʰɑʈʂ"}],"variations":[],"relations":[{"title":"","entry":{"id":32,"form":"-khac"}}]},{"entry":{"id":23,"form":"kheca"},"translations":[{"title":"名詞","forms":["水"]}],"tags":["v2.2.0"],"contents":[{"title":"Pronunciation","text":"ˈkʰeːʈʂɑ"}],"variations":[],"relations":[]},{"entry":{"id":38,"form":"khl"},"translations":[{"title":"接続詞","forms":["か","または"]}],"tags":["v2.2.0"],"contents":[{"title":"Pronunciation","text":"kʰl̩"}],"variations":[],"relations":[]},{"entry":{"id":24,"form":"khâli"},"translations":[{"title":"名詞","forms":["鏡"]}],"tags":["v2.2.0"],"contents":[{"title":"Pronunciation","text":"ˈcʰæːʎi"}],"variations":[],"relations":[]},{"entry":{"id":44,"form":"kowmel"},"translations":[{"title":"動詞","forms":["話す"]}],"tags":["v2.2.0"],"contents":[{"title":"","text":"b-m","markdown":"b-m"},{"title":"Pronunciation","text":"kowmel"}],"variations":[],"relations":[]},{"entry":{"id":13,"form":"legä"},"translations":[{"title":"名詞","forms":["歯"]}],"tags":["身体","v2.2.0"],"contents":[{"title":"Pronunciation","text":"ˈleː.ŋæ"}],"variations":[],"relations":[]},{"entry":{"id":73,"form":"li"},"translations":[{"title":"数詞","forms":["1"]}],"tags":["v2.2.0"],"contents":[{"title":"Pronunciation","text":"ʎiː"}],"variations":[],"relations":[]},{"entry":{"id":36,"form":"ljef-"},"translations":[{"title":"接頭辞","forms":[""]}],"tags":[],"contents":[{"title":"説明","text":"否定辞。名詞の前などにつけて、否定を表す。英語の un-, in- などに相当。","markdown":"否定辞。名詞の前などにつけて、否定を表す。英語の un-, in- などに相当。"},{"title":"Pronunciation","text":"ʎef"}],"variations":[],"relations":[]},{"entry":{"id":53,"form":"lom"},"translations":[{"title":"動詞","forms":["～である"]}],"tags":["v2.2.0"],"contents":[{"title":"説明","text":"コピュラ(繋辞)。不規則に変化する。\n\n過去形：olj\n\n未来形：cuf\n\n完了形語幹：gess-","markdown":"コピュラ(繋辞)。不規則に変化する。\n\n過去形：olj\n\n未来形：cuf\n\n完了形語幹：gess-"},{"title":"Pronunciation","text":"lom"}],"variations":[],"relations":[]},{"entry":{"id":40,"form":"loš"},"translations":[{"title":"代名詞","forms":["それ","その"]}],"tags":["v2.2.0"],"contents":[{"title":"説明","text":"中称の指示代名詞。こそあどの「そ」と大体同じ。","markdown":"中称の指示代名詞。こそあどの「そ」と大体同じ。"},{"title":"Pronunciation","text":"loʂ"}],"variations":[],"relations":[{"title":"","entry":{"id":39,"form":"goš"}},{"title":"","entry":{"id":41,"form":"toš"}}]},{"entry":{"id":10,"form":"lty"},"translations":[{"title":"名詞","forms":["腕"]}],"tags":["身体","v2.2.0"],"contents":[{"title":"Pronunciation","text":"ˈl̩ːtɨ"}],"variations":[],"relations":[]},{"entry":{"id":57,"form":"ml-"},"translations":[{"title":"接頭辞","forms":[""]}],"tags":[],"contents":[{"title":"説明","text":"完了相の接頭辞。\n\n語幹の軟音化を伴う。\n\n例 : tunel(見る)→mltúnel, kwoymel(話す)→mlkwóymel","markdown":"完了相の接頭辞。\n\n語幹の軟音化を伴う。\n\n例 : tunel(見る)→mltúnel, kwoymel(話す)→mlkwóymel"},{"title":"Pronunciation","text":"ml̩"}],"variations":[],"relations":[]},{"entry":{"id":17,"form":"mäppi"},"translations":[{"title":"名詞","forms":["白"]}],"tags":["色"],"contents":[{"title":"Pronunciation","text":"ˈmæp.pʲi"}],"variations":[],"relations":[]},{"entry":{"id":29,"form":"méwi"},"translations":[{"title":"名詞","forms":["ネコ"]}],"tags":["動物"],"contents":[{"title":"Pronunciation","text":"mʲeːʋʲi"}],"variations":[],"relations":[]},{"entry":{"id":26,"form":"nowy"},"translations":[{"title":"名詞","forms":["言語"]}],"tags":["v2.2.0"],"contents":[{"title":"Pronunciation","text":"ˈno.wɨ"}],"variations":[],"relations":[{"title":"","entry":{"id":27,"form":"-nowy"}}]},{"entry":{"id":12,"form":"nuggo"},"translations":[{"title":"名詞","forms":["鼻"]}],"tags":["身体"],"contents":[{"title":"階梯","text":"gg - g","markdown":"gg - g"},{"title":"Pronunciation","text":"ˈnuŋːo"}],"variations":[],"relations":[]},{"entry":{"id":9,"form":"nâé"},"translations":[{"title":"名詞","forms":["口"]}],"tags":["身体","v2.2.0"],"contents":[{"title":"Pronunciation","text":"ˈɲæːje"}],"variations":[],"relations":[]},{"entry":{"id":3,"form":"of"},"translations":[{"title":"代名詞","forms":["彼","彼女"]}],"tags":["v2.2.0"],"contents":[{"title":"説明","text":"三人称の代名詞。生物に対して使う。性の区別はない。","markdown":"三人称の代名詞。生物に対して使う。性の区別はない。"},{"title":"階梯","text":"p-f","markdown":"p-f"},{"title":"Pronunciation","text":"ˈof"}],"variations":[{"title":"対格","form":"ofem"},{"title":"属格","form":"opuy"},{"title":"与格","form":"opi"},{"title":"処格","form":"ofehj"},{"title":"向格","form":"ofyr"},{"title":"奪格","form":"ofjes"},{"title":"生格","form":"opjonu"},{"title":"殺格","form":"opeþu"},{"title":"呼格","form":"opoyja"}],"relations":[]},{"entry":{"id":28,"form":"phgäl"},"translations":[{"title":"名詞","forms":["家"]}],"tags":["v2.2.0"],"contents":[{"title":"Pronunciation","text":"pʰŋæl"}],"variations":[],"relations":[]},{"entry":{"id":47,"form":"ploncyt"},"translations":[{"title":"名詞","forms":["人"]}],"tags":["v2.2.0"],"contents":[{"title":"階梯","text":"th-t","markdown":"th-t"},{"title":"Pronunciation","text":"ˈploɳʈʂɨt"}],"variations":[{"title":"対格","form":"plončitem"},{"title":"属格","form":"plončithuy"},{"title":"与格","form":"plončithi"},{"title":"処格","form":" plončitehj"},{"title":"奪格","form":"plončitjes"},{"title":"向格","form":"plončityr"},{"title":"生格","form":"plončithjonu"},{"title":"殺格","form":"plončitheþu"},{"title":"呼格","form":"plončithoyja"}],"relations":[]},{"entry":{"id":62,"form":"ploše"},"translations":[{"title":"名詞","forms":["リンゴ"]}],"tags":["v2.1.0"],"contents":[{"title":"変化表 ・・・ I類 (階梯 : š - r)","text":"| ＼ | 単数 | 双数 | 複数 |\n|:--:|:---|:---|:---|\n| 主格 | ploše | ploref | plošena |\n| 対格 | plorem | plošefym | plošelam |\n| 属格 | plošeu | plošetu | plošenau |\n| 与格 | plošere | plošefre | plošenare |\n| 処格 | ploreh | plošefyh | plošelah |\n| 向格 | plorette | ploreftte | plošelatte |\n| 奪格 | plorešco | plošefyšco | plošelašco |\n| 生格 | plošekä | plošetykä | plošenakä |\n| 殺格 | ploresbo | plošefysbo | plošelasbo |\n| 呼格 | plošeoga | plošetoga | plošenaoga |","markdown":"| ＼ | 単数 | 双数 | 複数 |\n|:--:|:---|:---|:---|\n| 主格 | ploše | ploref | plošena |\n| 対格 | plorem | plošefym | plošelam |\n| 属格 | plošeu | plošetu | plošenau |\n| 与格 | plošere | plošefre | plošenare |\n| 処格 | ploreh | plošefyh | plošelah |\n| 向格 | plorette | ploreftte | plošelatte |\n| 奪格 | plorešco | plošefyšco | plošelašco |\n| 生格 | plošekä | plošetykä | plošenakä |\n| 殺格 | ploresbo | plošefysbo | plošelasbo |\n| 呼格 | plošeoga | plošetoga | plošenaoga |"},{"title":"Pronunciation","text":"ˈploː.ʂe"}],"variations":[],"relations":[]},{"entry":{"id":15,"form":"psat"},"translations":[{"title":"名詞","forms":["赤"]}],"tags":["色"],"contents":[{"title":"Pronunciation","text":"psɑt"}],"variations":[],"relations":[]},{"entry":{"id":25,"form":"restu"},"translations":[{"title":"名詞","forms":["時","時間"]}],"tags":["v2.0.0"],"contents":[{"title":"変化表 ・・・ I類 (階梯 : st - ss, 単数のみ)","text":"| ＼ | 単数 | 双数 | 複数 |\n|:--:|:---|:---|:---|\n| 主格 | restu | \\- | \\- |\n| 対格 | ressum | \\- | \\- |\n| 属格 | restuu | \\- | \\- |\n| 与格 | resture | \\- | \\- |\n| 処格 | ressux | \\- | \\- |\n| 向格 | ressutte | \\- | \\- |\n| 奪格 | ressušco | \\- | \\- |\n| 生格 | restukä | \\- | \\- |\n| 殺格 | ressusbo | \\- | \\- |\n| 呼格 | restuoga | \\- | \\- |","markdown":"| ＼ | 単数 | 双数 | 複数 |\n|:--:|:---|:---|:---|\n| 主格 | restu | \\- | \\- |\n| 対格 | ressum | \\- | \\- |\n| 属格 | restuu | \\- | \\- |\n| 与格 | resture | \\- | \\- |\n| 処格 | ressux | \\- | \\- |\n| 向格 | ressutte | \\- | \\- |\n| 奪格 | ressušco | \\- | \\- |\n| 生格 | restukä | \\- | \\- |\n| 殺格 | ressusbo | \\- | \\- |\n| 呼格 | restuoga | \\- | \\- |"},{"title":"Pronunciation","text":"ˈrʲes.tu"}],"variations":[],"relations":[]},{"entry":{"id":60,"form":"rofel"},"translations":[{"title":"動詞","forms":["〜と感じられる"]}],"tags":["v2.2.0"],"contents":[{"title":"階梯","text":"ff-f","markdown":"ff-f"},{"title":"Pronunciation","text":"ˈʕoː.fel"}],"variations":[{"title":"過去形","form":"roffja"},{"title":"未来形","form":"rofyþ"},{"title":"現在完了形","form":"lfrjofel"}],"relations":[]},{"entry":{"id":45,"form":"sawel"},"translations":[{"title":"動詞","forms":["持つ"]}],"tags":[],"contents":[{"title":"階梯","text":"m-w","markdown":"m-w"},{"title":"Pronunciation","text":"ˈsɑːwel"}],"variations":[{"title":"過去形","form":"sama"},{"title":"未来形","form":"sawyf"},{"title":"現在完了形","form":"ltsawel"}],"relations":[]},{"entry":{"id":21,"form":"snolku"},"translations":[{"title":"名詞","forms":["緑"]}],"tags":["色"],"contents":[{"title":"Pronunciation","text":"ˈsnol.ku"}],"variations":[],"relations":[]},{"entry":{"id":2,"form":"suk"},"translations":[{"title":"代名詞","forms":["あなた"]}],"tags":[],"contents":[{"title":"説明","text":"二人称の代名詞。","markdown":"二人称の代名詞。"},{"title":"Pronunciation","text":"suk"}],"variations":[{"title":"複数形","form":"sukla"}],"relations":[]},{"entry":{"id":37,"form":"thi"},"translations":[{"title":"接続詞","forms":["と","そして"]}],"tags":[],"contents":[{"title":"Pronunciation","text":"tsʰʲi"}],"variations":[],"relations":[]},{"entry":{"id":5,"form":"thušše"},"translations":[{"title":"名詞","forms":["目"]}],"tags":["身体"],"contents":[{"title":"階梯","text":"","markdown":""},{"title":"変化表 ・・・ I類 (階梯 : šš - š)","text":"| ＼ | 単数 | 双数 | 複数 |\n|:--:|:---|:---|:---|\n| 主格 | thušše | thušeþj | thuššena |\n| 対格 | thušem | thuššeþim | thuššelam |\n| 属格 | thuššeuy | thuššeþjuy | thuššenauy |\n| 与格 | thuššeje | thuššetje | thuššenaje |\n| 処格 | thušexj | thuššeþixj | thuššelaxj |\n| 向格 | thušette | thuššeþitte | thuššelatte |\n| 奪格 | thušešcjo | thuššeþišcjo | thuššelašcjo |\n| 生格 | thuššekäy | thuššetikäy | thuššenakäy |\n| 殺格 | thušesbo | thuššeþisbo | thuššelasbo |\n| 呼格 | thuššeoga | thuššetjoga | thuššenaoga |","markdown":"| ＼ | 単数 | 双数 | 複数 |\n|:--:|:---|:---|:---|\n| 主格 | thušše | thušeþj | thuššena |\n| 対格 | thušem | thuššeþim | thuššelam |\n| 属格 | thuššeuy | thuššeþjuy | thuššenauy |\n| 与格 | thuššeje | thuššetje | thuššenaje |\n| 処格 | thušexj | thuššeþixj | thuššelaxj |\n| 向格 | thušette | thuššeþitte | thuššelatte |\n| 奪格 | thušešcjo | thuššeþišcjo | thuššelašcjo |\n| 生格 | thuššekäy | thuššetikäy | thuššenakäy |\n| 殺格 | thušesbo | thuššeþisbo | thuššelasbo |\n| 呼格 | thuššeoga | thuššetjoga | thuššenaoga |"},{"title":"Pronunciation","text":"ˈtʰuʂːe"}],"variations":[],"relations":[]},{"entry":{"id":51,"form":"togka"},"translations":[{"title":"名詞","forms":["海"]}],"tags":[],"contents":[{"title":"階梯","text":"gk-gg","markdown":"gk-gg"},{"title":"Pronunciation","text":"toŋkɑ"}],"variations":[],"relations":[]},{"entry":{"id":41,"form":"toš"},"translations":[{"title":"代名詞","forms":["あれ","あの"]}],"tags":[],"contents":[{"title":"説明","text":"遠称の指示代名詞。こそあどの「あ」と大体同じ。","markdown":"遠称の指示代名詞。こそあどの「あ」と大体同じ。"},{"title":"Pronunciation","text":"toʂ"}],"variations":[],"relations":[{"title":"","entry":{"id":39,"form":"goš"}},{"title":"","entry":{"id":40,"form":"loš"}}]},{"entry":{"id":42,"form":"tunel"},"translations":[{"title":"動詞","forms":["見る"]}],"tags":[],"contents":[{"title":"","text":"d-n","markdown":"d-n"},{"title":"Pronunciation","text":"ˈtuː.nel"}],"variations":[{"title":"過去形","form":"tudja"},{"title":"未来形","form":"tunyþ"},{"title":"現在完了形","form":"lftjunel"}],"relations":[]},{"entry":{"id":46,"form":"wakel"},"translations":[{"title":"動詞","forms":["書く"]}],"tags":[],"contents":[{"title":"","text":"kh-k","markdown":"kh-k"},{"title":"Pronunciation","text":"ˈwɑː.kel"}],"variations":[{"title":"過去形","form":"wakhja"},{"title":"未来形","form":"wakyþ"},{"title":"現在完了形","form":"lfwakel"}],"relations":[]},{"entry":{"id":61,"form":"womfl"},"translations":[{"title":"数詞","forms":["1728","12^3"]}],"tags":[],"contents":[{"title":"数詞について","text":"英語におけるthousandの様なポジションだが、若干違う。\n\n12^3の倍数は、対応する数詞（普通の形で、倍数接頭辞ではない）を前に置いて表す。\n\n| 10進表記 | 12進表記 | 基数詞 |\n|:--:|:--:|:--:|\n| 3,456 | 2,000 | mi womfl |\n| 13,824 | 8,000 | isfje womfl |\n\n倍数接頭辞を前につけると、\n\n倍数接頭辞がnの意味の時、12^(3n)の意味になる。\n\n| 10進表記 | 12進表記 | 基数詞 |\n|:--:|:--:|:--:|\n| 20,736 | 10,000 | kjeg womfl |\n| 248,832 | 100,000 | čjulni womfl |\n| 2,985,984 | 1,000,000 | miwomfl |\n\n例えば、4,294,967,297を12進表記すると9BA,461,595となるので、\n\nnäyčjulni kuykjegthipl miwomfl tječjulni gofkjegthili womfl oþčjulni näykjegthiooþ\n\nとなる。","markdown":"英語におけるthousandの様なポジションだが、若干違う。\n\n12^3の倍数は、対応する数詞（普通の形で、倍数接頭辞ではない）を前に置いて表す。\n\n| 10進表記 | 12進表記 | 基数詞 |\n|:--:|:--:|:--:|\n| 3,456 | 2,000 | mi womfl |\n| 13,824 | 8,000 | isfje womfl |\n\n倍数接頭辞を前につけると、\n\n倍数接頭辞がnの意味の時、12^(3n)の意味になる。\n\n| 10進表記 | 12進表記 | 基数詞 |\n|:--:|:--:|:--:|\n| 20,736 | 10,000 | kjeg womfl |\n| 248,832 | 100,000 | čjulni womfl |\n| 2,985,984 | 1,000,000 | miwomfl |\n\n例えば、4,294,967,297を12進表記すると9BA,461,595となるので、\n\nnäyčjulni kuykjegthipl miwomfl tječjulni gofkjegthili womfl oþčjulni näykjegthiooþ\n\nとなる。"},{"title":"Pronunciation","text":"wom.fl̩"}],"variations":[],"relations":[{"title":"","entry":{"id":58,"form":"harpy"}},{"title":"","entry":{"id":59,"form":"čjulni"}}]},{"entry":{"id":19,"form":"woska"},"translations":[{"title":"名詞","forms":["紫"]}],"tags":["色"],"contents":[{"title":"Pronunciation","text":"ˈwos.kɑ"}],"variations":[],"relations":[]},{"entry":{"id":1,"form":"ym"},"translations":[{"title":"代名詞","forms":["私"]}],"tags":[],"contents":[{"title":"説明","text":"一人称の代名詞。","markdown":"一人称の代名詞。"},{"title":"Pronunciation","text":"ɨm"}],"variations":[{"title":"複数形","form":"ymla"}],"relations":[]},{"entry":{"id":43,"form":"ytel"},"translations":[{"title":"動詞","forms":["食べる"]}],"tags":[],"contents":[{"title":"","text":"tt-t","markdown":"tt-t"},{"title":"Pronunciation","text":"ˈɨː.tel"}],"variations":[{"title":"過去形","form":"yttja"},{"title":"未来形","form":"ytyþ"},{"title":"現在完了形","form":"lfitel"}],"relations":[]},{"entry":{"id":34,"form":"Âsnél"},"translations":[{"title":"名詞","forms":["ヤズニェリ"]}],"tags":["地名"],"contents":[{"title":"説明","text":"この言語が話されている地域の名前。国名、言語名の由来(暫定)。","markdown":"この言語が話されている地域の名前。国名、言語名の由来(暫定)。"},{"title":"Pronunciation","text":"ˈjæsʲ.ɲeʎ"}],"variations":[],"relations":[]},{"entry":{"id":49,"form":"ältoyšr"},"translations":[{"title":"名詞","forms":["丘"]}],"tags":[],"contents":[{"title":"Pronunciation","text":"æl.ˈtoɪ.ʂʁ̩"}],"variations":[],"relations":[]},{"entry":{"id":8,"form":"þylnu"},"translations":[{"title":"名詞","forms":["耳"]}],"tags":["身体"],"contents":[{"title":"Pronunciation","text":"ˈθɨl.nu"}],"variations":[],"relations":[]},{"entry":{"id":14,"form":"čhiiþr"},"translations":[{"title":"名詞","forms":["指"]}],"tags":["身体"],"contents":[{"title":"Pronunciation","text":"ˈtɕʰiː.θʁ̩"}],"variations":[],"relations":[]},{"entry":{"id":59,"form":"čjulni"},"translations":[{"title":"数詞","forms":["百四十四","144","12^2"]}],"tags":[],"contents":[{"title":"数詞について","text":"英語におけるhundredの様なポジションだが、若干違う。\n\n12^2の倍数は、対応する倍数接頭辞をつけて言う。\n| 10進表記 | 12進表記 | 基数詞 |\n|:--:|:--:|:--:|\n| 288 | 200 | mičjulni |\n| 1,008 | 700 | phjančjulni |\n\n例えば、700(12進表記で4A4)はtječjulni plkjegthitjeとなる。\n","markdown":"英語におけるhundredの様なポジションだが、若干違う。\n\n12^2の倍数は、対応する倍数接頭辞をつけて言う。\n| 10進表記 | 12進表記 | 基数詞 |\n|:--:|:--:|:--:|\n| 288 | 200 | mičjulni |\n| 1,008 | 700 | phjančjulni |\n\n例えば、700(12進表記で4A4)はtječjulni plkjegthitjeとなる。\n"},{"title":"Pronunciation","text":"ˈtɕul.ɲi"}],"variations":[],"relations":[{"title":"","entry":{"id":58,"form":"harpy"}},{"title":"","entry":{"id":61,"form":"womfl"}}]},{"entry":{"id":7,"form":"šgäfä"},"translations":[{"title":"名詞","forms":["顔"]}],"tags":["身体"],"contents":[{"title":"Pronunciation","text":"ˈʂŋæː.fæ"}],"variations":[],"relations":[]},{"entry":{"id":4,"form":"šjoy"},"translations":[{"title":"代名詞","forms":["それ"]}],"tags":[],"contents":[{"title":"説明","text":"三人称の代名詞。生物でないものに使う。","markdown":"三人称の代名詞。生物でないものに使う。"},{"title":"Pronunciation","text":"ɕoɪ"}],"variations":[{"title":"複数形","form":"šjoyla"}],"relations":[]},{"entry":{"id":16,"form":"šry"},"translations":[{"title":"名詞","forms":["青"]}],"tags":["色"],"contents":[{"title":"Pronunciation","text":"ʂʁɨː"}],"variations":[],"relations":[]},{"entry":{"id":11,"form":"šuydje"},"translations":[{"title":"名詞","forms":["足"]}],"tags":["身体"],"contents":[{"title":"Pronunciation","text":"ˈʂɵɪ.ɗʲe"}],"variations":[],"relations":[]}],"zpdic":{"punctuations":[",","、"],"pronunciationTitle":"Pronunciation"},"zpdicOnline":{"explanation":"Âsnélnowy /jæsʲˈɲelnowɨ/\n\n制作中アプリオリ人工言語、ヤズニェル語の辞典です。\n\n文法がある程度完成するまで、当分の間メモ帳代わりに使います。\n\n現在最新のバージョンは2.3.0です。「v2.3.0」のタグが付いている単語が改訂済みの単語です。\n\n2024/01/28 更新","enableMarkdown":true},"zatlin":"","version":2}
+{
+    "words": [
+        {
+            "entry": {
+                "id": 55,
+                "form": "-a"
+            },
+            "translations": [
+                {
+                    "title": "接尾辞",
+                    "forms": [
+                        ""
+                    ]
+                }
+            ],
+            "tags": [
+                "v2.0.0"
+            ],
+            "contents": [
+                {
+                    "title": "説明",
+                    "text": "過去時制の接尾辞。",
+                    "markdown": "過去時制の接尾辞。"
+                },
+                {
+                    "title": "Pronunciation",
+                    "text": "ɑ"
+                }
+            ],
+            "variations": [],
+            "relations": []
+        },
+        {
+            "entry": {
+                "id": 65,
+                "form": "-e"
+            },
+            "translations": [
+                {
+                    "title": "接尾辞",
+                    "forms": [
+                        "〜に"
+                    ]
+                }
+            ],
+            "tags": [
+                "格語尾",
+                "v2.1.0"
+            ],
+            "contents": [
+                {
+                    "title": "説明",
+                    "text": "与格語尾。多くの場合、動詞の間接目的語を標示する。",
+                    "markdown": "与格語尾。多くの場合、動詞の間接目的語を標示する。"
+                },
+                {
+                    "title": "Pronunciation",
+                    "text": "e"
+                }
+            ],
+            "variations": [],
+            "relations": []
+        },
+        {
+            "entry": {
+                "id": 54,
+                "form": "-el"
+            },
+            "translations": [
+                {
+                    "title": "接尾辞",
+                    "forms": [
+                        ""
+                    ]
+                }
+            ],
+            "tags": [
+                "v2.0.0"
+            ],
+            "contents": [
+                {
+                    "title": "説明",
+                    "text": "現在時制の接尾辞。\n\n辞書には、動詞はこれがついた現在形の形で載っている。",
+                    "markdown": "現在時制の接尾辞。\n\n辞書には、動詞はこれがついた現在形の形で載っている。"
+                },
+                {
+                    "title": "Pronunciation",
+                    "text": "el"
+                }
+            ],
+            "variations": [],
+            "relations": []
+        },
+        {
+            "entry": {
+                "id": 32,
+                "form": "-khac"
+            },
+            "translations": [
+                {
+                    "title": "接尾辞",
+                    "forms": [
+                        "～国"
+                    ]
+                }
+            ],
+            "tags": [
+                "v2.0.0"
+            ],
+            "contents": [
+                {
+                    "title": "説明",
+                    "text": "民族名などにつけて、国名を表す。\n\n硬音語に付く。軟音語には-ljabが使われるが、口蓋調和の規則に従わない外来語には、どちらも使われる。\n\n例. Nipogkhac, Japagkhac (日本)、Ygglkhac (イギリス)",
+                    "markdown": "民族名などにつけて、国名を表す。\n\n硬音語に付く。軟音語には-ljabが使われるが、口蓋調和の規則に従わない外来語には、どちらも使われる。\n\n例. Nipogkhac, Japagkhac (日本)、Ygglkhac (イギリス)"
+                },
+                {
+                    "title": "Pronunciation",
+                    "text": "kʰɑts"
+                }
+            ],
+            "variations": [],
+            "relations": [
+                {
+                    "title": "",
+                    "entry": {
+                        "id": 31,
+                        "form": "khac"
+                    }
+                }
+            ]
+        },
+        {
+            "entry": {
+                "id": 69,
+                "form": "-käy"
+            },
+            "translations": [
+                {
+                    "title": "接尾辞",
+                    "forms": [
+                        "〜を"
+                    ]
+                }
+            ],
+            "tags": [
+                "格語尾",
+                "v2.1.0"
+            ],
+            "contents": [
+                {
+                    "title": "説明",
+                    "text": "生格語尾。といってもスラヴ語文法の生格とは関係がない。",
+                    "markdown": "生格語尾。といってもスラヴ語文法の生格とは関係がない。"
+                },
+                {
+                    "title": "Pronunciation",
+                    "text": "kæj"
+                }
+            ],
+            "variations": [],
+            "relations": []
+        },
+        {
+            "entry": {
+                "id": 63,
+                "form": "-m"
+            },
+            "translations": [
+                {
+                    "title": "接尾辞",
+                    "forms": [
+                        "〜を"
+                    ]
+                }
+            ],
+            "tags": [
+                "格語尾",
+                "v2.1.0"
+            ],
+            "contents": [
+                {
+                    "title": "説明",
+                    "text": "対格語尾。多くの場合動詞の直接目的語を標示する。",
+                    "markdown": "対格語尾。多くの場合動詞の直接目的語を標示する。"
+                },
+                {
+                    "title": "Pronunciation",
+                    "text": "m"
+                }
+            ],
+            "variations": [],
+            "relations": []
+        },
+        {
+            "entry": {
+                "id": 27,
+                "form": "-nowy"
+            },
+            "translations": [
+                {
+                    "title": "接尾辞",
+                    "forms": [
+                        "～語"
+                    ]
+                }
+            ],
+            "tags": [],
+            "contents": [
+                {
+                    "title": "説明",
+                    "text": "国名、民族名などにつけて言語名にする。\n\n例. Niponnowy, Japannowy (日本語)、Ygglnowy (英語)",
+                    "markdown": "国名、民族名などにつけて言語名にする。\n\n例. Niponnowy, Japannowy (日本語)、Ygglnowy (英語)"
+                },
+                {
+                    "title": "Pronunciation",
+                    "text": "no.wɨ"
+                }
+            ],
+            "variations": [],
+            "relations": [
+                {
+                    "title": "",
+                    "entry": {
+                        "id": 26,
+                        "form": "nowy"
+                    }
+                }
+            ]
+        },
+        {
+            "entry": {
+                "id": 71,
+                "form": "-oga"
+            },
+            "translations": [
+                {
+                    "title": "接尾辞",
+                    "forms": [
+                        "〜よ!"
+                    ]
+                }
+            ],
+            "tags": [
+                "格語尾",
+                "v2.1.0"
+            ],
+            "contents": [
+                {
+                    "title": "説明",
+                    "text": "呼格語尾。主に文語で、人に呼びかける時に使われる。口語ではあまり使われない。",
+                    "markdown": "呼格語尾。主に文語で、人に呼びかける時に使われる。口語ではあまり使われない。"
+                },
+                {
+                    "title": "Pronunciation",
+                    "text": "o.ŋɑ"
+                }
+            ],
+            "variations": [],
+            "relations": []
+        },
+        {
+            "entry": {
+                "id": 70,
+                "form": "-sbo"
+            },
+            "translations": [
+                {
+                    "title": "接尾辞",
+                    "forms": [
+                        "〜を"
+                    ]
+                }
+            ],
+            "tags": [
+                "格語尾",
+                "v2.1.0"
+            ],
+            "contents": [
+                {
+                    "title": "説明",
+                    "text": "殺格語尾。殺す、破壊するなどの意味の動詞の目的語を標示する。",
+                    "markdown": "殺格語尾。殺す、破壊するなどの意味の動詞の目的語を標示する。"
+                },
+                {
+                    "title": "Pronunciation",
+                    "text": "s.ɓo"
+                }
+            ],
+            "variations": [
+                {
+                    "title": "異型",
+                    "form": "-eþu"
+                }
+            ],
+            "relations": []
+        },
+        {
+            "entry": {
+                "id": 68,
+                "form": "-tte"
+            },
+            "translations": [
+                {
+                    "title": "接尾辞",
+                    "forms": [
+                        "〜へ"
+                    ]
+                }
+            ],
+            "tags": [
+                "格語尾",
+                "v2.1.0"
+            ],
+            "contents": [
+                {
+                    "title": "説明",
+                    "text": "向格語尾。動作の終点、行き先、結果などを標示する。",
+                    "markdown": "向格語尾。動作の終点、行き先、結果などを標示する。"
+                },
+                {
+                    "title": "Pronunciation",
+                    "text": "t.te"
+                }
+            ],
+            "variations": [],
+            "relations": []
+        },
+        {
+            "entry": {
+                "id": 64,
+                "form": "-uy"
+            },
+            "translations": [
+                {
+                    "title": "接尾辞",
+                    "forms": [
+                        "〜の"
+                    ]
+                }
+            ],
+            "tags": [
+                "格語尾",
+                "v2.1.0"
+            ],
+            "contents": [
+                {
+                    "title": "説明",
+                    "text": "属格語尾。主に人名などに付き、その人が所有していることを標示する。",
+                    "markdown": "属格語尾。主に人名などに付き、その人が所有していることを標示する。"
+                },
+                {
+                    "title": "Pronunciation",
+                    "text": "uj"
+                }
+            ],
+            "variations": [],
+            "relations": []
+        },
+        {
+            "entry": {
+                "id": 66,
+                "form": "-xj"
+            },
+            "translations": [
+                {
+                    "title": "接尾辞",
+                    "forms": [
+                        "〜で"
+                    ]
+                }
+            ],
+            "tags": [
+                "格語尾",
+                "v2.1.0"
+            ],
+            "contents": [
+                {
+                    "title": "説明",
+                    "text": "処格語尾。場所を標示する。",
+                    "markdown": "処格語尾。場所を標示する。"
+                },
+                {
+                    "title": "Pronunciation",
+                    "text": "ç"
+                }
+            ],
+            "variations": [],
+            "relations": []
+        },
+        {
+            "entry": {
+                "id": 56,
+                "form": "-yþ"
+            },
+            "translations": [
+                {
+                    "title": "接尾辞",
+                    "forms": [
+                        ""
+                    ]
+                }
+            ],
+            "tags": [],
+            "contents": [
+                {
+                    "title": "説明",
+                    "text": "未来時制の接尾辞。",
+                    "markdown": "未来時制の接尾辞。"
+                },
+                {
+                    "title": "Pronunciation",
+                    "text": "ɨθ"
+                }
+            ],
+            "variations": [],
+            "relations": []
+        },
+        {
+            "entry": {
+                "id": 67,
+                "form": "-šcjo"
+            },
+            "translations": [
+                {
+                    "title": "接尾辞",
+                    "forms": [
+                        "〜から"
+                    ]
+                }
+            ],
+            "tags": [
+                "格語尾",
+                "v2.1.0"
+            ],
+            "contents": [
+                {
+                    "title": "説明",
+                    "text": "奪格語尾。動作の起点、理由などを標示する。",
+                    "markdown": "奪格語尾。動作の起点、理由などを標示する。"
+                },
+                {
+                    "title": "Pronunciation",
+                    "text": "ɕ.t͡ɕo"
+                }
+            ],
+            "variations": [],
+            "relations": []
+        },
+        {
+            "entry": {
+                "id": 50,
+                "form": "Bgste"
+            },
+            "translations": [
+                {
+                    "title": "名詞",
+                    "forms": [
+                        "ブングステ"
+                    ]
+                }
+            ],
+            "tags": [
+                "v2.2.0",
+                "固有名詞"
+            ],
+            "contents": [
+                {
+                    "title": "説明",
+                    "text": "名字の一種。",
+                    "markdown": "名字の一種。"
+                },
+                {
+                    "title": "Pronunciation",
+                    "text": "ˈɓŋ̍ste"
+                }
+            ],
+            "variations": [],
+            "relations": []
+        },
+        {
+            "entry": {
+                "id": 74,
+                "form": "Kargalky"
+            },
+            "translations": [],
+            "tags": [],
+            "contents": [
+                {
+                    "title": "Pronunciation",
+                    "text": "kaʁˈŋalkɨ"
+                }
+            ],
+            "variations": [],
+            "relations": []
+        },
+        {
+            "entry": {
+                "id": 72,
+                "form": "bnatto"
+            },
+            "translations": [
+                {
+                    "title": "名詞",
+                    "forms": [
+                        "川"
+                    ]
+                }
+            ],
+            "tags": [
+                "v2.2.0"
+            ],
+            "contents": [
+                {
+                    "title": "階梯",
+                    "text": "tt-t",
+                    "markdown": "tt-t"
+                },
+                {
+                    "title": "Pronunciation",
+                    "text": "ˈɓnɑt.to"
+                }
+            ],
+            "variations": [],
+            "relations": []
+        },
+        {
+            "entry": {
+                "id": 30,
+                "form": "bog"
+            },
+            "translations": [
+                {
+                    "title": "名詞",
+                    "forms": [
+                        "イヌ"
+                    ]
+                }
+            ],
+            "tags": [
+                "動物"
+            ],
+            "contents": [
+                {
+                    "title": "Pronunciation",
+                    "text": "ɓoŋ"
+                }
+            ],
+            "variations": [],
+            "relations": []
+        },
+        {
+            "entry": {
+                "id": 22,
+                "form": "choflu"
+            },
+            "translations": [
+                {
+                    "title": "名詞",
+                    "forms": [
+                        "オレンジ"
+                    ]
+                }
+            ],
+            "tags": [
+                "色"
+            ],
+            "contents": [
+                {
+                    "title": "Pronunciation",
+                    "text": "ˈʈʂʰof.lu"
+                }
+            ],
+            "variations": [],
+            "relations": []
+        },
+        {
+            "entry": {
+                "id": 20,
+                "form": "félé"
+            },
+            "translations": [
+                {
+                    "title": "名詞",
+                    "forms": [
+                        "黄"
+                    ]
+                }
+            ],
+            "tags": [
+                "色"
+            ],
+            "contents": [
+                {
+                    "title": "Pronunciation",
+                    "text": "ˈfeː.ʎe"
+                }
+            ],
+            "variations": [],
+            "relations": []
+        },
+        {
+            "entry": {
+                "id": 35,
+                "form": "g"
+            },
+            "translations": [
+                {
+                    "title": "冠詞",
+                    "forms": [
+                        "その",
+                        "the"
+                    ]
+                }
+            ],
+            "tags": [],
+            "contents": [
+                {
+                    "title": "説明",
+                    "text": "定冠詞。名詞の前に置き、定性(definiteness)を標示する。",
+                    "markdown": "定冠詞。名詞の前に置き、定性(definiteness)を標示する。"
+                },
+                {
+                    "title": "Pronunciation",
+                    "text": "ŋ̍"
+                }
+            ],
+            "variations": [],
+            "relations": []
+        },
+        {
+            "entry": {
+                "id": 39,
+                "form": "goš"
+            },
+            "translations": [
+                {
+                    "title": "代名詞",
+                    "forms": [
+                        "これ",
+                        "この"
+                    ]
+                }
+            ],
+            "tags": [],
+            "contents": [
+                {
+                    "title": "説明",
+                    "text": "近称の指示代名詞。こそあどの「こ」と大体同じ。",
+                    "markdown": "近称の指示代名詞。こそあどの「こ」と大体同じ。"
+                },
+                {
+                    "title": "Pronunciation",
+                    "text": "ŋoʂ"
+                }
+            ],
+            "variations": [],
+            "relations": [
+                {
+                    "title": "",
+                    "entry": {
+                        "id": 40,
+                        "form": "loš"
+                    }
+                },
+                {
+                    "title": "",
+                    "entry": {
+                        "id": 41,
+                        "form": "toš"
+                    }
+                }
+            ]
+        },
+        {
+            "entry": {
+                "id": 58,
+                "form": "harpy"
+            },
+            "translations": [
+                {
+                    "title": "名詞",
+                    "forms": [
+                        "数",
+                        "数字",
+                        "番号"
+                    ]
+                }
+            ],
+            "tags": [],
+            "contents": [
+                {
+                    "title": "数詞について",
+                    "text": "",
+                    "markdown": ""
+                },
+                {
+                    "title": "Pronunciation",
+                    "text": "ˈhɑʕpɨ"
+                }
+            ],
+            "variations": [],
+            "relations": [
+                {
+                    "title": "",
+                    "entry": {
+                        "id": 59,
+                        "f  orm": "čjulni"
+                    }
+                },
+                {
+                    "title": "",
+                    "entry": {
+                        "id": 61,
+                        "form": "womfl"
+                    }
+                }
+            ]
+        },
+        {
+            "entry": {
+                "id": 18,
+                "form": "hauk"
+            },
+            "translations": [
+                {
+                    "title": "名詞",
+                    "forms": [
+                        "黒"
+                    ]
+                }
+            ],
+            "tags": [
+                "色"
+            ],
+            "contents": [
+                {
+                    "title": "Pronunciation",
+                    "text": "hɑwk"
+                }
+            ],
+            "variations": [],
+            "relations": []
+        },
+        {
+            "entry": {
+                "id": 33,
+                "form": "hârjú"
+            },
+            "translations": [
+                {
+                    "title": "名詞",
+                    "forms": [
+                        "山"
+                    ]
+                }
+            ],
+            "tags": [
+                "v2.2.0"
+            ],
+            "contents": [
+                {
+                    "title": "Pronunciation",
+                    "text": "ˈçæːɾʲu"
+                }
+            ],
+            "variations": [],
+            "relations": []
+        },
+        {
+            "entry": {
+                "id": 6,
+                "form": "hét"
+            },
+            "translations": [
+                {
+                    "title": "名詞",
+                    "forms": [
+                        "手"
+                    ]
+                }
+            ],
+            "tags": [
+                "身体"
+            ],
+            "contents": [
+                {
+                    "title": "Pronunciation",
+                    "text": "çetsʲ"
+                }
+            ],
+            "variations": [],
+            "relations": []
+        },
+        {
+            "entry": {
+                "id": 31,
+                "form": "khac"
+            },
+            "translations": [
+                {
+                    "title": "名詞",
+                    "forms": [
+                        "国"
+                    ]
+                }
+            ],
+            "tags": [
+                "v2.2.0"
+            ],
+            "contents": [
+                {
+                    "title": "Pronunciation",
+                    "text": "kʰɑʈʂ"
+                }
+            ],
+            "variations": [],
+            "relations": [
+                {
+                    "title": "",
+                    "entry": {
+                        "id": 32,
+                        "form": "-khac"
+                    }
+                }
+            ]
+        },
+        {
+            "entry": {
+                "id": 23,
+                "form": "kheca"
+            },
+            "translations": [
+                {
+                    "title": "名詞",
+                    "forms": [
+                        "水"
+                    ]
+                }
+            ],
+            "tags": [
+                "v2.2.0"
+            ],
+            "contents": [
+                {
+                    "title": "Pronunciation",
+                    "text": "ˈkʰeːʈʂɑ"
+                }
+            ],
+            "variations": [],
+            "relations": []
+        },
+        {
+            "entry": {
+                "id": 38,
+                "form": "khl"
+            },
+            "translations": [
+                {
+                    "title": "接続詞",
+                    "forms": [
+                        "か",
+                        "または"
+                    ]
+                }
+            ],
+            "tags": [
+                "v2.2.0"
+            ],
+            "contents": [
+                {
+                    "title": "Pronunciation",
+                    "text": "kʰl̩"
+                }
+            ],
+            "variations": [],
+            "relations": []
+        },
+        {
+            "entry": {
+                "id": 24,
+                "form": "khâli"
+            },
+            "translations": [
+                {
+                    "title": "名詞",
+                    "forms": [
+                        "鏡"
+                    ]
+                }
+            ],
+            "tags": [
+                "v2.2.0"
+            ],
+            "contents": [
+                {
+                    "title": "Pronunciation",
+                    "text": "ˈcʰæːʎi"
+                }
+            ],
+            "variations": [],
+            "relations": []
+        },
+        {
+            "entry": {
+                "id": 44,
+                "form": "kowmel"
+            },
+            "translations": [
+                {
+                    "title": "動詞",
+                    "forms": [
+                        "話す"
+                    ]
+                }
+            ],
+            "tags": [
+                "v2.2.0"
+            ],
+            "contents": [
+                {
+                    "title": "",
+                    "text": "b-m",
+                    "markdown": "b-m"
+                },
+                {
+                    "title": "Pronunciation",
+                    "text": "kowmel"
+                }
+            ],
+            "variations": [],
+            "relations": []
+        },
+        {
+            "entry": {
+                "id": 13,
+                "form": "legä"
+            },
+            "translations": [
+                {
+                    "title": "名詞",
+                    "forms": [
+                        "歯"
+                    ]
+                }
+            ],
+            "tags": [
+                "身体",
+                "v2.2.0"
+            ],
+            "contents": [
+                {
+                    "title": "Pronunciation",
+                    "text": "ˈleː.ŋæ"
+                }
+            ],
+            "variations": [],
+            "relations": []
+        },
+        {
+            "entry": {
+                "id": 73,
+                "form": "li"
+            },
+            "translations": [
+                {
+                    "title": "数詞",
+                    "forms": [
+                        "1"
+                    ]
+                }
+            ],
+            "tags": [
+                "v2.2.0"
+            ],
+            "contents": [
+                {
+                    "title": "Pronunciation",
+                    "text": "ʎiː"
+                }
+            ],
+            "variations": [],
+            "relations": []
+        },
+        {
+            "entry": {
+                "id": 36,
+                "form": "ljef-"
+            },
+            "translations": [
+                {
+                    "title": "接頭辞",
+                    "forms": [
+                        ""
+                    ]
+                }
+            ],
+            "tags": [],
+            "contents": [
+                {
+                    "title": "説明",
+                    "text": "否定辞。名詞の前などにつけて、否定を表す。英語の un-, in- などに相当。",
+                    "markdown": "否定辞。名詞の前などにつけて、否定を表す。英語の un-, in- などに相当。"
+                },
+                {
+                    "title": "Pronunciation",
+                    "text": "ʎef"
+                }
+            ],
+            "variations": [],
+            "relations": []
+        },
+        {
+            "entry": {
+                "id": 53,
+                "form": "lom"
+            },
+            "translations": [
+                {
+                    "title": "動詞",
+                    "forms": [
+                        "～である"
+                    ]
+                }
+            ],
+            "tags": [
+                "v2.2.0"
+            ],
+            "contents": [
+                {
+                    "title": "説明",
+                    "text": "コピュラ(繋辞)。不規則に変化する。\n\n過去形：olj\n\n未来形：cuf\n\n完了形語幹：gess-",
+                    "markdown": "コピュラ(繋辞)。不規則に変化する。\n\n過去形：olj\n\n未来形：cuf\n\n完了形語幹：gess-"
+                },
+                {
+                    "title": "Pronunciation",
+                    "text": "lom"
+                }
+            ],
+            "variations": [],
+            "relations": []
+        },
+        {
+            "entry": {
+                "id": 40,
+                "form": "loš"
+            },
+            "translations": [
+                {
+                    "title": "代名詞",
+                    "forms": [
+                        "それ",
+                        "その"
+                    ]
+                }
+            ],
+            "tags": [
+                "v2.2.0"
+            ],
+            "contents": [
+                {
+                    "title": "説明",
+                    "text": "中称の指示代名詞。こそあどの「そ」と大体同じ。",
+                    "markdown": "中称の指示代名詞。こそあどの「そ」と大体同じ。"
+                },
+                {
+                    "title": "Pronunciation",
+                    "text": "loʂ"
+                }
+            ],
+            "variations": [],
+            "relations": [
+                {
+                    "title": "",
+                    "entry": {
+                        "id": 39,
+                        "form": "goš"
+                    }
+                },
+                {
+                    "title": "",
+                    "entry": {
+                        "id": 41,
+                        "form": "toš"
+                    }
+                }
+            ]
+        },
+        {
+            "entry": {
+                "id": 10,
+                "form": "lty"
+            },
+            "translations": [
+                {
+                    "title": "名詞",
+                    "forms": [
+                        "腕"
+                    ]
+                }
+            ],
+            "tags": [
+                "身体",
+                "v2.2.0"
+            ],
+            "contents": [
+                {
+                    "title": "Pronunciation",
+                    "text": "ˈl̩ːtɨ"
+                }
+            ],
+            "variations": [],
+            "relations": []
+        },
+        {
+            "entry": {
+                "id": 57,
+                "form": "ml-"
+            },
+            "translations": [
+                {
+                    "title": "接頭辞",
+                    "forms": [
+                        ""
+                    ]
+                }
+            ],
+            "tags": [],
+            "contents": [
+                {
+                    "title": "説明",
+                    "text": "完了相の接頭辞。\n\n語幹の軟音化を伴う。\n\n例 : tunel(見る)→mltúnel, kwoymel(話す)→mlkwóymel",
+                    "markdown": "完了相の接頭辞。\n\n語幹の軟音化を伴う。\n\n例 : tunel(見る)→mltúnel, kwoymel(話す)→mlkwóymel"
+                },
+                {
+                    "title": "Pronunciation",
+                    "text": "ml̩"
+                }
+            ],
+            "variations": [],
+            "relations": []
+        },
+        {
+            "entry": {
+                "id": 17,
+                "form": "mäppi"
+            },
+            "translations": [
+                {
+                    "title": "名詞",
+                    "forms": [
+                        "白"
+                    ]
+                }
+            ],
+            "tags": [
+                "色"
+            ],
+            "contents": [
+                {
+                    "title": "Pronunciation",
+                    "text": "ˈmæp.pʲi"
+                }
+            ],
+            "variations": [],
+            "relations": []
+        },
+        {
+            "entry": {
+                "id": 29,
+                "form": "méwi"
+            },
+            "translations": [
+                {
+                    "title": "名詞",
+                    "forms": [
+                        "ネコ"
+                    ]
+                }
+            ],
+            "tags": [
+                "動物"
+            ],
+            "contents": [
+                {
+                    "title": "Pronunciation",
+                    "text": "mʲeːʋʲi"
+                }
+            ],
+            "variations": [],
+            "relations": []
+        },
+        {
+            "entry": {
+                "id": 26,
+                "form": "nowy"
+            },
+            "translations": [
+                {
+                    "title": "名詞",
+                    "forms": [
+                        "言語"
+                    ]
+                }
+            ],
+            "tags": [
+                "v2.2.0"
+            ],
+            "contents": [
+                {
+                    "title": "Pronunciation",
+                    "text": "ˈno.wɨ"
+                }
+            ],
+            "variations": [],
+            "relations": [
+                {
+                    "title": "",
+                    "entry": {
+                        "id": 27,
+                        "form": "-nowy"
+                    }
+                }
+            ]
+        },
+        {
+            "entry": {
+                "id": 12,
+                "form": "nuggo"
+            },
+            "translations": [
+                {
+                    "title": "名詞",
+                    "forms": [
+                        "鼻"
+                    ]
+                }
+            ],
+            "tags": [
+                "身体"
+            ],
+            "contents": [
+                {
+                    "title": "階梯",
+                    "text": "gg - g",
+                    "markdown": "gg - g"
+                },
+                {
+                    "title": "Pronunciation",
+                    "text": "ˈnuŋːo"
+                }
+            ],
+            "variations": [],
+            "relations": []
+        },
+        {
+            "entry": {
+                "id": 9,
+                "form": "nâé"
+            },
+            "translations": [
+                {
+                    "title": "名詞",
+                    "forms": [
+                        "口"
+                    ]
+                }
+            ],
+            "tags": [
+                "身体",
+                "v2.2.0"
+            ],
+            "contents": [
+                {
+                    "title": "Pronunciation",
+                    "text": "ˈɲæːje"
+                }
+            ],
+            "variations": [],
+            "relations": []
+        },
+        {
+            "entry": {
+                "id": 3,
+                "form": "of"
+            },
+            "translations": [
+                {
+                    "title": "代名詞",
+                    "forms": [
+                        "彼",
+                        "彼女"
+                    ]
+                }
+            ],
+            "tags": [
+                "v2.2.0"
+            ],
+            "contents": [
+                {
+                    "title": "説明",
+                    "text": "三人称の代名詞。生物に対して使う。性の区別はない。",
+                    "markdown": "三人称の代名詞。生物に対して使う。性の区別はない。"
+                },
+                {
+                    "title": "階梯",
+                    "text": "p-f",
+                    "markdown": "p-f"
+                },
+                {
+                    "title": "Pronunciation",
+                    "text": "ˈof"
+                }
+            ],
+            "variations": [
+                {
+                    "title": "対格",
+                    "form": "ofem"
+                },
+                {
+                    "title": "属格",
+                    "form": "opuy"
+                },
+                {
+                    "title": "与格",
+                    "form": "opi"
+                },
+                {
+                    "title": "処格",
+                    "form": "ofehj"
+                },
+                {
+                    "title": "向格",
+                    "form": "ofyr"
+                },
+                {
+                    "title": "奪格",
+                    "form": "ofjes"
+                },
+                {
+                    "title": "生格",
+                    "form": "opjonu"
+                },
+                {
+                    "title": "殺格",
+                    "form": "opeþu"
+                },
+                {
+                    "title": "呼格",
+                    "form": "opoyja"
+                }
+            ],
+            "relations": []
+        },
+        {
+            "entry": {
+                "id": 28,
+                "form": "phgäl"
+            },
+            "translations": [
+                {
+                    "title": "名詞",
+                    "forms": [
+                        "家"
+                    ]
+                }
+            ],
+            "tags": [
+                "v2.2.0"
+            ],
+            "contents": [
+                {
+                    "title": "Pronunciation",
+                    "text": "pʰŋæl"
+                }
+            ],
+            "variations": [],
+            "relations": []
+        },
+        {
+            "entry": {
+                "id": 47,
+                "form": "ploncyt"
+            },
+            "translations": [
+                {
+                    "title": "名詞",
+                    "forms": [
+                        "人"
+                    ]
+                }
+            ],
+            "tags": [
+                "v2.2.0"
+            ],
+            "contents": [
+                {
+                    "title": "階梯",
+                    "text": "th-t",
+                    "markdown": "th-t"
+                },
+                {
+                    "title": "Pronunciation",
+                    "text": "ˈploɳʈʂɨt"
+                }
+            ],
+            "variations": [
+                {
+                    "title": "対格",
+                    "form": "plončitem"
+                },
+                {
+                    "title": "属格",
+                    "form": "plončithuy"
+                },
+                {
+                    "title": "与格",
+                    "form": "plončithi"
+                },
+                {
+                    "title": "処格",
+                    "form": " plončitehj"
+                },
+                {
+                    "title": "奪格",
+                    "form": "plončitjes"
+                },
+                {
+                    "title": "向格",
+                    "form": "plončityr"
+                },
+                {
+                    "title": "生格",
+                    "form": "plončithjonu"
+                },
+                {
+                    "title": "殺格",
+                    "form": "plončitheþu"
+                },
+                {
+                    "title": "呼格",
+                    "form": "plončithoyja"
+                }
+            ],
+            "relations": []
+        },
+        {
+            "entry": {
+                "id": 62,
+                "form": "ploše"
+            },
+            "translations": [
+                {
+                    "title": "名詞",
+                    "forms": [
+                        "リンゴ"
+                    ]
+                }
+            ],
+            "tags": [
+                "v2.1.0"
+            ],
+            "contents": [
+                {
+                    "title": "変化表 ・・・ I類 (階梯 : š - r)",
+                    "text": "| ＼ | 単数 | 双数 | 複数 |\n|:--:|:---|:---|:---|\n| 主格 | ploše | ploref | plošena |\n| 対格 | plorem | plošefym | plošelam |\n| 属格 | plošeu | plošetu | plošenau |\n| 与格 | plošere | plošefre | plošenare |\n| 処格 | ploreh | plošefyh | plošelah |\n| 向格 | plorette | ploreftte | plošelatte |\n| 奪格 | plorešco | plošefyšco | plošelašco |\n| 生格 | plošekä | plošetykä | plošenakä |\n| 殺格 | ploresbo | plošefysbo | plošelasbo |\n| 呼格 | plošeoga | plošetoga | plošenaoga |",
+                    "markdown": "| ＼ | 単数 | 双数 | 複数 |\n|:--:|:---|:---|:---|\n| 主格 | ploše | ploref | plošena |\n| 対格 | plorem | plošefym | plošelam |\n| 属格 | plošeu | plošetu | plošenau |\n| 与格 | plošere | plošefre | plošenare |\n| 処格 | ploreh | plošefyh | plošelah |\n| 向格 | plorette | ploreftte | plošelatte |\n| 奪格 | plorešco | plošefyšco | plošelašco |\n| 生格 | plošekä | plošetykä | plošenakä |\n| 殺格 | ploresbo | plošefysbo | plošelasbo |\n| 呼格 | plošeoga | plošetoga | plošenaoga |"
+                },
+                {
+                    "title": "Pronunciation",
+                    "text": "ˈploː.ʂe"
+                }
+            ],
+            "variations": [],
+            "relations": []
+        },
+        {
+            "entry": {
+                "id": 15,
+                "form": "psat"
+            },
+            "translations": [
+                {
+                    "title": "名詞",
+                    "forms": [
+                        "赤"
+                    ]
+                }
+            ],
+            "tags": [
+                "色"
+            ],
+            "contents": [
+                {
+                    "title": "Pronunciation",
+                    "text": "psɑt"
+                }
+            ],
+            "variations": [],
+            "relations": []
+        },
+        {
+            "entry": {
+                "id": 25,
+                "form": "restu"
+            },
+            "translations": [
+                {
+                    "title": "名詞",
+                    "forms": [
+                        "時",
+                        "時間"
+                    ]
+                }
+            ],
+            "tags": [
+                "v2.0.0"
+            ],
+            "contents": [
+                {
+                    "title": "変化表 ・・・ I類 (階梯 : st - ss, 単数のみ)",
+                    "text": "| ＼ | 単数 | 双数 | 複数 |\n|:--:|:---|:---|:---|\n| 主格 | restu | \\- | \\- |\n| 対格 | ressum | \\- | \\- |\n| 属格 | restuu | \\- | \\- |\n| 与格 | resture | \\- | \\- |\n| 処格 | ressux | \\- | \\- |\n| 向格 | ressutte | \\- | \\- |\n| 奪格 | ressušco | \\- | \\- |\n| 生格 | restukä | \\- | \\- |\n| 殺格 | ressusbo | \\- | \\- |\n| 呼格 | restuoga | \\- | \\- |",
+                    "markdown": "| ＼ | 単数 | 双数 | 複数 |\n|:--:|:---|:---|:---|\n| 主格 | restu | \\- | \\- |\n| 対格 | ressum | \\- | \\- |\n| 属格 | restuu | \\- | \\- |\n| 与格 | resture | \\- | \\- |\n| 処格 | ressux | \\- | \\- |\n| 向格 | ressutte | \\- | \\- |\n| 奪格 | ressušco | \\- | \\- |\n| 生格 | restukä | \\- | \\- |\n| 殺格 | ressusbo | \\- | \\- |\n| 呼格 | restuoga | \\- | \\- |"
+                },
+                {
+                    "title": "Pronunciation",
+                    "text": "ˈrʲes.tu"
+                }
+            ],
+            "variations": [],
+            "relations": []
+        },
+        {
+            "entry": {
+                "id": 60,
+                "form": "rofel"
+            },
+            "translations": [
+                {
+                    "title": "動詞",
+                    "forms": [
+                        "〜と感じられる"
+                    ]
+                }
+            ],
+            "tags": [
+                "v2.2.0"
+            ],
+            "contents": [
+                {
+                    "title": "階梯",
+                    "text": "ff-f",
+                    "markdown": "ff-f"
+                },
+                {
+                    "title": "Pronunciation",
+                    "text": "ˈʕoː.fel"
+                }
+            ],
+            "variations": [
+                {
+                    "title": "過去形",
+                    "form": "roffja"
+                },
+                {
+                    "title": "未来形",
+                    "form": "rofyþ"
+                },
+                {
+                    "title": "現在完了形",
+                    "form": "lfrjofel"
+                }
+            ],
+            "relations": []
+        },
+        {
+            "entry": {
+                "id": 45,
+                "form": "sawel"
+            },
+            "translations": [
+                {
+                    "title": "動詞",
+                    "forms": [
+                        "持つ"
+                    ]
+                }
+            ],
+            "tags": [],
+            "contents": [
+                {
+                    "title": "階梯",
+                    "text": "m-w",
+                    "markdown": "m-w"
+                },
+                {
+                    "title": "Pronunciation",
+                    "text": "ˈsɑːwel"
+                }
+            ],
+            "variations": [
+                {
+                    "title": "過去形",
+                    "form": "sama"
+                },
+                {
+                    "title": "未来形",
+                    "form": "sawyf"
+                },
+                {
+                    "title": "現在完了形",
+                    "form": "ltsawel"
+                }
+            ],
+            "relations": []
+        },
+        {
+            "entry": {
+                "id": 21,
+                "form": "snolku"
+            },
+            "translations": [
+                {
+                    "title": "名詞",
+                    "forms": [
+                        "緑"
+                    ]
+                }
+            ],
+            "tags": [
+                "色"
+            ],
+            "contents": [
+                {
+                    "title": "Pronunciation",
+                    "text": "ˈsnol.ku"
+                }
+            ],
+            "variations": [],
+            "relations": []
+        },
+        {
+            "entry": {
+                "id": 2,
+                "form": "suk"
+            },
+            "translations": [
+                {
+                    "title": "代名詞",
+                    "forms": [
+                        "あなた"
+                    ]
+                }
+            ],
+            "tags": [],
+            "contents": [
+                {
+                    "title": "説明",
+                    "text": "二人称の代名詞。",
+                    "markdown": "二人称の代名詞。"
+                },
+                {
+                    "title": "Pronunciation",
+                    "text": "suk"
+                }
+            ],
+            "variations": [
+                {
+                    "title": "複数形",
+                    "form": "sukla"
+                }
+            ],
+            "relations": []
+        },
+        {
+            "entry": {
+                "id": 37,
+                "form": "thi"
+            },
+            "translations": [
+                {
+                    "title": "接続詞",
+                    "forms": [
+                        "と",
+                        "そして"
+                    ]
+                }
+            ],
+            "tags": [],
+            "contents": [
+                {
+                    "title": "Pronunciation",
+                    "text": "tsʰʲi"
+                }
+            ],
+            "variations": [],
+            "relations": []
+        },
+        {
+            "entry": {
+                "id": 5,
+                "form": "thušše"
+            },
+            "translations": [
+                {
+                    "title": "名詞",
+                    "forms": [
+                        "目"
+                    ]
+                }
+            ],
+            "tags": [
+                "身体"
+            ],
+            "contents": [
+                {
+                    "title": "階梯",
+                    "text": "",
+                    "markdown": ""
+                },
+                {
+                    "title": "変化表 ・・・ I類 (階梯 : šš - š)",
+                    "text": "| ＼ | 単数 | 双数 | 複数 |\n|:--:|:---|:---|:---|\n| 主格 | thušše | thušeþj | thuššena |\n| 対格 | thušem | thuššeþim | thuššelam |\n| 属格 | thuššeuy | thuššeþjuy | thuššenauy |\n| 与格 | thuššeje | thuššetje | thuššenaje |\n| 処格 | thušexj | thuššeþixj | thuššelaxj |\n| 向格 | thušette | thuššeþitte | thuššelatte |\n| 奪格 | thušešcjo | thuššeþišcjo | thuššelašcjo |\n| 生格 | thuššekäy | thuššetikäy | thuššenakäy |\n| 殺格 | thušesbo | thuššeþisbo | thuššelasbo |\n| 呼格 | thuššeoga | thuššetjoga | thuššenaoga |",
+                    "markdown": "| ＼ | 単数 | 双数 | 複数 |\n|:--:|:---|:---|:---|\n| 主格 | thušše | thušeþj | thuššena |\n| 対格 | thušem | thuššeþim | thuššelam |\n| 属格 | thuššeuy | thuššeþjuy | thuššenauy |\n| 与格 | thuššeje | thuššetje | thuššenaje |\n| 処格 | thušexj | thuššeþixj | thuššelaxj |\n| 向格 | thušette | thuššeþitte | thuššelatte |\n| 奪格 | thušešcjo | thuššeþišcjo | thuššelašcjo |\n| 生格 | thuššekäy | thuššetikäy | thuššenakäy |\n| 殺格 | thušesbo | thuššeþisbo | thuššelasbo |\n| 呼格 | thuššeoga | thuššetjoga | thuššenaoga |"
+                },
+                {
+                    "title": "Pronunciation",
+                    "text": "ˈtʰuʂːe"
+                }
+            ],
+            "variations": [],
+            "relations": []
+        },
+        {
+            "entry": {
+                "id": 51,
+                "form": "togka"
+            },
+            "translations": [
+                {
+                    "title": "名詞",
+                    "forms": [
+                        "海"
+                    ]
+                }
+            ],
+            "tags": [],
+            "contents": [
+                {
+                    "title": "階梯",
+                    "text": "gk-gg",
+                    "markdown": "gk-gg"
+                },
+                {
+                    "title": "Pronunciation",
+                    "text": "toŋkɑ"
+                }
+            ],
+            "variations": [],
+            "relations": []
+        },
+        {
+            "entry": {
+                "id": 41,
+                "form": "toš"
+            },
+            "translations": [
+                {
+                    "title": "代名詞",
+                    "forms": [
+                        "あれ",
+                        "あの"
+                    ]
+                }
+            ],
+            "tags": [],
+            "contents": [
+                {
+                    "title": "説明",
+                    "text": "遠称の指示代名詞。こそあどの「あ」と大体同じ。",
+                    "markdown": "遠称の指示代名詞。こそあどの「あ」と大体同じ。"
+                },
+                {
+                    "title": "Pronunciation",
+                    "text": "toʂ"
+                }
+            ],
+            "variations": [],
+            "relations": [
+                {
+                    "title": "",
+                    "entry": {
+                        "id": 39,
+                        "form": "goš"
+                    }
+                },
+                {
+                    "title": "",
+                    "entry": {
+                        "id": 40,
+                        "form": "loš"
+                    }
+                }
+            ]
+        },
+        {
+            "entry": {
+                "id": 42,
+                "form": "tunel"
+            },
+            "translations": [
+                {
+                    "title": "動詞",
+                    "forms": [
+                        "見る"
+                    ]
+                }
+            ],
+            "tags": [],
+            "contents": [
+                {
+                    "title": "",
+                    "text": "d-n",
+                    "markdown": "d-n"
+                },
+                {
+                    "title": "Pronunciation",
+                    "text": "ˈtuː.nel"
+                }
+            ],
+            "variations": [
+                {
+                    "title": "過去形",
+                    "form": "tudja"
+                },
+                {
+                    "title": "未来形",
+                    "form": "tunyþ"
+                },
+                {
+                    "title": "現在完了形",
+                    "form": "lftjunel"
+                }
+            ],
+            "relations": []
+        },
+        {
+            "entry": {
+                "id": 46,
+                "form": "wakel"
+            },
+            "translations": [
+                {
+                    "title": "動詞",
+                    "forms": [
+                        "書く"
+                    ]
+                }
+            ],
+            "tags": [],
+            "contents": [
+                {
+                    "title": "",
+                    "text": "kh-k",
+                    "markdown": "kh-k"
+                },
+                {
+                    "title": "Pronunciation",
+                    "text": "ˈwɑː.kel"
+                }
+            ],
+            "variations": [
+                {
+                    "title": "過去形",
+                    "form": "wakhja"
+                },
+                {
+                    "title": "未来形",
+                    "form": "wakyþ"
+                },
+                {
+                    "title": "現在完了形",
+                    "form": "lfwakel"
+                }
+            ],
+            "relations": []
+        },
+        {
+            "entry": {
+                "id": 61,
+                "form": "womfl"
+            },
+            "translations": [
+                {
+                    "title": "数詞",
+                    "forms": [
+                        "1728",
+                        "12^3"
+                    ]
+                }
+            ],
+            "tags": [],
+            "contents": [
+                {
+                    "title": "数詞について",
+                    "text": "英語におけるthousandの様なポジションだが、若干違う。\n\n12^3の倍数は、対応する数詞（普通の形で、倍数接頭辞ではない）を前に置いて表す。\n\n| 10進表記 | 12進表記 | 基数詞 |\n|:--:|:--:|:--:|\n| 3,456 | 2,000 | mi womfl |\n| 13,824 | 8,000 | isfje womfl |\n\n倍数接頭辞を前につけると、\n\n倍数接頭辞がnの意味の時、12^(3n)の意味になる。\n\n| 10進表記 | 12進表記 | 基数詞 |\n|:--:|:--:|:--:|\n| 20,736 | 10,000 | kjeg womfl |\n| 248,832 | 100,000 | čjulni womfl |\n| 2,985,984 | 1,000,000 | miwomfl |\n\n例えば、4,294,967,297を12進表記すると9BA,461,595となるので、\n\nnäyčjulni kuykjegthipl miwomfl tječjulni gofkjegthili womfl oþčjulni näykjegthiooþ\n\nとなる。",
+                    "markdown": "英語におけるthousandの様なポジションだが、若干違う。\n\n12^3の倍数は、対応する数詞（普通の形で、倍数接頭辞ではない）を前に置いて表す。\n\n| 10進表記 | 12進表記 | 基数詞 |\n|:--:|:--:|:--:|\n| 3,456 | 2,000 | mi womfl |\n| 13,824 | 8,000 | isfje womfl |\n\n倍数接頭辞を前につけると、\n\n倍数接頭辞がnの意味の時、12^(3n)の意味になる。\n\n| 10進表記 | 12進表記 | 基数詞 |\n|:--:|:--:|:--:|\n| 20,736 | 10,000 | kjeg womfl |\n| 248,832 | 100,000 | čjulni womfl |\n| 2,985,984 | 1,000,000 | miwomfl |\n\n例えば、4,294,967,297を12進表記すると9BA,461,595となるので、\n\nnäyčjulni kuykjegthipl miwomfl tječjulni gofkjegthili womfl oþčjulni näykjegthiooþ\n\nとなる。"
+                },
+                {
+                    "title": "Pronunciation",
+                    "text": "wom.fl̩"
+                }
+            ],
+            "variations": [],
+            "relations": [
+                {
+                    "title": "",
+                    "entry": {
+                        "id": 58,
+                        "form": "harpy"
+                    }
+                },
+                {
+                    "title": "",
+                    "entry": {
+                        "id": 59,
+                        "form": "čjulni"
+                    }
+                }
+            ]
+        },
+        {
+            "entry": {
+                "id": 19,
+                "form": "woska"
+            },
+            "translations": [
+                {
+                    "title": "名詞",
+                    "forms": [
+                        "紫"
+                    ]
+                }
+            ],
+            "tags": [
+                "色"
+            ],
+            "contents": [
+                {
+                    "title": "Pronunciation",
+                    "text": "ˈwos.kɑ"
+                }
+            ],
+            "variations": [],
+            "relations": []
+        },
+        {
+            "entry": {
+                "id": 1,
+                "form": "ym"
+            },
+            "translations": [
+                {
+                    "title": "代名詞",
+                    "forms": [
+                        "私"
+                    ]
+                }
+            ],
+            "tags": [],
+            "contents": [
+                {
+                    "title": "説明",
+                    "text": "一人称の代名詞。",
+                    "markdown": "一人称の代名詞。"
+                },
+                {
+                    "title": "Pronunciation",
+                    "text": "ɨm"
+                }
+            ],
+            "variations": [
+                {
+                    "title": "複数形",
+                    "form": "ymla"
+                }
+            ],
+            "relations": []
+        },
+        {
+            "entry": {
+                "id": 43,
+                "form": "ytel"
+            },
+            "translations": [
+                {
+                    "title": "動詞",
+                    "forms": [
+                        "食べる"
+                    ]
+                }
+            ],
+            "tags": [],
+            "contents": [
+                {
+                    "title": "",
+                    "text": "tt-t",
+                    "markdown": "tt-t"
+                },
+                {
+                    "title": "Pronunciation",
+                    "text": "ˈɨː.tel"
+                }
+            ],
+            "variations": [
+                {
+                    "title": "過去形",
+                    "form": "yttja"
+                },
+                {
+                    "title": "未来形",
+                    "form": "ytyþ"
+                },
+                {
+                    "title": "現在完了形",
+                    "form": "lfitel"
+                }
+            ],
+            "relations": []
+        },
+        {
+            "entry": {
+                "id": 34,
+                "form": "Âsnél"
+            },
+            "translations": [
+                {
+                    "title": "名詞",
+                    "forms": [
+                        "ヤズニェリ"
+                    ]
+                }
+            ],
+            "tags": [
+                "地名"
+            ],
+            "contents": [
+                {
+                    "title": "説明",
+                    "text": "この言語が話されている地域の名前。国名、言語名の由来(暫定)。",
+                    "markdown": "この言語が話されている地域の名前。国名、言語名の由来(暫定)。"
+                },
+                {
+                    "title": "Pronunciation",
+                    "text": "ˈjæsʲ.ɲeʎ"
+                }
+            ],
+            "variations": [],
+            "relations": []
+        },
+        {
+            "entry": {
+                "id": 49,
+                "form": "ältoyšr"
+            },
+            "translations": [
+                {
+                    "title": "名詞",
+                    "forms": [
+                        "丘"
+                    ]
+                }
+            ],
+            "tags": [],
+            "contents": [
+                {
+                    "title": "Pronunciation",
+                    "text": "æl.ˈtoɪ.ʂʁ̩"
+                }
+            ],
+            "variations": [],
+            "relations": []
+        },
+        {
+            "entry": {
+                "id": 8,
+                "form": "þylnu"
+            },
+            "translations": [
+                {
+                    "title": "名詞",
+                    "forms": [
+                        "耳"
+                    ]
+                }
+            ],
+            "tags": [
+                "身体"
+            ],
+            "contents": [
+                {
+                    "title": "Pronunciation",
+                    "text": "ˈθɨl.nu"
+                }
+            ],
+            "variations": [],
+            "relations": []
+        },
+        {
+            "entry": {
+                "id": 14,
+                "form": "čhiiþr"
+            },
+            "translations": [
+                {
+                    "title": "名詞",
+                    "forms": [
+                        "指"
+                    ]
+                }
+            ],
+            "tags": [
+                "身体"
+            ],
+            "contents": [
+                {
+                    "title": "Pronunciation",
+                    "text": "ˈtɕʰiː.θʁ̩"
+                }
+            ],
+            "variations": [],
+            "relations": []
+        },
+        {
+            "entry": {
+                "id": 59,
+                "form": "čjulni"
+            },
+            "translations": [
+                {
+                    "title": "数詞",
+                    "forms": [
+                        "百四十四",
+                        "144",
+                        "12^2"
+                    ]
+                }
+            ],
+            "tags": [],
+            "contents": [
+                {
+                    "title": "数詞について",
+                    "text": "英語におけるhundredの様なポジションだが、若干違う。\n\n12^2の倍数は、対応する倍数接頭辞をつけて言う。\n| 10進表記 | 12進表記 | 基数詞 |\n|:--:|:--:|:--:|\n| 288 | 200 | mičjulni |\n| 1,008 | 700 | phjančjulni |\n\n例えば、700(12進表記で4A4)はtječjulni plkjegthitjeとなる。\n",
+                    "markdown": "英語におけるhundredの様なポジションだが、若干違う。\n\n12^2の倍数は、対応する倍数接頭辞をつけて言う。\n| 10進表記 | 12進表記 | 基数詞 |\n|:--:|:--:|:--:|\n| 288 | 200 | mičjulni |\n| 1,008 | 700 | phjančjulni |\n\n例えば、700(12進表記で4A4)はtječjulni plkjegthitjeとなる。\n"
+                },
+                {
+                    "title": "Pronunciation",
+                    "text": "ˈtɕul.ɲi"
+                }
+            ],
+            "variations": [],
+            "relations": [
+                {
+                    "title": "",
+                    "entry": {
+                        "id": 58,
+                        "form": "harpy"
+                    }
+                },
+                {
+                    "title": "",
+                    "entry": {
+                        "id": 61,
+                        "form": "womfl"
+                    }
+                }
+            ]
+        },
+        {
+            "entry": {
+                "id": 7,
+                "form": "šgäfä"
+            },
+            "translations": [
+                {
+                    "title": "名詞",
+                    "forms": [
+                        "顔"
+                    ]
+                }
+            ],
+            "tags": [
+                "身体"
+            ],
+            "contents": [
+                {
+                    "title": "Pronunciation",
+                    "text": "ˈʂŋæː.fæ"
+                }
+            ],
+            "variations": [],
+            "relations": []
+        },
+        {
+            "entry": {
+                "id": 4,
+                "form": "šjoy"
+            },
+            "translations": [
+                {
+                    "title": "代名詞",
+                    "forms": [
+                        "それ"
+                    ]
+                }
+            ],
+            "tags": [],
+            "contents": [
+                {
+                    "title": "説明",
+                    "text": "三人称の代名詞。生物でないものに使う。",
+                    "markdown": "三人称の代名詞。生物でないものに使う。"
+                },
+                {
+                    "title": "Pronunciation",
+                    "text": "ɕoɪ"
+                }
+            ],
+            "variations": [
+                {
+                    "title": "複数形",
+                    "form": "šjoyla"
+                }
+            ],
+            "relations": []
+        },
+        {
+            "entry": {
+                "id": 16,
+                "form": "šry"
+            },
+            "translations": [
+                {
+                    "title": "名詞",
+                    "forms": [
+                        "青"
+                    ]
+                }
+            ],
+            "tags": [
+                "色"
+            ],
+            "contents": [
+                {
+                    "title": "Pronunciation",
+                    "text": "ʂʁɨː"
+                }
+            ],
+            "variations": [],
+            "relations": []
+        },
+        {
+            "entry": {
+                "id": 11,
+                "form": "šuydje"
+            },
+            "translations": [
+                {
+                    "title": "名詞",
+                    "forms": [
+                        "足"
+                    ]
+                }
+            ],
+            "tags": [
+                "身体"
+            ],
+            "contents": [
+                {
+                    "title": "Pronunciation",
+                    "text": "ˈʂɵɪ.ɗʲe"
+                }
+            ],
+            "variations": [],
+            "relations": []
+        }
+    ],
+    "zpdic": {
+        "punctuations": [
+            ",",
+            "、"
+        ],
+        "pronunciationTitle": "Pronunciation"
+    },
+    "zpdicOnline": {
+        "explanation": "Âsnélnowy /jæsʲˈɲelnowɨ/\n\n制作中アプリオリ人工言語、ヤズニェル語の辞典です。\n\n文法がある程度完成するまで、当分の間メモ帳代わりに使います。\n\n現在最新のバージョンは2.3.0です。「v2.3.0」のタグが付いている単語が改訂済みの単語です。\n\n2024/01/28 更新",
+        "enableMarkdown": true
+    },
+    "zatlin": "",
+    "version": 2
+}
