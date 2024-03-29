@@ -4,15 +4,15 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 
-		<!-- Bootstrap 5.3.0 CSS -->
-		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+		<!-- Import Google Fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Noto+Serif+JP:wght@200;300;400;500;600;700;900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Zen+Antique&display=swap" rel="stylesheet">
+		
+		<!-- Bootstrap v5.3.3 CSS -->
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 		
 		<style>
-			/* import Google Fonts */
-			@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;200;300;400;500;600;700;800;900&family=Noto+Serif+JP:wght@200;300;400;500;600;700;900&family=UnifrakturMaguntia&family=Zen+Antique&display=swap');
-
-			
-
 			body
 			{
 				background-color: #f8f9fa;
@@ -20,7 +20,7 @@
 				font-size: 1rem;
 			}
 
-			h1, h2, h3, h5, h5, h6
+			h1, h2, h3, h4, h5, h6
 			{
 				font-family: 'Times New Roman', 'Noto Serif JP', serif;
 				color: #1b3053;
@@ -42,12 +42,6 @@
 			.ipa 
 			{
 				font-family: 'Arial', 'Helvetica Neue', sans-serif;
-				
-			}
-
-			.link-light:hover 
-			{
-				color: #cbccce!important;
 			}
 
 			table > thead > tr > th,
@@ -56,20 +50,17 @@
 				text-align: center;
 				font-family: 'Noto Sans JP', sans-serif;
 				font-weight: 500;
-				font-size: 0.95em;
 			}
 
 			table > tbody > tr > td 
 			{
 				text-align: center;
-				font-size: 0.95em;
+				
 			}
 
 			table > tbody > tr > td.bikou 
 			{
-				
 				text-align: left;
-				
 			}
 
 			body > .page-top-button 
@@ -81,37 +72,60 @@
 
 			.bg-deep-blue 
 			{
-				background-color: #0a1f3f;
+				background-color: #002547!important;
 			}
 
-			.text-deep-blue 
+			.text-deep-blue,
+			.link-deep-blue
 			{
-				color: #003e9b;
+				color: #00367e!important;
+			}
+
+			.link-deep-blue:hover
+			{
+				color: #00367eaa!important;
+			}
+
+			.octicon
+			{
+				display: inline;
+				fill: currentColor;
+				height: 1.4rem;
+			}
+
+			.octicon-sm
+			{
+				display: inline;
+				fill: currentColor;
+				height: 0.8rem;
 			}
 		</style>
 
 		<title>ヴェッセンズランド語 音韻論</title>
 	</head>
     <body>
-		<div class="container-fluid m-0 py-3 bg-deep-blue bg-gradient">
-			<header>
-				<h1 class="text-center m-0 titlee text-light">Vessenzländisķ</h1>
-			</header>
-		</div>
         <div class="container-fluid">
 			<div class="row">
-				<div class="col-md-3 col-xxl-2 bg-deep-blue py-3">
+				<div class="col bg-deep-blue bg-gradient mb-4">
+					<header>
+						<h1 class="text-center m-0 py-3 titlee text-light">Vessenzländisķ</h1>
+					</header>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-3 col-xxl-2 bg-body-secondary rounded border-top border-end shadow">
 					<div class="sticky-md-top">
-						<nav class="nav flex-column">
-							<a class="nav-link text-center pt-4 link-light" href="../index.html">Top</a>
-							<a class="nav-link disabled ps-2 text-light" href="#">Ásnélnowy</a>
-							<a class="nav-link ps-3 link-light" href="./jaes_about.html">概説</a>
-							<a class="nav-link ps-3 link-light" href="./jaes_phonology.html">音韻論</a>
-							<hr class="text-light">
-							<a class="nav-link disabled ps-2 text-light" href="#">Vessenzländisķ</a>
-							<a class="nav-link ps-3 link-light" href="./vess_about.html">概説</a>
-							<a class="nav-link ps-3 link-light" aria-current="page" href="#">音韻論</a>
-							<a class="nav-link ps-3 link-light" href="./vess_orthgraph.html">文字と発音</a>
+						<nav class="nav flex-column pt-3">
+							<a class="nav-link link-deep-blue text-center" href="../index.html">Top</a>
+							<a class="nav-link disabled" href="#">Ásnélnowy</a>
+							<a class="nav-link link-deep-blue ms-1" href="./jaes_about.html">概説</a>
+							<a class="nav-link link-deep-blue ms-1" href="./jaes_phonology.html">音韻論</a>
+							<a class="nav-link disabled ms-1" href="#">文字と発音（準備中）</a>
+							<hr class="">
+							<a class="nav-link disabled" href="#">Vessenzländisķ</a>
+							<a class="nav-link link-deep-blue ms-1" href="./vess_about.html">概説</a>
+							<a class="nav-link link-deep-blue ms-1" href="#" aria-current="page">音韻論</a>
+							<a class="nav-link link-deep-blue ms-1" href="./vess_orthgraph.html">文字と発音</a>
 						</nav>
 					</div>
 				</div>
@@ -420,7 +434,7 @@
 			</a>
 		</div>
 		
-    	<!-- Bootstrap 5.3.0 JS Bundle -->
-		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    	<!-- Bootstrap v5.3.3 JS -->
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 	</body>
 </html>
