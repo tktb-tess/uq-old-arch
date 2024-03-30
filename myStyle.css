@@ -3,7 +3,9 @@
 
 :root {
     --my-heading-color: 26, 54, 88;
+    --my-link-color: 0, 71, 179;
 }
+
 
 body
 {
@@ -75,12 +77,12 @@ body > .page-top-button
 .text-deep-blue,
 .link-deep-blue
 {
-    color: rgb(var(--my-heading-color))!important;
+    color: rgb(var(--my-link-color))!important;
 }
 
 .link-deep-blue:hover
 {
-    color: rgba(var(--my-heading-color), 0.7)!important;
+    color: rgba(var(--my-link-color), 0.7)!important;
 }
 
 .octicon
@@ -95,4 +97,9 @@ body > .page-top-button
     display: inline;
     fill: currentColor;
     height: 0.8rem;
+}
+
+.no-underline
+{
+    text-decoration: none!important;
 }
