@@ -10,7 +10,7 @@
 
 body
 {
-    background-color: var(--bs-light);
+    background-color: var(--bs-black);
     font-family: 'Arial', 'Helvetica Neue', 'Noto Sans JP', sans-serif;
     font-size: 0.9rem;
 }
@@ -18,7 +18,7 @@ body
 h1, h2, h3, h4, h5, h6
 {
     font-family: 'Times New Roman', 'Noto Serif JP', serif;
-    color: rgba(var(--my-heading-color-rgb));
+    color: var(--bs-light);
 }
 
 p
