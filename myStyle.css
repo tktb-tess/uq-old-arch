@@ -63,7 +63,7 @@ table > tbody > tr > td
     
 }
 
-table > tbody > tr > td.bikou 
+table > tbody > tr > td.bikou
 {
     text-align: left;
 }
@@ -114,4 +114,11 @@ body > .page-top-button
 .noto-sans-jp
 {
     font-family: 'Noto Sans JP';
+}
+
+.shitsumon
+{
+    font-family: 'Zen Antique', serif;
+    font-weight: 400;
+    border-bottom: 1px solid;
 }
