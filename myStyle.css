@@ -124,3 +124,9 @@ body > .page-top-button
     color: white;
 }
 
+@media (min-width:768px) {
+    .sidebar {
+        overflow-y: auto;
+        height: 90vh;
+    }
+}
