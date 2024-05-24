@@ -29,6 +29,7 @@ p
 a
 {
     text-decoration: none;
+    transition: color 60ms ease-in-out;
 }
 
 .section-title 
@@ -130,3 +131,5 @@ body > .page-top-button
         height: 90vh;
     }
 }
+
+

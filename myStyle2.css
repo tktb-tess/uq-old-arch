@@ -44,6 +44,7 @@ p
 a
 {
     text-decoration: none;
+    transition: color 60ms ease-in-out;
 }
 
 .section-title 
