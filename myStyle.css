@@ -1,5 +1,6 @@
 /* Import Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Noto+Serif+JP:wght@200;300;400;500;600;700;900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Zen+Antique&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100..900&display=swap');
 
 :root
 {
@@ -19,11 +20,6 @@ h1, h2, h3, h4, h5, h6
 {
     font-family: 'Times New Roman', 'Noto Serif JP', serif;
     color: rgba(var(--my-heading-color-rgb));
-}
-
-p
-{
-    text-indent: 0.4rem;
 }
 
 a
@@ -114,7 +110,7 @@ body > .page-top-button
 
 .noto-sans-jp
 {
-    font-family: 'Noto Sans JP';
+    font-family: 'Noto Sans JP', sans-serif;
 }
 
 .shitsumon
@@ -132,4 +128,8 @@ body > .page-top-button
     }
 }
 
+.noto-sans-sc
+{
+    font-family: 'Noto Sans SC', sans-serif;
+}
 

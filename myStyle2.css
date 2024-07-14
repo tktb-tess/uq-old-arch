@@ -8,37 +8,21 @@
     
 }
 
+/* linear-gradient(to bottom right,black 47%, #380066 50%, black 53%) */
 
 body
 {
-    color: white;
-    background: linear-gradient(to bottom right,black 47%, #380066 50%, black 53%);
+    color: black;
+    background: #f8f9fa;
     font-family: 'Arial', 'Helvetica Neue', 'Noto Sans JP', sans-serif;
     font-size: 0.9rem;
 }
 
-h1, h2, h3, h4, h5, h6
+
+.title-h
 {
-    font-family: 'Times New Roman', 'Noto Serif JP', serif;
-    
-}
-
-.title-flex {
-    display: flex;
-    justify-content: center;
-}
-
-.title-h {
-    text-align: center;
-    padding-left: 10px;
-    padding-right: 10px;
-    font-family: 'Zen Antique', serif;
-    font-weight: 400;
-}
-
-p
-{
-    text-indent: 0.4rem;
+    font-size: 3em;
+    margin-top: 1.5rem;
 }
 
 a
