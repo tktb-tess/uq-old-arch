@@ -1,0 +1,1925 @@
+{
+    "words": [
+        {
+            "entry": {
+                "id": 32,
+                "form": "-kaz"
+            },
+            "translations": [
+                {
+                    "title": "接尾辞",
+                    "forms": [
+                        "～国"
+                    ]
+                }
+            ],
+            "tags": [
+                "v2.0.0"
+            ],
+            "contents": [
+                {
+                    "title": "説明",
+                    "text": "民族名などにつけて、国名を表す。\n\n例 : Nipponkaz（日本）、Yŋŋlkaz（イギリス）",
+                    "markdown": "民族名などにつけて、国名を表す。  \n\n例 : __Nipponkaz__（日本）、__Yŋŋlkaz__（イギリス）"
+                },
+                {
+                    "title": "Pronunciation",
+                    "text": "kʰɑʈ͡ʂ"
+                }
+            ],
+            "variations": [],
+            "relations": [
+                {
+                    "title": "",
+                    "entry": {
+                        "id": 31,
+                        "form": "kaz"
+                    }
+                }
+            ]
+        },
+        {
+            "entry": {
+                "id": 27,
+                "form": "-nowy"
+            },
+            "translations": [
+                {
+                    "title": "接尾辞",
+                    "forms": [
+                        "～語"
+                    ]
+                }
+            ],
+            "tags": [],
+            "contents": [
+                {
+                    "title": "説明",
+                    "text": "国名、民族名などにつけて言語名にする。\n\n例: Nipponnowy（日本語）、Yŋŋlnowy（英語）",
+                    "markdown": "国名、民族名などにつけて言語名にする。\n\n例: __Nipponnowy__（日本語）、__Yŋŋlnowy__（英語）"
+                },
+                {
+                    "title": "Pronunciation",
+                    "text": "no.wɨ"
+                }
+            ],
+            "variations": [],
+            "relations": [
+                {
+                    "title": "",
+                    "entry": {
+                        "id": 26,
+                        "form": "nowy"
+                    }
+                }
+            ]
+        },
+        {
+            "entry": {
+                "id": 50,
+                "form": "Bʻŋsde"
+            },
+            "translations": [
+                {
+                    "title": "名詞",
+                    "forms": [
+                        "ブングステ"
+                    ]
+                }
+            ],
+            "tags": [
+                "v2.2.0",
+                "固有名詞"
+            ],
+            "contents": [
+                {
+                    "title": "説明",
+                    "text": "名字の一種。",
+                    "markdown": "名字の一種。"
+                },
+                {
+                    "title": "Pronunciation",
+                    "text": "ˈɓŋ̍stɛ"
+                }
+            ],
+            "variations": [],
+            "relations": []
+        },
+        {
+            "entry": {
+                "id": 74,
+                "form": "Garŋalky"
+            },
+            "translations": [],
+            "tags": [],
+            "contents": [
+                {
+                    "title": "Pronunciation",
+                    "text": "kɑʁˈŋɑlkʰɨ"
+                }
+            ],
+            "variations": [],
+            "relations": []
+        },
+        {
+            "entry": {
+                "id": 49,
+                "form": "altojšr"
+            },
+            "translations": [
+                {
+                    "title": "名詞",
+                    "forms": [
+                        "丘"
+                    ]
+                }
+            ],
+            "tags": [
+                "v2.3.0"
+            ],
+            "contents": [
+                {
+                    "title": "Pronunciation",
+                    "text": "ɑl.ˈtoj.ʂʁ̩"
+                }
+            ],
+            "variations": [],
+            "relations": []
+        },
+        {
+            "entry": {
+                "id": 62,
+                "form": "bloše"
+            },
+            "translations": [
+                {
+                    "title": "名詞",
+                    "forms": [
+                        "リンゴ"
+                    ]
+                }
+            ],
+            "tags": [
+                "vÁ0.1.0"
+            ],
+            "contents": [
+                {
+                    "title": "変化表 ・・・ I類（階梯 : š - r）",
+                    "text": "| ＼ | 単数 | 双数 | 複数 |\n|:--:|:---|:---|:---|\n| 主格 | bloše | bloreþ | blošena |\n| 対格 | blorem | blošeþym | blošelam |\n| 属格 | blošeó | blošedó | blošenaó |\n| 与格 | blošere | blošedre | blošenare |\n| 処格 | blorehj | blošeþihj | blošelahj |\n| 向格 | bloredde | blošeþydde | blošeladde |\n| 奪格 | blorešzó | blošeþyšzó | blošelašzó |\n| 生格 | blošega | bloreþga | blošenaga |\n| 殺格 | bloresbʻo | blošeþysbʻo | blošelasbʻo |\n| 呼格 | blošeoŋa | blošedoŋa | blošenaoŋa |",
+                    "markdown": "| ＼ | 単数 | 双数 | 複数 |\n|:--:|:---|:---|:---|\n| 主格 | bloše | bloreþ | blošena |\n| 対格 | blorem | blošeþym | blošelam |\n| 属格 | blošeó | blošedó | blošenaó |\n| 与格 | blošere | blošedre | blošenare |\n| 処格 | blorehj | blošeþihj | blošelahj |\n| 向格 | bloredde | blošeþydde | blošeladde |\n| 奪格 | blorešzó | blošeþyšzó | blošelašzó |\n| 生格 | blošega | bloreþga | blošenaga |\n| 殺格 | bloresbʻo | blošeþysbʻo | blošelasbʻo |\n| 呼格 | blošeoŋa | blošedoŋa | blošenaoŋa |"
+                },
+                {
+                    "title": "Pronunciation",
+                    "text": "ˈploː.ʂɛ"
+                }
+            ],
+            "variations": [],
+            "relations": []
+        },
+        {
+            "entry": {
+                "id": 15,
+                "form": "bsad"
+            },
+            "translations": [
+                {
+                    "title": "名詞",
+                    "forms": [
+                        "赤"
+                    ]
+                }
+            ],
+            "tags": [
+                "色"
+            ],
+            "contents": [
+                {
+                    "title": "変化表 ・・・ II類（階梯 : dd - d）",
+                    "text": "|＼|単数|双数|複数|\n|:--:|:---|:---|:---|\n|主格||||\n|対格||||\n|属格||||\n|与格||||\n|処格||||\n|向格||||\n|奪格||||\n|生格||||\n|殺格||||\n|呼格||||",
+                    "markdown": "|＼|単数|双数|複数|\n|:--:|:---|:---|:---|\n|主格||||\n|対格||||\n|属格||||\n|与格||||\n|処格||||\n|向格||||\n|奪格||||\n|生格||||\n|殺格||||\n|呼格||||"
+                },
+                {
+                    "title": "Pronunciation",
+                    "text": "psɑt"
+                }
+            ],
+            "variations": [],
+            "relations": []
+        },
+        {
+            "entry": {
+                "id": 72,
+                "form": "bʻnaddo"
+            },
+            "translations": [
+                {
+                    "title": "名詞",
+                    "forms": [
+                        "川"
+                    ]
+                }
+            ],
+            "tags": [
+                "v2.2.0"
+            ],
+            "contents": [
+                {
+                    "title": "変化表 ・・・ I類（階梯 : dd - d）",
+                    "text": "|＼|単数|双数|複数|\n|:--:|:---|:---|:---|\n|主格||||\n|対格||||\n|属格||||\n|与格||||\n|処格||||\n|向格||||\n|奪格||||\n|生格||||\n|殺格||||\n|呼格||||",
+                    "markdown": "|＼|単数|双数|複数|\n|:--:|:---|:---|:---|\n|主格||||\n|対格||||\n|属格||||\n|与格||||\n|処格||||\n|向格||||\n|奪格||||\n|生格||||\n|殺格||||\n|呼格||||"
+                },
+                {
+                    "title": "Pronunciation",
+                    "text": "ˈɓnɑt.to"
+                }
+            ],
+            "variations": [],
+            "relations": []
+        },
+        {
+            "entry": {
+                "id": 30,
+                "form": "bʻoŋ"
+            },
+            "translations": [
+                {
+                    "title": "名詞",
+                    "forms": [
+                        "イヌ"
+                    ]
+                }
+            ],
+            "tags": [
+                "動物"
+            ],
+            "contents": [
+                {
+                    "title": "変化表 ・・・ II類（階梯なし）",
+                    "text": "|＼|単数|双数|複数|\n|:--:|:---|:---|:---|\n|主格||||\n|対格||||\n|属格||||\n|与格||||\n|処格||||\n|向格||||\n|奪格||||\n|生格||||\n|殺格||||\n|呼格||||",
+                    "markdown": "|＼|単数|双数|複数|\n|:--:|:---|:---|:---|\n|主格||||\n|対格||||\n|属格||||\n|与格||||\n|処格||||\n|向格||||\n|奪格||||\n|生格||||\n|殺格||||\n|呼格||||"
+                },
+                {
+                    "title": "Pronunciation",
+                    "text": "ɓoŋ"
+                }
+            ],
+            "variations": [],
+            "relations": []
+        },
+        {
+            "entry": {
+                "id": 14,
+                "form": "ciþr"
+            },
+            "translations": [
+                {
+                    "title": "名詞",
+                    "forms": [
+                        "指"
+                    ]
+                }
+            ],
+            "tags": [
+                "身体"
+            ],
+            "contents": [
+                {
+                    "title": "Pronunciation",
+                    "text": "ˈtɕʰiː.θʁ̩"
+                }
+            ],
+            "variations": [],
+            "relations": []
+        },
+        {
+            "entry": {
+                "id": 22,
+                "form": "coflu"
+            },
+            "translations": [
+                {
+                    "title": "名詞",
+                    "forms": [
+                        "オレンジ"
+                    ]
+                }
+            ],
+            "tags": [
+                "色"
+            ],
+            "contents": [
+                {
+                    "title": "変化表 ・・・ I類（階梯なし）",
+                    "text": "|＼|単数|双数|複数|\n|:--:|:---|:---|:---|\n|主格||||\n|対格||||\n|属格||||\n|与格||||\n|処格||||\n|向格||||\n|奪格||||\n|生格||||\n|殺格||||\n|呼格||||",
+                    "markdown": "|＼|単数|双数|複数|\n|:--:|:---|:---|:---|\n|主格||||\n|対格||||\n|属格||||\n|与格||||\n|処格||||\n|向格||||\n|奪格||||\n|生格||||\n|殺格||||\n|呼格||||"
+                },
+                {
+                    "title": "Pronunciation",
+                    "text": "ˈʈʂʰof.lu"
+                }
+            ],
+            "variations": [],
+            "relations": []
+        },
+        {
+            "entry": {
+                "id": 41,
+                "form": "daš"
+            },
+            "translations": [
+                {
+                    "title": "代名詞",
+                    "forms": [
+                        "あれ",
+                        "あの"
+                    ]
+                }
+            ],
+            "tags": [],
+            "contents": [
+                {
+                    "title": "説明",
+                    "text": "遠称の指示代名詞。こそあどの「あ」と大体同じ。",
+                    "markdown": "遠称の指示代名詞。こそあどの「あ」と大体同じ。"
+                },
+                {
+                    "title": "Pronunciation",
+                    "text": "tɑʂ"
+                }
+            ],
+            "variations": [],
+            "relations": [
+                {
+                    "title": "",
+                    "entry": {
+                        "id": 39,
+                        "form": "ŋaš"
+                    }
+                },
+                {
+                    "title": "",
+                    "entry": {
+                        "id": 40,
+                        "form": "laš"
+                    }
+                }
+            ]
+        },
+        {
+            "entry": {
+                "id": 51,
+                "form": "doŋga"
+            },
+            "translations": [
+                {
+                    "title": "名詞",
+                    "forms": [
+                        "海"
+                    ]
+                }
+            ],
+            "tags": [],
+            "contents": [
+                {
+                    "title": "変化表 ・・・ I類（階梯 : ŋg - ŋŋ）",
+                    "text": "|＼|単数|双数|複数|\n|:--:|:---|:---|:---|\n|主格||||\n|対格||||\n|属格||||\n|与格||||\n|処格||||\n|向格||||\n|奪格||||\n|生格||||\n|殺格||||\n|呼格||||",
+                    "markdown": "|＼|単数|双数|複数|\n|:--:|:---|:---|:---|\n|主格||||\n|対格||||\n|属格||||\n|与格||||\n|処格||||\n|向格||||\n|奪格||||\n|生格||||\n|殺格||||\n|呼格||||"
+                },
+                {
+                    "title": "Pronunciation",
+                    "text": "toŋkɑ"
+                }
+            ],
+            "variations": [],
+            "relations": []
+        },
+        {
+            "entry": {
+                "id": 42,
+                "form": "dynel"
+            },
+            "translations": [
+                {
+                    "title": "動詞",
+                    "forms": [
+                        "見る"
+                    ]
+                }
+            ],
+            "tags": [],
+            "contents": [
+                {
+                    "title": "階梯",
+                    "text": "dʻ - n",
+                    "markdown": "dʻ - n"
+                },
+                {
+                    "title": "Pronunciation",
+                    "text": "ˈtɨː.nel"
+                }
+            ],
+            "variations": [],
+            "relations": []
+        },
+        {
+            "entry": {
+                "id": 20,
+                "form": "félé"
+            },
+            "translations": [
+                {
+                    "title": "名詞",
+                    "forms": [
+                        "黄"
+                    ]
+                }
+            ],
+            "tags": [
+                "色"
+            ],
+            "contents": [
+                {
+                    "title": "変化表 ・・・ I類（階梯なし）",
+                    "text": "|＼|単数|双数|複数|\n|:--:|:---|:---|:---|\n|主格||||\n|対格||||\n|属格||||\n|与格||||\n|処格||||\n|向格||||\n|奪格||||\n|生格||||\n|殺格||||\n|呼格||||",
+                    "markdown": "|＼|単数|双数|複数|\n|:--:|:---|:---|:---|\n|主格||||\n|対格||||\n|属格||||\n|与格||||\n|処格||||\n|向格||||\n|奪格||||\n|生格||||\n|殺格||||\n|呼格||||"
+                },
+                {
+                    "title": "Pronunciation",
+                    "text": "ˈfʲɛː.ʎɛ"
+                }
+            ],
+            "variations": [],
+            "relations": []
+        },
+        {
+            "entry": {
+                "id": 44,
+                "form": "gowmel"
+            },
+            "translations": [
+                {
+                    "title": "動詞",
+                    "forms": [
+                        "話す"
+                    ]
+                }
+            ],
+            "tags": [
+                "v2.2.0"
+            ],
+            "contents": [
+                {
+                    "title": "",
+                    "text": "bʻ-m",
+                    "markdown": "bʻ-m"
+                },
+                {
+                    "title": "Pronunciation",
+                    "text": "kowmel"
+                }
+            ],
+            "variations": [],
+            "relations": []
+        },
+        {
+            "entry": {
+                "id": 58,
+                "form": "harby"
+            },
+            "translations": [
+                {
+                    "title": "名詞",
+                    "forms": [
+                        "数",
+                        "数字",
+                        "番号"
+                    ]
+                }
+            ],
+            "tags": [],
+            "contents": [
+                {
+                    "title": "数詞（24まで）",
+                    "text": "|12進表記|数詞|倍数接頭辞|12進表記|数詞|\n|:--:|:---|:---|:--:|:---|\n|0|znál|zná-|10|gys|\n|1|li|ly-|11|gystili|\n|2|mi|my-|12|gystimi|\n|3|bʻa|bʻa-|13|gystibʻa|\n|4|dé|te-|14|gystidé|\n|5|of|of-|15|gystiof|\n|6|ŋofe|ŋo-|16|gystiŋofe|\n|7|dʻmaj|dʻma-|17|gystidʻmaj|\n|8|óm|óm-|18|gystióm|\n|9|efyr|fy-|19|gystiefyr|\n|A|kyla|kyl-|1A|gystikyla|\n|B|kloj|klo-|1B|gystikloj|\n|–|–|–|20|mygys|\n",
+                    "markdown": "|12進表記|数詞|倍数接頭辞|12進表記|数詞|\n|:--:|:---|:---|:--:|:---|\n|0|znál|zná-|10|gys|\n|1|li|ly-|11|gystili|\n|2|mi|my-|12|gystimi|\n|3|bʻa|bʻa-|13|gystibʻa|\n|4|dé|te-|14|gystidé|\n|5|of|of-|15|gystiof|\n|6|ŋofe|ŋo-|16|gystiŋofe|\n|7|dʻmaj|dʻma-|17|gystidʻmaj|\n|8|óm|óm-|18|gystióm|\n|9|efyr|fy-|19|gystiefyr|\n|A|kyla|kyl-|1A|gystikyla|\n|B|kloj|klo-|1B|gystikloj|\n|–|–|–|20|mygys|\n"
+                },
+                {
+                    "title": "変化表 ・・・ I類（階梯 : b - f）",
+                    "text": "|＼|単数|双数|複数|\n|:--:|:---|:---|:---|\n|主格||||\n|対格||||\n|属格||||\n|与格||||\n|処格||||\n|向格||||\n|奪格||||\n|生格||||\n|殺格||||\n|呼格||||",
+                    "markdown": "|＼|単数|双数|複数|\n|:--:|:---|:---|:---|\n|主格||||\n|対格||||\n|属格||||\n|与格||||\n|処格||||\n|向格||||\n|奪格||||\n|生格||||\n|殺格||||\n|呼格||||"
+                },
+                {
+                    "title": "Pronunciation",
+                    "text": "ˈhɑʁpɨ"
+                }
+            ],
+            "variations": [],
+            "relations": [
+                {
+                    "title": "",
+                    "entry": {
+                        "id": 59,
+                        "form": "zólni"
+                    }
+                },
+                {
+                    "title": "",
+                    "entry": {
+                        "id": 61,
+                        "form": "womfl"
+                    }
+                }
+            ]
+        },
+        {
+            "entry": {
+                "id": 18,
+                "form": "haug"
+            },
+            "translations": [
+                {
+                    "title": "名詞",
+                    "forms": [
+                        "黒"
+                    ]
+                }
+            ],
+            "tags": [
+                "色"
+            ],
+            "contents": [
+                {
+                    "title": "変化表 ・・・ II類（階梯 : k - g）",
+                    "text": "|＼|単数|双数|複数|\n|:--:|:---|:---|:---|\n|主格||||\n|対格||||\n|属格||||\n|与格||||\n|処格||||\n|向格||||\n|奪格||||\n|生格||||\n|殺格||||\n|呼格||||",
+                    "markdown": "|＼|単数|双数|複数|\n|:--:|:---|:---|:---|\n|主格||||\n|対格||||\n|属格||||\n|与格||||\n|処格||||\n|向格||||\n|奪格||||\n|生格||||\n|殺格||||\n|呼格||||"
+                },
+                {
+                    "title": "Pronunciation",
+                    "text": "hɑwk"
+                }
+            ],
+            "variations": [],
+            "relations": []
+        },
+        {
+            "entry": {
+                "id": 6,
+                "form": "héd"
+            },
+            "translations": [
+                {
+                    "title": "名詞",
+                    "forms": [
+                        "手"
+                    ]
+                }
+            ],
+            "tags": [
+                "身体"
+            ],
+            "contents": [
+                {
+                    "title": "変化表 ・・・ II類（階梯 : t - d）",
+                    "text": "|＼|単数|双数|複数|\n|:--:|:---|:---|:---|\n|主格||||\n|対格||||\n|属格||||\n|与格||||\n|処格||||\n|向格||||\n|奪格||||\n|生格||||\n|殺格||||\n|呼格||||",
+                    "markdown": "|＼|単数|双数|複数|\n|:--:|:---|:---|:---|\n|主格||||\n|対格||||\n|属格||||\n|与格||||\n|処格||||\n|向格||||\n|奪格||||\n|生格||||\n|殺格||||\n|呼格||||"
+                },
+                {
+                    "title": "Pronunciation",
+                    "text": "çɛt"
+                }
+            ],
+            "variations": [],
+            "relations": []
+        },
+        {
+            "entry": {
+                "id": 33,
+                "form": "héru"
+            },
+            "translations": [
+                {
+                    "title": "名詞",
+                    "forms": [
+                        "山"
+                    ]
+                }
+            ],
+            "tags": [
+                "v2.2.0"
+            ],
+            "contents": [
+                {
+                    "title": "変化表 ・・・ I類（階梯なし）",
+                    "text": "|＼|単数|双数|複数|\n|:--:|:---|:---|:---|\n|主格||||\n|対格||||\n|属格||||\n|与格||||\n|処格||||\n|向格||||\n|奪格||||\n|生格||||\n|殺格||||\n|呼格||||",
+                    "markdown": "|＼|単数|双数|複数|\n|:--:|:---|:---|:---|\n|主格||||\n|対格||||\n|属格||||\n|与格||||\n|処格||||\n|向格||||\n|奪格||||\n|生格||||\n|殺格||||\n|呼格||||"
+                },
+                {
+                    "title": "Pronunciation",
+                    "text": "ˈçɛːʁu"
+                }
+            ],
+            "variations": [],
+            "relations": []
+        },
+        {
+            "entry": {
+                "id": 31,
+                "form": "kaz"
+            },
+            "translations": [
+                {
+                    "title": "名詞",
+                    "forms": [
+                        "国"
+                    ]
+                }
+            ],
+            "tags": [
+                "v2.2.0"
+            ],
+            "contents": [
+                {
+                    "title": "変化表 ・・・ II類（階梯 : zz - z）",
+                    "text": "|＼|単数|双数|複数|\n|:--:|:---|:---|:---|\n|主格||||\n|対格||||\n|属格||||\n|与格||||\n|処格||||\n|向格||||\n|奪格||||\n|生格||||\n|殺格||||\n|呼格||||",
+                    "markdown": "|＼|単数|双数|複数|\n|:--:|:---|:---|:---|\n|主格||||\n|対格||||\n|属格||||\n|与格||||\n|処格||||\n|向格||||\n|奪格||||\n|生格||||\n|殺格||||\n|呼格||||"
+                },
+                {
+                    "title": "Pronunciation",
+                    "text": "kʰɑʈʂ"
+                }
+            ],
+            "variations": [],
+            "relations": [
+                {
+                    "title": "",
+                    "entry": {
+                        "id": 32,
+                        "form": "-kaz"
+                    }
+                }
+            ]
+        },
+        {
+            "entry": {
+                "id": 23,
+                "form": "keza"
+            },
+            "translations": [
+                {
+                    "title": "名詞",
+                    "forms": [
+                        "水"
+                    ]
+                }
+            ],
+            "tags": [
+                "v2.2.0"
+            ],
+            "contents": [
+                {
+                    "title": "変化表 ・・・ I類（階梯なし, 単数のみ）",
+                    "text": "|＼|単数|双数|複数|\n|:--:|:---|:---|:---|\n|主格||\\-|\\-|\n|対格||\\-|\\-|\n|属格||\\-|\\-|\n|与格||\\-|\\-|\n|処格||\\-|\\-|\n|向格||\\-|\\-|\n|奪格||\\-|\\-|\n|生格||\\-|\\-|\n|殺格||\\-|\\-|\n|呼格||\\-|\\-|",
+                    "markdown": "|＼|単数|双数|複数|\n|:--:|:---|:---|:---|\n|主格||\\-|\\-|\n|対格||\\-|\\-|\n|属格||\\-|\\-|\n|与格||\\-|\\-|\n|処格||\\-|\\-|\n|向格||\\-|\\-|\n|奪格||\\-|\\-|\n|生格||\\-|\\-|\n|殺格||\\-|\\-|\n|呼格||\\-|\\-|"
+                },
+                {
+                    "title": "Pronunciation",
+                    "text": "ˈkʰɛːʈʂɑ"
+                }
+            ],
+            "variations": [],
+            "relations": []
+        },
+        {
+            "entry": {
+                "id": 38,
+                "form": "kl"
+            },
+            "translations": [
+                {
+                    "title": "接続詞",
+                    "forms": [
+                        "か",
+                        "または"
+                    ]
+                }
+            ],
+            "tags": [
+                "v2.2.0"
+            ],
+            "contents": [
+                {
+                    "title": "Pronunciation",
+                    "text": "kʰl̩"
+                }
+            ],
+            "variations": [],
+            "relations": []
+        },
+        {
+            "entry": {
+                "id": 24,
+                "form": "káni"
+            },
+            "translations": [
+                {
+                    "title": "名詞",
+                    "forms": [
+                        "鏡"
+                    ]
+                }
+            ],
+            "tags": [
+                "v2.2.0"
+            ],
+            "contents": [
+                {
+                    "title": "変化表 ・・・ I類（階梯 : n - l）",
+                    "text": "|＼|単数|双数|複数|\n|:--:|:---|:---|:---|\n|主格||||\n|対格||||\n|属格||||\n|与格||||\n|処格||||\n|向格||||\n|奪格||||\n|生格||||\n|殺格||||\n|呼格||||",
+                    "markdown": "|＼|単数|双数|複数|\n|:--:|:---|:---|:---|\n|主格||||\n|対格||||\n|属格||||\n|与格||||\n|処格||||\n|向格||||\n|奪格||||\n|生格||||\n|殺格||||\n|呼格||||"
+                },
+                {
+                    "title": "Pronunciation",
+                    "text": "ˈcʰaːɲi"
+                }
+            ],
+            "variations": [],
+            "relations": []
+        },
+        {
+            "entry": {
+                "id": 40,
+                "form": "laš"
+            },
+            "translations": [
+                {
+                    "title": "代名詞",
+                    "forms": [
+                        "それ",
+                        "その"
+                    ]
+                }
+            ],
+            "tags": [
+                "v2.2.0"
+            ],
+            "contents": [
+                {
+                    "title": "説明",
+                    "text": "中称の指示代名詞。こそあどの「そ」と大体同じ。",
+                    "markdown": "中称の指示代名詞。こそあどの「そ」と大体同じ。"
+                },
+                {
+                    "title": "Pronunciation",
+                    "text": "lɑʂ"
+                }
+            ],
+            "variations": [],
+            "relations": [
+                {
+                    "title": "",
+                    "entry": {
+                        "id": 39,
+                        "form": "ŋaš"
+                    }
+                },
+                {
+                    "title": "",
+                    "entry": {
+                        "id": 41,
+                        "form": "daš"
+                    }
+                }
+            ]
+        },
+        {
+            "entry": {
+                "id": 13,
+                "form": "leŋa"
+            },
+            "translations": [
+                {
+                    "title": "名詞",
+                    "forms": [
+                        "歯"
+                    ]
+                }
+            ],
+            "tags": [
+                "身体",
+                "v2.3.0"
+            ],
+            "contents": [
+                {
+                    "title": "変化表 ・・・ I類（階梯なし）",
+                    "text": "|＼|単数|双数|複数|\n|:--:|:---|:---|:---|\n|主格||||\n|対格||||\n|属格||||\n|与格||||\n|処格||||\n|向格||||\n|奪格||||\n|生格||||\n|殺格||||\n|呼格||||",
+                    "markdown": "|＼|単数|双数|複数|\n|:--:|:---|:---|:---|\n|主格||||\n|対格||||\n|属格||||\n|与格||||\n|処格||||\n|向格||||\n|奪格||||\n|生格||||\n|殺格||||\n|呼格||||"
+                },
+                {
+                    "title": "Pronunciation",
+                    "text": "ˈlɛːŋa"
+                }
+            ],
+            "variations": [],
+            "relations": []
+        },
+        {
+            "entry": {
+                "id": 73,
+                "form": "li"
+            },
+            "translations": [
+                {
+                    "title": "数詞",
+                    "forms": [
+                        "1"
+                    ]
+                }
+            ],
+            "tags": [
+                "v2.2.0"
+            ],
+            "contents": [
+                {
+                    "title": "Pronunciation",
+                    "text": "ʎiː"
+                }
+            ],
+            "variations": [],
+            "relations": []
+        },
+        {
+            "entry": {
+                "id": 36,
+                "form": "ljef-"
+            },
+            "translations": [
+                {
+                    "title": "接頭辞",
+                    "forms": [
+                        ""
+                    ]
+                }
+            ],
+            "tags": [],
+            "contents": [
+                {
+                    "title": "説明",
+                    "text": "否定辞。名詞の前などにつけて、否定を表す。英語の un-, in- などに相当。",
+                    "markdown": "否定辞。名詞の前などにつけて、否定を表す。英語の un-, in- などに相当。"
+                },
+                {
+                    "title": "Pronunciation",
+                    "text": "ʎɛf"
+                }
+            ],
+            "variations": [],
+            "relations": []
+        },
+        {
+            "entry": {
+                "id": 53,
+                "form": "lom"
+            },
+            "translations": [
+                {
+                    "title": "動詞",
+                    "forms": [
+                        "～である"
+                    ]
+                }
+            ],
+            "tags": [
+                "v2.2.0"
+            ],
+            "contents": [
+                {
+                    "title": "説明",
+                    "text": "コピュラ(繋辞)。不規則に変化する。\n\n過去形 : olj\n未来形 : cof",
+                    "markdown": "コピュラ(繋辞)。不規則に変化する。\n\n過去形 : olj  \n未来形 : cof"
+                },
+                {
+                    "title": "Pronunciation",
+                    "text": "lom"
+                }
+            ],
+            "variations": [],
+            "relations": []
+        },
+        {
+            "entry": {
+                "id": 10,
+                "form": "lty"
+            },
+            "translations": [
+                {
+                    "title": "名詞",
+                    "forms": [
+                        "腕"
+                    ]
+                }
+            ],
+            "tags": [
+                "身体",
+                "v2.2.0"
+            ],
+            "contents": [
+                {
+                    "title": "変化表 ・・・ I類（階梯 : t - d）",
+                    "text": "|＼|単数|双数|複数|\n|:--:|:---|:---|:---|\n|主格||||\n|対格||||\n|属格||||\n|与格||||\n|処格||||\n|向格||||\n|奪格||||\n|生格||||\n|殺格||||\n|呼格||||",
+                    "markdown": "|＼|単数|双数|複数|\n|:--:|:---|:---|:---|\n|主格||||\n|対格||||\n|属格||||\n|与格||||\n|処格||||\n|向格||||\n|奪格||||\n|生格||||\n|殺格||||\n|呼格||||"
+                },
+                {
+                    "title": "Pronunciation",
+                    "text": "ˈl̩ːtʰɨ"
+                }
+            ],
+            "variations": [],
+            "relations": []
+        },
+        {
+            "entry": {
+                "id": 17,
+                "form": "mebbi"
+            },
+            "translations": [
+                {
+                    "title": "名詞",
+                    "forms": [
+                        "白"
+                    ]
+                }
+            ],
+            "tags": [
+                "色"
+            ],
+            "contents": [
+                {
+                    "title": "変化表 ・・・ I類（階梯 : bb - b）",
+                    "text": "|＼|単数|双数|複数|\n|:--:|:---|:---|:---|\n|主格||||\n|対格||||\n|属格||||\n|与格||||\n|処格||||\n|向格||||\n|奪格||||\n|生格||||\n|殺格||||\n|呼格||||",
+                    "markdown": "|＼|単数|双数|複数|\n|:--:|:---|:---|:---|\n|主格||||\n|対格||||\n|属格||||\n|与格||||\n|処格||||\n|向格||||\n|奪格||||\n|生格||||\n|殺格||||\n|呼格||||"
+                },
+                {
+                    "title": "Pronunciation",
+                    "text": "ˈmɛp.pʲi"
+                }
+            ],
+            "variations": [],
+            "relations": []
+        },
+        {
+            "entry": {
+                "id": 57,
+                "form": "ml-"
+            },
+            "translations": [
+                {
+                    "title": "接頭辞",
+                    "forms": [
+                        ""
+                    ]
+                }
+            ],
+            "tags": [],
+            "contents": [
+                {
+                    "title": "説明",
+                    "text": "完了相の接頭辞。\n\n語幹の軟音化を伴う。\n\n例 : tynel 「見る」 → mltinel\n\ngowmel 「話す」 → mlgówmel",
+                    "markdown": "完了相の接頭辞。\n\n語幹の軟音化を伴う。\n\n例 : __tynel__ 「見る」 → __mltinel__\n\n__gowmel__ 「話す」 → __mlgówmel__"
+                },
+                {
+                    "title": "Pronunciation",
+                    "text": "ml̩"
+                }
+            ],
+            "variations": [],
+            "relations": []
+        },
+        {
+            "entry": {
+                "id": 29,
+                "form": "méwi"
+            },
+            "translations": [
+                {
+                    "title": "名詞",
+                    "forms": [
+                        "ネコ"
+                    ]
+                }
+            ],
+            "tags": [
+                "動物"
+            ],
+            "contents": [
+                {
+                    "title": "変化表 ・・・ I類（階梯なし）",
+                    "text": "|＼|単数|双数|複数|\n|:--:|:---|:---|:---|\n|主格||||\n|対格||||\n|属格||||\n|与格||||\n|処格||||\n|向格||||\n|奪格||||\n|生格||||\n|殺格||||\n|呼格||||",
+                    "markdown": "|＼|単数|双数|複数|\n|:--:|:---|:---|:---|\n|主格||||\n|対格||||\n|属格||||\n|与格||||\n|処格||||\n|向格||||\n|奪格||||\n|生格||||\n|殺格||||\n|呼格||||"
+                },
+                {
+                    "title": "Pronunciation",
+                    "text": "mʲɛːʋʲi"
+                }
+            ],
+            "variations": [],
+            "relations": []
+        },
+        {
+            "entry": {
+                "id": 26,
+                "form": "nowy"
+            },
+            "translations": [
+                {
+                    "title": "名詞",
+                    "forms": [
+                        "言語"
+                    ]
+                }
+            ],
+            "tags": [
+                "v2.2.0"
+            ],
+            "contents": [
+                {
+                    "title": "変化表 ・・・ I類（階梯なし）",
+                    "text": "|＼|単数|双数|複数|\n|:--:|:---|:---|:---|\n|主格||||\n|対格||||\n|属格||||\n|与格||||\n|処格||||\n|向格||||\n|奪格||||\n|生格||||\n|殺格||||\n|呼格||||",
+                    "markdown": "|＼|単数|双数|複数|\n|:--:|:---|:---|:---|\n|主格||||\n|対格||||\n|属格||||\n|与格||||\n|処格||||\n|向格||||\n|奪格||||\n|生格||||\n|殺格||||\n|呼格||||"
+                },
+                {
+                    "title": "Pronunciation",
+                    "text": "ˈno.wɨ"
+                }
+            ],
+            "variations": [],
+            "relations": [
+                {
+                    "title": "",
+                    "entry": {
+                        "id": 27,
+                        "form": "-nowy"
+                    }
+                }
+            ]
+        },
+        {
+            "entry": {
+                "id": 12,
+                "form": "nuŋŋo"
+            },
+            "translations": [
+                {
+                    "title": "名詞",
+                    "forms": [
+                        "鼻"
+                    ]
+                }
+            ],
+            "tags": [
+                "身体"
+            ],
+            "contents": [
+                {
+                    "title": "変化表 ・・・ I類（階梯 : ŋŋ - ŋ）",
+                    "text": "|＼|単数|双数|複数|\n|:--:|:---|:---|:---|\n|主格|nuŋŋo|||\n|対格|nuŋom|||\n|属格|nuŋŋoó|||\n|与格|nuŋŋore|||\n|処格|nuŋohj|||\n|向格|nuŋodde|||\n|奪格|nuŋošzó|||\n|生格|nuŋŋoga|||\n|殺格|nuŋosbʻo|||\n|呼格|nuŋŋooŋa|||",
+                    "markdown": "|＼|単数|双数|複数|\n|:--:|:---|:---|:---|\n|主格|nuŋŋo|||\n|対格|nuŋom|||\n|属格|nuŋŋoó|||\n|与格|nuŋŋore|||\n|処格|nuŋohj|||\n|向格|nuŋodde|||\n|奪格|nuŋošzó|||\n|生格|nuŋŋoga|||\n|殺格|nuŋosbʻo|||\n|呼格|nuŋŋooŋa|||"
+                },
+                {
+                    "title": "Pronunciation",
+                    "text": "ˈnuŋːo"
+                }
+            ],
+            "variations": [],
+            "relations": []
+        },
+        {
+            "entry": {
+                "id": 9,
+                "form": "náé"
+            },
+            "translations": [
+                {
+                    "title": "名詞",
+                    "forms": [
+                        "口"
+                    ]
+                }
+            ],
+            "tags": [
+                "身体",
+                "v2.3.0"
+            ],
+            "contents": [
+                {
+                    "title": "変化表 ・・・ I類（階梯なし）",
+                    "text": "|＼|単数|双数|複数|\n|:--:|:---|:---|:---|\n|主格||||\n|対格||||\n|属格||||\n|与格||||\n|処格||||\n|向格||||\n|奪格||||\n|生格||||\n|殺格||||\n|呼格||||",
+                    "markdown": "|＼|単数|双数|複数|\n|:--:|:---|:---|:---|\n|主格||||\n|対格||||\n|属格||||\n|与格||||\n|処格||||\n|向格||||\n|奪格||||\n|生格||||\n|殺格||||\n|呼格||||"
+                },
+                {
+                    "title": "Pronunciation",
+                    "text": "ˈɲɑːjɛ"
+                }
+            ],
+            "variations": [],
+            "relations": []
+        },
+        {
+            "entry": {
+                "id": 3,
+                "form": "of"
+            },
+            "translations": [
+                {
+                    "title": "代名詞",
+                    "forms": [
+                        "彼",
+                        "彼女"
+                    ]
+                }
+            ],
+            "tags": [
+                "v2.2.0"
+            ],
+            "contents": [
+                {
+                    "title": "説明",
+                    "text": "3人称単数の代名詞。生物に対して使う。性の区別はない。",
+                    "markdown": "3人称単数の代名詞。生物に対して使う。性の区別はない。"
+                },
+                {
+                    "title": "変化表 ・・・ II類（階梯 : b - f）",
+                    "text": "|＼|単数|双数|複数|\n|:--:|:---|:---|:---|\n|主格|of|ofyþ|obena|\n|対格||||\n|属格||||\n|与格||||\n|処格||||\n|向格||||\n|奪格||||\n|生格||||\n|殺格||||\n|呼格||||",
+                    "markdown": "|＼|単数|双数|複数|\n|:--:|:---|:---|:---|\n|主格|of|ofyþ|obena|\n|対格||||\n|属格||||\n|与格||||\n|処格||||\n|向格||||\n|奪格||||\n|生格||||\n|殺格||||\n|呼格||||"
+                },
+                {
+                    "title": "Pronunciation",
+                    "text": "ˈof"
+                }
+            ],
+            "variations": [],
+            "relations": []
+        },
+        {
+            "entry": {
+                "id": 47,
+                "form": "plonzyd"
+            },
+            "translations": [
+                {
+                    "title": "名詞",
+                    "forms": [
+                        "人"
+                    ]
+                }
+            ],
+            "tags": [
+                "v2.3.0"
+            ],
+            "contents": [
+                {
+                    "title": "変化表 ・・・ II類（階梯 : t - d）",
+                    "text": "|＼|単数|双数|複数|\n|:--:|:---|:---|:---|\n|主格|plonzyd|||\n|対格|plonzydym|||\n|属格|plonzytó|||\n|与格|plonzytre|||\n|処格|plonzydihj|||\n|向格|plonzydudde|||\n|奪格|plonzydyšzó|||\n|生格|plonzydga|||\n|殺格|plonzydosbʻo|||\n|呼格|plonzytoŋa|||",
+                    "markdown": "|＼|単数|双数|複数|\n|:--:|:---|:---|:---|\n|主格|plonzyd|||\n|対格|plonzydym|||\n|属格|plonzytó|||\n|与格|plonzytre|||\n|処格|plonzydihj|||\n|向格|plonzydudde|||\n|奪格|plonzydyšzó|||\n|生格|plonzydga|||\n|殺格|plonzydosbʻo|||\n|呼格|plonzytoŋa|||"
+                },
+                {
+                    "title": "Pronunciation",
+                    "text": "ˈpʰloɳʈʂɨt"
+                }
+            ],
+            "variations": [],
+            "relations": []
+        },
+        {
+            "entry": {
+                "id": 28,
+                "form": "pŋal"
+            },
+            "translations": [
+                {
+                    "title": "名詞",
+                    "forms": [
+                        "家"
+                    ]
+                }
+            ],
+            "tags": [
+                "v2.2.0"
+            ],
+            "contents": [
+                {
+                    "title": "変化表 ・・・ II類（階梯 : n - l）",
+                    "text": "|＼|単数|双数|複数|\n|:--:|:---|:---|:---|\n|主格|pŋal|pŋalyþ|pŋanyna|\n|対格|pŋalym|pŋalyþym|pŋanylam|\n|属格|pŋanó|pŋalydó|pŋanynaó|\n|与格|pŋanre|pŋalydre|pŋanynare|\n|処格|pŋalihj|pŋalyþihj|pŋanylahj|\n|向格|pŋaludde|pŋalyþudde|pŋanyladde|\n|奪格|pŋalyšzó|pŋalyþyšzó|pŋanylašzó|\n|生格|pŋalga|pŋalyþga|pŋanynaga|\n|殺格|pŋalosbʻo|pŋalyþosbʻo|pŋanylasbʻo|\n|呼格|pŋanoŋa|pŋalydoŋa|pŋanynaoŋa|",
+                    "markdown": "|＼|単数|双数|複数|\n|:--:|:---|:---|:---|\n|主格|pŋal|pŋalyþ|pŋanyna|\n|対格|pŋalym|pŋalyþym|pŋanylam|\n|属格|pŋanó|pŋalydó|pŋanynaó|\n|与格|pŋanre|pŋalydre|pŋanynare|\n|処格|pŋalihj|pŋalyþihj|pŋanylahj|\n|向格|pŋaludde|pŋalyþudde|pŋanyladde|\n|奪格|pŋalyšzó|pŋalyþyšzó|pŋanylašzó|\n|生格|pŋalga|pŋalyþga|pŋanynaga|\n|殺格|pŋalosbʻo|pŋalyþosbʻo|pŋanylasbʻo|\n|呼格|pŋanoŋa|pŋalydoŋa|pŋanynaoŋa|"
+                },
+                {
+                    "title": "Pronunciation",
+                    "text": "pʰŋɑl"
+                }
+            ],
+            "variations": [],
+            "relations": []
+        },
+        {
+            "entry": {
+                "id": 60,
+                "form": "rofel"
+            },
+            "translations": [
+                {
+                    "title": "動詞",
+                    "forms": [
+                        "〜と感じられる"
+                    ]
+                }
+            ],
+            "tags": [
+                "v2.3.0"
+            ],
+            "contents": [
+                {
+                    "title": "変化表 ・・・ 階梯 : ff - f",
+                    "text": "",
+                    "markdown": ""
+                },
+                {
+                    "title": "Pronunciation",
+                    "text": "ˈʁoːfɛl"
+                }
+            ],
+            "variations": [],
+            "relations": []
+        },
+        {
+            "entry": {
+                "id": 25,
+                "form": "résdo"
+            },
+            "translations": [
+                {
+                    "title": "名詞",
+                    "forms": [
+                        "時",
+                        "時間"
+                    ]
+                }
+            ],
+            "tags": [
+                "v2.3.0"
+            ],
+            "contents": [
+                {
+                    "title": "変化表 ・・・ I類（階梯 : sd - ss, 単数のみ）",
+                    "text": "| ＼ | 単数 | 双数 | 複数 |\n|:--:|:---|:---|:---|\n| 主格 | résdo | \\- | \\- |\n| 対格 | réssom | \\- | \\- |\n| 属格 | résdoó | \\- | \\- |\n| 与格 | résdore | \\- | \\- |\n| 処格 | réssohj | \\- | \\- |\n| 向格 | réssodde | \\- | \\- |\n| 奪格 | réssošzó | \\- | \\- |\n| 生格 | résdoga | \\- | \\- |\n| 殺格 | réssosbʻo | \\- | \\- |\n| 呼格 | résdooŋa | \\- | \\- |",
+                    "markdown": "| ＼ | 単数 | 双数 | 複数 |\n|:--:|:---|:---|:---|\n| 主格 | résdo | \\- | \\- |\n| 対格 | réssom | \\- | \\- |\n| 属格 | résdoó | \\- | \\- |\n| 与格 | résdore | \\- | \\- |\n| 処格 | réssohj | \\- | \\- |\n| 向格 | réssodde | \\- | \\- |\n| 奪格 | réssošzó | \\- | \\- |\n| 生格 | résdoga | \\- | \\- |\n| 殺格 | réssosbʻo | \\- | \\- |\n| 呼格 | résdooŋa | \\- | \\- |"
+                },
+                {
+                    "title": "Pronunciation",
+                    "text": "ˈɾʲɛs.to"
+                }
+            ],
+            "variations": [],
+            "relations": []
+        },
+        {
+            "entry": {
+                "id": 45,
+                "form": "sawel"
+            },
+            "translations": [
+                {
+                    "title": "動詞",
+                    "forms": [
+                        "持つ"
+                    ]
+                }
+            ],
+            "tags": [],
+            "contents": [
+                {
+                    "title": "階梯",
+                    "text": "m-w",
+                    "markdown": "m-w"
+                },
+                {
+                    "title": "Pronunciation",
+                    "text": "ˈsɑːwel"
+                }
+            ],
+            "variations": [
+                {
+                    "title": "過去形",
+                    "form": "sama"
+                },
+                {
+                    "title": "未来形",
+                    "form": "sawyf"
+                },
+                {
+                    "title": "現在完了形",
+                    "form": "mlsáwel"
+                }
+            ],
+            "relations": []
+        },
+        {
+            "entry": {
+                "id": 21,
+                "form": "snolgy"
+            },
+            "translations": [
+                {
+                    "title": "名詞",
+                    "forms": [
+                        "緑"
+                    ]
+                }
+            ],
+            "tags": [
+                "色"
+            ],
+            "contents": [
+                {
+                    "title": "変化表 ・・・ I類（階梯 : g - h, 単数のみ）",
+                    "text": "|＼|単数|双数|複数|\n|:--:|:---|:---|:---|\n|主格|snolgy|\\-|\\-|\n|対格|snolhym|\\-|\\-|\n|属格|snolgyó|\\-|\\-|\n|与格|snolgyre|\\-|\\-|\n|処格|snolhyhj|\\-|\\-|\n|向格|snolhydde|\\-|\\-|\n|奪格|snolhyšzó|\\-|\\-|\n|生格|snolgyga|\\-|\\-|\n|殺格|snolhysbʻo|\\-|\\-|\n|呼格|snolgyoŋa|\\-|\\-|",
+                    "markdown": "|＼|単数|双数|複数|\n|:--:|:---|:---|:---|\n|主格|snolgy|\\-|\\-|\n|対格|snolhym|\\-|\\-|\n|属格|snolgyó|\\-|\\-|\n|与格|snolgyre|\\-|\\-|\n|処格|snolhyhj|\\-|\\-|\n|向格|snolhydde|\\-|\\-|\n|奪格|snolhyšzó|\\-|\\-|\n|生格|snolgyga|\\-|\\-|\n|殺格|snolhysbʻo|\\-|\\-|\n|呼格|snolgyoŋa|\\-|\\-|"
+                },
+                {
+                    "title": "Pronunciation",
+                    "text": "ˈsnol.kɨ"
+                }
+            ],
+            "variations": [],
+            "relations": []
+        },
+        {
+            "entry": {
+                "id": 2,
+                "form": "syg"
+            },
+            "translations": [
+                {
+                    "title": "代名詞",
+                    "forms": [
+                        "あなた"
+                    ]
+                }
+            ],
+            "tags": [],
+            "contents": [
+                {
+                    "title": "説明",
+                    "text": "二人称の代名詞。",
+                    "markdown": "二人称の代名詞。"
+                },
+                {
+                    "title": "変化表 ・・・ 特殊",
+                    "text": "|＼|単数|双数|複数|\n|:--:|:---|:---|:---|\n|主格|syg|hama|hab|\n|対格|sygym|hawam|habym|\n|属格|sykó|hamaó|hapó|\n|与格|sykre|hamare|hapre|\n|処格|sygihj|hawahj|habihj|\n|向格|sygedde|hawadde|habedde|\n|奪格|sygyšzé|hawašzé|habyšzé|\n|生格|sygga|hamaga|habga|\n|殺格|sygosbʻo|hawasbʻo|habosbʻo|\n|呼格|sykoŋa|hamaoŋa|hapoŋa|",
+                    "markdown": "|＼|単数|双数|複数|\n|:--:|:---|:---|:---|\n|主格|syg|hama|hab|\n|対格|sygym|hawam|habym|\n|属格|sykó|hamaó|hapó|\n|与格|sykre|hamare|hapre|\n|処格|sygihj|hawahj|habihj|\n|向格|sygedde|hawadde|habedde|\n|奪格|sygyšzé|hawašzé|habyšzé|\n|生格|sygga|hamaga|habga|\n|殺格|sygosbʻo|hawasbʻo|habosbʻo|\n|呼格|sykoŋa|hamaoŋa|hapoŋa|"
+                },
+                {
+                    "title": "Pronunciation",
+                    "text": "sɨk"
+                }
+            ],
+            "variations": [],
+            "relations": []
+        },
+        {
+            "entry": {
+                "id": 5,
+                "form": "tašše"
+            },
+            "translations": [
+                {
+                    "title": "名詞",
+                    "forms": [
+                        "目"
+                    ]
+                }
+            ],
+            "tags": [
+                "身体"
+            ],
+            "contents": [
+                {
+                    "title": "階梯",
+                    "text": "",
+                    "markdown": ""
+                },
+                {
+                    "title": "変化表 ・・・ I類（階梯 : šš - š）",
+                    "text": "|＼|単数|双数|複数|\n|:--:|:---|:---|:---|\n|主格|tašše|||\n|対格|tašem|||\n|属格|taššeó|||\n|与格|taššere|||\n|処格|tašehj|||\n|向格|tašedde|||\n|奪格|tašešzé|||\n|生格|taššega|||\n|殺格|tašesbʻo|||\n|呼格|taššeoŋa|||",
+                    "markdown": "|＼|単数|双数|複数|\n|:--:|:---|:---|:---|\n|主格|tašše|||\n|対格|tašem|||\n|属格|taššeó|||\n|与格|taššere|||\n|処格|tašehj|||\n|向格|tašedde|||\n|奪格|tašešzé|||\n|生格|taššega|||\n|殺格|tašesbʻo|||\n|呼格|taššeoŋa|||"
+                },
+                {
+                    "title": "Pronunciation",
+                    "text": "ˈtʰɑʂːɛ"
+                }
+            ],
+            "variations": [],
+            "relations": []
+        },
+        {
+            "entry": {
+                "id": 37,
+                "form": "ti"
+            },
+            "translations": [
+                {
+                    "title": "接続詞",
+                    "forms": [
+                        "と",
+                        "そして"
+                    ]
+                }
+            ],
+            "tags": [],
+            "contents": [
+                {
+                    "title": "Pronunciation",
+                    "text": "tsʰʲi"
+                }
+            ],
+            "variations": [],
+            "relations": []
+        },
+        {
+            "entry": {
+                "id": 46,
+                "form": "wagel"
+            },
+            "translations": [
+                {
+                    "title": "動詞",
+                    "forms": [
+                        "書く"
+                    ]
+                }
+            ],
+            "tags": [],
+            "contents": [
+                {
+                    "title": "Pronunciation",
+                    "text": "ˈwɑː.kel"
+                }
+            ],
+            "variations": [],
+            "relations": []
+        },
+        {
+            "entry": {
+                "id": 61,
+                "form": "womfl"
+            },
+            "translations": [
+                {
+                    "title": "数詞",
+                    "forms": [
+                        "1728",
+                        "12^3"
+                    ]
+                }
+            ],
+            "tags": [],
+            "contents": [
+                {
+                    "title": "数詞について",
+                    "text": "英語におけるthousandの様なポジションだが、若干違う。\n\n12^3の倍数は、対応する数詞（普通の形で、倍数接頭辞ではない）を前に置いて表す。\n\n| 10進表記 | 12進表記 | 基数詞 |\n|:--:|:--:|:--:|\n| 3,456 | 2,000 | mi womfl |\n| 13,824 | 8,000 | isfje womfl |\n\n倍数接頭辞を前につけると、\n\n倍数接頭辞がnの意味の時、12^(3n)の意味になる。\n\n| 10進表記 | 12進表記 | 基数詞 |\n|:--:|:--:|:--:|\n| 20,736 | 10,000 | kjeg womfl |\n| 248,832 | 100,000 | čjulni womfl |\n| 2,985,984 | 1,000,000 | miwomfl |\n\n例えば、4,294,967,297を12進表記すると9BA,461,595となるので、\n\nnäyčjulni kuykjegthipl miwomfl tječjulni gofkjegthili womfl oþčjulni näykjegthiooþ\n\nとなる。",
+                    "markdown": "英語におけるthousandの様なポジションだが、若干違う。\n\n12^3の倍数は、対応する数詞（普通の形で、倍数接頭辞ではない）を前に置いて表す。\n\n| 10進表記 | 12進表記 | 基数詞 |\n|:--:|:--:|:--:|\n| 3,456 | 2,000 | mi womfl |\n| 13,824 | 8,000 | isfje womfl |\n\n倍数接頭辞を前につけると、\n\n倍数接頭辞がnの意味の時、12^(3n)の意味になる。\n\n| 10進表記 | 12進表記 | 基数詞 |\n|:--:|:--:|:--:|\n| 20,736 | 10,000 | kjeg womfl |\n| 248,832 | 100,000 | čjulni womfl |\n| 2,985,984 | 1,000,000 | miwomfl |\n\n例えば、4,294,967,297を12進表記すると9BA,461,595となるので、\n\nnäyčjulni kuykjegthipl miwomfl tječjulni gofkjegthili womfl oþčjulni näykjegthiooþ\n\nとなる。"
+                },
+                {
+                    "title": "Pronunciation",
+                    "text": "wom.fl̩"
+                }
+            ],
+            "variations": [],
+            "relations": [
+                {
+                    "title": "",
+                    "entry": {
+                        "id": 58,
+                        "form": "harby"
+                    }
+                },
+                {
+                    "title": "",
+                    "entry": {
+                        "id": 59,
+                        "form": "zólni"
+                    }
+                }
+            ]
+        },
+        {
+            "entry": {
+                "id": 19,
+                "form": "wošga"
+            },
+            "translations": [
+                {
+                    "title": "名詞",
+                    "forms": [
+                        "紫"
+                    ]
+                }
+            ],
+            "tags": [
+                "色"
+            ],
+            "contents": [
+                {
+                    "title": "Pronunciation",
+                    "text": "ˈwoʂ.kɑ"
+                }
+            ],
+            "variations": [],
+            "relations": []
+        },
+        {
+            "entry": {
+                "id": 43,
+                "form": "ydel"
+            },
+            "translations": [
+                {
+                    "title": "動詞",
+                    "forms": [
+                        "食べる"
+                    ]
+                }
+            ],
+            "tags": [],
+            "contents": [
+                {
+                    "title": "変化表 ・・・ 階梯 : t - d",
+                    "text": "",
+                    "markdown": ""
+                },
+                {
+                    "title": "Pronunciation",
+                    "text": "ˈɨː.tel"
+                }
+            ],
+            "variations": [],
+            "relations": []
+        },
+        {
+            "entry": {
+                "id": 1,
+                "form": "ym"
+            },
+            "translations": [
+                {
+                    "title": "代名詞",
+                    "forms": [
+                        "私"
+                    ]
+                }
+            ],
+            "tags": [],
+            "contents": [
+                {
+                    "title": "説明",
+                    "text": "1人称単数の人称代名詞。\n\n強調する場合を除き、通常使用されない。",
+                    "markdown": "1人称単数の人称代名詞。\n\n強調する場合を除き、通常使用されない。"
+                },
+                {
+                    "title": "代名詞の一覧表",
+                    "text": "ヤズニェル語の代名詞は、人称（1, 2, 3人称）と数（単・双・複数）を区別する他、1人称双数・複数では聞き手を含むか（包括形）含まないか（除外形）、3人称では生物か否かを区別する。\n\n|＼|単数|双数|〃|複数|〃|\n|:--:|:---|:---|:---|:---|:---|\n|\\-|\\-|包括|除外|包括|除外|\n|1人称|ym|tama|bʻima|dar|méŋ|\n|2人称|syg|hama|\\-|hab|\\-|\n|3人称生物|of|\\-|ofyþ|\\-|obena|\n|〃非生物|šój|\\-|šójþ|\\-|šójena|\n\nまた、動詞に付く人称接辞は以下のようになる。人称接辞には3人称の生物非生物の区別はない。\n\n|＼|単数|双数|〃|複数|〃|\n|:--:|:---|:---|:---|:---|:---|\n|\\-|\\-|包括|除外|包括|除外|\n|1人称|-(y)m|-(y)dam|-(y)mim|-(y)dar|-(y)méŋ|\n|2人称|-(y)syg|-am|\\-|-ab|\\-|\n|3人称|-of|\\-|-ofyþ|\\-|-obej|",
+                    "markdown": "ヤズニェル語の代名詞は、人称（1, 2, 3人称）と数（単・双・複数）を区別する他、1人称双数・複数では聞き手を含むか（包括形）含まないか（除外形）、3人称では生物か否かを区別する。\n\n|＼|単数|双数|〃|複数|〃|\n|:--:|:---|:---|:---|:---|:---|\n|\\-|\\-|包括|除外|包括|除外|\n|1人称|ym|tama|bʻima|dar|méŋ|\n|2人称|syg|hama|\\-|hab|\\-|\n|3人称生物|of|\\-|ofyþ|\\-|obena|\n|〃非生物|šój|\\-|šójþ|\\-|šójena|\n\nまた、動詞に付く人称接辞は以下のようになる。人称接辞には3人称の生物非生物の区別はない。\n\n|＼|単数|双数|〃|複数|〃|\n|:--:|:---|:---|:---|:---|:---|\n|\\-|\\-|包括|除外|包括|除外|\n|1人称|-(y)m|-(y)dam|-(y)mim|-(y)dar|-(y)méŋ|\n|2人称|-(y)syg|-am|\\-|-ab|\\-|\n|3人称|-of|\\-|-ofyþ|\\-|-obej|"
+                },
+                {
+                    "title": "変化表 ・・・ 特殊",
+                    "text": "|＼|単数|双数|〃|複数|〃|\n|:--:|:---|:---|:---|:---|:---|\n|\\-|\\-|包括|除外|包括|除外|\n|主格||||||\n|対格||||||\n|属格||||||\n|与格||||||\n|処格||||||\n|向格||||||\n|奪格||||||\n|生格||||||\n|殺格||||||\n|呼格||||||",
+                    "markdown": "|＼|単数|双数|〃|複数|〃|\n|:--:|:---|:---|:---|:---|:---|\n|\\-|\\-|包括|除外|包括|除外|\n|主格||||||\n|対格||||||\n|属格||||||\n|与格||||||\n|処格||||||\n|向格||||||\n|奪格||||||\n|生格||||||\n|殺格||||||\n|呼格||||||"
+                },
+                {
+                    "title": "Pronunciation",
+                    "text": "ɨm"
+                }
+            ],
+            "variations": [],
+            "relations": []
+        },
+        {
+            "entry": {
+                "id": 59,
+                "form": "zólni"
+            },
+            "translations": [
+                {
+                    "title": "数詞",
+                    "forms": [
+                        "百四十四",
+                        "144",
+                        "12^2"
+                    ]
+                }
+            ],
+            "tags": [],
+            "contents": [
+                {
+                    "title": "数詞について",
+                    "text": "英語におけるhundredの様なポジションだが、若干違う。\n\n12^2の倍数は、対応する倍数接頭辞をつけて言う。\n| 10進表記 | 12進表記 | 基数詞 |\n|:--:|:--:|:--:|\n| 288 | 200 | mizólni |\n| 1,008 | 700 | phjanzólni |\n\n例えば、700(12進表記で4A4)はtječjulni plkjegthitjeとなる。\n",
+                    "markdown": "英語におけるhundredの様なポジションだが、若干違う。\n\n12^2の倍数は、対応する倍数接頭辞をつけて言う。\n| 10進表記 | 12進表記 | 基数詞 |\n|:--:|:--:|:--:|\n| 288 | 200 | mizólni |\n| 1,008 | 700 | phjanzólni |\n\n例えば、700(12進表記で4A4)はtječjulni plkjegthitjeとなる。\n"
+                },
+                {
+                    "title": "Pronunciation",
+                    "text": "ˈtɕol.ɲi"
+                }
+            ],
+            "variations": [],
+            "relations": [
+                {
+                    "title": "",
+                    "entry": {
+                        "id": 58,
+                        "form": "harby"
+                    }
+                },
+                {
+                    "title": "",
+                    "entry": {
+                        "id": 61,
+                        "form": "womfl"
+                    }
+                }
+            ]
+        },
+        {
+            "entry": {
+                "id": 34,
+                "form": "Ásnél"
+            },
+            "translations": [
+                {
+                    "title": "名詞",
+                    "forms": [
+                        "ヤズニェル"
+                    ]
+                }
+            ],
+            "tags": [
+                "地名",
+                "v2.3.0"
+            ],
+            "contents": [
+                {
+                    "title": "説明",
+                    "text": "この言語が話されている地域の名前。国名、言語名の由来(暫定)。",
+                    "markdown": "この言語が話されている地域の名前。国名、言語名の由来(暫定)。"
+                },
+                {
+                    "title": "変化表 ・・・ II類（階梯 : n - l, 単数のみ）",
+                    "text": "|＼|単数|双数|複数|\n|:--:|:---|:---|:---|\n|主格||\\-|\\-|\n|対格||\\-|\\-|\n|属格||\\-|\\-|\n|与格||\\-|\\-|\n|処格||\\-|\\-|\n|向格||\\-|\\-|\n|奪格||\\-|\\-|\n|生格||\\-|\\-|\n|殺格||\\-|\\-|\n|呼格||\\-|\\-|",
+                    "markdown": "|＼|単数|双数|複数|\n|:--:|:---|:---|:---|\n|主格||\\-|\\-|\n|対格||\\-|\\-|\n|属格||\\-|\\-|\n|与格||\\-|\\-|\n|処格||\\-|\\-|\n|向格||\\-|\\-|\n|奪格||\\-|\\-|\n|生格||\\-|\\-|\n|殺格||\\-|\\-|\n|呼格||\\-|\\-|"
+                },
+                {
+                    "title": "Pronunciation",
+                    "text": "ˈjɑsʲ.ɲel"
+                }
+            ],
+            "variations": [],
+            "relations": []
+        },
+        {
+            "entry": {
+                "id": 8,
+                "form": "þylno"
+            },
+            "translations": [
+                {
+                    "title": "名詞",
+                    "forms": [
+                        "耳"
+                    ]
+                }
+            ],
+            "tags": [
+                "身体"
+            ],
+            "contents": [
+                {
+                    "title": "説明",
+                    "text": "通常双数形で使う。",
+                    "markdown": "通常双数形で使う。"
+                },
+                {
+                    "title": "変化表 ・・・ I類（階梯 : n - l, 複数なし）",
+                    "text": "|＼|単数|双数|複数|\n|:--:|:---|:---|:---|\n|主格|þylno|þylloþ|\\-|\n|対格|þyllom|þylloþym|\\-|\n|属格|þylnoó|þyllodó|\\-|\n|与格|þylnore|þyllodre|\\-|\n|処格|þyllohj|þylloþihj|\\-|\n|向格|þyllodde|þylloþedde|\\-|\n|奪格|þyllošzó|þylloþyšzó|\\-|\n|生格|þylnoga|þylloþga|\\-|\n|殺格|þyllosbʻo|þylloþosbʻo|\\-|\n|呼格|þylnooqa|þyllodoqa|\\-|",
+                    "markdown": "|＼|単数|双数|複数|\n|:--:|:---|:---|:---|\n|主格|þylno|þylloþ|\\-|\n|対格|þyllom|þylloþym|\\-|\n|属格|þylnoó|þyllodó|\\-|\n|与格|þylnore|þyllodre|\\-|\n|処格|þyllohj|þylloþihj|\\-|\n|向格|þyllodde|þylloþedde|\\-|\n|奪格|þyllošzó|þylloþyšzó|\\-|\n|生格|þylnoga|þylloþga|\\-|\n|殺格|þyllosbʻo|þylloþosbʻo|\\-|\n|呼格|þylnooqa|þyllodoqa|\\-|"
+                },
+                {
+                    "title": "Pronunciation",
+                    "text": "ˈθɨl.no"
+                }
+            ],
+            "variations": [],
+            "relations": []
+        },
+        {
+            "entry": {
+                "id": 35,
+                "form": "ŋ"
+            },
+            "translations": [
+                {
+                    "title": "冠詞",
+                    "forms": [
+                        "その",
+                        "the"
+                    ]
+                }
+            ],
+            "tags": [],
+            "contents": [
+                {
+                    "title": "説明",
+                    "text": "定冠詞。名詞の前に置き、定性(definiteness)を標示する。",
+                    "markdown": "定冠詞。名詞の前に置き、定性(definiteness)を標示する。"
+                },
+                {
+                    "title": "Pronunciation",
+                    "text": "ŋ̍"
+                }
+            ],
+            "variations": [],
+            "relations": []
+        },
+        {
+            "entry": {
+                "id": 39,
+                "form": "ŋaš"
+            },
+            "translations": [
+                {
+                    "title": "代名詞",
+                    "forms": [
+                        "これ",
+                        "この"
+                    ]
+                }
+            ],
+            "tags": [],
+            "contents": [
+                {
+                    "title": "説明",
+                    "text": "近称の指示代名詞。こそあどの「こ」と大体同じ。",
+                    "markdown": "近称の指示代名詞。こそあどの「こ」と大体同じ。"
+                },
+                {
+                    "title": "Pronunciation",
+                    "text": "ŋɑʂ"
+                }
+            ],
+            "variations": [],
+            "relations": [
+                {
+                    "title": "",
+                    "entry": {
+                        "id": 40,
+                        "form": "laš"
+                    }
+                },
+                {
+                    "title": "",
+                    "entry": {
+                        "id": 41,
+                        "form": "daš"
+                    }
+                }
+            ]
+        },
+        {
+            "entry": {
+                "id": 11,
+                "form": "šodʻé"
+            },
+            "translations": [
+                {
+                    "title": "名詞",
+                    "forms": [
+                        "足"
+                    ]
+                }
+            ],
+            "tags": [
+                "身体"
+            ],
+            "contents": [
+                {
+                    "title": "変化表 ・・・ I類（階梯 : dʻ - n）",
+                    "text": "|＼|単数|双数|複数|\n|:--:|:---|:---|:---|\n|主格|šodʻé|||\n|対格|šoném|||\n|属格||||\n|与格||||\n|処格||||\n|向格||||\n|奪格||||\n|生格||||\n|殺格||||\n|呼格||||",
+                    "markdown": "|＼|単数|双数|複数|\n|:--:|:---|:---|:---|\n|主格|šodʻé|||\n|対格|šoném|||\n|属格||||\n|与格||||\n|処格||||\n|向格||||\n|奪格||||\n|生格||||\n|殺格||||\n|呼格||||"
+                },
+                {
+                    "title": "Pronunciation",
+                    "text": "ˈʂoːɗʲe"
+                }
+            ],
+            "variations": [],
+            "relations": []
+        },
+        {
+            "entry": {
+                "id": 16,
+                "form": "šry"
+            },
+            "translations": [
+                {
+                    "title": "名詞",
+                    "forms": [
+                        "青"
+                    ]
+                }
+            ],
+            "tags": [
+                "色"
+            ],
+            "contents": [
+                {
+                    "title": "Pronunciation",
+                    "text": "ʂʁɨː"
+                }
+            ],
+            "variations": [],
+            "relations": []
+        },
+        {
+            "entry": {
+                "id": 4,
+                "form": "šój"
+            },
+            "translations": [
+                {
+                    "title": "代名詞",
+                    "forms": [
+                        "それ"
+                    ]
+                }
+            ],
+            "tags": [],
+            "contents": [
+                {
+                    "title": "説明",
+                    "text": "三人称の代名詞。生物でないものに使う。",
+                    "markdown": "三人称の代名詞。生物でないものに使う。"
+                },
+                {
+                    "title": "変化表 ・・・ I類（階梯なし）",
+                    "text": "|＼|単数|双数|複数|\n|:--:|:---|:---|:---|\n|主格|šój|šójþ|šójna|\n|対格||||\n|属格||||\n|与格||||\n|処格||||\n|向格||||\n|奪格||||\n|生格||||\n|殺格||||\n|呼格||||",
+                    "markdown": "|＼|単数|双数|複数|\n|:--:|:---|:---|:---|\n|主格|šój|šójþ|šójna|\n|対格||||\n|属格||||\n|与格||||\n|処格||||\n|向格||||\n|奪格||||\n|生格||||\n|殺格||||\n|呼格||||"
+                },
+                {
+                    "title": "Pronunciation",
+                    "text": "ɕoɪ"
+                }
+            ],
+            "variations": [],
+            "relations": []
+        },
+        {
+            "entry": {
+                "id": 7,
+                "form": "šŋaba"
+            },
+            "translations": [
+                {
+                    "title": "名詞",
+                    "forms": [
+                        "顔"
+                    ]
+                }
+            ],
+            "tags": [
+                "身体"
+            ],
+            "contents": [
+                {
+                    "title": "変化表 ・・・ I類（階梯 : b - f）",
+                    "text": "|＼|単数|双数|複数|\n|:--:|:---|:---|:---|\n|主格|šŋaba|||\n|対格|šŋafam|||\n|属格|šŋabaó|||\n|与格|šŋabare|||\n|処格|šŋafahj|||\n|向格|šŋafadde|||\n|奪格|šŋafašzó|||\n|生格|šŋabaga|||\n|殺格|šŋafasbʻo|||\n|呼格|šŋabaoŋa|||",
+                    "markdown": "|＼|単数|双数|複数|\n|:--:|:---|:---|:---|\n|主格|šŋaba|||\n|対格|šŋafam|||\n|属格|šŋabaó|||\n|与格|šŋabare|||\n|処格|šŋafahj|||\n|向格|šŋafadde|||\n|奪格|šŋafašzó|||\n|生格|šŋabaga|||\n|殺格|šŋafasbʻo|||\n|呼格|šŋabaoŋa|||"
+                },
+                {
+                    "title": "Pronunciation",
+                    "text": "ˈʂŋɑː.pɑ"
+                }
+            ],
+            "variations": [],
+            "relations": []
+        }
+    ],
+    "zpdic": {
+        "punctuations": [
+            ",",
+            "、"
+        ],
+        "pronunciationTitle": "Pronunciation"
+    },
+    "zpdicOnline": {
+        "explanation": "Ásnélnowy /jasɲɛlˈnowɨ/\n\n制作中アプリオリ人工言語、ヤズニェル語の辞典です。\n\n文法がある程度完成するまで、当分の間メモ帳代わりに使います。\n\n文法が完成するまでバージョンをÁ0.~にします。\n\n現在最新のバージョンはÁ0.1.0です。「vÁ0.1.0」のタグが付いている単語が改訂済みの単語です。「v2.~」で始まるものは更新が追い付いてないもので、「Á0.~」の方が新しいです。\n\n2024/07/14 更新",
+        "enableMarkdown": true
+    },
+    "zatlin": "a_stp = \"p\" | \"t\" | \"k\"\nuna_stp = \"b\" | \"d\" | \"g\"\nimp = \"b\\u02bb\" | \"d\\u02bb\"\nstp = a_stp 3 | una_stp 3 | imp 2\nafr = \"z\" | \"c\"\nfrc = \"s\" | \"f\" | \"š\" | \"h\" | \"þ\"\nnsl = \"n\" | \"m\" | \"q\"\nliq = \"l\" | \"r\"\nsmv = \"w\"\nh_C = stp 8 | afr 2 | frc 5 | nsl 3 | liq 2 | smv\ns_C = h_C \"j\"\nC = h_C | s_C\n\nPs = \"p\" | \"b\\u02bb\" | \"b\"\nTs = \"t\" | \"d\\u02bb\" | \"d\"\nKs = \"k\" | \"g\"\n\nh_V = \"a\" | \"e\" | \"y\" | \"o\"\ns_V = \"á\" | \"é\" | \"i\" | \"ó\"\nh_syl_C = \"L\" | \"R\" | \"N\"\ns_syl_C = \"jL\" | \"jR\" | \"jN\"\nV = h_V 4 | s_V 4 | h_syl_C | s_syl_C\n\nCC_ofst_pre = (stp 8 | frc 5 ) (smv | liq 2 | nsl 3) 78 | (\"p\" | \"b\\u02bb\") (\"s\" | \"š\") 4 | (\"k\" | \"q\") \"š\" 2 | nsl (liq | smv) 9 | liq smv 2\nCC_ofst_vio = Ts \"l\" | Ps \"w\" | Ps \"m\" | Ks \"q\" | \"fw\" | \"þl\" | \"fm\" | \"hq\" | \"nl\" | \"mw\"\nCC_ofst = CC_ofst_pre - CC_ofst_vio\n\nC_coda = C - a_stp | imp | \"c\"\n\n\nCC_coda_pre = (smv | \"j\" | liq 2 | nsl 3) (una_stp 3 | frc 5 ) 91 | (\"s\" | \"š\") (\"b\" | \"d\") 4 | \"šg\"\nCC_coda_vio = \"mf\" | \"nþ\" | \"qh\"\nCC_coda = CC_coda_pre - CC_coda_vio\n\nVC = V C_coda\nVCC = V CC_coda\nCV = C V\nCVC = C V C_coda\nCVCC = C V CC_coda\nCCV = CC_ofst V\nCCVC = CC_ofst V C_coda\nCCVCC = CC_ofst V CC_coda\n\nsyll = CV | CVC | CVCC | CCV | CCVC | CCVCC | V | VC | VCC\nvio = \"j\" (h_V | s_V) | \"jj\" h_syl_C\n\n% CVC CV - vio",
+    "version": 2
+}
