@@ -13,11 +13,16 @@ V: 任意の母音
 C: 任意の子音
 
 old English(7th ~ 13th century)  
-old Vessenzlandic(9th ~ 13th)  
-middle Vessenzlandic(13th ~ 18th)  
-modern Vessenzlandic(18th ~)
+old Vessenslandic(9th ~ 13th)  
+middle Vessenslandic(13th ~ 18th)  
+modern Vessenslandic(18th ~)
 
-## old Vessenzlandicからmiddle Vessenzlandicにかけての変化
+## old Englishからold Vessenslandicにかけての変化
+
+殆どold Englishと同じであったと考えられている。
+
+
+## old Vessenslandicからmiddle Vessenslandicにかけての変化
 
 ### 狭母音の割れ
 
@@ -45,18 +50,24 @@ modern Vessenzlandic(18th ~)
 
 /ɔʏ̯/ > /œʏ̯/
 
-## middle Vessenzlandicからmodern Vessenzlandicにかけての変化
+## middle Vessenslandicからmodern Vessenslandicにかけての変化
 
-## early modern Vessenzlandic以降の変化
+## early modern Vessenslandic以降の変化
 
 ## 鼻母音化関連
 
-## 同器官的な破裂音が続かない場所での鼻音の消失、直前の母音の鼻音化と代償延長
+### 同器官的な破裂音が続かない場所での鼻音の消失、直前の母音の鼻音化
 
-/Vn/, /Vm/ > /Ṽː/ \_\#, V\_C\[-stop\]
+/Vn/, /Vm/ > /Ṽ/ \_\#, V\_C\[-stop\]
 
-## 語末で同器官的な有声破裂音が続くときの有声破裂音の消失
+### 語末で同器官的な有声破裂音が続くときの有声破裂音の消失
 
 /nd/, /mb/, /ŋg/ > /n/, /m/, /ŋ/ V\_\#  
+
+
+
+
+## 2次ウムラウト
+
 
 
