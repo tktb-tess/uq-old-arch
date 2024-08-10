@@ -12,14 +12,14 @@
 V: 任意の母音  
 C: 任意の子音
 
-old English(7th ~ 13th century)  
-old Vessenslandic(9th ~ 13th)  
-middle Vessenslandic(13th ~ 18th)  
-modern Vessenslandic(18th ~)
+OE: old English(7th ~ 13th century)  
+OV: old Vessenslandic(9th ~ 13th)  
+MdV: middle Vessenslandic(13th ~ 18th)  
+Vae: modern Vessenslandic(18th ~)
 
 ## old Englishからold Vessenslandicにかけての変化
 
-殆どold Englishと同じであったと考えられている。
+殆どold Englishと同じであったと考えられている。西サクソン方言が主体であるがわずかに他方言の影響もみられる。
 
 
 ## old Vessenslandicからmiddle Vessenslandicにかけての変化
@@ -44,13 +44,16 @@ modern Vessenslandic(18th ~)
 /eo/ > /œ/  
 /eoː/ > /eʊ̯/  
 /æɑ/ > /a/  
+/æɑ/ > /ɛɑ̯/ \_\l, r, x
 /æɑː/ > /ɛɑ̯/
+
+
+
+## middle Vessenslandicからmodern Vessenslandicにかけての変化
 
 ## 二重母音の変化
 
 /ɔʏ̯/ > /œʏ̯/
-
-## middle Vessenslandicからmodern Vessenslandicにかけての変化
 
 ## early modern Vessenslandic以降の変化
 
@@ -60,11 +63,9 @@ modern Vessenslandic(18th ~)
 
 /Vn/, /Vm/ > /Ṽ/ \_\#, V\_C\[-stop\]
 
-### 語末で同器官的な有声破裂音が続くときの有声破裂音の消失
+### 語末の同器官的な鼻音+有声破裂音における有声破裂音の消失
 
 /nd/, /mb/, /ŋg/ > /n/, /m/, /ŋ/ V\_\#  
-
-
 
 
 ## 2次ウムラウト
