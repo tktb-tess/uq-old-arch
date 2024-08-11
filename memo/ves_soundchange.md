@@ -12,23 +12,23 @@
 V: 任意の母音  
 C: 任意の子音
 
-OE: old English(7th ~ 13th century)  
-OV: old Vessenslandic(9th ~ 13th)  
-MdV: middle Vessenslandic(13th ~ 18th)  
-Vae: modern Vessenslandic(18th ~)
+OE: Old English(7th ~ 13th century)  
+OV: Old Vessenslandic(9th ~ 13th)  
+MdV: Middle Vessenslandic(13th ~ 18th)  
+Vae: Modern Vessenslandic(18th ~)
 
-## old Englishからold Vessenslandicにかけての変化
+## Old EnglishからOld Vessenslandicにかけての変化
 
-殆どold Englishと同じであったと考えられている。西サクソン方言が主体であるがわずかに他方言の影響もみられる。
+殆どold Englishと同じであったと考えられている。西サクソン方言が主体であるが、わずかに他方言の影響もみられる。
 
 
-## old Vessenslandicからmiddle Vessenslandicにかけての変化
+## Old VessenslandicからMiddle Vessenslandicにかけての変化
 
 ### 狭母音の割れ
 
-/iː/ > /aɪ̯/  
-/uː/ > /aʊ̯/  
-/yː/ > /ɔʏ̯/
+/iː/ > /aɪ/  
+/uː/ > /aʊ/  
+/yː/ > /ɔʏ/
 
 ### 長短→広狭への変化
 
@@ -40,35 +40,62 @@ Vae: modern Vessenslandic(18th ~)
 ### OEの二重母音の変化
 
 /iy/ > /y/  
-/iyː/ > /yː/ > /œʏ̯/  
+/iyː/ > /yː/ > /ɔʏ/  
 /eo/ > /œ/  
-/eoː/ > /eʊ̯/  
+/eoː/ > /ɛʊ/  
 /æɑ/ > /a/  
-/æɑ/ > /ɛɑ̯/ \_\l, r, x
-/æɑː/ > /ɛɑ̯/
+/æɑ/ > /ɛa/ \_/l/, /r/, /x/  
+/æɑː/ > /ɛa/  
+/ɑː/ > /ɛa/ \_/l/, /r/, /x/
 
+## Middle VessenslandicからEarly Modern Vessenslandicにかけての変化
 
+### 二重母音の変化
 
-## middle Vessenslandicからmodern Vessenslandicにかけての変化
+/ɔʏ/ > /œʏ/  
+/ɛʊ/ > /ɪʊ/  
+/ɛa/ > /ɪa/
 
-## 二重母音の変化
+### 鼻母音化関連
 
-/ɔʏ̯/ > /œʏ̯/
-
-## early modern Vessenslandic以降の変化
-
-## 鼻母音化関連
-
-### 同器官的な破裂音が続かない場所での鼻音の消失、直前の母音の鼻音化
+前が母音かつ、同器官的な破裂音が続かない場所で鼻音が脱落し、直前の母音が鼻母音化した。
 
 /Vn/, /Vm/ > /Ṽ/ \_\#, V\_C\[-stop\]
 
-### 語末の同器官的な鼻音+有声破裂音における有声破裂音の消失
+語末の同器官的な鼻音 + 有声破裂音における、有声破裂音が脱落した。
 
 /nd/, /mb/, /ŋg/ > /n/, /m/, /ŋ/ V\_\#  
 
+### secondary umlaut
 
-## 2次ウムラウト
+直後の音節母音が /i/, /y/ である場合、その音節主母音が後舌母音の場合は前舌化、前舌母音の場合は1段階狭くなった。
 
+/u/ > /y/  
+/o/ > /ø/  
+/ɔ/ > /œ/  
+/a/ > /ɛ/  
+/ɛ/ > /e/  
+/e/ > /i/  
+/œ/ > /ø/  
+/ø/ > /y/
+/aɪ/ > /ɛɪ/  
+/aʊ/ > /ɛʊ/ > /ɪʊ/
 
+## Early Modern Vessenslandic以降の変化
+
+### 母音の長短の復活
+
+/V/ > /Vː/ (\_CV, \_\#) and (\[+stress\])
+
+### 二重母音の変化
+
+/ɪʊ/ > /ɪɔ/ > /joː/  
+/ɪa/ > /jaː/
+
+### 母音の合流
+
+/e(ː)/ を除く半狭母音が狭母音と合流した。
+
+/o(ː)/ > /u(ː)/  
+/ø(ː)/ > /y(ː)/
 
