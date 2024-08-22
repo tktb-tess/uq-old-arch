@@ -1,21 +1,22 @@
-# ヴェセンズランド語の音変化
+# ヴェセンズラン語の音変化
 
 \[stop\]: 閉鎖音  
-\[fric\]: 摩擦音  
-\[affr\]: 破擦音  
-\[nasl\]: 鼻音  
-\[appr\]: 接近音  
-\[rhot\]: r音  
-\[liq\]: 流音  
-\[semv\]: 半母音  
-\[latr\]: 側面音  
+\[fricative\]: 摩擦音  
+\[affricate\]: 破擦音  
+\[nasal\]: 鼻音  
+\[approximant\]: 接近音  
+\[rhotic\]: r音  
+\[liquid\]: 流音  
+\[semivowel\]: 半母音  
+\[lateral\]: 側面音  
 V: 任意の母音  
 C: 任意の子音
 
-OE: Old English(7th ~ 13th century)  
-OV: Old Vessenslandic(9th ~ 13th)  
-MdV: Middle Vessenslandic(13th ~ 18th)  
-Vae: Modern Vessenslandic(18th ~)
+OE: 古英語(Old English, 7th–13th century)  
+OV: 古ヴェッセンズラン語(Old Vessenslandic, 9th–13th)  
+MdV: 中ヴェッセンズラン語(Middle Vessenslandic, 13th–18th)  
+EMV: 初期近代ヴェッセンズラン語(Modern Vessenslandic, 18th–20th)  
+LMV: 後期近代ヴェッセンズラン語(Late Modern Vessenslandic 20th–)
 
 ## Old EnglishからOld Vessenslandicにかけての変化
 
@@ -32,6 +33,8 @@ Vae: Modern Vessenslandic(18th ~)
 
 ### 長短→広狭への変化
 
+中母音の長母音は半狭母音に、短母音は半広母音に変化した。これに伴い長短の区別がなくなった。
+
 /e/ > /ɛ/  
 /eː/ > /e/  
 /o/ > /ɔ/  
@@ -44,17 +47,11 @@ Vae: Modern Vessenslandic(18th ~)
 /eo/ > /œ/  
 /eoː/ > /ɛʊ/  
 /æɑ/ > /a/  
-/æɑ/ > /ɛa/ \_/l/, /r/, /x/  
+/æɑ/ > /ɛa/ \_(/l/, /r/, /x/)  
 /æɑː/ > /ɛa/  
-/ɑː/ > /ɛa/ \_/l/, /r/, /x/
+/æː/ > /ɛa/ \_(/l/, /r/, /x/)
 
 ## Middle VessenslandicからEarly Modern Vessenslandicにかけての変化
-
-### 二重母音の変化
-
-/ɔʏ/ > /œʏ/  
-/ɛʊ/ > /ɪʊ/  
-/ɛa/ > /ɪa/
 
 ### 鼻母音化関連
 
@@ -64,7 +61,7 @@ Vae: Modern Vessenslandic(18th ~)
 
 語末の同器官的な鼻音 + 有声破裂音における、有声破裂音が脱落した。
 
-/nd/, /mb/, /ŋg/ > /n/, /m/, /ŋ/ V\_\#  
+/nd/, /mb/, /ŋɡ/ > /n/, /m/, /ŋ/ V\_\#  
 
 ### secondary umlaut
 
@@ -81,11 +78,20 @@ Vae: Modern Vessenslandic(18th ~)
 /aɪ/ > /ɛɪ/  
 /aʊ/ > /ɛʊ/ > /ɪʊ/
 
+### 二重母音の変化
+
+/ɔʏ/ > /œʏ/  
+/ɛʊ/ > /ɪʊ/  
+/ɛa/ > /ɪa/
+
 ## Early Modern Vessenslandic以降の変化
 
 ### 母音の長短の復活
 
-/V/ > /Vː/ (\_CV, \_\#) and (\[+stress\])
+強勢がある開音節の主母音が長くなった。音韻的な母音の長短の区別が復活した。  
+ただし活用・曲用で長短が変わる場合は類推で統一される傾向にある。
+
+/V/ > /Vː/ (\_CV or \_\#) and \[+stress\]
 
 ### 二重母音の変化
 
@@ -99,3 +105,9 @@ Vae: Modern Vessenslandic(18th ~)
 /o(ː)/ > /u(ː)/  
 /ø(ː)/ > /y(ː)/
 
+## 採用保留
+
+### pの変化
+
+/p/ > (/pɸ/) > /ʍ/ \#\_  
+/xw/ > /ʍ/
