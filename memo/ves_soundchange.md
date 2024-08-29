@@ -111,11 +111,6 @@ LMV: 後期近代ヴェッセンズラン語(Late Modern Vessenslandic 20th–)
 /tː/ > /ʔ͡d/  
 /kː/ > /ʔ͡ɡ/
 
-### /p/の変化
-
-/p/ > (/pɸ/) > /ʍ/ \#\_  
-/xw/ > /ʍ/
-
 ## Early Modern Vessenslandic以降の変化
 
 ### 母音の長短の復活
@@ -144,4 +139,8 @@ LMV: 後期近代ヴェッセンズラン語(Late Modern Vessenslandic 20th–)
 
 ## 採用保留
 
+### /p/の変化
+
+/p/ > (/pɸ/) > /ʍ/ \#\_  
+/xw/ > /ʍ/
 
