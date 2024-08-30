@@ -139,8 +139,12 @@ LMV: 後期近代ヴェッセンズラン語(Late Modern Vessenslandic 20th–)
 
 ## 採用保留
 
-### /p/の変化
+### 語頭/p/の変化
 
 /p/ > (/pɸ/) > /ʍ/ \#\_  
 /xw/ > /ʍ/
+
+### 語頭/h/の変化(rhinoglottophilia)
+
+/h/ > /h̃/ > /ŋ/ \#\_Ṽ
 
