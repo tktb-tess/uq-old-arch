@@ -7,5 +7,5 @@
 
 ## memo
 
-- [ヴェッセンズラン語の音変化](./memo/ves_soundchange.md)
-- [ヤズニェル語の音変化](./memo/jaes_soundchange.md)
+- [ヴェッセンズラン語の音変化](./memo/vaes_soundchange.md)
+- [ヴェッセンズラン語のスワデシュ・リスト](./memo/vaes_swadesh_list.md)
