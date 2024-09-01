@@ -3,7 +3,7 @@
 |No.|English|Vässenzländisķ|
 |---:|:---|:---|
 |1|I|iķ|
-|2|you (singular)|ðau (familiar), Jee (respectful)|
+|2|you (singular)|ðaw (familiar), Jee (respectful)|
 |3|they (singular)|hee (masculine), hew (feminine), hit (neuter)|
 |4|we|vee|
 |5|you (plural)|jee|
@@ -38,17 +38,17 @@
 ||narrow||
 |35|thin||
 ||woman||
-||man (adult male)|man, \-es, män, m.|
-||man (human being)|man, \-es, män, m.|
-||child|ķilder, \-es, \-an, n.|
-|40|wife|vaiv, \-es, \-an, f.|
+||man (adult male)|man|
+||man (human being)|man|
+||child|ķilder|
+|40|wife|vaiv|
 ||husband||
-||mother|móder, \-e\-, \-e, f.|
-||father|fader, \-es, \-as, m.|
+||mother|móder|
+||father|fader|
 ||animal||
-|45|fish|fisķ, \-es, \-skas, m.|
-||bird|britd, \-es, \-as, m.|
-||dog|hund, \-es, \-as, m.|
+|45|fish|fisķ|
+||bird|britd|
+||dog|hund|
 ||louse||
 ||snake||
 |50|worm||
@@ -57,7 +57,7 @@
 ||stick||
 ||fruit||
 |55|seed||
-||leaf|ljav, \-es, \-an, n.|
+||leaf|ljav|
 ||root||
 ||bark (of a tree)||
 ||flower||
@@ -68,30 +68,30 @@
 ||blood||
 |65|bone||
 ||fat (noun)||
-||egg|ei, \-s, \-ran, n.|
+||egg|ei|
 ||horn||
 ||tail||
 |70|feather||
 ||hair||
 ||head||
-||ear|jaar, \-an, \-an, n.|
-||eye|jäģ, \-agan, \-agan, n.|
+||ear|jaar|
+||eye|jäģ|
 |75|nose||
-||mouth|mawð, \-es, \-as, m.|
-||tooth|tóðð, \-es, \-e\-, m.|
-||tongue (organ)|tung, \-an, \-an, f.|
+||mouth|mawð|
+||tooth|tóðð|
+||tongue (organ)|tung|
 ||fingernail||
-|80|foot|fótt, \-e\-, \-e\-, f.|
-||leg|läkge, \-an, \-an, m.|
-||knee|knewv, \-es, \-an, m.|
-||hand|hand, \-ä\-, \-e, f.|
-||wing|fiðer, \-es, \-as, m.|
-|85|belly|byll, \-jes, \-jas, m.|
-||guts|gutdas pl.|
-||neck|fnäkge, \-an, \-an, m.|
+|80|foot|fótt|
+||leg|läkge|
+||knee|knewv|
+||hand|hand|
+||wing|fiðer|
+|85|belly|byll|
+||guts|gutdas|
+||neck|fnäkge|
 ||back||
-||breast|brewst, \-es, \-an, n.|
-|90|heart|hört, \-an, \-an, n.|
+||breast|brewst|
+|90|heart|hört|
 ||liver||
 ||to drink|drinkan|
 ||to eat|eatan|
@@ -137,7 +137,7 @@
 ||to wipe||
 ||to pull||
 |135|to push||
-||to throw||
+||to throw|vörpan|
 ||to tie||
 ||to sew||
 ||to count||
@@ -148,55 +148,55 @@
 ||to flow||
 |145|to freeze|frewzan|
 ||to swell||
-||sun|süwn, \-an, \-an, f.|
-||moon|mune, \-an, \-an, m.|
+||sun|süwn|
+||moon|mune|
 ||star||
-|150|water|vater, \-es, \-an, n.|
-||rain||
+|150|water|vater|
+||rain|ręi|
 ||river||
 ||lake||
 ||sea||
 |155|salt||
-||stone||
+||stone|stan|
 ||sand||
 ||dust||
-||earth||
-|160|cloud||
+||earth|örð|
+|160|cloud|sķew|
 ||fog||
-||sky||
-||wind||
-||snow||
-|165|ice|ais, \-es, \-an, n.|
-||smoke||
-||fire||
-||ash||
-||to burn||
-|170|road||
-||mountain||
-||red||
-||green||
-||yellow||
-|175|white||
-||black||
-||night||
-||day||
-||year|jarr, \-s, \-an, n.|
-|180|warm||
-||cold||
-||full||
-||new||
-||old||
+||sky|lyft|
+||wind|vind|
+||snow|snav|
+|165|ice|ais|
+||smoke|smoke|
+||fire|fuyr|
+||ash|äsķ|
+||to burn|byrnan|
+|170|road|radd|
+||mountain|börg|
+||red|rjad|
+||green|green|
+||yellow|jölv|
+|175|white|hvait|
+||black|black|
+||night|night|
+||day|däģ|
+||year|jarr|
+|180|warm|vjąr|
+||cold|ķald|
+||full|full|
+||new|nuyv|
+||old|jald|
 |185|good|gud|
-||bad||
-||rotten||
-||dirty||
-||straight||
-|190|round||
-||sharp (as a knife)||
+||bad|yvel|
+||rotten|ģyroatod|
+||dirty|fuylðaģ|
+||straight|ģystrjaght|
+|190|round|ģyrunted|
+||sharp (as a knife)|sķjarp|
 ||dull (as a knife)||
 ||smooth||
-||wet||
-|195|dry||
+||wet|vätt|
+|195|dry|druy|
 ||correct||
 ||near||
 ||far||
@@ -205,7 +205,7 @@
 ||at||
 ||in|in|
 ||with|mid|
-||and||
-|205|if|jif|
+||and|and|
+|205|if|if|
 ||because||
-|207|name||
+|207|name|name|
