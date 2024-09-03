@@ -52,7 +52,7 @@
 ||louse||
 ||snake||
 |50|worm||
-||tree||
+||tree|träv|
 ||forest||
 ||stick||
 ||fruit||
@@ -60,39 +60,39 @@
 ||leaf|ljav|
 ||root||
 ||bark (of a tree)||
-||flower||
+||flower|blózme m.|
 |60|grass||
 ||rope||
 ||skin||
 ||meat||
 ||blood||
-|65|bone||
+|65|bone|ban|
 ||fat (noun)||
 ||egg|ei|
 ||horn||
 ||tail||
 |70|feather||
 ||hair||
-||head||
+||head|hjawd n.|
 ||ear|jaar|
 ||eye|jäģ|
-|75|nose||
+|75|nose|noos f.|
 ||mouth|mawð|
 ||tooth|tóðð|
-||tongue (organ)|tung|
-||fingernail||
+||tongue (organ)|tung f.|
+||fingernail|fingernäģl m.|
 |80|foot|fótt|
 ||leg|läkge|
-||knee|knewv|
+||knee|knäv|
 ||hand|hand|
 ||wing|fiðer|
 |85|belly|byll|
 ||guts|gutdas|
 ||neck|fnäkge|
-||back||
+||back|frycķ|
 ||breast|brewst|
 |90|heart|hört|
-||liver||
+||liver|liver|
 ||to drink|drinkan|
 ||to eat|eatan|
 ||to bite|baitan|
@@ -100,7 +100,7 @@
 ||to spit||
 ||to vomit||
 ||to blow||
-||to breathe||
+||to breathe|fnestjan|
 |100|to laugh|sķyghan|
 ||to see|seean|
 ||to hear||
@@ -148,7 +148,7 @@
 ||to flow||
 |145|to freeze|frewzan|
 ||to swell||
-||sun|süwn|
+||sun|sün|
 ||moon|mune|
 ||star||
 |150|water|vater|
@@ -189,23 +189,23 @@
 |185|good|gud|
 ||bad|yvel|
 ||rotten|ģyroatod|
-||dirty|fuylðaģ|
+||dirty|byzmiten|
 ||straight|ģystrjaght|
 |190|round|ģyrunted|
 ||sharp (as a knife)|sķjarp|
-||dull (as a knife)||
-||smooth||
+||dull (as a knife)|stypb|
+||smooth|smeð|
 ||wet|vätt|
 |195|dry|druy|
-||correct||
-||near||
-||far||
-||right||
-|200|left||
-||at||
+||correct|right|
+||near|njagh|
+||far|förr|
+||right|svaiðre|
+|200|left|vįstre|
+||at|on|
 ||in|in|
 ||with|mid|
 ||and|and|
 |205|if|if|
-||because||
+||because|siððon|
 |207|name|name|
