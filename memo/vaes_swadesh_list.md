@@ -9,58 +9,58 @@
 |5|you (plural)|jee|
 |6|they (plural)|huy|
 |7|this|ðis|
-|8|that||
+|8|that|sä|
 |9|here|herr|
-|10|there|ðerr|
+|10|there|ðjar|
 |11|who|hva|
 |12|what|hvat|
 |13|where|hvar|
-|14|when|hvan|
-|15|how||
+|14|when|hvönn|
+|15|how|hvaw|
 |16|not|naght|
-|17|all||
+|17|all|jall|
 |18|many|myzķel|
-|19|some||
-|20|few||
+|19|some|sum|
+|20|few|fjaw|
 |21|other|uwðer|
 |22|one|an|
 |23|two|tvęģ|
 |24|three|ðrau|
 |25|four|fewr|
 |26|five|faiv|
-|27|big||
-|28|long||
-|29|wide||
+|27|big|sturr|
+|28|long|long|
+|29|wide|brad|
 |30|thick||
-||heavy|hävaģ|
-||small||
-||short||
-||narrow||
-|35|thin||
-||woman||
-||man (adult male)|man|
-||man (human being)|man|
-||child|ķilder|
-|40|wife|vaiv|
-||husband||
-||mother|móder|
-||father|fader|
-||animal||
-|45|fish|fisķ|
-||bird|britd|
-||dog|hund|
-||louse||
-||snake||
-|50|worm||
-||tree|träv|
-||forest||
+||heavy|hävvaģ|
+||small|smal|
+||short|sķort|
+||narrow|njaro|
+|35|thin|ðynn|
+||woman|vaiman f.|
+||man (adult male)|man m.|
+||man (human being)|man m.|
+||child|ķilder n.|
+|40|wife|vaiv n.|
+||husband|hawzbonde m.|
+||mother|móder f.|
+||father|fader m.|
+||animal|viltdewr n.|
+|45|fish|fisķ m.|
+||bird|britd m.|
+||dog|hund m.|
+||louse|laws f.|
+||snake|snake m.|
+|50|worm|vỹrr m.|
+||tree|träv n.|
+||forest|vuwd m.|
 ||stick||
 ||fruit||
 |55|seed||
 ||leaf|ljav|
 ||root||
 ||bark (of a tree)||
-||flower|blózme m.|
+||flower|bluzme m.|
 |60|grass||
 ||rope||
 ||skin||
@@ -81,18 +81,18 @@
 ||tooth|tóðð|
 ||tongue (organ)|tung f.|
 ||fingernail|fingernäģl m.|
-|80|foot|fótt|
-||leg|läkge|
-||knee|knäv|
-||hand|hand|
-||wing|fiðer|
-|85|belly|byll|
-||guts|gutdas|
-||neck|fnäkge|
-||back|frycķ|
-||breast|brewst|
-|90|heart|hört|
-||liver|liver|
+|80|foot|fótt f.|
+||leg|läkge m.|
+||knee|knäv n.|
+||hand|hand f.|
+||wing|fiðer n.|
+|85|belly|bylli m.|
+||guts|gutdas m.pl.|
+||neck|fnäkge m.|
+||back|frycķ m.|
+||breast|brewst n.|
+|90|heart|hört f.|
+||liver|liver f.|
 ||to drink|drinkan|
 ||to eat|eatan|
 ||to bite|baitan|
@@ -157,29 +157,29 @@
 ||lake||
 ||sea||
 |155|salt||
-||stone|stan|
+||stone|stan m.|
 ||sand||
 ||dust||
-||earth|örð|
-|160|cloud|sķew|
+||earth|örð f.|
+|160|cloud|sķew m.|
 ||fog||
-||sky|lyft|
-||wind|vind|
-||snow|snav|
-|165|ice|ais|
-||smoke|smoke|
-||fire|fuyr|
-||ash|äsķ|
+||sky|lyft f.|
+||wind|vind m.|
+||snow|snav m.|
+|165|ice|ais n.|
+||smoke|smoke m.|
+||fire|fuyr n.|
+||ash|äsķ f.|
 ||to burn|byrnan|
-|170|road|radd|
-||mountain|börg|
+|170|road|radd f.|
+||mountain|börg m.|
 ||red|rjad|
 ||green|green|
 ||yellow|jölv|
 |175|white|hvait|
 ||black|black|
-||night|night|
-||day|däģ|
+||night|night f.|
+||day|däģ m.|
 ||year|jarr|
 |180|warm|vjąr|
 ||cold|ķald|
