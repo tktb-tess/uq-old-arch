@@ -57,7 +57,7 @@
 ||stick||
 ||fruit||
 |55|seed||
-||leaf|ljav|
+||leaf|ljav n.|
 ||root||
 ||bark (of a tree)||
 ||flower|bluzme m.|
@@ -66,16 +66,16 @@
 ||skin||
 ||meat||
 ||blood||
-|65|bone|ban|
+|65|bone|ban n.|
 ||fat (noun)||
-||egg|ei|
+||egg|ei n.|
 ||horn||
 ||tail||
 |70|feather||
 ||hair||
 ||head|hjawd n.|
-||ear|jaar|
-||eye|jäģ|
+||ear|jaar n.|
+||eye|jäģ n.|
 |75|nose|noos f.|
 ||mouth|mawð|
 ||tooth|tóðð|
@@ -148,11 +148,11 @@
 ||to flow||
 |145|to freeze|frewzan|
 ||to swell||
-||sun|sün|
-||moon|mune|
-||star||
-|150|water|vater|
-||rain|ręi|
+||sun|süwn f.|
+||moon|mune m.|
+||star|större m.|
+|150|water|vater n.|
+||rain|ręi m.|
 ||river||
 ||lake||
 ||sea||
@@ -180,7 +180,7 @@
 ||black|black|
 ||night|night f.|
 ||day|däģ m.|
-||year|jarr|
+||year|jarr n.|
 |180|warm|vjąr|
 ||cold|ķald|
 ||full|full|
