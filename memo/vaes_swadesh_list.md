@@ -4,7 +4,7 @@
 |---:|:---|:---|
 |1|I|iķ|
 |2|you (singular)|ðaw (familiar), Jee (respectful)|
-|3|they (singular)|hee (masculine), hew (feminine), hit (neuter)|
+|3|they (singular)|hee _m._ , hew _f._ , hit _n._|
 |4|we|vee|
 |5|you (plural)|jee|
 |6|they (plural)|huy|
@@ -31,68 +31,68 @@
 |27|big|sturr|
 |28|long|long|
 |29|wide|brad|
-|30|thick||
+|30|thick|ðick|
 ||heavy|hävvaģ|
 ||small|smal|
 ||short|sķort|
 ||narrow|njaro|
 |35|thin|ðynn|
-||woman|vaiman f.|
-||man (adult male)|man m.|
-||man (human being)|man m.|
-||child|ķilder n.|
-|40|wife|vaiv n.|
-||husband|hawzbonde m.|
-||mother|móder f.|
-||father|fader m.|
-||animal|viltdewr n.|
-|45|fish|fisķ m.|
-||bird|britd m.|
-||dog|hund m.|
-||louse|laws f.|
-||snake|snake m.|
-|50|worm|vỹrr m.|
-||tree|träv n.|
-||forest|vuwd m.|
+||woman|vaiman _f._|
+||man (adult male)|man _m._|
+||man (human being)|man _m._|
+||child|ķilder _n._|
+|40|wife|vaiv _n._|
+||husband|hawzbonde _m._|
+||mother|móder _f._|
+||father|fader _m._|
+||animal|viltdewr _n._|
+|45|fish|fisķ _m._|
+||bird|britd _m._|
+||dog|hund _m._|
+||louse|laws _f._|
+||snake|snake _m._|
+|50|worm|vỹrr _m._|
+||tree|träv _n._|
+||forest|vuwd _m._|
 ||stick||
 ||fruit||
 |55|seed||
-||leaf|ljav n.|
+||leaf|ljav _n._|
 ||root||
 ||bark (of a tree)||
-||flower|bluzme m.|
+||flower|bluzme _m._|
 |60|grass||
 ||rope||
 ||skin||
 ||meat||
 ||blood||
-|65|bone|ban n.|
+|65|bone|ban _n._|
 ||fat (noun)||
-||egg|ei n.|
+||egg|ei _n._|
 ||horn||
 ||tail||
 |70|feather||
 ||hair||
-||head|hjawd n.|
-||ear|jaar n.|
-||eye|jäģ n.|
-|75|nose|noos f.|
-||mouth|mawð|
-||tooth|tóðð|
-||tongue (organ)|tung f.|
-||fingernail|fingernäģl m.|
-|80|foot|fótt f.|
-||leg|läkge m.|
-||knee|knäv n.|
-||hand|hand f.|
-||wing|fiðer n.|
-|85|belly|bylli m.|
-||guts|gutdas m.pl.|
-||neck|fnäkge m.|
-||back|frycķ m.|
-||breast|brewst n.|
-|90|heart|hört f.|
-||liver|liver f.|
+||head|hjawd _n._|
+||ear|jaar _n._|
+||eye|jäģ _n._|
+|75|nose|noos _f._|
+||mouth|mawð _m._|
+||tooth|tóðð _m._|
+||tongue (organ)|tung _f._|
+||fingernail|fingernäģl _m._|
+|80|foot|fótt _f._|
+||leg|läkge _m._|
+||knee|knäv _n._|
+||hand|hand _f._|
+||wing|fiðer _n._|
+|85|belly|bylli _m._|
+||guts|gutdas _m.pl._|
+||neck|fnäkge _m._|
+||back|frycķ _m._|
+||breast|brewst _n._|
+|90|heart|hört _f._|
+||liver|liver _f._|
 ||to drink|drinkan|
 ||to eat|eatan|
 ||to bite|baitan|
@@ -105,7 +105,7 @@
 ||to see|seean|
 ||to hear||
 ||to know|ģyknavan|
-||to think|ðynkan|
+||to think|venan|
 |105|to smell||
 ||to fear||
 ||to sleep|sleapan|
@@ -115,12 +115,12 @@
 ||to fight|föghtan|
 ||to hunt||
 ||to hit||
-||to cut||
+||to cut|snaiðan|
 |115|to split||
 ||to stab||
 ||to scratch||
 ||to dig||
-||to swim||
+||to swim|svimman|
 |120|to fly|flewgan|
 ||to walk||
 ||to come|kuman|
@@ -128,7 +128,7 @@
 ||to sit||
 |125|to stand|standan|
 ||to turn (intransitive)||
-||to fall||
+||to fall|fjallan|
 ||to give||
 ||to hold||
 |130|to squeeze||
@@ -148,39 +148,39 @@
 ||to flow||
 |145|to freeze|frewzan|
 ||to swell||
-||sun|süwn f.|
-||moon|mune m.|
-||star|större m.|
-|150|water|vater n.|
-||rain|ręi m.|
+||sun|süwn _f._|
+||moon|mune _m._|
+||star|större _m._|
+|150|water|vater _n._|
+||rain|ręi _m._|
 ||river||
 ||lake||
 ||sea||
 |155|salt||
-||stone|stan m.|
+||stone|stan _m._|
 ||sand||
 ||dust||
-||earth|örð f.|
-|160|cloud|sķew m.|
+||earth|örð _f._|
+|160|cloud|sķew _m._|
 ||fog||
-||sky|lyft f.|
-||wind|vind m.|
-||snow|snav m.|
-|165|ice|ais n.|
-||smoke|smoke m.|
-||fire|fuyr n.|
-||ash|äsķ f.|
+||sky|lyft _f._|
+||wind|vind _m._|
+||snow|snav _m._|
+|165|ice|ais _n._|
+||smoke|smoke _m._|
+||fire|fuyr _n._|
+||ash|äsķ _f._|
 ||to burn|byrnan|
-|170|road|radd f.|
-||mountain|börg m.|
+|170|road|radd _f._|
+||mountain|börg _m._|
 ||red|rjad|
 ||green|green|
 ||yellow|jölv|
 |175|white|hvait|
 ||black|black|
-||night|night f.|
-||day|däģ m.|
-||year|jarr n.|
+||night|night _f._|
+||day|däģ _m._|
+||year|jarr _n._|
 |180|warm|vjąr|
 ||cold|ķald|
 ||full|full|
@@ -188,7 +188,7 @@
 ||old|jald|
 |185|good|gud|
 ||bad|yvel|
-||rotten|ģyroatod|
+||rotten|ģyrotod|
 ||dirty|byzmiten|
 ||straight|ģystrjaght|
 |190|round|ģyrunted|
@@ -201,11 +201,11 @@
 ||near|njagh|
 ||far|förr|
 ||right|svaiðre|
-|200|left|vįstre|
+|200|left|vinstre|
 ||at|on|
 ||in|in|
 ||with|mid|
 ||and|and|
-|205|if|if|
+|205|if|iff|
 ||because|siððon|
-|207|name|name|
+|207|name|name _m._|
