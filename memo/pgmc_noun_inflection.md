@@ -76,7 +76,7 @@ __\*gastiz「客」__*m.*
 |対格|gastį|gastinz|
 |具格|gastī|gastimiz|
 
-__\*mari「海」__*m.*
+__\*mari「海」__*n.*
 
 |＼|単数|複数|
 |:--:|:---|:---|
