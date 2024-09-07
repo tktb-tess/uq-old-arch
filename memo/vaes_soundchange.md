@@ -12,16 +12,15 @@
 V: 任意の母音  
 C: 任意の子音
 
-OE: 古英語(Old English, 7th–13th century)  
-OV: 古ヴェッセンズラン語(Old Vessenslandic, 9th–13th)  
-MdV: 中ヴェッセンズラン語(Middle Vessenslandic, 13th–18th)  
-EMV: 初期近代ヴェッセンズラン語(Modern Vessenslandic, 18th–20th)  
-LMV: 後期近代ヴェッセンズラン語(Late Modern Vessenslandic 20th–)
+OE: 古英語 (Old English, 7th–13th century)  
+OV: 古ヴェッセンズラン語 (Old Vessenslandic, 9th–13th)  
+MdV: 中ヴェッセンズラン語 (Middle Vessenslandic, 13th–18th)  
+EMV: 初期近代ヴェッセンズラン語 (Early Modern Vessenslandic, 18th–20th)  
+LMV: 後期近代ヴェッセンズラン語 (Late Modern Vessenslandic, 20th–)
 
 ## Old EnglishからOld Vessenslandicにかけての変化
 
 殆どold Englishと同じであったと考えられている。西サクソン方言が主体であるが、わずかに他方言の影響もみられる。
-
 
 ## Old VessenslandicからMiddle Vessenslandicにかけての変化
 
@@ -104,12 +103,11 @@ LMV: 後期近代ヴェッセンズラン語(Late Modern Vessenslandic 20th–)
 
 ### 長破裂音の前声門化
 
-裏話: ベトナム語にあるようなものを想定している  
 方言によって放出音・入破音っぽくもなる
 
-/pː/ > /ʔ͡b/  
-/tː/ > /ʔ͡d/  
-/kː/ > /ʔ͡ɡ/
+/pː/ > /ʔ͡p/  
+/tː/ > /ʔ͡t/  
+/kː/ > /ʔ͡k/
 
 ## Early Modern Vessenslandic以降の変化
 
