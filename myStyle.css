@@ -30,20 +30,26 @@ a
     transition: color 60ms ease-in-out;
 }
 
-.section-title 
-{
-    font-family: 'Times New Roman', 'Zen Antique', serif;
+.section-title {
+    font-family: 'Zen Antique', serif;
     font-weight: 400;
 }
 
-.titlee 
-{
-    font-family: 'Times New Roman', 'Zen Antique', serif;
-    font-weight: 400;
+.article-font, 
+.article-font-jp {
     font-size: calc(1.7rem + 1.4vw);
 }
 
-.ipa 
+.article-font {
+    font-family: 'Times New Roman', serif;
+}
+
+.article-font-jp {
+    font-family: 'Zen Antique', serif;
+}
+
+.ipa,
+.l-serif
 {
     font-family: 'Times New Roman', serif;
     font-size: 1.1em;
@@ -111,14 +117,6 @@ body > .page-top-button
     font-family: 'Noto Sans JP', sans-serif;
 }
 
-.shitsumon
-{
-    font-family: 'Zen Antique', serif;
-    font-weight: 400;
-    background-color: rgb(var(--my-heading-color-rgb));
-    color: white;
-}
-
 @media (min-width:768px) {
     .sidebar {
         overflow-y: auto;
@@ -130,4 +128,11 @@ body > .page-top-button
 {
     font-family: 'Noto Sans SC', sans-serif;
 }
+
+.l-sans {
+    font-family: 'Inter', 'Arial', 'Helvetica Neue', sans-serif;
+}
+
+
+
 
