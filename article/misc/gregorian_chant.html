@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Bootstrap v5.3.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- Import my stylesheet -->
+    <link href="../../stylesheet/myStyle.css" type="text/css" rel="stylesheet">
+    <link rel="icon" href="../../image/favicon.ico">
+    <title>グレゴリオ聖歌</title>
+</head>
+
+<body>
+    <div class="container border-start border-end">
+        <h2 class="text-center my-4 section-title" id="%E3%82%B0%E3%83%AC%E3%82%B4%E3%83%AA%E3%82%AA%E8%81%96%E6%AD%8C">グレゴリオ聖歌</h2>
+        <p class="ms-3">まず、グレゴリオ聖歌の教会旋法には大事な音が2つあり、それが<strong>フィナリス</strong>（finalis）と<strong>ドミナント</strong>（dominant）<br>
+            フィナリスは旋律の終わりに来る音、現代の主音に相当<br>
+            ドミナントは旋律内で繰り返し使われまくる軸になる音、現代の属音に相当……というわけでもなく結構違う。</p>
+        <h3 class="ms-1" id="8%E3%81%A4%E3%81%AE%E6%97%8B%E6%B3%95">8つの旋法</h3>
+        <p class="ms-3">旋法は8つあるが、これらは4つの<strong>正格旋法</strong>と対応する4つの<strong>変格旋法</strong>（プラガル旋法）というのに分けられる。<br>
+            変格は対応する正格とフィナリスが同じだが、音高の範囲（<strong>アンビトゥス</strong>という）とドミナントが違う。<br>
+            変格には対応する正格の名前に<strong>ヒュポ</strong>（hypo-）をつける。</p>
+        <p class="ms-3">旋法は順番に</p>
+        <ul class="ms-3">
+            <li>ドリア dorian</li>
+            <li>ヒュポドリア hypodorian</li>
+            <li>フリュギア phrygian</li>
+            <li>ヒュポフリュギア hypophrygian</li>
+            <li>リュディア lydian</li>
+            <li>ヒュポリュディア hypolydian</li>
+            <li>ミクソリュディア mixolydian</li>
+            <li>ヒュポミクソリュディア hypomixolydian</li>
+        </ul>
+        <p class="ms-3">※イオニア（長調）ionian とアエオリア（短調）aeolian、ロクリア locrian は初期はない</p>
+        <h3 class="ms-1" id="%E5%9F%BA%E6%9C%AC%E3%83%AB%E3%83%BC%E3%83%AB">基本ルール</h3>
+        <p class="ms-3">フィナリスは<br>
+            ドリアがレ<br>
+            フリュギアがミ<br>
+            リュディアがファ<br>
+            ミクソリュディアがソ<br>
+            変格正格同じ</p>
+        <p class="ms-3">ドミナントは正格ではフィナリスの5度上、変格では対の正格ドミナントの3度下<br>
+            <strong>ただしこのルールでドミナントが「シ」になる場合、1つ上げて「ド」にする。</strong><br>
+            具体的にはフリュギア、ヒュポミクソリュディアに適用される。
+        </p>
+        <p class="ms-3">アンビトゥス（音高の範囲）は正格がフィナリスから1オクターブ、変格がフィナリスの4度下から1オクターブ<br>
+            つまり正格では一番下、変格では大体真ん中らへんにフィナリスが来る<br>
+            構成音は全部白鍵とする</p>
+        <h2 id="%E5%85%B7%E4%BD%93%E7%9A%84%E3%81%AA%E9%9F%B3%E9%9A%8E">具体的な音階</h2>
+        <p class="ms-3">以下に全部書き下す。<br>
+            フィナリスは[]、ドミナントは()で囲う</p>
+        <h4 class="ms-2" id="1-%E3%83%89%E3%83%AA%E3%82%A2">1. ドリア</h4>
+        <p class="ms-3">[レ] ミ ファ ソ (ラ) シ ド レ</p>
+        <h4 class="ms-2" id="2-%E3%83%92%E3%83%A5%E3%83%9D%E3%83%89%E3%83%AA%E3%82%A2">2. ヒュポドリア</h4>
+        <p class="ms-3">ラ シ ド [レ] ミ (ファ) ソ ラ</p>
+        <h4 class="ms-2" id="3-%E3%83%95%E3%83%AA%E3%83%A5%E3%82%AE%E3%82%A2">3. フリュギア</h4>
+        <p class="ms-3">[ミ] ファ ソ ラ シ (ド) レ ミ</p>
+        <h4 class="ms-2" id="4-%E3%83%92%E3%83%A5%E3%83%9D%E3%83%95%E3%83%AA%E3%83%A5%E3%82%AE%E3%82%A2">4. ヒュポフリュギア</h4>
+        <p class="ms-3">シ ド レ [ミ] ファ ソ (ラ) シ</p>
+        <p class="ms-3">※ドミナントに注意、フリュギアの(ド)から3度下げるのでこう</p>
+        <h4 class="ms-2" id="5-%E3%83%AA%E3%83%A5%E3%83%87%E3%82%A3%E3%82%A2">5. リュディア</h4>
+        <p class="ms-3">[ファ] ソ ラ シ (ド) レ ミ ファ</p>
+        <h4 class="ms-2" id="6-%E3%83%92%E3%83%A5%E3%83%9D%E3%83%AA%E3%83%A5%E3%83%87%E3%82%A3%E3%82%A2">6. ヒュポリュディア</h4>
+        <p class="ms-3">ド レ ミ [ファ] ソ (ラ) シ ド</p>
+        <h4 class="ms-2" id="7-%E3%83%9F%E3%82%AF%E3%82%BD%E3%83%AA%E3%83%A5%E3%83%87%E3%82%A3%E3%82%A2">7. ミクソリュディア</h4>
+        <p class="ms-3">[ソ] ラ シ ド (レ) ミ ファ ソ</p>
+        <h4 class="ms-2" id="8-%E3%83%92%E3%83%A5%E3%83%9D%E3%83%9F%E3%82%AF%E3%82%BD%E3%83%AA%E3%83%A5%E3%83%87%E3%82%A3%E3%82%A2">
+            8.
+            ヒュポミクソリュディア</h4>
+        <p class="ms-3">ミ ファ [ソ] ラ シ (ド) レ ミ</p>
+        <h3 class="ms-1" id="%E8%A3%9C%E8%B6%B3">補足</h3>
+        <ul class="ms-3">
+            <li>（ヒュポ）ドリアと（ヒュポ）リュディアではシが半音下がってシ♭になることがまあまあある</li>
+            <li>音高範囲は絶対でなく1, 2音上下にはみ出ることもある</li>
+        </ul>
+        <div class="d-flex justify-content-center mb-4">
+            <a class="btn btn-outline-dark" href="../../" role="button">戻る</a>
+        </div>
+    </div>
+
+    <!-- Bootstrap v5.3.3 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
