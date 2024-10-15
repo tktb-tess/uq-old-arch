@@ -27,7 +27,23 @@ h1, h2, h3, h4, h5, h6
 a
 {
     text-decoration: none;
-    transition: color 60ms ease-in-out;
+    transition: color 60ms ease-in;
+
+    &.link-deep-blue
+    {
+        color: rgb(var(--my-link-color-rgb))!important;
+    
+        &:hover {
+            color: rgb(var(--my-link-color-rgb), 0.7)!important;
+        }
+    }
+
+    .bi-box-arrow-up-right {
+        display: inline;
+        vertical-align: middle;
+        fill: currentColor;
+        height: 0.8rem;
+    }
 }
 
 .section-title {
@@ -86,15 +102,8 @@ body > .page-top-button
     background-color: rgb(var(--my-heading-color-rgb))!important;
 }
 
-.text-deep-blue,
-.link-deep-blue
-{
+.text-deep-blue {
     color: rgb(var(--my-link-color-rgb))!important;
-}
-
-.link-deep-blue:hover
-{
-    color: rgb(var(--my-link-color-rgb), 0.7)!important;
 }
 
 .bi-chevron-up
@@ -103,13 +112,6 @@ body > .page-top-button
     fill: currentColor;
     vertical-align: text-bottom;
     height: 27px;
-}
-
-.bi-box-arrow-up-right
-{
-    display: inline-block;
-    fill: currentColor;
-    height: 14px;
 }
 
 .noto-sans-jp
