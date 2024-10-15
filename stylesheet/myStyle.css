@@ -2,35 +2,32 @@
 /* Noto Sans JP + SC, Noto Serif JP, Zen Antique */
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Noto+Sans+SC:wght@100..900&family=Noto+Serif+JP:wght@200..900&family=Zen+Antique&display=swap');
 
-:root
-{
+:root {
     --my-heading-color-rgb: 26, 54, 88;
     --my-link-color-rgb: 0, 71, 179;
+    --serif-font:'Times New Roman', 'Noto Serif JP', serif;
+    --sans-font: 'Inter', 'Arial', 'Helvetica Neue', 'Noto Sans JP', sans-serif;
 }
 
 html {
     font-size: 1.0em;
 }
 
-body
-{
+body {
     background-color: var(--bs-light);
-    font-family: 'Inter', 'Arial', 'Helvetica Neue', 'Noto Sans JP', sans-serif;
+    font-family: var(--sans-font);
 }
 
-h1, h2, h3, h4, h5, h6
-{
-    font-family: 'Times New Roman', 'Noto Serif JP', serif;
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--serif-font);
     color: rgba(var(--my-heading-color-rgb));
 }
 
-a
-{
+a {
     text-decoration: none;
     transition: color 60ms ease-in;
 
-    &.link-deep-blue
-    {
+    &.link-deep-blue {
         color: rgb(var(--my-link-color-rgb))!important;
     
         &:hover {
@@ -65,40 +62,32 @@ a
 }
 
 .ipa,
-.l-serif
-{
+.l-serif {
     font-family: 'Times New Roman', serif;
-    font-size: 1.0em;
 }
 
-table > thead > tr > th,
-table > tbody > tr > th 
-{
+table > * > * > th {
     text-align: center;
     font-family: 'Noto Sans JP', sans-serif;
     font-weight: 500;
 }
 
-table > tbody > tr > td 
-{
+table > * > * > td {
     text-align: center;
+
+    &.bikou {
+        text-align: left;
+    }
     
 }
 
-table > tbody > tr > td.bikou
-{
-    text-align: left;
-}
-
-body > .page-top-button 
-{
+.page-top-button {
     position: fixed;
     right: 20px;
     bottom: 20px;
 }
 
-.bg-deep-blue 
-{
+.bg-deep-blue {
     background-color: rgb(var(--my-heading-color-rgb))!important;
 }
 
@@ -106,16 +95,14 @@ body > .page-top-button
     color: rgb(var(--my-link-color-rgb))!important;
 }
 
-.bi-chevron-up
-{
+.bi-chevron-up {
     display: inline;
     fill: currentColor;
     vertical-align: text-bottom;
     height: 27px;
 }
 
-.noto-sans-jp
-{
+.noto-sans-jp {
     font-family: 'Noto Sans JP', sans-serif;
 }
 
@@ -126,8 +113,7 @@ body > .page-top-button
     }
 }
 
-.noto-sans-sc
-{
+.noto-sans-sc {
     font-family: 'Noto Sans SC', sans-serif;
 }
 
