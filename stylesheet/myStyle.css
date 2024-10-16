@@ -2,11 +2,23 @@
 /* Noto Sans JP + SC, Noto Serif JP, Zen Antique */
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Noto+Sans+SC:wght@100..900&family=Noto+Serif+JP:wght@200..900&family=Zen+Antique&display=swap');
 
+@font-face {
+    font-family: tktbInter;
+    font-style: normal;
+    src: url("../font/Inter/Inter-VariableFont_opsz\,wght.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: tktbInter;
+    font-style: italic;
+    src: url("../font/Inter/Inter-Italic-VariableFont_opsz\,wght.ttf") format("truetype");
+}
+
 :root {
     --my-heading-color-rgb: 26, 54, 88;
     --my-link-color-rgb: 0, 71, 179;
-    --serif-font:'Times New Roman', 'Noto Serif JP', serif;
-    --sans-font: 'Inter', 'Arial', 'Helvetica Neue', 'Noto Sans JP', sans-serif;
+    --serif-font: 'Times New Roman', 'Noto Serif JP', serif;
+    --sans-font: 'tktbInter', 'Arial', 'Helvetica Neue', 'Noto Sans JP', sans-serif;
 }
 
 html {
@@ -118,7 +130,7 @@ table > * > * > td {
 }
 
 .l-sans {
-    font-family: 'Inter', 'Arial', 'Helvetica Neue', sans-serif;
+    font-family: 'tktbInter', 'Arial', 'Helvetica Neue', sans-serif;
 }
 
 
