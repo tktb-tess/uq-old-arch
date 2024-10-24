@@ -149,13 +149,12 @@ button.btn-audio-controls {
     border: none;
     margin-left: 0.25rem;
     margin-right: 0.5rem;
-    margin-top: 0.5rem;
     padding: 0.25rem;
     background-color: var(--my-light-color);
     color: rgba(var(--my-heading-color-rgb), 1);
     border-radius: 0.5rem;
 
-    &:hover {
+    &:hover, &.active {
         background-color: rgba(var(--my-heading-color-rgb), 1);
         color: var(--my-light-color);
     }
