@@ -80,10 +80,12 @@
                 }, false);
 
                 musicList[musicID].addEventListener('timeupdate', function() { // 経過時間の表示
-                    const min = Math.trunc(musicList[musicID].currentTime / 60);
-                    const sec = Math.trunc(musicList[musicID].currentTime) % 60;
-                    const sec_str = (sec < 10) ? '0' + sec : sec.toString();
-                    duration.innerHTML = min.toString() + ':' + sec_str;
+                    if (musicList[musicID]) {
+                        const sec = Math.trunc(musicList[musicID].currentTime) % 60;
+                        const min = Math.trunc(musicList[musicID].currentTime / 60);
+                        const sec_str = (sec < 10) ? '0' + sec : sec.toString();
+                        duration.innerHTML = min.toString() + ':' + sec_str;
+                    }
                 }, false);
 
             } else if (musicList[musicID].paused) { // 2回目以降の途中からの再生
