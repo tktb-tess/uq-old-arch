@@ -16,8 +16,9 @@
 <body>
     <div class="container border-start border-end">
         <h2 class="my-4 p-0 section-title text-center">音楽</h2>
-
-        <p class="ms-3">音楽を作ると、たのしい。</p>
+        
+        <h5 class="text-center">音楽を作ると、たのしい。</h5>
+        
         <h4 class="ms-1">ライセンス</h4>
         <p class="ms-3" xmlns:cc="http://creativecommons.org/ns#">
             以下の作品は、個別の記述が無い限り、
@@ -67,30 +68,30 @@
             const duration = document.getElementById(musicID + '-time');
             const path = document.getElementById(musicID).src;
 
-            if (!musicList[path]) { // 初回再生
-                musicList[path] = new Audio(path);
-                musicList[path].play();
+            if (!musicList[musicID]) { // 初回再生
+                musicList[musicID] = new Audio(path);
+                musicList[musicID].play();
                 playbtn.innerHTML = pauseBtnSvg;
 
-                musicList[path].addEventListener('ended', function() {
-                    delete musicList[path];
+                musicList[musicID].addEventListener('ended', function() {
+                    delete musicList[musicID];
                     playbtn.innerHTML = playBtnSvg;
                     duration.innerHTML = '0:00';
                 }, false);
 
-                musicList[path].addEventListener('timeupdate', function() {
-                    const min = Math.trunc(musicList[path].currentTime / 60);
-                    const sec = Math.trunc(musicList[path].currentTime) % 60;
+                musicList[musicID].addEventListener('timeupdate', function() { // 経過時間の表示
+                    const min = Math.trunc(musicList[musicID].currentTime / 60);
+                    const sec = Math.trunc(musicList[musicID].currentTime) % 60;
                     const sec_str = (sec < 10) ? '0' + sec : sec.toString();
                     duration.innerHTML = min.toString() + ':' + sec_str;
                 }, false);
 
-            } else if (musicList[path].paused) { // 2回目以降の途中からの再生
-                musicList[path].play();
+            } else if (musicList[musicID].paused) { // 2回目以降の途中からの再生
+                musicList[musicID].play();
                 playbtn.innerHTML = pauseBtnSvg;
                 
             } else { // 一時停止
-                musicList[path].pause();
+                musicList[musicID].pause();
                 playbtn.innerHTML = playBtnSvg;
             }
             
@@ -102,10 +103,10 @@
             const duration = document.getElementById(musicID + '-time');
             const path = document.getElementById(musicID).src;
 
-            if (musicList[path]) {
-                musicList[path].pause();
-                musicList[path].currentTime = 0;
-                delete musicList[path];
+            if (musicList[musicID]) {
+                musicList[musicID].pause();
+                musicList[musicID].currentTime = 0;
+                delete musicList[musicID];
                 playbtn.innerHTML = playBtnSvg;
                 duration.innerHTML = '0:00';
             }

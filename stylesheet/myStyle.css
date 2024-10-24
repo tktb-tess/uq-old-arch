@@ -32,6 +32,13 @@ html {
 body {
     background-color: var(--my-light-color);
     font-family: var(--sans-font);
+
+    > .container,
+    > .container-fluid {
+        min-height: 100vh;
+        padding-top: 1px;
+        padding-bottom: 1px;
+    }
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -154,6 +161,7 @@ button.btn-audio-controls {
     }
 
     > svg {
+        display: inline;
         height: 1.75rem;
         fill: currentColor;
         vertical-align: middle;
