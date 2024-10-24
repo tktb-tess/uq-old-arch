@@ -17,6 +17,8 @@
 :root {
     --my-heading-color-rgb: 26, 54, 88;
     --my-link-color-rgb: 0, 71, 179;
+    --my-dark-color: var(--bs-body-color);
+    --my-light-color: var(--bs-light);
     --serif-font: 'Times New Roman', 'Noto Serif JP', serif;
     --sans-font: myInter, 'Arial', 'Helvetica Neue', 'Noto Sans JP', sans-serif;
 }
@@ -26,7 +28,7 @@ html {
 }
 
 body {
-    background-color: var(--bs-light);
+    background-color: var(--my-light-color);
     font-family: var(--sans-font);
 }
 
@@ -139,17 +141,17 @@ button.btn-audio-controls {
     margin-left: 0.25rem;
     margin-right: 0.75rem;
     margin-top: 0.5rem;
-    background: transparent;
-    color: var(--bs-body-color);
-    background-color: rgba(var(--my-heading-color-rgb), 0.25);
-    border-radius: 1.25rem;
+    padding: 0.25rem;
+    background-color: var(--my-dark-color);
+    color: var(--my-light-color);
+    border-radius: 50%;
 
     &:hover {
         opacity: 0.7;
     }
 
     > svg {
-        height: 1.5rem;
+        height: 1.75rem;
         fill: currentColor;
         vertical-align: middle;
     }

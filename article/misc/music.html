@@ -35,12 +35,12 @@
         <figure class="ms-3">
             <figcaption class="fs-5">Tessyrrhaqt - Welcome</figcaption>
             <audio src="../../audio/welcome.m4a" id="wlcm"></audio>
-            <button class="btn-audio-controls" id="wlcm-play" onclick="musicPlayPause('../../audio/welcome.m4a', 'wlcm')" role="button">
+            <button class="btn-audio-controls" id="wlcm-play" onclick="musicPlayPause('wlcm')" role="button">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
                     <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"/>
                 </svg>
             </button>
-            <button class="btn-audio-controls" id="wlcm-stop" role="button" onclick="musicStop('../../audio/welcome.m4a', 'wlcm')">
+            <button class="btn-audio-controls" id="wlcm-stop" role="button" onclick="musicStop('wlcm')">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
                     <path d="M5 3.5h6A1.5 1.5 0 0 1 12.5 5v6a1.5 1.5 0 0 1-1.5 1.5H5A1.5 1.5 0 0 1 3.5 11V5A1.5 1.5 0 0 1 5 3.5z"/>
                 </svg>
@@ -62,9 +62,10 @@
         const playBtnSvg = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"/></svg>';
         const pauseBtnSvg = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M5.5 3.5A1.5 1.5 0 0 1 7 5v6a1.5 1.5 0 0 1-3 0V5a1.5 1.5 0 0 1 1.5-1.5zm5 0A1.5 1.5 0 0 1 12 5v6a1.5 1.5 0 0 1-3 0V5a1.5 1.5 0 0 1 1.5-1.5z"/></svg>';
         
-        let musicPlayPause = function(path, musicID) {
+        let musicPlayPause = function(musicID) {
             const playbtn = document.getElementById(musicID + '-play');
             const duration = document.getElementById(musicID + '-time');
+            const path = document.getElementById(musicID).src;
 
             if (!musicList[path]) { // 初回再生
                 musicList[path] = new Audio(path);
@@ -80,16 +81,11 @@
                 musicList[path].addEventListener('timeupdate', function() {
                     const min = Math.trunc(musicList[path].currentTime / 60);
                     const sec = Math.trunc(musicList[path].currentTime) % 60;
-                    let sec_str = '';
-                    if (sec < 10) {
-                        sec_str = '0' + sec.toString();
-                    } else {
-                        sec_str = sec.toString();
-                    }
+                    const sec_str = (sec < 10) ? '0' + sec : sec.toString();
                     duration.innerHTML = min.toString() + ':' + sec_str;
                 }, false);
 
-            } else if(musicList[path].paused) { // 2回目以降の途中からの再生
+            } else if (musicList[path].paused) { // 2回目以降の途中からの再生
                 musicList[path].play();
                 playbtn.innerHTML = pauseBtnSvg;
                 
@@ -101,9 +97,11 @@
             
         }
 
-        let musicStop = function(path, musicID) { // 停止
+        let musicStop = function(musicID) { // 停止
             const playbtn = document.getElementById(musicID + '-play');
             const duration = document.getElementById(musicID + '-time');
+            const path = document.getElementById(musicID).src;
+
             if (musicList[path]) {
                 musicList[path].pause();
                 musicList[path].currentTime = 0;
