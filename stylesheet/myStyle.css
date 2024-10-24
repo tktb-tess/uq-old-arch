@@ -21,6 +21,8 @@
     --my-light-color: var(--bs-light);
     --serif-font: 'Times New Roman', 'Noto Serif JP', serif;
     --sans-font: myInter, 'Arial', 'Helvetica Neue', 'Noto Sans JP', sans-serif;
+    --my-transition: 150ms ease-in-out;
+    --my-transition2: 70ms ease-in-out;
 }
 
 html {
@@ -39,7 +41,7 @@ h1, h2, h3, h4, h5, h6 {
 
 a {
     text-decoration: none;
-    transition: color 60ms ease-in;
+    transition: var(--my-transition2);
 
     &.link-deep-blue {
         color: rgb(var(--my-link-color-rgb))!important;
@@ -136,18 +138,19 @@ table > * > * > td {
 }
 
 button.btn-audio-controls {
-    transition: 60ms ease-in;
+    transition: var(--my-transition);
     border: none;
     margin-left: 0.25rem;
-    margin-right: 0.75rem;
+    margin-right: 0.5rem;
     margin-top: 0.5rem;
     padding: 0.25rem;
-    background-color: var(--my-dark-color);
-    color: var(--my-light-color);
-    border-radius: 50%;
+    background-color: var(--my-light-color);
+    color: rgba(var(--my-heading-color-rgb), 1);
+    border-radius: 0.5rem;
 
     &:hover {
-        opacity: 0.7;
+        background-color: rgba(var(--my-heading-color-rgb), 1);
+        color: var(--my-light-color);
     }
 
     > svg {
