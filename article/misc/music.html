@@ -73,7 +73,7 @@
                 musicList[musicID].play();
                 playbtn.innerHTML = pauseBtnSvg;
 
-                musicList[musicID].addEventListener('ended', function() {
+                musicList[musicID].addEventListener('ended', function() { // 最後まで再生された場合の処理
                     delete musicList[musicID];
                     playbtn.innerHTML = playBtnSvg;
                     duration.innerHTML = '0:00';
