@@ -56,7 +56,7 @@
                         <path fill-rule="evenodd" d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z"/>
                     </svg>
                 </button>
-                <span class="card-text" id="wlcm-time">0:00</span>
+                <span class="card-text" id="wlcm-time">-:--</span>
             </div>
             
             
@@ -85,7 +85,7 @@
                         <path fill-rule="evenodd" d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z"/>
                     </svg>
                 </button>
-                <span id="celes-time" class="card-text">0:00</span>
+                <span id="celes-time" class="card-text">-:--</span>
             </div>
         </div>
         <div class="d-flex justify-content-center my-3">
@@ -114,7 +114,7 @@
                 musicList[musicID].addEventListener('ended', function() { // 最後まで再生された場合の処理
                     delete musicList[musicID];
                     playbtn.innerHTML = playBtnSvg;
-                    duration.innerHTML = '0:00';
+                    duration.innerHTML = '-:--';
                 }, false);
 
                 musicList[musicID].addEventListener('timeupdate', function() { // 経過時間の表示
@@ -148,7 +148,7 @@
                 musicList[musicID].currentTime = 0;
                 delete musicList[musicID];
                 playbtn.innerHTML = playBtnSvg;
-                duration.innerHTML = '0:00';
+                duration.innerHTML = '-:--';
             }
         }
 
