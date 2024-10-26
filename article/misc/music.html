@@ -38,7 +38,7 @@
                 <h5 class="card-title">Tessyrrhaqt - Welcome</h5>
                 <p class="ms-1 card-text">軽く作ったPsytranceもどきのBGM。</p>
             </div>
-            <audio src="../../audio/welcome.m4a" id="wlcm"></audio>
+            <audio src="../../audio/welcome.m4a" id="wlcm" preload="metadata"></audio>
             <div class="card-body">
                 <button role="button" class="btn-audio-controls" id="wlcm-play" onclick="musicPlayPause('wlcm')">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
@@ -56,7 +56,7 @@
                         <path fill-rule="evenodd" d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z"/>
                     </svg>
                 </button>
-                <span class="card-text" id="wlcm-time">-:--</span>
+                <span id="wlcm-time" class="card-text">-:-- / -:--</span>
             </div>
             
             
@@ -67,7 +67,7 @@
                 <h5 class="card-title">Tessyrrhaqt - Celeste (short ver.)</h5>
                 <p class="ms-1 card-text">YouTubeのエンディングで使いそうな爽快系の曲。long ver. はまだない。</p>
             </div>
-            <audio src="../../audio/celeste.m4a" id="celes"></audio>
+            <audio src="../../audio/celeste.m4a" id="celes" preload="metadata"></audio>
             <div class="card-body">
                 <button role="button" class="btn-audio-controls" id="celes-play" onclick="musicPlayPause('celes')">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
@@ -85,7 +85,7 @@
                         <path fill-rule="evenodd" d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z"/>
                     </svg>
                 </button>
-                <span id="celes-time" class="card-text">-:--</span>
+                <span id="celes-time" class="card-text">-:-- / -:--</span>
             </div>
         </div>
         <div class="d-flex justify-content-center my-3">
@@ -97,75 +97,99 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     
     <script>
-        const musicList = {};
+        const audioList = document.getElementsByTagName('audio');
         const playBtnSvg = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"/></svg>';
         const pauseBtnSvg = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M5.5 3.5A1.5 1.5 0 0 1 7 5v6a1.5 1.5 0 0 1-3 0V5a1.5 1.5 0 0 1 1.5-1.5zm5 0A1.5 1.5 0 0 1 12 5v6a1.5 1.5 0 0 1-3 0V5a1.5 1.5 0 0 1 1.5-1.5z"/></svg>';
+        let currentPlayAudio = null;
         
-        let musicPlayPause = function(musicID) {
-            const playbtn = document.getElementById(musicID + '-play');
-            const duration = document.getElementById(musicID + '-time');
-            
-
-            if (!musicList[musicID]) { // 初回再生
-                musicList[musicID] = document.getElementById(musicID);
-                musicList[musicID].play();
-                playbtn.innerHTML = pauseBtnSvg;
-
-                musicList[musicID].addEventListener('ended', function() { // 最後まで再生された場合の処理
-                    delete musicList[musicID];
-                    playbtn.innerHTML = playBtnSvg;
-                    duration.innerHTML = '-:--';
-                }, false);
-
-                musicList[musicID].addEventListener('timeupdate', function() { // 経過時間の表示
-                    if (musicList[musicID]) {
-                        const sec = Math.trunc(musicList[musicID].currentTime) % 60;
-                        const min = Math.trunc(musicList[musicID].currentTime / 60);
-                        const sec_str = (sec < 10) ? '0' + sec : sec.toString();
-                        duration.innerHTML = min.toString() + ':' + sec_str;
-                    }
-                }, false);
-
-            } else if (musicList[musicID].paused) { // 2回目以降の途中からの再生
-                musicList[musicID].play();
-                playbtn.innerHTML = pauseBtnSvg;
-                
-            } else { // 一時停止
-                musicList[musicID].pause();
-                playbtn.innerHTML = playBtnSvg;
-            }
-            
-            
+        for (let i = 0; i < audioList.length; i++) {
+            audioList[i].addEventListener('timeupdate', function() {
+                const musicID = this.id;
+                const timeE = document.getElementById(musicID + '-time');
+                const dur = toTime(document.getElementById(musicID).duration);
+                timeE.innerHTML = toTime(this.currentTime) + ' / ' + dur;
+                console.log('timeupdate listener fired, ' + this.id);
+            }, false);
+            audioList[i].addEventListener('ended', function() { // 最後まで再生された場合の処理
+                const musicID = this.id;
+                const playBtn = document.getElementById(musicID + '-play');
+                const playTime = document.getElementById(musicID + '-time');
+                currentPlayAudio = null;
+                playBtn.innerHTML = playBtnSvg;
+                playTime.innerHTML = '-:-- / -:--';
+                console.log('ended listener fired, ' + this.id);
+            }, false);
         }
+        
+        
 
-        let musicStop = function(musicID) { // 停止
-            const playbtn = document.getElementById(musicID + '-play');
-            const duration = document.getElementById(musicID + '-time');
-            
+        const musicPlayPause = (musicID) => {
+            const playBtn = document.getElementById(musicID + '-play');
+            const playTime = document.getElementById(musicID + '-time');
+            const mDuration = toTime(document.getElementById(musicID).duration);
 
-            if (musicList[musicID]) {
-                musicList[musicID].pause();
-                musicList[musicID].currentTime = 0;
-                delete musicList[musicID];
-                playbtn.innerHTML = playBtnSvg;
-                duration.innerHTML = '-:--';
-            }
-        }
+            if (currentPlayAudio === null) { // 何も再生されていない場合
+                currentPlayAudio = audioList.namedItem(musicID);
+                currentPlayAudio.play();
+                playBtn.innerHTML = pauseBtnSvg;
 
-        let toggleLoop = function(musicID) {
-            const loopBtn = document.getElementById(musicID + '-loop');
+            } else if (currentPlayAudio.id !== musicID) { // 他の曲が再生されている場合
+                const prevPlayBtn = document.getElementById(currentPlayAudio.id + '-play');
+                const prevPlayTime = document.getElementById(currentPlayAudio.id + '-time');
 
-            if (!document.getElementById(musicID).loop) {
-                document.getElementById(musicID).loop = true;
-                loopBtn.classList.add('active');
+                // 前の曲を止める
+                currentPlayAudio.pause();
+                currentPlayAudio.currentTime = 0;
+                prevPlayBtn.innerHTML = playBtnSvg;
+
+                // 再生処理
+                currentPlayAudio = document.getElementById(musicID);
+                currentPlayAudio.play();
+                playBtn.innerHTML = pauseBtnSvg;
+
+                console.log('new song started');
+
+            } else if (currentPlayAudio.paused) { // 再開
+                currentPlayAudio.play();
+                playBtn.innerHTML = pauseBtnSvg;
+
+            } else if (!currentPlayAudio.paused) { // 一時停止
+                currentPlayAudio.pause();
+                playBtn.innerHTML = playBtnSvg;
 
             } else {
-                document.getElementById(musicID).loop = false;
-                loopBtn.classList.remove('active');
+                console.log('unidentified error');
             }
         }
-        
 
+        const musicStop = (musicID) => { // 停止
+            const playBtn = document.getElementById(musicID + '-play');
+            const playTime = document.getElementById(musicID + '-time');
+
+            if (currentPlayAudio) {
+                if (currentPlayAudio.id === musicID) {
+                    currentPlayAudio.pause();
+                    currentPlayAudio.currentTime = 0;
+                    currentPlayAudio = null;
+                    playBtn.innerHTML = playBtnSvg;
+                    console.log('music stopped');
+                }
+            }
+        }
+
+        const toggleLoop = (musicID) => {
+            const loopBtn = document.getElementById(musicID + '-loop');
+            loopBtn.classList.toggle('active');
+            document.getElementById(musicID).loop = !document.getElementById(musicID).loop;
+        }
+        
+        const toTime = (time) => {
+            const sec = Math.trunc(time) % 60;
+            const min = Math.trunc(time / 60);
+            const sec_str = (sec < 10) ? '0' + sec : sec.toString();
+            return min.toString() + ':' + sec_str;
+        }
+        
     </script>
 
 
