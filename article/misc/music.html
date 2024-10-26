@@ -108,21 +108,19 @@
                 const timeE = document.getElementById(musicID + '-time');
                 const dur = toTime(document.getElementById(musicID).duration);
                 timeE.innerHTML = toTime(this.currentTime) + ' / ' + dur;
-                console.log('timeupdate listener fired, ' + this.id);
+                // console.log('timeupdate listener fired, ' + this.id);
             }, false);
             audioList[i].addEventListener('ended', function() { // 最後まで再生された場合の処理
                 const musicID = this.id;
                 const playBtn = document.getElementById(musicID + '-play');
                 const playTime = document.getElementById(musicID + '-time');
+                playTime.innerHTML = '0:00 / ' + toTime(this.duration);
                 currentPlayAudio = null;
                 playBtn.innerHTML = playBtnSvg;
-                playTime.innerHTML = '-:-- / -:--';
-                console.log('ended listener fired, ' + this.id);
+                // console.log('ended listener fired, ' + this.id);
             }, false);
         }
         
-        
-
         const musicPlayPause = (musicID) => {
             const playBtn = document.getElementById(musicID + '-play');
             const playTime = document.getElementById(musicID + '-time');
@@ -147,7 +145,7 @@
                 currentPlayAudio.play();
                 playBtn.innerHTML = pauseBtnSvg;
 
-                console.log('new song started');
+                // console.log('new song started');
 
             } else if (currentPlayAudio.paused) { // 再開
                 currentPlayAudio.play();
@@ -172,7 +170,7 @@
                     currentPlayAudio.currentTime = 0;
                     currentPlayAudio = null;
                     playBtn.innerHTML = playBtnSvg;
-                    console.log('music stopped');
+                    // console.log('music stopped');
                 }
             }
         }
