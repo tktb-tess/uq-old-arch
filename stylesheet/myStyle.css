@@ -112,10 +112,33 @@ table > * > * > td {
     
 }
 
-.page-top-button {
+#page-top-button {
     position: fixed;
     right: 20px;
     bottom: 20px;
+    transition: var(--my-transition);
+    visibility: hidden;
+    opacity: 0;
+    
+
+    &.visible {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    button.btn {
+        padding-left: 8px;
+        padding-right: 8px;
+        padding-top: 6px;
+        padding-bottom: 10px;
+    }
+
+    .bi-chevron-up {
+        display: inline;
+        fill: currentColor;
+        vertical-align: middle;
+        height: 25px;
+    }
 }
 
 .bg-deep-blue {
@@ -126,12 +149,7 @@ table > * > * > td {
     color: rgb(var(--my-link-color-rgb))!important;
 }
 
-.bi-chevron-up {
-    display: inline;
-    fill: currentColor;
-    vertical-align: text-bottom;
-    height: 27px;
-}
+
 
 .noto-sans-jp {
     font-family: 'Noto Sans JP', sans-serif;
