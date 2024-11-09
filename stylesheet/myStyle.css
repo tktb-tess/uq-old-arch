@@ -22,7 +22,10 @@
     --my-dark-color: var(--bs-body-color);
     --my-light-color: var(--bs-light);
     --serif-font: 'Times New Roman', 'Noto Serif JP', serif;
+    --serif-font-la: 'Times New Roman', serif;
+    --ipa-font: 'Brill', 'Times New Roman', serif;
     --sans-font: myInter, 'Arial', 'Helvetica Neue', 'Noto Sans JP', sans-serif;
+    --sans-font-la: myInter, 'Arial', 'Helvetica Neue', sans-serif;
     --my-transition: 150ms ease-in-out;
     --my-transition2: 70ms ease-in-out;
 }
@@ -85,16 +88,20 @@ a {
 }
 
 .article-font {
-    font-family: 'Times New Roman', serif;
+    font-family: var(--serif-font-la);
 }
 
 .article-font-jp {
     font-family: 'Zen Antique', serif;
 }
 
-.ipa,
 .l-serif {
-    font-family: 'Times New Roman', serif;
+    font-family: var(--serif-font-la);
+}
+
+.ipa {
+    font-family: var(--ipa-font);
+    font-size: 1.1em;
 }
 
 table > * > * > th {
