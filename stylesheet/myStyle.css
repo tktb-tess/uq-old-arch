@@ -4,28 +4,18 @@
 /* Noto Sans JP + SC, Noto Serif JP, Zen Antique */
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Noto+Sans+SC:wght@100..900&family=Noto+Serif+JP:wght@200..900&family=Zen+Antique&display=swap');
 
-@font-face {
-    font-family: myInter;
-    font-style: normal;
-    src: url("../font/Inter/Inter-VariableFont_opsz\,wght.ttf") format("truetype");
-}
-
-@font-face {
-    font-family: myInter;
-    font-style: italic;
-    src: url("../font/Inter/Inter-Italic-VariableFont_opsz\,wght.ttf") format("truetype");
-}
+@import url("myStyle-font-face.css");
 
 :root {
     --my-heading-color-rgb: 26, 54, 88;
     --my-link-color-rgb: 0, 71, 179;
     --my-dark-color: var(--bs-body-color);
     --my-light-color: var(--bs-light);
-    --serif-font: 'Times New Roman', 'Noto Serif JP', serif;
-    --serif-font-la: 'Times New Roman', serif;
-    --ipa-font: 'Brill', 'Times New Roman', serif;
-    --sans-font: myInter, 'Arial', 'Helvetica Neue', 'Noto Sans JP', sans-serif;
-    --sans-font-la: myInter, 'Arial', 'Helvetica Neue', sans-serif;
+    --serif-font: UQWebSerif, 'Times New Roman', 'Noto Serif JP', serif;
+    --serif-font-la: UQWebSerif, 'Times New Roman', serif;
+    --ipa-font: UQWebSerif, 'Times New Roman', serif;
+    --sans-font: Inter28, 'Arial', 'Helvetica Neue', 'Noto Sans JP', sans-serif;
+    --sans-font-la: Inter28, 'Arial', 'Helvetica Neue', sans-serif;
     --my-transition: 150ms ease-in-out;
     --my-transition2: 70ms ease-in-out;
 }
@@ -101,7 +91,7 @@ a {
 
 .ipa {
     font-family: var(--ipa-font);
-    font-size: 1.1em;
+    font-size: 1.0em;
 }
 
 table > * > * > th {
@@ -174,7 +164,7 @@ table > * > * > td {
 }
 
 .l-sans {
-    font-family: myInter, 'Arial', 'Helvetica Neue', sans-serif;
+    font-family: Inter28, 'Arial', 'Helvetica Neue', sans-serif;
 }
 
 
