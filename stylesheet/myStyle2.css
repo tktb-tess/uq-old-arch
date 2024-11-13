@@ -3,17 +3,7 @@
 /* Import Noto Sans + Serif JP */
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Noto+Serif+JP:wght@200..900&display=swap');
 
-@font-face {
-    font-family: myInter;
-    font-style: normal;
-    src: url("../font/Inter/Inter-VariableFont_opsz\,wght.ttf") format("truetype");
-}
-
-@font-face {
-    font-family: myInter;
-    font-style: italic;
-    src: url("../font/Inter/Inter-Italic-VariableFont_opsz\,wght.ttf") format("truetype");
-}
+@import url(myStyle-font-face.css);
 
 *, *::before, *::after {
     box-sizing: border-box;
@@ -28,7 +18,7 @@
     --mycolor-gray3: #747474;
     --my-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
     --my-shadow2: 0 0 0.25rem 0.125rem rgba(0, 0, 0, 0.075);
-    --sans-font: myInter, 'Arial', 'Noto Sans JP', sans-serif;
+    --sans-font: Inter28pt, 'Arial', 'Noto Sans JP', sans-serif;
     --serif-font: 'Brill', 'Times New Roman', 'Noto Serif JP', serif;
     --size-h1: calc(1.3rem + 1.2vw);
     --size-h2: calc(1.275rem + 0.3vw);

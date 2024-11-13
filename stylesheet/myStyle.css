@@ -11,11 +11,11 @@
     --my-link-color-rgb: 0, 71, 179;
     --my-dark-color: var(--bs-body-color);
     --my-light-color: var(--bs-light);
-    --serif-font: UQWebSerif, 'Times New Roman', 'Noto Serif JP', serif;
-    --serif-font-la: UQWebSerif, 'Times New Roman', serif;
-    --ipa-font: UQWebSerif, 'Times New Roman', serif;
-    --sans-font: Inter28, 'Arial', 'Helvetica Neue', 'Noto Sans JP', sans-serif;
-    --sans-font-la: Inter28, 'Arial', 'Helvetica Neue', sans-serif;
+    --serif-font: 'UQ Web Serif', 'Times New Roman', 'Noto Serif JP', serif;
+    --serif-font-la: 'UQ Web Serif', 'Times New Roman', serif;
+    --ipa-font: 'UQ Web Serif', 'Times New Roman', serif;
+    --sans-font: Inter28pt, 'Arial', 'Helvetica Neue', 'Noto Sans JP', sans-serif;
+    --sans-font-la: Inter28pt, 'Arial', 'Helvetica Neue', sans-serif;
     --my-transition: 150ms ease-in-out;
     --my-transition2: 70ms ease-in-out;
 }
@@ -164,7 +164,7 @@ table > * > * > td {
 }
 
 .l-sans {
-    font-family: Inter28, 'Arial', 'Helvetica Neue', sans-serif;
+    font-family: Inter28pt, 'Arial', 'Helvetica Neue', sans-serif;
 }
 
 

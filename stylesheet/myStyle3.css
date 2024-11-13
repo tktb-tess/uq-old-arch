@@ -1,25 +1,12 @@
-@charset "utf-8";
+@charset "UTF-8";
 
 /* Import Inter + Noto Sans/Serif JP */
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans+JP:wght@100..900&family=Noto+Serif+JP:wght@200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Noto+Serif+JP:wght@200..900&display=swap');
 
-@font-face {
-    font-family: myTibetan;
-    font-style: normal;
-    src: url("../font/NotoSerifTibetan/NotoSerifTibetan-VariableFont_wght.ttf");
-}
+/* Import Noto Serif Tibetan */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Tibetan:wght@100..900&display=swap');
 
-@font-face {
-    font-family: myInter;
-    font-style: normal;
-    src: url("../font/Inter/Inter-VariableFont_opsz\,wght.ttf");
-}
-
-@font-face {
-    font-family: myInter;
-    font-style: italic;
-    src: url("../font/Inter/Inter-Italic-VariableFont_opsz\,wght.ttf");
-}
+@import url(myStyle-font-face.css);
 
 *, *::before, *::after {
     box-sizing: border-box;
@@ -34,8 +21,8 @@
     --mycolor-gray3: #747474;
     --my-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
     --my-shadow2: 0 0 0.25rem 0.125rem rgba(0, 0, 0, 0.075);
-    --sans-font: myInter, Arial, myTibetan, 'Noto Sans JP', sans-serif;
-    --serif-font: 'Brill', 'Times New Roman', myTibetan, 'Noto Serif JP', serif;
+    --sans-font: Inter28pt, Arial, 'Noto Serif Tibetan', 'Noto Sans JP', sans-serif;
+    --serif-font: 'Brill', 'Times New Roman', 'Noto Serif Tibetan', 'Noto Serif JP', serif;
     --size-h1: calc(1.3rem + 1.2vw);
     --size-h2: calc(1.275rem + 0.3vw);
     --size-h3: 1.25rem;
@@ -235,13 +222,17 @@ table {
         background-color: var(--mycolor-gray2);
     }
 
-    &.text-centre > * > * > td,
-    &.text-centre > * > * > th {
+    &.text-centre-td > * > * > td,
+    &.text-centre-th > * > * > th,
+    &.text-centre-tdth > * > * > td,
+    &.text-centre-tdth > * > * > th {
         text-align: center;
     }
 
-    &.text-right > * > * > td,
-    &.text-right > * > * > th {
+    &.text-right-td > * > * > td,
+    &.text-right-th > * > * > th,
+    &.text-right-tdth > * > * > td,
+    &.text-right-tdth > * > * > th {
         text-align: right;
     }
 }

@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>日本語 チベット文字表記</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="../../stylesheet/myStyle3.css">
+</head>
+
+<body>
+	<div class="container">
+		<h1 class="article" id="article">ནི་ཧོཾ་གོ་</h1>
+		<p><a class="link-deep-blue" href="../../">←戻る</a></p>
+		<h2 id="onsetsukoozoo">
+			音節構造　ཨོཾ་སེ་ཙཀཽ་ཛཽ་</h2>
+		<p>先に音節構造の話からする。</p>
+		<p>
+			日本語の音節構造は最大で C<sub>1</sub>C<sub>2</sub>G<sub>1</sub>VG<sub>2</sub> である。<br>
+			ここで、C は子音、G はグライド、V は音節主音（主に母音）である。
+		</p>
+		<p>
+			なお、この音節構造は<a href="https://github.com/NihongoTopics/Kyouro/blob/e15c34cddf5338fb81c8eb006ecec7edcfdf5fa4/Proposing%20a%20new%20romanization%20system%20of%20Japanese%20(book).pdf">教育ローマ字</a>の資料内で提案されているものである。より詳しい話はそちらを直接参照するのが良い。
+		</p>
+		<h3 id="c">C</h3>
+		<p>
+			C は 無し・C<sub>2</sub>・C<sub>1</sub>C<sub>2</sub> のいずれかである。ただし C<sub>1</sub>C<sub>2</sub> の場合、C<sub>1</sub> と
+			C<sub>2</sub> 双方ともに無声子音である。<br>
+			従来 i, u が「無声化」していると考えられてきた部分は実際には母音が脱落しており、<br>
+			C<sub>1</sub>C<sub>2</sub> はそこに現れている子音クラスターで、<br>
+			C<sub>1</sub> は、u が脱落したならそのまま、i が脱落したなら硬口蓋化する。<br>
+			C<sub>2</sub> には全ての子音、C<sub>1</sub> には全ての無声子音とその硬口蓋化音が現れる。<br>
+			C<sub>1</sub>, C<sub>2</sub> いずれも長くなれる。
+		</p>
+		<h3 id="g">G</h3>
+		<p>
+			G<sub>1</sub> の存在は任意で y のみが来る。y は前の子音を硬口蓋化する。<br>
+			G<sub>2</sub> の存在も任意で ĭ, n̆ の他、わずかな例で ĕ, ŭ も現れる。<br>
+			（ブレーヴェは C や V と区別するために付している。）<br>
+			ただし V が長いときは G<sub>2</sub> は現れない。<br>
+			ĭ は V が a, u, o の時に現れ、ĕ, ŭ は V が a の時のみ現れる。n̆ はいずれの場合にも現れ得る。</p>
+		<h3 id="v">V</h3>
+		<p>V は a, i, u, e, o の他わずかに ɴ が現れる（区別のため small capital を用いている。）<br>
+			ɴ が V の時は C や G は現れない。また ɴ 以外は長くなれる。
+		</p>
+		<hr>
+		<p>以下、下の様な記号を用いて表すこととする。</p>
+		<p>
+			C<sub>1</sub> = {∅, k<sup>u</sup>, k<sup>i</sup>, s<sup>u</sup>, š<sup>u</sup>, š<sup>i</sup>, t<sup>u</sup>,
+			t<sup>i</sup>, c<sup>u</sup>, č<sup>u</sup>, č<sup>i</sup>, f<sup>u</sup>, h<sup>i</sup>, p<sup>u</sup>,
+			p<sup>i</sup>}<br>
+			C<sub>2</sub> = {∅, k, g, s, z, š, ž, t, d, c, č, n, h, f, b, p, m, y, r, w}<br>
+			G<sub>1</sub> = {∅, y}<br>
+			V = {a, i, u, e, o, ɴ}<br>
+			G<sub>2</sub> = {∅, ĭ, n̆, ĕ, ŭ}
+		</p>
+		<p>
+			ただし、上付きの i, u は脱落した母音を表し、š, ž, c, č はそれぞれシャ行、ジャ行、ツァ行、チャ行の子音を表す。<br>
+			長子音は2重にすることで示し、長母音は上にマクロンを付すことで示す。
+		</p>
+		<h2 id="moji">文字　མོ་ཇི་</h2>
+		<p>音節は <em>tseg</em>「་」で区切る。</p>
+		<p>基本的な文字は以下の通り。</p>
+		<div class="table-container">
+			<table class="text-centre-tdth">
+				<thead>
+					<tr>
+						<th>発音</th>
+						<th>文字</th>
+						<th>発音</th>
+						<th>文字</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>a</td>
+						<td>ཨ</td>
+						<td>-</td>
+						<td>-</td>
+					</tr>
+					<tr>
+						<td>ka</td>
+						<td>ཀ</td>
+						<td>ga</td>
+						<td>ག</td>
+					</tr>
+					<tr>
+						<td>sa</td>
+						<td>ས</td>
+						<td>za</td>
+						<td>ཛ</td>
+					</tr>
+					<tr>
+						<td>ša</td>
+						<td>ཤ</td>
+						<td>ža</td>
+						<td>ཇ</td>
+					</tr>
+					<tr>
+						<td>ta</td>
+						<td>ཏ</td>
+						<td>da</td>
+						<td>ད</td>
+					</tr>
+					<tr>
+						<td>ca</td>
+						<td>ཙ</td>
+						<td>ča</td>
+						<td>ཅ</td>
+					</tr>
+					<tr>
+						<td>pa</td>
+						<td>པ</td>
+						<td>ba</td>
+						<td>བ</td>
+					</tr>
+					<tr>
+						<td>ma</td>
+						<td>མ</td>
+						<td>na</td>
+						<td>ན</td>
+					</tr>
+					<tr>
+						<td>ha</td>
+						<td>ཧ</td>
+						<td>ra</td>
+						<td>ར</td>
+					</tr>
+					<tr>
+						<td>ya</td>
+						<td>ཡ</td>
+						<td>wa</td>
+						<td>ཝ</td>
+					</tr>
+					<tr>
+						<td>fa</td>
+						<td>ཕ</td>
+						<td>-</td>
+						<td>-</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<p>文字は後に示す母音記号が無ければ、後ろに母音 a が付いているものとして読む。</p>
+
+		<h3 id="vowel-mark">母音記号　བོ་ཨིཾ་ཀི་གཽ་</h3>
+		<div class="table-container">
+			<table class="text-centre-tdth">
+				<thead>
+					<tr>
+						<th>発音</th>
+						<th>文字</th>
+						<th>ཀ での例</th>
+						<th>発音</th>
+						<th>文字</th>
+						<th>ཀ での例</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>a</td>
+						<td>-</td>
+						<td>ཀ</td>
+						<td>ā</td>
+						<td>◌ཱ</td>
+						<td>ཀཱ</td>
+					</tr>
+					<tr>
+						<td>i</td>
+						<td>◌ི</td>
+						<td>ཀི</td>
+						<td>ī</td>
+						<td>◌ཱི</td>
+						<td>ཀཱི</td>
+					</tr>
+					<tr>
+						<td>u</td>
+						<td>◌ུ</td>
+						<td>ཀུ</td>
+						<td>ū</td>
+						<td>◌ཱུ</td>
+						<td>ཀཱུ</td>
+					</tr>
+					<tr>
+						<td>e</td>
+						<td>◌ེ</td>
+						<td>ཀེ</td>
+						<td>ē</td>
+						<td>◌ཻ</td>
+						<td>ཀཻ</td>
+					</tr>
+					<tr>
+						<td>o</td>
+						<td>◌ོ</td>
+						<td>ཀོ</td>
+						<td>ō</td>
+						<td>◌ཽ</td>
+						<td>ཀཽ</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		
+		<p>a 以外の母音は上の様な母音記号を付けることで表す。<br>長母音は下に  ཱ を付けるか、線を二重にして表す。</p>
+		<h3 id="geminated-cons">長子音　ཅཽ་ཤི་ཨིཾ་</h3>
+		<p>長子音（促音）は、左側に <em>nyis tsheg shad</em>「༐」を付して表す。</p>
+		<div class="table-container">
+			<table class="text-centre-tdth">
+				<thead>
+					<tr>
+						<th></th>
+						<th>文字</th>
+						<th>例</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>C̄</td>
+						<td>༐◌</td>
+						<td>༐ཀ (kka)</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		
+		<h3 id="cons-cluster">子音クラスター　ཤི་ཨིཾ་ཀུ་ར་སྟཱ་</h3>
+		<p>
+			子音クラスター C<sub>1</sub>C<sub>2</sub> は1つの音節内（<em>tseg</em> と次の <em>tseg</em> の間）で文字を縦あるいは横に並べて表す。<br>
+			縦か横かで違いはない。（例: ナスカ na.s<sup>u</sup>ka = ན་སྐ or ན་སཀ）
+		</p>
+		<p>
+			ཤ (š), ཅ (č) 以外は、何もつけず並べると C<sup>u</sup> を表す。C<sup>i</sup> を表記する場合は  ྱ (y) を付す。<br>
+			一方 ཤ (š), ཅ (č) では、何もつけないと C<sup>i</sup> を表す。C<sup>u</sup> を表記する場合は  ྭ (w) を付す。
+		</p>
+		<div class="table-container">
+			<table class="text-centre-tdth">
+				<thead>
+					<tr>
+						<th></th>
+						<th>文字</th>
+						<th>例</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>C<sup>u</sup> (C ≠ š, č), {š, č}<sup>i</sup></td>
+						<td>各文字単独</td>
+						<td>ཙཀི (月 c<sup>u</sup>ki), ཤཏ (下 š<sup>i</sup>ta)</td>
+					</tr>
+					<tr>
+						<td>{š, č}<sup>u</sup></td>
+						<td>ཤྭ, ཅྭ</td>
+						<td>ཤྭཏའི (主体 š<sup>u</sup>taĭ)</td>
+					</tr>
+					<tr>
+						<td>C<sup>i</sup> (C ≠ š, č)</td>
+						<td>◌ྱ</td>
+						<td>ཧྱཙུ་ཡཽ (必要 h<sup>i</sup>cu.yō)</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		
+		<h3 id="glides">グライド　གུ་རའི་དོ་</h3>
+		<p>
+			G<sub>1</sub> y は音節核の字に  ྱ (y) を付す。G<sub>2</sub> ĭ, ĕ, ŭ は、それぞれ右側に འི, འེ, འུ を付して表す。n̆ は、核の字に  ཾ を付して表す。
+		</p>
+		<div class="table-container">
+			<table class="text-centre-tdth">
+				<thead>
+					<tr>
+						<th>種類</th>
+						<th>文字</th>
+						<th>ཀ での例</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>G<sub>1</sub> <em>y</em>（拗音）</td>
+						<td>◌ྱ</td>
+						<td>ཀྱ (kya)</td>
+					</tr>
+					<tr>
+						<td>G<sub>2</sub> <em>ĭ</em></td>
+						<td>◌འི</td>
+						<td>ཀའི (kaĭ)</td>
+					</tr>
+					<tr>
+						<td>G<sub>2</sub> <em>n̆</em>（撥音）</td>
+						<td>◌ཾ</td>
+						<td>ཀཾ (kan̆)</td>
+					</tr>
+					<tr>
+						<td>G<sub>2</sub> <em>ĕ</em></td>
+						<td>◌འེ</td>
+						<td>ཀའེ (kaĕ)</td>
+					</tr>
+					<tr>
+						<td>G<sub>2</sub> <em>ŭ</em></td>
+						<td>◌འུ</td>
+						<td>ཀའུ (kaŭ)</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		
+		<h3 id="arranging">字の配置について　ཇི་ནོ་ ཧའི་ཅི་ནི་ ཙུའི་ཏེ་</h3>
+		<p>上に挙げた子音クラスター、拗音グライド G<sub>1</sub> など、字を上下に重ねるものは、それを左右に並べて表記しても問題ない。</p>
+		<p>「畢竟 (h<sup>i</sup>kkyō)」は ཧྱ༐ཀྱཽ, ཧྱ༐ཀཡཽ, ཧཡ༐ཀཡཽ の全てが許される。</p>
+
+		<h2 id="distinguish">音節核の見分け方　ཨོཾ་སེ་ཙཀ་ཀུ་ནོ་ མི་ཝ་ཀེ་ཀ་ཏ་</h2>
+		<p><em>tseg</em> の中が1文字の時、それが音節核である。</p>
+		<p>2文字以上の場合、</p>
+		<p>
+			母音記号が付いていればそこが音節核、<br>
+			また、無声子音の字が並んでいる、または「無声子音 + ཡ or ཝ + 無声子音」のように並んでいるとき、右側の無声子音字が音節核である。<br>
+			また、グライドの字 (འི, འེ, འུ) があれば、その直前が音節核である。
+		</p>
+
+		<h2 id="wakachigaki">分かち書き　ཝ་ཀ་ཅི་ག་ཀ་</h2>
+		<p>
+			チベット語において通常分かち書きはしないが、この表記では文節毎にスペースを入れることも可能とする。（入れなくてもよい）<br>
+			ただし末尾に <em>tseg</em> を付ける。
+		</p>
+		<p>
+			読点には <em>gter tsheg</em>「༔」を使い、句点には <em>shad</em>「།」を使う。これらが付く際 <em>tseg</em> は不要。
+			段落の終わりには <em>nyis shad</em> 「༎」を使う。
+		</p>
+		<p>例:</p>
+		<p>ཀྱཽ་ནོ་ ཨ་ས༔ ཝ་ཏ་ཤི་ཝ་ རཾ་ནིཾ་གུ་ཨོ་ ཤྟ། —— 今日の朝、私はランニングをした。</p>
+		
+		<h2 id="ex-words">例 単語　རཻ ཏཾ་གོ</h2>
+		<div class="table-container">
+			<table class="text-centre-tdth">
+				<thead>
+					<tr>
+						<th>単語</th>
+						<th>音節構造</th>
+						<th>表記</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>神</td>
+						<td>ka.mi</td>
+						<td>ཀ་མི</td>
+					</tr>
+					<tr>
+						<td>階段</td>
+						<td>kaĭ.dan̆</td>
+						<td>ཀའི་དཾ</td>
+					</tr>
+					<tr>
+						<td>北</td>
+						<td>k<sup>i</sup>ta</td>
+						<td>ཀྱཏ</td>
+					</tr>
+					<tr>
+						<td>浅草</td>
+						<td>a.sa.k<sup>u</sup>sa</td>
+						<td>ཨ་ས་ཀྶ</td>
+					</tr>
+					<tr>
+						<td>区間</td>
+						<td>k<sup>u</sup>kan̆</td>
+						<td>ཀཀཾ</td>
+					</tr>
+					<tr>
+						<td>即興</td>
+						<td>so.kkyō</td>
+						<td>ས་༐ཀྱཽ</td>
+					</tr>
+					<tr>
+						<td>楽器店</td>
+						<td>ga.kk<sup>i</sup>ten̆</td>
+						<td>ག་༐ཀྱཏེཾ</td>
+					</tr>
+					<tr>
+						<td>死刑執行</td>
+						<td>š<sup>i</sup>kē.š<sup>i</sup>kkō</td>
+						<td>ཤཀཻ་ཤ༐ཀཽ</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		
+		<h2 id="ex-sentence">例文</h2>
+		<h3 id="indoorkei-nara-trackmaker">Yunomi &amp; Nicamoq - インドア系ならトラックメイカー ドロップ部分</h3>
+		<p><a href="https://youtu.be/su0FCBRwVpE?si=C8f06FSj1__Qb9u2">ようつべ</a></p>
+		<p>ཨོ་ཤ་རེ་ནོ་ ཀྱོ་ཀཅི་ད་ ཕ་༐ཤོཾ་སེཾ་ཏཱ་</p>
+		<p>རྱཽ་ཏེ་ཨོ་ ཀ་ཀ་གེ་ཏེ་ ཀུ་ར་༐པྱོ་ཧེཾ་ཛ་</p>
+		<p>ཇཱ་ཇི་ནི་ ཝའི་ཤ་ཙུ་ ཛེ་༐ཏའི་ཧེཾ་ད་</p>
+		<p>ཨེ་མུ་ཨའི་དཱི་ཨའི་ ཏོ་ར་༐ཀུ་མེ་ཨི་ཀཱ་</p>
+		<p>ཨོ་ཤ་རེ་ནོ་ སཻ་ཅི་ད་ ཕ་༐ཤོཾ་སེཾ་ཏཱ་</p>
+		<p>རྱཽ་ཏེ་ཨོ་ ཀ་ཀ་གེ་ཏེ་ ཀུ་ར་པཔྱོ་ཧེཾ་ཛ་</p>
+		<p>ནཽ་ཀི་ཝ་ ཨ་ཤྟ་ད་ ཛེ་༐ཏའི་ ཏེ་ཙུ་ཡ་</p>
+		<p>ཨེ་བི་དེ་ཨི་ ཨེ་བི་ནའི་ ཏོ་ར་༐ཀུ་མེ་ཨི་ཀཱ་</p>
+		<h5>漢字かな表記</h5>
+		<p>お洒落の極地だ ファッションセンター</p>
+		<p>両手を掲げて クラッピョヘンザ</p>
+		<p>ジャージにワイシャツ 絶対ヘンだ</p>
+		<p>M・I・D・I トラックメイカー</p>
+		<p>お洒落の聖地だ ファッションセンター</p>
+		<p>両手を掲げて クラッピョヘンザ</p>
+		<p>納期は明日だ 絶対徹夜</p>
+		<p>エビデイ エビナイ トラックメイカー</p>
+	</div>
+
+</body>
+
+</html>
