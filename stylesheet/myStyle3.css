@@ -149,14 +149,18 @@ p, ul {
 }
 
 hr {
-    margin: 2rem 0;
-    border: none;
-    text-align: center;
-    color: #00000091;
 
-    &::after {
-        content: '〜〜〜';
+    &.section {
+        margin: 2rem 0;
+        border: none;
+        text-align: center;
+        color: #00000091;
+
+        &::after {
+            content: '〜〜〜';
+        }
     }
+    
 }
 
 p {
