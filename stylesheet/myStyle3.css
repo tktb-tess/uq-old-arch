@@ -150,17 +150,12 @@ p, ul {
 
 hr {
 
-    &.section {
-        margin: 2rem 0;
-        border: none;
-        text-align: center;
-        color: #00000091;
-
-        &::after {
-            content: '〜〜〜';
-        }
-    }
     
+    margin: 1.75rem auto;
+    border: none;
+    border-top: double 3px;
+    width: 80px;
+    color: #0000005d;
 }
 
 p {
