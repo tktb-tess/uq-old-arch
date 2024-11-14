@@ -14,7 +14,7 @@
 
 :root {
     --mycolor-white: #f8f9fa;
-    --mycolor-darkgray: #1d3641;
+    --mycolor-darkblue: #1d3641;
     --mycolor-blue-rgb: 29, 58, 155;
     --mycolor-gray: #cfcfcf;
     --mycolor-gray2: rgba(0, 0, 0, 0.05);
@@ -87,7 +87,7 @@ body {
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--sans-font);
     font-weight: 400;
-    color: var(--mycolor-darkgray);
+    color: var(--mycolor-darkblue);
     margin-top: 1.5rem;
     margin-bottom: 1.0rem;
 }
@@ -101,8 +101,8 @@ h1 {
         text-wrap: nowrap;
         margin: 1.25rem auto;
         max-width: 85%;
-        padding-top: 0.2rem;
-        padding-bottom: 0.55rem;
+        padding-top: 1.0rem;
+        padding-bottom: 0;
         box-shadow: var(--my-shadow2);
         border-radius: 10px;
     }
@@ -116,9 +116,9 @@ h1 {
 
 h2 {
     font-size: var(--size-h2);
-    border-bottom: double 3px var(--mycolor-darkgray);
+    border-bottom: double 3px var(--mycolor-darkblue);
     padding-left: 0.375rem;
-    line-height: 1.4;
+    line-height: 1.75;
 }
 
 h3 {
@@ -149,9 +149,7 @@ p, ul {
 }
 
 hr {
-
-    
-    margin: 1.75rem auto;
+    margin: 2.0rem auto;
     border: none;
     border-top: double 3px;
     width: 80px;
@@ -203,18 +201,28 @@ table {
     > * > * > td {
         border: solid 1px;
         border-color: var(--mycolor-gray);
-        padding: 0.3em 0.6em;
-        vertical-align: middle;
+        vertical-align: text-bottom;
         text-wrap: nowrap;
+        padding-left: 0.6rem;
+        padding-right: 0.6rem;
     }
 
     > * > * > td {
         text-align: left;
+        padding-top: 0.5rem;
+        padding-bottom: 0;
     }
 
     > * > * > th {
         font-weight: 500;
         text-align: center;
+        padding-top: 0.3rem;
+        padding-bottom: 0.3rem;
+
+        &.tibetan {
+            padding-top: 0.5rem;
+            padding-bottom: 0;
+        }
     }
 
     > * > tr:nth-child(even) {
@@ -237,23 +245,23 @@ table {
 }
 
 .font-sans {
-    font-family: var(--sans-font);
+    font-family: var(--sans-font)!important;
 }
 
 .font-serif {
-    font-family: var(--serif-font);
+    font-family: var(--serif-font)!important;
 }
 
 .text-centre {
-    text-align: center;
+    text-align: center!important;
 }
 
 .text-left {
-    text-align: left;
+    text-align: left!important;
 }
 
 .text-right {
-    text-align: right;
+    text-align: right!important;
 }
 
 .bi-box-arrow-up-right {
