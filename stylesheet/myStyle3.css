@@ -22,7 +22,7 @@
     --my-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
     --my-shadow2: 0 0 0.25rem 0.125rem rgba(0, 0, 0, 0.075);
     --sans-font: Inter28pt, Arial, 'Noto Serif Tibetan', 'Noto Sans JP', sans-serif;
-    --serif-font: 'UQ Web Serif', 'Brill', 'Times New Roman', 'Noto Serif Tibetan', 'Noto Serif JP', serif;
+    --serif-font: 'UQ Web Serif', Brill, 'Times New Roman', 'Noto Serif Tibetan', 'Noto Serif JP', serif;
     --size-h1: calc(1.3rem + 1.2vw);
     --size-h2: calc(1.275rem + 0.3vw);
     --size-h3: 1.25rem;
