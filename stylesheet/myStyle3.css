@@ -22,7 +22,7 @@
     --my-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
     --my-shadow2: 0 0 0.25rem 0.125rem rgba(0, 0, 0, 0.075);
     --sans-font: Inter28pt, Arial, 'Noto Serif Tibetan', 'Noto Sans JP', sans-serif;
-    --serif-font: 'Brill', 'Times New Roman', 'Noto Serif Tibetan', 'Noto Serif JP', serif;
+    --serif-font: 'UQ Web Serif', 'Brill', 'Times New Roman', 'Noto Serif Tibetan', 'Noto Serif JP', serif;
     --size-h1: calc(1.3rem + 1.2vw);
     --size-h2: calc(1.275rem + 0.3vw);
     --size-h3: 1.25rem;
@@ -45,11 +45,15 @@ body {
     margin: 0;
 }
 
-.container {
+.container,
+.container-fluid {
     width: 100%;
     min-height: 100vh;
     margin: 0 auto;
     padding: 1px 0.75rem;
+}
+
+.container {
     box-shadow: var(--my-shadow2);
 }
 
@@ -86,8 +90,11 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--sans-font);
-    font-weight: 400;
     color: var(--mycolor-darkblue);
+}
+
+h2, h3, h4, h5, h6 {
+    font-weight: 400;
     margin-top: 1.5rem;
     margin-bottom: 1.0rem;
 }
@@ -95,7 +102,8 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
     font-size: var(--size-h1);
-
+    font-weight: 500;
+    
     &.article {
         text-align: center;
         text-wrap: nowrap;
