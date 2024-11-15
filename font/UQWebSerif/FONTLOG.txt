@@ -1,1 +1,0 @@
-Akane Tokotoba converted "Charis SIL" to woff2 format and changed name to "UQ Web Serif" in order not to use RFN in 2024.

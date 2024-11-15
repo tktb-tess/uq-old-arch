@@ -2,68 +2,68 @@
     font-family: Inter28pt;
     font-style: normal;
     font-weight: 400;
-    src: url("../font/Inter/Inter28pt.woff2") format("woff2");
+    src: url("https://tktb-tess.github.io/tktb-source/font/Inter/Inter28pt.woff2") format("woff2");
 }
 
 @font-face {
     font-family: Inter28pt;
     font-style: italic;
     font-weight: 400;
-    src: url("../font/Inter/Inter28pt-Italic.woff2") format("woff2");
+    src: url("https://tktb-tess.github.io/tktb-source/font/Inter/Inter28pt-Italic.woff2") format("woff2");
 }
 
 @font-face {
     font-family: Inter28pt;
     font-style: normal;
     font-weight: 500;
-    src: url("../font/Inter/Inter28pt-Medium.woff2") format("woff2");
+    src: url("https://tktb-tess.github.io/tktb-source/font/Inter/Inter28pt-Medium.woff2") format("woff2");
 }
 
 @font-face {
     font-family: Inter28pt;
     font-style: italic;
     font-weight: 500;
-    src: url("../font/Inter/Inter28pt-MediumItalic.woff2") format("woff2");
+    src: url("https://tktb-tess.github.io/tktb-source/font/Inter/Inter28pt-MediumItalic.woff2") format("woff2");
 }
 
 @font-face {
     font-family: Inter28pt;
     font-style: normal;
     font-weight: 700;
-    src: url("../font/Inter/Inter28pt-Bold.woff2") format("woff2");
+    src: url("https://tktb-tess.github.io/tktb-source/font/Inter/Inter28pt-Bold.woff2") format("woff2");
 }
 
 @font-face {
     font-family: Inter28pt;
     font-style: italic;
     font-weight: 700;
-    src: url("../font/Inter/Inter28pt-BoldItalic.woff2") format("woff2");
+    src: url("https://tktb-tess.github.io/tktb-source/font/Inter/Inter28pt-BoldItalic.woff2") format("woff2");
 }
 
 @font-face {
     font-family: 'UQ Web Serif';
     font-style: normal;
     font-weight: 400;
-    src: url("../font/UQWebSerif/UQwebserif.woff2") format("woff2");
+    src: url("https://tktb-tess.github.io/tktb-source/font/UQWebSerif/UQwebserif.woff2") format("woff2");
 }
 
 @font-face {
     font-family: 'UQ Web Serif';
     font-style: italic;
     font-weight: 400;
-    src: url("../font/UQWebSerif/UQwebserif-Italic.woff2") format("woff2");
+    src: url("https://tktb-tess.github.io/tktb-source/font/UQWebSerif/UQwebserif-Italic.woff2") format("woff2");
 }
 
 @font-face {
     font-family: 'UQ Web Serif';
     font-style: normal;
     font-weight: 700;
-    src: url("../font/UQWebSerif/UQwebserif-Bold.woff2") format("woff2");
+    src: url("https://tktb-tess.github.io/tktb-source/font/UQWebSerif/UQwebserif-Bold.woff2") format("woff2");
 }
 
 @font-face {
     font-family: 'UQ Web Serif';
     font-style: italic;
     font-weight: 700;
-    src: url("../font/UQWebSerif/UQwebserif-BoldItalic.woff2") format("woff2");
+    src: url("https://tktb-tess.github.io/tktb-source/font/UQWebSerif/UQwebserif-BoldItalic.woff2") format("woff2");
 }
