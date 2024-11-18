@@ -42,6 +42,7 @@ html {
 body {
     background-color: var(--mycolor-white);
     font-family: var(--sans-font);
+    font-optical-sizing: auto;
     margin: 0;
 }
 

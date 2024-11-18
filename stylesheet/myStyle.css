@@ -27,6 +27,7 @@ html {
 body {
     background-color: var(--my-light-color);
     font-family: var(--sans-font);
+    font-optical-sizing: auto;
 
     > .container,
     > .container-fluid {
