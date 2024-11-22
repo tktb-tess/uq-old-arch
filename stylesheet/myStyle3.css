@@ -160,9 +160,9 @@ p, ul {
 hr {
     margin: 2.25rem auto;
     border: none;
-    border-top: double 3px;
-    width: 80px;
-    color: #0000005d;
+    border-top: double 3px black;
+    width: 60px;
+    opacity: 0.4;
 }
 
 p {
