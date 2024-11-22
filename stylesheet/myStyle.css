@@ -158,10 +158,13 @@ hr {
     font-family: 'Noto Sans JP', sans-serif;
 }
 
-@media (min-width:768px) {
+@media (min-width: 768px) {
     .sidebar {
         overflow-y: auto;
-        height: 90vh;
+        height: 100vh;
+        scrollbar-width: thin;
+        scrollbar-color: #bbbbbb transparent;
+        
     }
 }
 
@@ -172,8 +175,6 @@ hr {
 .l-sans {
     font-family: Inter28pt, 'Arial', 'Helvetica Neue', sans-serif;
 }
-
-
 
 button.btn-audio-controls {
     transition: var(--my-transition);
