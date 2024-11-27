@@ -6,7 +6,7 @@
 /* Import Noto Serif Tibetan */
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Tibetan:wght@100..900&display=swap');
 
-@import url(myStyle-font-face.css);
+@import url('myStyle-font-face.css');
 
 *, *::before, *::after {
     box-sizing: border-box;
@@ -96,7 +96,7 @@ h1, h2, h3, h4, h5, h6 {
 
 h2, h3, h4, h5, h6 {
     font-weight: 400;
-    margin-top: 1.5rem;
+    margin-top: 0rem;
     margin-bottom: 1.0rem;
 }
 
@@ -154,7 +154,16 @@ h6 {
 p, ul {
     margin-top: 0;
     margin-bottom: 0.75rem;
-    
+    margin-left: 1.0rem;
+}
+
+ul {
+    padding-left: 1.25rem;
+
+    &.unstyled {
+        list-style: none;
+        padding-left: 0;
+    }
 }
 
 hr {
@@ -163,10 +172,6 @@ hr {
     border-top: double 3px black;
     width: 60px;
     opacity: 0.4;
-}
-
-p {
-    margin-left: 1.0rem;
 }
 
 a {
