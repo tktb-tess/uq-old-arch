@@ -11,6 +11,7 @@
     --my-link-color-rgb: 0, 71, 179;
     --my-dark-color: var(--bs-body-color);
     --my-light-color: var(--bs-light);
+    --my-gray: var(--bs-secondary);
     --serif-font: 'UQ Web Serif', 'Times New Roman', 'Noto Serif JP', serif;
     --serif-font-la: 'UQ Web Serif', Brill, 'Times New Roman', serif;
     --ipa-font: 'UQ Web Serif', 'Times New Roman', serif;
@@ -18,6 +19,7 @@
     --sans-font-la: Inter28pt, 'Arial', 'Helvetica Neue', sans-serif;
     --my-transition: 150ms ease-in-out;
     --my-transition2: 70ms ease-in-out;
+    --my-transition3: 120ms ease-in-out;
     --size-h1: calc(1.375rem + 1.5vw);
     --size-h2: calc(1.3rem + 0.6vw);
     --size-h2-1: calc(1.275rem + 0.3vw);
@@ -138,29 +140,44 @@ table > * > * > td {
 
 #page-top-button {
     position: fixed;
-    right: 20px;
-    bottom: 20px;
-    transition: var(--my-transition);
-    visibility: hidden;
+    right: 25px;
+    bottom: 25px;
+    transition: var(--my-transition2);
     opacity: 0;
-    
+    visibility: hidden;
+
     &.visible {
-        visibility: visible;
         opacity: 1;
+        visibility: visible;
     }
 
-    button.btn {
-        padding-left: 8px;
-        padding-right: 8px;
-        padding-top: 6px;
-        padding-bottom: 10px;
-    }
+    button {
+        display: block;
+        text-align: center;
+        background-color: transparent;
+        border: none;
+        border-radius: 50%;
+        padding: 12px;
+        transition: var(--my-transition3);
 
-    .bi-chevron-up {
-        display: inline;
-        fill: currentColor;
-        vertical-align: middle;
-        height: 25px;
+        #page-top-arrow {
+            padding: 8px;
+            border-top: solid 2px var(--my-gray);
+            border-right: solid 2px var(--my-gray);
+            transform: translateY(4px) rotate(-45deg);
+            transition: var(--my-transition3);
+        }
+
+        @media (hover: hover) and (pointer: fine) {
+            &:hover {
+                background-color: var(--my-gray);
+                color: var(--bs-light);
+
+                #page-top-arrow {
+                    border-color: var(--bs-light);
+                }
+            }
+        }
     }
 }
 
