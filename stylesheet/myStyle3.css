@@ -31,7 +31,6 @@
     --size-h6: 0.75rem;
     --my-transition: 80ms ease-in-out;
     --my-transition2: 120ms ease-in-out;
-    
 }
 
 html {
@@ -44,6 +43,7 @@ body {
     font-family: var(--sans-font);
     font-optical-sizing: auto;
     margin: 0;
+    padding: 0;
 }
 
 .container,
@@ -96,10 +96,9 @@ h1, h2, h3, h4, h5, h6 {
 
 h2, h3, h4, h5, h6 {
     font-weight: 500;
-    
 }
 
-p,h2,h3,h4,h5,h6,ul,ol,table {
+p, h2, h3, h4, h5, h6, ul, ol, table {
     margin-top: 0;
     margin-bottom: 1.25rem;
     line-height: 1.8;
@@ -152,7 +151,7 @@ p, ul, ol {
     margin-right: 1.0rem;
 }
 
-li>ul,li>ol {
+li > ul, li > ol {
     margin-bottom: 0.25rem;
 }
 
@@ -195,7 +194,7 @@ a {
 table {
     border-collapse: collapse;
     background-color: white;
-    box-shadow: var(--my-shadow);
+    box-shadow: none;
     display: block;
     width: max-content;
     max-width: 100%;
@@ -204,18 +203,20 @@ table {
     margin-right: auto;
     
     /* scrollbar */
-    &::-webkit-scrollbar {
-        width: 7px;
-        height: 7px;
-    }
-
-    &::-webkit-scrollbar-track {
-        background-color: var(--mycolor-white);
-    }
-
-    &::-webkit-scrollbar-thumb {
-        border-radius: 6px;
-        background-color: rgba(0, 0, 0, 0.2);
+    @media (hover: hover) and (pointer: fine) {
+        &::-webkit-scrollbar {
+            width: 7px;
+            height: 7px;
+        }
+    
+        &::-webkit-scrollbar-track {
+            background-color: var(--mycolor-white);
+        }
+    
+        &::-webkit-scrollbar-thumb {
+            border-radius: 6px;
+            background-color: rgba(0, 0, 0, 0.2);
+        }
     }
 
     > * > * > th,
@@ -257,6 +258,17 @@ table {
     &.text-right-tdth > * > * > th {
         text-align: right;
     }
+}
+
+img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
+}
+
+figure > img {
+    all: initial;
 }
 
 .font-sans {
