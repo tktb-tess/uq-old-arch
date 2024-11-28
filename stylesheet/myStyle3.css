@@ -102,7 +102,7 @@ h2, h3, h4, h5, h6 {
 p,h2,h3,h4,h5,h6,ul,ol,table {
     margin-top: 0;
     margin-bottom: 1.25rem;
-    line-height: 1.75;
+    line-height: 1.8;
 }
 
 h1 {
@@ -127,10 +127,12 @@ h2 {
 h3 {
     font-size: var(--size-h3);
     margin-left: 0.5rem;
+    margin-right: 0.5rem;
 }
 
 h4, h5, h6 {
     margin-left: 0.75rem;
+    margin-right: 0.75rem;
 }
 
 h4 {
@@ -147,6 +149,7 @@ h6 {
 
 p, ul, ol {
     margin-left: 1.0rem;
+    margin-right: 1.0rem;
 }
 
 li>ul,li>ol {
@@ -164,7 +167,7 @@ ul {
 }
 
 hr {
-    margin: 2.25rem auto;
+    margin: 4.0rem auto;
     border: none;
     border-top: double 3px rgba(0, 0, 0, 0.4);
     width: 60px;
