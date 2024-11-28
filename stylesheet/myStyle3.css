@@ -96,31 +96,25 @@ h1, h2, h3, h4, h5, h6 {
 
 h2, h3, h4, h5, h6 {
     font-weight: 400;
-    margin-top: 0rem;
-    margin-bottom: 1.0rem;
+    
 }
 
+p,h2,h3,h4,h5,h6,ul,ol,table {
+    margin-top: 0rem;
+    margin-bottom: 1.25rem;
+}
 
 h1 {
     font-size: var(--size-h1);
     font-weight: 500;
-    
-    &.article {
-        text-align: center;
-        text-wrap: nowrap;
-        margin: 1.25rem auto;
-        max-width: 85%;
-        padding-top: 1.0rem;
-        padding-bottom: 0;
-        box-shadow: var(--my-shadow2);
-        border-radius: 10px;
-    }
-
-    @media (min-width: 768px) {
-        &.article {
-            max-width: 60%;
-        }
-    }    
+    text-align: center;
+    text-wrap: nowrap;
+    margin: 1.25rem auto;
+    width: max-content;
+    padding: 1.25rem 4.0rem;
+    box-shadow: var(--my-shadow2);
+    border-radius: 25px;
+    line-height: 1.75;
 }
 
 h2 {
@@ -151,15 +145,13 @@ h6 {
     font-size: var(--size-h6);
 }
 
-p, ul {
-    margin-top: 0;
-    margin-bottom: 0.75rem;
+p, ul, ol {
     margin-left: 1.0rem;
 }
 
 ul {
-    padding-left: 1.25rem;
-
+    padding-left: 1.5rem;
+    list-style-type: "\25b8   ";
     &.unstyled {
         list-style: none;
         padding-left: 0;
@@ -193,22 +185,30 @@ a {
     
 }
 
-.table-container {
-    overflow-x: auto;
-    margin-top: 1.0rem;
-    margin-bottom: 0.25rem;
-    padding: 0 1.5rem;
-}
-
 table {
     border-collapse: collapse;
     background-color: white;
     box-shadow: var(--my-shadow);
-    margin-bottom: 0.75rem;
+    display: block;
+    width: max-content;
+    max-width: 100%;
+    overflow-x: auto;
+    margin-left: auto;
+    margin-right: auto;
+    
+    /* scrollbar */
+    &::-webkit-scrollbar {
+        width: 10px;
+        height: 10px;
+    }
 
-    &.table-center {
-        margin-left: auto;
-        margin-right: auto;
+    &::-webkit-scrollbar-track {
+        background-color: var(--mycolor-white);
+    }
+
+    &::-webkit-scrollbar-thumb {
+        border-radius: 6px;
+        background-color: rgba(0, 0, 0, 0.2);
     }
 
     > * > * > th,
