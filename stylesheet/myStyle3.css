@@ -101,6 +101,9 @@ h2, h3, h4, h5, h6 {
 p, h2, h3, h4, h5, h6, ul, ol, table {
     margin-top: 0;
     margin-bottom: 1.25rem;
+}
+
+p, h2, h3, h4, h5, h6, ul, ol {
     line-height: 1.8;
 }
 
@@ -201,6 +204,7 @@ table {
     overflow-x: auto;
     margin-left: auto;
     margin-right: auto;
+    line-height: 3.5;
     
     /* scrollbar */
     @media (hover: hover) and (pointer: fine) {
@@ -225,9 +229,7 @@ table {
         border-color: var(--mycolor-gray);
         vertical-align: text-bottom;
         text-wrap: nowrap;
-        padding-left: 0.6rem;
-        padding-right: 0.6rem;
-        line-height: 2.5;
+        padding: 0 1.25rem;
     }
 
     > * > * > td {
