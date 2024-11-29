@@ -31,6 +31,7 @@
     --size-h6: 0.75rem;
     --my-transition: 80ms ease-in-out;
     --my-transition2: 120ms ease-in-out;
+    --my-transition3: 250ms ease-in-out;
 }
 
 html {
@@ -304,7 +305,7 @@ figure > img {
     position: fixed;
     right: 25px;
     bottom: 25px;
-    transition: var(--my-transition2);
+    transition: var(--my-transition3);
     opacity: 0;
     visibility: hidden;
 
