@@ -29,6 +29,20 @@
 @font-face {
     font-family: Inter28pt;
     font-style: normal;
+    font-weight: 600;
+    src: url("https://tktb-tess.github.io/tktb-source/font/Inter/Inter28pt-SemiBold.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: Inter28pt;
+    font-style: italic;
+    font-weight: 600;
+    src: url("https://tktb-tess.github.io/tktb-source/font/Inter/Inter28pt-SemiBoldItalic.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: Inter28pt;
+    font-style: normal;
     font-weight: 700;
     src: url("https://tktb-tess.github.io/tktb-source/font/Inter/Inter28pt-Bold.woff2") format("woff2");
 }
