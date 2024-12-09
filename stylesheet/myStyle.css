@@ -93,13 +93,14 @@ a {
         }
     }
 
-    .bi-box-arrow-up-right {
+    &.ext-link::after {
+        content: url(../svg/box-arrow-up-right.svg);
         display: inline-block;
-        vertical-align: middle;
-        fill: currentColor;
-        width: 0.8rem;
+        margin-right: 0.1rem;
+        width: 0.75rem;
         height: auto;
     }
+    
 }
 
 .section-title {

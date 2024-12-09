@@ -213,7 +213,13 @@ a {
         pointer-events: none;
     }
 
-    
+    &.ext-link::after {
+        content: url(../svg/box-arrow-up-right.svg);
+        display: inline-block;
+        margin-right: 0.1rem;
+        width: 0.75rem;
+        height: auto;
+    }
 }
 
 table {
@@ -296,13 +302,6 @@ figure > img {
 
 .text-right {
     text-align: right!important;
-}
-
-.bi-box-arrow-up-right {
-    display: inline;
-    fill: currentColor;
-    vertical-align: middle;
-    height: 0.8rem;
 }
 
 #page-top-button {
