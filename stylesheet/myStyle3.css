@@ -8,24 +8,28 @@
 @font-face {
     font-family: Noto-Serif-Tibetan;
     font-weight: 400;
+    font-style: normal;
     src: url("https://tktb-tess.github.io/tktb-source/font/NotoSerifTibetan/NotoSerifTibetan-Regular.woff2") format("woff2");
 }
 
 @font-face {
     font-family: Noto-Serif-Tibetan;
     font-weight: 500;
+    font-style: normal;
     src: url("https://tktb-tess.github.io/tktb-source/font/NotoSerifTibetan/NotoSerifTibetan-Medium.woff2") format("woff2");
 }
 
 @font-face {
     font-family: Noto-Serif-Tibetan;
     font-weight: 600;
+    font-style: normal;
     src: url("https://tktb-tess.github.io/tktb-source/font/NotoSerifTibetan/NotoSerifTibetan-SemiBold.woff2") format("woff2");
 }
 
 @font-face {
     font-family: Noto-Serif-Tibetan;
     font-weight: 700;
+    font-style: normal;
     src: url("https://tktb-tess.github.io/tktb-source/font/NotoSerifTibetan/NotoSerifTibetan-Bold.woff2") format("woff2");
 }
 
@@ -56,7 +60,6 @@
 }
 
 html {
-    font-size: 1.0em;
     scroll-behavior: smooth;
 }
 
@@ -68,48 +71,26 @@ body {
     padding: 0;
 }
 
-.container,
-.container-fluid {
+#_container,
+#_container-fluid {
+    display: flow-root;
     width: 100%;
     min-height: 100vh;
     margin: 0 auto;
-    padding: 1px 0.75rem;
+    padding: 0 0.75rem;
 }
 
-.container {
+#_container {
     box-shadow: var(--my-shadow2);
-}
 
-@media (min-width: 576px) {
-    .container {
-        max-width: 540px;
-    }
-}
-
-@media (min-width: 768px) {
-    .container {
-        max-width: 720px;
-    }
-}
-
-@media (min-width: 992px) {
-    .container {
-        max-width: 960px;
-    }
-}
-
-@media (min-width: 1200px) {
-    .container {
+    @media (min-width: 1200px) {
         max-width: 1140px;
     }
-}
-
-@media (min-width: 1400px) {
-    .container {
+    @media (min-width: 1400px) {
         max-width: 1320px;
     }
-}
 
+}
 
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--sans-font);
@@ -129,7 +110,7 @@ p, h2, h3, h4, h5, h6, ul, ol {
     line-height: 1.8;
 }
 
-h1 {
+h1#title {
     font-size: var(--size-h1);
     font-weight: 500;
     text-align: center;
@@ -199,7 +180,7 @@ hr {
 
 a {
     text-decoration: none;
-    transition: var(--my-transition);
+    transition: color var(--my-transition);
     color: rgb(var(--mycolor-blue-rgb));
 
     @media (hover: hover) and (pointer: fine) {
@@ -209,7 +190,7 @@ a {
     }
 
     &.link-disabled {
-        color: initial;
+        color: revert;
         pointer-events: none;
     }
 
@@ -275,33 +256,38 @@ table {
 
 img {
     display: block;
-    margin: 0 auto;
+    margin: 2.0rem auto;
+    width: max-content;
     max-width: 100%;
     height: auto;
 }
 
 figure > img {
-    all: initial;
+    margin: 0;
+}
+
+figure > figcaption {
+    text-align: center;
 }
 
 .font-sans {
-    font-family: var(--sans-font)!important;
+    font-family: var(--sans-font) !important;
 }
 
 .font-serif {
-    font-family: var(--serif-font)!important;
+    font-family: var(--serif-font) !important;
 }
 
 .text-centre {
-    text-align: center!important;
+    text-align: center !important;
 }
 
 .text-left {
-    text-align: left!important;
+    text-align: left !important;
 }
 
 .text-right {
-    text-align: right!important;
+    text-align: right !important;
 }
 
 #page-top-button {
