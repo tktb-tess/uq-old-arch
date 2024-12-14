@@ -1,0 +1,201 @@
+@charset "utf-8";
+
+/* Import Google Fonts: Noto Sans/Serif JP, Zen Antique */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Noto+Serif+JP:wght@200..900&family=Zen+Antique&display=swap');
+/* Import my font-faces */
+@import url('myStyle-font-face.css');
+
+*,
+::before,
+::after {
+    box-sizing: border-box;
+}
+
+:root {
+    scroll-behavior: smooth;
+    --purple2: #3c1f69;
+    --purple1: #e4ddff;
+    --white1: #f8f9fa;
+    --black-tl1: #00000077;
+    --blue1: #0040b6;
+    --bg-color: var(--white1);
+    --h-color: var(--purple2);
+    --link-color: var(--blue1);
+    --shadow-color: var(--black-tl1);
+    --border-color-1: var(--black-tl1);
+    --font-sans: 'Inter28pt', 'Arial', 'Helvetica Neue', 'Noto Sans JP', 'Source Han Sans', 'Noto Sans CJK JP', 'Yu Gothic UI', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', sans-serif;
+    --font-serif: 'UQ Web Serif', 'Times New Roman', 'Noto Serif JP', 'Source Han Serif', 'Noto Serif CJK JP', 'Yu Mincho', 'Hiragino Serif', 'Hiragino Mincho ProN', serif;
+    --gutter-container: .75rem;
+    --size-h1: calc(1.375rem + 0.9vw);
+    --size-h2: calc(1.325rem + 0.5vw);
+    --size-h3: calc(1.3rem + 0.2vw);
+    --size-h4: 1.25rem;
+    --size-h5: 1.125rem;
+    --size-h6: 1rem;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+    line-height: 1.4;
+}
+
+body {
+    background-color: var(--bg-color);
+    font-family: var(--font-sans);
+    font-optical-sizing: auto;
+}
+
+img {
+    display: block;
+}
+
+#_container {
+    display: flow-root;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 var(--gutter-container);
+    min-height: 100vh;
+    box-shadow: 0 0 5px var(--shadow-color);
+
+    @media (min-width: 1200px) {
+        max-width: 1140px;
+    }
+
+    @media (min-width: 1400px) {
+        max-width: 1320px;
+    }
+}
+
+.font-serif:not(#DUMMY) {
+    font-family: var(--font-serif);
+}
+
+div {
+    margin-block-end: 1.2rem;
+}
+
+p, ul, ol, dl, pre {
+    margin-inline-start: 1rem;
+    margin-block-end: 1.2rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin-block-end: .8rem;
+    font-weight: 500;
+    color: var(--h-color);
+    font-family: var(--font-serif);
+}
+
+h1 {
+    font-size: var(--size-h1);
+}
+
+h2 {
+    font-size: var(--size-h2);
+}
+
+h3 {
+    font-size: var(--size-h3);
+    margin-inline-start: .25rem;
+}
+
+h4 {
+    font-size: var(--size-h4);
+    margin-inline-start: .375rem;
+}
+
+h5 {
+    font-size: var(--size-h5);
+    margin-inline-start: .5rem;
+}
+
+h6 {
+    font-size: var(--size-h6);
+    margin-inline-start: .75rem;
+}
+
+a {
+    text-decoration: none;
+    color: var(--link-color);
+    transition: opacity 80ms ease-in-out;
+
+    @media (hover: hover) and (pointer: fine) {
+        &:hover {
+            opacity: 0.6;
+        }
+    }
+}
+
+h1#title {
+    text-align: center;
+    margin: 2rem auto;
+    width: max-content;
+    max-width: 100%;
+    text-wrap: balance;
+    overflow-wrap: anywhere;
+    padding: 0rem .5rem;
+    font-family: 'Zen Antique', serif;
+    font-weight: 400;
+}
+
+input[type="text"], textarea {
+    border: solid 1px var(--border-color-1);
+    border-radius: 5px;
+    padding-inline: .25rem;
+}
+
+textarea {
+    resize: none;
+    width: 25rem;
+    height: 4rem;
+}
+
+button {
+    display: block;
+    margin: .5rem auto;
+    background: transparent;
+    color: var(--purple2);
+    border: solid 1px var(--purple2);
+    font-size: 1rem;
+    border-radius: 5px;
+    padding: .1rem .5rem;
+    background-clip: padding-box;
+    transition: color 80ms ease-in-out, background-color 80ms ease-in-out;
+
+    &:hover {
+        background-color: var(--purple2);
+        color: var(--white1);
+    }
+
+    &:active {
+        opacity: 0.8;
+    }
+}
+
+#base64, #base64de {
+    margin: 2rem auto;
+    width: max-content;
+    max-width: 100%;
+}
+
+input[type="text"] {
+    
+    width: 15rem;
+    max-width: 100%;
+}
+
+.txt-centre {
+    text-align: center;
+}
+
+div:has(> input) {
+    margin-block-end: 0;
+}
+
+.d-block {
+    display: block;
+}
+

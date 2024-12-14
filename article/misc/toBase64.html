@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <title>Base64 Encoder</title>
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="../../image/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="../../stylesheet/myStyle4.css">
+
+    <!-- OGP -->
+	<meta property="og:type" content="article">
+	<meta property="og:title" content="Base64 Encoder - 悠久肆方体">
+	<meta property="og:description" content="">
+	<meta property="og:url" content="https://tktb-tess.github.io/">
+	<meta property="og:site_name" content="悠久肆方体">
+	<meta property="og:image" content="https://tktb-tess.github.io/tktb-source/image/link-card.jpg">
+	<!-- Twitter card -->
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:site" content="@triethylamineq">
+</head>
+<body>
+    <div id="_container">
+        <h1 id="title">〜Base64エンコードとか〜</h1>
+        <p><a href="../../">← 戻る</a></p>
+        <div id="base64">
+            <h3 id="base64-title" class="txt-centre">テキスト → Base64 エンコーダー</h3>
+            <div>
+                <label id="base64-label" for="base64-input">変換したい文字列:</label>
+                <input id="base64-input" type="text">
+            </div>
+            <button id="base64-btn" type="button">変換</button>
+            <div>
+                <label class="d-block" for="base64-result">結果:</label>
+                <textarea id="base64-result" readonly></textarea>
+            </div>
+        </div>
+        <div id="base64de">
+            <h3 id="base64de-title" class="txt-centre">Base64 → テキスト デコーダー</h3>
+            <div>
+                <label id="base64de-label" for="base64de-input">変換したい文字列:</label>
+                <input id="base64de-input" type="text">
+            </div>
+            <button id="base64de-btn" type="button">変換</button>
+            <div>
+                <label class="d-block" for="base64de-result">結果:</label>
+                <textarea id="base64de-result" readonly></textarea>
+            </div>
+        </div>
+    </div>
+    <script src="../../js/toBase64.js"></script>
+</body>
+</html>
