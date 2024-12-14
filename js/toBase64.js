@@ -12,7 +12,13 @@ base64_btn.addEventListener("click", () => {
 base64de_btn.addEventListener("click", () => {
     const base64de_input = document.getElementById("base64de-input");
     const base64de_result = document.getElementById("base64de-result");
-    base64de_result.value = Base64Decoder(base64de_input.value);
+
+    try {
+        base64de_result.value = Base64Decoder(base64de_input.value);
+    } catch (e) {
+        console.error(e);
+        alert("不正な引数です。\nBase64形式を入力してください");
+    }
 }, false);
 
 const Base64Encoder = (str) => {
