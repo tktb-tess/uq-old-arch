@@ -165,13 +165,15 @@ button {
     background-clip: padding-box;
     transition: color 80ms ease-in-out, background-color 80ms ease-in-out;
 
-    &:hover {
-        background-color: var(--purple2);
-        color: var(--white1);
-    }
-
-    &:active {
-        opacity: 0.8;
+    @media (hover: hover) and (pointer: fine) {
+        &:hover {
+            background-color: var(--purple2);
+            color: var(--white1);
+        }
+    
+        &:active {
+            opacity: 0.8;
+        }
     }
 }
 
