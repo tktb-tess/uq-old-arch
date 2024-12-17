@@ -16,7 +16,7 @@
     font-family: 'CharisSIL';
     font-style: normal;
     font-weight: 100 500;
-    src: 
+    src: local("Charis SIL"),
         url("https://tktb-tess.github.io/tktb-source/font/CharisSIL/CharisSIL-Regular.woff2") format("woff2");
 }
 
