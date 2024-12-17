@@ -1,37 +1,9 @@
 @charset "UTF-8";
 
-/* Import Inter + Noto Sans/Serif JP */
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Noto+Serif+JP:wght@200..900&display=swap');
-
+/* import Noto Sans/Serif JP, Noto Serif Tibetan */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Noto+Serif+JP:wght@200..900&family=Noto+Serif+Tibetan:wght@100..900&display=swap');
+/* Import my font-faces */
 @import url('myStyle-font-face.css');
-
-@font-face {
-    font-family: Noto-Serif-Tibetan;
-    font-weight: 400;
-    font-style: normal;
-    src: url("https://tktb-tess.github.io/tktb-source/font/NotoSerifTibetan/NotoSerifTibetan-Regular.woff2") format("woff2");
-}
-
-@font-face {
-    font-family: Noto-Serif-Tibetan;
-    font-weight: 500;
-    font-style: normal;
-    src: url("https://tktb-tess.github.io/tktb-source/font/NotoSerifTibetan/NotoSerifTibetan-Medium.woff2") format("woff2");
-}
-
-@font-face {
-    font-family: Noto-Serif-Tibetan;
-    font-weight: 600;
-    font-style: normal;
-    src: url("https://tktb-tess.github.io/tktb-source/font/NotoSerifTibetan/NotoSerifTibetan-SemiBold.woff2") format("woff2");
-}
-
-@font-face {
-    font-family: Noto-Serif-Tibetan;
-    font-weight: 700;
-    font-style: normal;
-    src: url("https://tktb-tess.github.io/tktb-source/font/NotoSerifTibetan/NotoSerifTibetan-Bold.woff2") format("woff2");
-}
 
 *, *::before, *::after {
     box-sizing: border-box;
@@ -46,8 +18,8 @@
     --mycolor-gray3: #747474;
     --my-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
     --my-shadow2: 0 0 0.25rem 0.125rem rgba(0, 0, 0, 0.075);
-    --sans-font: Inter28pt, Arial, Noto-Serif-Tibetan, 'Noto Sans JP', sans-serif;
-    --serif-font: 'UQ Web Serif', Brill, 'Times New Roman', Noto-Serif-Tibetan, 'Noto Serif JP', serif;
+    --sans-font: 'InterVar', 'Arial', 'Noto Serif Tibetan', 'Noto Sans JP', sans-serif;
+    --serif-font: 'CharisSIL', 'Brill', 'Times New Roman', 'Noto Serif Tibetan', 'Noto Serif JP', serif;
     --size-h1: calc(1.3rem + 1.2vw);
     --size-h2: calc(1.275rem + 0.3vw);
     --size-h3: 1.25rem;
@@ -195,7 +167,7 @@ a {
     }
 
     &.ext-link::after {
-        content: url(../svg/box-arrow-up-right.svg);
+        content: url("../svg/box-arrow-up-right.svg");
         display: inline-block;
         margin-right: 0.1rem;
         width: 0.75rem;
