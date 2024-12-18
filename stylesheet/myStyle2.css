@@ -20,12 +20,12 @@
     --my-shadow2: 0 0 0.25rem 0.125rem rgba(0, 0, 0, 0.075);
     --sans-font: 'InterVar', 'Arial', 'Noto Sans JP', sans-serif;
     --serif-font: 'CharisSIL', 'Brill', 'Times New Roman', 'Noto Serif JP', serif;
-    --size-h1: calc(1.3rem + 1.2vw);
-    --size-h2: calc(1.275rem + 0.3vw);
-    --size-h3: 1.25rem;
-    --size-h4: 1rem;
-    --size-h5: 0.875rem;
-    --size-h6: 0.75rem;
+    --size-h1: calc(1.375rem + .9vw);
+    --size-h2: calc(1.325rem + .5vw);
+    --size-h3: calc(1.3rem + .2vw);
+    --size-h4: 1.25rem;
+    --size-h5: 1.125rem;
+    --size-h6: 1rem;
     --my-transition: 80ms ease-in-out;
 }
 

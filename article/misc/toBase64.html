@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <title>Base64 Encoder</title>
+    <title>ツール</title>
     <meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="../../image/favicon.ico">
@@ -9,7 +9,7 @@
 
     <!-- OGP -->
 	<meta property="og:type" content="article">
-	<meta property="og:title" content="Base64 Encoder - 悠久肆方体">
+	<meta property="og:title" content="ツール - 悠久肆方体">
 	<meta property="og:description" content="">
 	<meta property="og:url" content="https://tktb-tess.github.io/">
 	<meta property="og:site_name" content="悠久肆方体">
@@ -20,30 +20,28 @@
 </head>
 <body>
     <div id="_container">
-        <h1 id="title">〜Base64エンコードとか〜</h1>
+        <h1 id="title">〜ツール〜</h1>
         <p><a href="../../">← 戻る</a></p>
-        <div id="base64">
-            <h3 id="base64-title" class="txt-centre">テキスト → Base64 エンコーダー</h3>
+        <div id="base64" class="b64">
+            <h3 id="base64-title" class="b64-title">テキスト → Base64 エンコーダー</h3>
             <div>
-                <label id="base64-label" for="base64-input">変換したい文字列:</label>
-                <input id="base64-input" type="text" placeholder="文字列を入力">
+                <input id="base64-input" class="b64-input" type="text" placeholder="変換したい文字列を入力">
             </div>
-            <button id="base64-btn" type="button">変換</button>
+            <button id="base64-btn" class="b64-btn" type="button">変換</button>
             <div>
-                <label class="d-block" for="base64-result">結果:</label>
-                <textarea id="base64-result" readonly></textarea>
+                <label class="b64-result-label" for="base64-result">結果:</label>
+                <textarea id="base64-result" class="b64-result" readonly></textarea>
             </div>
         </div>
-        <div id="base64de">
-            <h3 id="base64de-title" class="txt-centre">Base64 → テキスト デコーダー</h3>
+        <div id="base64de" class="b64">
+            <h3 id="base64de-title" class="b64-title">Base64 → テキスト デコーダー</h3>
             <div>
-                <label id="base64de-label" for="base64de-input">変換したいBase64形式:</label>
-                <input id="base64de-input" type="text" placeholder="Base64形式を入力">
+                <input id="base64de-input" class="b64-input" type="text" placeholder="Base64形式を入力">
             </div>
-            <button id="base64de-btn" type="button">変換</button>
+            <button id="base64de-btn" class="b64-btn" type="button">変換</button>
             <div>
-                <label class="d-block" for="base64de-result">結果:</label>
-                <textarea id="base64de-result" readonly></textarea>
+                <label class="b64-result-label" for="base64de-result">結果:</label>
+                <textarea id="base64de-result" class="b64-result" readonly></textarea>
             </div>
         </div>
     </div>

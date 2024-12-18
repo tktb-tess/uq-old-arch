@@ -20,12 +20,11 @@
     --my-transition: 150ms ease-in-out;
     --my-transition2: 70ms ease-in-out;
     --my-transition3: 250ms ease-in-out;
-    --size-h1: calc(1.375rem + 1.5vw);
-    --size-h2: calc(1.3rem + .6vw);
-    --size-h2-1: calc(1.275rem + .3vw);
-    --size-h3: 1.25rem;
-    --size-h4: 1.125rem;
-    --size-h5: 1rem;
+    --size-h1: calc(1.375rem + .9vw);
+    --size-h2: calc(1.325rem + .5vw);
+    --size-h3: calc(1.3rem + .2vw);
+    --size-h4: 1.25rem;
+    --size-h5: 1.125rem;
     --size-h6: 1rem;
 }
 
@@ -94,7 +93,7 @@ a {
     }
 
     &.ext-link::after {
-        content: url(../svg/box-arrow-up-right.svg);
+        content: url('../svg/box-arrow-up-right.svg');
         display: inline-block;
         margin-right: 0.1rem;
         width: 0.75rem;
