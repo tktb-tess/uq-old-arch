@@ -45,12 +45,13 @@ base64de_btn.addEventListener("click", () => {
     const b64 = new Base64();
     try {
         b64.decoder(base64de_input.value);
+        base64de_result.value = b64.getStr();
     } catch (e) { // Base64以外が来たら警告
         console.error(e);
         window.alert("Base64形式を入力してください");
     }
 
-    base64de_result.value = b64.getStr();
+    
 }, false);
 
 
