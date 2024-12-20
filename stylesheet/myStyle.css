@@ -8,7 +8,8 @@
 
 :root {
     --my-heading-color-rgb: 26, 54, 88;
-    --my-link-color-rgb: 0, 71, 179;
+    --my-link-color-rgb: 0, 64, 182;
+    --color-blue: #0040b6;
     --my-dark-color: var(--bs-body-color);
     --my-light-color: var(--bs-light);
     --my-gray: var(--bs-secondary);
@@ -26,10 +27,6 @@
     --size-h4: 1.25rem;
     --size-h5: 1.125rem;
     --size-h6: 1rem;
-}
-
-html {
-    font-size: 1.0em;
 }
 
 body {

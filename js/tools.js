@@ -50,8 +50,6 @@ base64de_btn.addEventListener("click", () => {
         console.error(e);
         window.alert("Base64形式を入力してください");
     }
-
-    
 }, false);
 
 

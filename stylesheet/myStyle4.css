@@ -5,53 +5,48 @@
 /* Import my font-faces */
 @import url('myStyle-font-face.css');
 
-*,
-::before,
-::after {
+*, ::before, ::after {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: none;
+    line-height: 1.4;
+    overflow-wrap: anywhere;
 }
 
 :root {
     scroll-behavior: smooth;
-    --purple2: #322549;
-    --purple1: #efd8ff;
-    --white1: #f8f9fa;
-    --black-tl1: #00000077;
-    --blue1: #0040b6;
-    --gray1: #868686;
-    --color-bg: var(--white1);
-    --color-side: var(--purple1);
-    --color-highlight: var(--purple2);
-    --color-link: var(--blue1);
-    --color-shadow: var(--black-tl1);
-    --color-border-1: var(--black-tl1);
-    --color-arrow: var(--gray1);
+    --lila-2: #322549;
+    --lila-1: #efd8ff;
+    --weiss-1: #f8f9fa;
+    --schwarz-lichtdurchlaessig-1: #00000077;
+    --blau-1: #0040b6;
+    --grau-1: #868686;
+    --farbe-bg: var(--weiss-1);
+    --farbe-seite: var(--lila-1);
+    --farbe-highlight: var(--lila-2);
+    --farbe-link: var(--blau-1);
+    --farbe-schatten: var(--schwarz-lichtdurchlaessig-1);
+    --farbe-rand-1: var(--schwarz-lichtdurchlaessig-1);
+    --farbe-pfeil-oben: var(--grau-1);
     --font-sans: 'InterVar', 'Arial', 'Helvetica Neue', 'Noto Sans JP', 'Source Han Sans', 'Noto Sans CJK JP', 'Yu Gothic UI', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', sans-serif;
     --font-serif: 'CharisSIL', 'Times New Roman', 'Noto Serif JP', 'Source Han Serif', 'Noto Serif CJK JP', 'Yu Mincho', 'Hiragino Serif', 'Hiragino Mincho ProN', serif;
-    --gutter-container: .75rem;
-    --size-h1: calc(1.375rem + .9vw);
-    --size-h2: calc(1.325rem + .5vw);
-    --size-h3: calc(1.3rem + .2vw);
-    --size-h4: 1.25rem;
-    --size-h5: 1.125rem;
-    --size-h6: 1rem;
+    --graben-behaelter: .75rem;
+    --groesse-h1: calc(1.375rem + .9vw);
+    --groesse-h2: calc(1.325rem + .5vw);
+    --groesse-h3: calc(1.3rem + .2vw);
+    --groesse-h4: 1.25rem;
+    --groesse-h5: 1.125rem;
+    --groesse-h6: 1rem;
     --transition-btn-hover: 100ms ease-in-out;
     --transition-btn-visibility: 250ms ease-in-out;
     --transition-link: 60ms ease-in-out;
 }
 
-
-* {
-    margin: 0;
-    padding: 0;
-    border: none;
-    line-height: 1.4;
-}
-
 body {
     font-family: var(--font-sans);
     font-optical-sizing: auto;
-    background-color: var(--purple1);
+    background-color: var(--lila-1);
 }
 
 img {
@@ -60,12 +55,12 @@ img {
 
 #_container {
     display: flow-root;
-    background-color: var(--color-bg);
+    background-color: var(--farbe-bg);
     width: 100%;
     margin: 0 auto;
-    padding: 0 var(--gutter-container);
+    padding: 0 var(--graben-behaelter);
     min-height: 100vh;
-    box-shadow: 0 0 5px var(--color-shadow);
+    box-shadow: 0 0 5px var(--farbe-schatten);
 
     @media (min-width: 1200px) {
         max-width: 1140px;
@@ -76,7 +71,7 @@ img {
     }
 }
 
-.font-serif:not(#DUMMY) {
+.font-serif {
     font-family: var(--font-serif);
 }
 
@@ -92,41 +87,41 @@ p, ul, ol, dl, pre {
 h1, h2, h3, h4, h5, h6 {
     margin-block-end: .8rem;
     font-weight: 500;
-    color: var(--color-highlight);
+    color: var(--farbe-highlight);
     font-family: var(--font-serif);
 }
 
 h1 {
-    font-size: var(--size-h1);
+    font-size: var(--groesse-h1);
 }
 
 h2 {
-    font-size: var(--size-h2);
+    font-size: var(--groesse-h2);
 }
 
 h3 {
-    font-size: var(--size-h3);
+    font-size: var(--groesse-h3);
     margin-inline-start: .25rem;
 }
 
 h4 {
-    font-size: var(--size-h4);
+    font-size: var(--groesse-h4);
     margin-inline-start: .375rem;
 }
 
 h5 {
-    font-size: var(--size-h5);
+    font-size: var(--groesse-h5);
     margin-inline-start: .5rem;
 }
 
 h6 {
-    font-size: var(--size-h6);
+    font-size: var(--groesse-h6);
     margin-inline-start: .75rem;
 }
 
 a {
     text-decoration: none;
-    color: var(--color-link);
+    color: var(--farbe-link);
     transition: opacity var(--transition-link);
 
     @media (hover: hover) and (pointer: fine) {
@@ -143,36 +138,41 @@ h1#title {
     max-width: 100%;
     text-wrap: balance;
     overflow-wrap: anywhere;
-    padding: 0rem .5rem;
+    padding: 0 .5rem;
     font-family: 'Zen Antique', serif;
     font-weight: 400;
 }
 
 
-
 button {
     display: block;
-    margin: .5rem auto;
+    margin-inline: auto;
+    width: max-content;
+    max-width: 100%;
     background: transparent;
-    color: var(--purple2);
-    border: solid 1px var(--purple2);
+    color: var(--lila-2);
+    border: solid 1px var(--lila-2);
+    padding: .1rem .5rem;
     font-size: 1rem;
     border-radius: 5px;
-    padding: .1rem .5rem;
-    background-clip: padding-box;
-    transition: color 80ms ease-in-out, background-color 80ms ease-in-out;
+    background-clip: border-box;
+    transition: color var(--transition-btn-hover), background-color var(--transition-btn-hover);
+    cursor: pointer;
 
     @media (hover: hover) and (pointer: fine) {
         &:hover {
-            background-color: var(--purple2);
-            color: var(--white1);
+            background-color: var(--lila-2);
+            color: var(--weiss-1);
         }
-    
+
         &:active {
             opacity: 0.8;
         }
     }
+
 }
+
+
 
 ul, ol, dl {
     padding-inline-start: 1.2rem;
@@ -206,8 +206,12 @@ li {
         margin-block-end: 0;
     }
 
+    button.b64-btn {
+        margin: .5rem auto;
+    }
+
     input.b64-input, textarea.b64-result {
-        border: solid 1px var(--color-border-1);
+        border: solid 1px var(--farbe-rand-1);
         border-radius: 5px;
         padding-inline: .25rem;
         width: 100%;
@@ -223,58 +227,51 @@ li {
     }
 }
 
+#page-top-button {
+    margin: 0;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    padding: 15px;
+    border-radius: 50%;
+    border: none;
+    transition: color var(--transition-btn-hover),
+        background-color var(--transition-btn-hover),
+        opacity var(--transition-btn-visibility),
+        visibility var(--transition-btn-visibility);
+    visibility: hidden;
+    opacity: 0;
+
+    &.visible {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    &:active {
+        opacity: 1;
+    }
+
+    #arrow-up {
+        margin: 0;
+        padding: 8px;
+        border-right: solid 2px;
+        border-top: solid 2px;
+        transform: rotate(-45deg) translate(-3px, 3px);
+    }
+}
+
 .txt-centre {
     text-align: center;
 }
-
-
 
 .d-block {
     display: block;
 }
 
-#page-top-button {
-    position: fixed;
-    margin: 0;
-    right: 25px;
-    bottom: 25px;
-    transition: opacity var(--transition-btn-visibility);
-    opacity: 0;
-    visibility: hidden;
-
-    &.visible {
-        opacity: 1;
-        visibility: visible;
-    }
-
-    button {
-        display: block;
-        text-align: center;
-        background-color: transparent;
-        border: none;
-        border-radius: 50%;
-        padding: 12px;
-        transition: background-color var(--transition-btn-hover), color var(--transition-btn-hover);
-
-        #page-top-arrow {
-            margin: 0;
-            padding: 8px;
-            border-top: solid 2px var(--color-arrow);
-            border-right: solid 2px var(--color-arrow);
-            transform: translateY(4px) rotate(-45deg);
-            transition: border-color var(--transition-btn-hover);
-        }
-
-        @media (hover: hover) and (pointer: fine) {
-            &:hover {
-                background-color: var(--color-arrow);
-                color: var(--color-bg);
-
-                #page-top-arrow {
-                    border-color: var(--color-bg);
-                }
-            }
-        }
-    }
+.centred {
+    display: block;
+    margin-inline: auto;
+    width: max-content;
+    max-width: 100%;
 }
 
