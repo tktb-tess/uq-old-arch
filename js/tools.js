@@ -6,6 +6,11 @@ const base64_input = document.getElementById("base64-input"); // 入力欄
 const base64_result = document.getElementById("base64-result"); // 結果欄
 const base64de_input = document.getElementById("base64de-input");
 const base64de_result = document.getElementById("base64de-result");
+const p_generator_input_1 = document.getElementById('p-generator-input-1');
+const p_generator_input_2 = document.getElementById('p-generator-input-2');
+const p_generator_btn = document.getElementById('p-generator-btn');
+const p_generator_result = document.getElementById('p-generator-result');
+const werker = new Worker("prim_liste.js");
 
 class Base64 {
     #str;
@@ -56,49 +61,50 @@ class RSA {
     #p; #q; #pq; #phi_pq;
     
     constructor(val_p, val_q) {
-        if (typeof(val_p) !== 'number' || typeof(val_q) !== 'number') throw new TypeError("Die Argumentstypen sind keine `number`.");
+        if (typeof(val_p) !== 'number' || typeof(val_q) !== 'number') {
+            throw new TypeError("Die Argumentstypen sind keine `number`.");
+        }
         this.#p = val_p;
         this.#q = val_q;
-        this.#pq = this.#p * this.#q;
-        this.#phi_pq = (this.#p - 1) * (this.#q - 1);
+        this.#pq = val_p * val_q;
+        this.#phi_pq = (val_p - 1) * (val_q - 1);
     }
 
-    static primzahlIst(n) {
-        if (typeof(n) !== 'number') throw new TypeError("Der Argumentstyp ist kein `number`.");
+    static primzahlIst(n_) {
+
+        if (typeof(n) !== 'number') {
+            throw new TypeError("Der Argumentstyp ist kein `number`.");
+        }
         if (n < 2) return false;
         const limit = Math.floor(Math.sqrt(n));
-
         return true;
-
     }
 
     // max以下の素数の配列を返す
-    static primListeMachen(max) { 
-        if (typeof(max) !== 'number') {
-            throw new TypeError("Der Argumentstyp ist kein `number`.");
+    static primListeMachen(min_, max_) {
+        const min = Number(min_), max = Number(max_);
+        if (min === NaN || max === NaN) {
+            throw new TypeError("Das Argument ist kein `number`.");
         }
         if (max > 500000) {
-            throw new Error("値が大きすぎます。\n500,000以下の値を入力してください。");
+            throw new Error("最大値が大きすぎます。\n500,000以下の値を入力してください。");
         }
-        let prim_liste = [...Array(max - 1)].map((_, i) => i + 2);
-        
-        for (let i = 0; i < prim_liste.length; i++) {
-            const p_ = prim_liste[i];
-            for (let j = i + 1; j < prim_liste.length; j++) {
-                if (prim_liste[j] % p_ === 0) {
-                    prim_liste.splice(j, 1);
-                }
-                
-            }
-        }
-        return prim_liste;
+        werker.postMessage([min, max]);
+        console.log('message posted');
+        return;
     }
 }
 
-new Promise((resolve) => {
-    setTimeout(() => {
-        const result = RSA.primListeMachen(200000);
-        resolve(result);
-    }, 4000);
-}).then((val) => console.log(val));
+if (window.Worker) {
+    werker.onmessage = (e) => {
+        console.log(e.data);
+    };
+
+} else {
+    console.error("このブラウザではWeb workerがサポートされていません。");
+}
+
+p_generator_btn.addEventListener('click', () => {
+    RSA.primListeMachen(p_generator_input_1.value, p_generator_input_2.value);
+}, false);
 
