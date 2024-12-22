@@ -71,8 +71,8 @@ class RSA {
     }
 
     static primzahlIst(n_) {
-
-        if (typeof(n) !== 'number') {
+        const n = Number(n_);
+        if (n === NaN) {
             throw new TypeError("Der Argumentstyp ist kein `number`.");
         }
         if (n < 2) return false;
