@@ -56,8 +56,8 @@ base64de_btn.addEventListener("click", () => {
         b64.decoder(base64de_input.value);
         base64de_result.value = b64.getStr();
     } catch (e) { // Base64以外が来たら警告
-        console.error("ein Ausnahme fange: " + e);
-        window.alert("Base64形式を入力してください");
+        console.error(`ein Ausnahme fange: ${e}`);
+        base64de_result.value = "Error: Base64形式を入力してください";
     }
 }, false);
 
@@ -96,7 +96,8 @@ function primListeKallen(min_, max_) {
     p_generator_progress.style.cssText = "visibility: visible;" // "計算中……" を表示
 
     if (prim_cache.length > 0 && prim_cache[prim_cache.length - 1] >= max) { // キャッシュで賄えるかの判定
-        console.log("cache mode!");
+
+        // console.log("cache mode!");
         const result = [...prim_cache]; // キャッシュからコピー
 
         while (result[result.length - 1] > max) { // maxよりデカい素数の消去
@@ -105,11 +106,11 @@ function primListeKallen(min_, max_) {
         while (result[0] < min) { // min未満の素数の消去
             result.shift();
         }
-        p_generator_progress.style.cssText = null; // "計算中……" を消す
+        p_generator_progress.style.cssText = undefined; // "計算中……" を消す
         p_generator_result.value = result.join(" "); // 帰ってきたnumber配列をスペース区切りにしてresultに表示
         return;
     } else {
-        console.log("normal mode!");
+        // console.log("normal mode!");
         werker.postMessage([min, max]); // werkerに計算を投げる
         // console.log('message postete');
     }
@@ -122,7 +123,7 @@ if (window.Worker) {
         while (result.liste[0] < result.min) {
             result.liste.shift(); // min未満の素数を削除
         }
-        p_generator_progress.style.cssText = null; // "計算中……" を消す
+        p_generator_progress.style.cssText = undefined; // "計算中……" を消す
         p_generator_result.value = result.liste.join(" "); // 帰ってきたnumber配列をスペース区切りにしてresultに表示
     };
     
@@ -135,13 +136,14 @@ p_generator_btn.addEventListener('click', () => {
     try {
         primListeKallen(p_generator_input_1.value, p_generator_input_2.value); // 計算
     } catch (e) { // 諸々のエラー処理
-        // console.error("ein Ausnahme fange: " + e);
+        console.error(`ein Ausnahme fange: ${e}`);
+
         switch (e.message) {
             case "Limit überschreitet":
-                p_generator_result.value = "最大値が大きすぎます。500000以下の値を入力して下さい。";
+                p_generator_result.value = "Error: 最大値が大きすぎます。500000以下の値を入力して下さい。";
                 break;
             case "keine Zahl":
-                p_generator_result.value = "数値を入力して下さい。";
+                p_generator_result.value = "Error: 数値を入力して下さい。";
                 break;
         }
     }
