@@ -17,7 +17,7 @@ onmessage = (e) => {
             }
         }
     }
-    // [2, 3, 5, ..., p_k (< max)]
+    // [2, 3, 5, ..., p_k (<= max)]
 
     postMessage({liste: prim_liste, min: min}); //メインスレッドに返す
     return;

@@ -125,7 +125,7 @@ if (window.Worker) {
         p_generator_progress.style.cssText = null; // "計算中……" を消す
         p_generator_result.value = result.liste.join(" "); // 帰ってきたnumber配列をスペース区切りにしてresultに表示
     };
-
+    
 } else {
     console.error("このブラウザではWeb workerがサポートされていません。");
 }
@@ -144,9 +144,7 @@ p_generator_btn.addEventListener('click', () => {
                 p_generator_result.value = "数値を入力して下さい。";
                 break;
         }
-        
     }
-    
 }, false);
 
 
