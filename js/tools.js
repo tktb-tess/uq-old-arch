@@ -10,14 +10,14 @@ const p_generator_input_1 = document.getElementById('p-generator-input-1');
 const p_generator_input_2 = document.getElementById('p-generator-input-2');
 const p_generator_btn = document.getElementById('p-generator-btn');
 const p_generator_result = document.getElementById('p-generator-result');
-const p_generator_progress = document.getElementById('p-generator-progress');
+const p_generator_progress = document.getElementById('p-generator-progress'); // "計算中……" の表示
 const werker = new Worker("/js/prim_liste.js");
 
-
+let prim_cache = [];
 
 class Base64 {
-    #str;
-    #base64;
+    #str; // テキスト
+    #base64; // Base64
 
     // Base64エンコード
     encoder(_str) {
@@ -34,6 +34,7 @@ class Base64 {
         this.#str = new TextDecoder().decode(utf8arr); // UTF-8からデコード
     }
 
+    // ゲッター
     getStr() {
         return this.#str;
     }
@@ -73,40 +74,56 @@ class RSA {
         this.#pq = val_p * val_q;
         this.#phi_pq = (val_p - 1) * (val_q - 1);
     }
+}
 
-    static primzahlIst(n_) {
-        
+// max以下の素数の配列を返す
+function primListeKallen(min_, max_) {
+    if (min_ === "" || max_ === "") { // 空文字は弾く
+        throw new Error("keine Zahl");
+    }
+    const min = Number(min_), max = Number(max_);
+    if (Number.isNaN(min) || Number.isNaN(max)) { // 非数は弾く
+        throw new Error("keine Zahl");
+    }
+    if (max > 500000) { // 500000より大きいのを弾く
+        throw new Error("Limit überschreitet");
+    }
+    if (min > max) { // minの方がデカかったら空のままにする
+        return;
     }
 
-    // max以下の素数の配列を返す
-    static primListeMachen(min_, max_) {
-        if (min_ === "" || max_ === "") {
-            throw new Error("keine Zahl");
-        }
-        const min = Number(min_), max = Number(max_);
-        if (isNaN(min) || Number.isNaN(max)) {
-            throw new Error("keine Zahl");
-        }
-        if (max > 500000) {
-            throw new Error("überschreitet Limit");
-        }
-        if (min > max) {
-            return;
-        }
+    // console.log(min); console.log(max);
+    p_generator_progress.style.cssText = "visibility: visible;" // "計算中……" を表示
 
-        // console.log(min); console.log(max);
+    if (prim_cache.length > 0 && prim_cache[prim_cache.length - 1] >= max) { // キャッシュで賄えるかの判定
+        console.log("cache mode!");
+        const result = [...prim_cache]; // キャッシュからコピー
 
-        p_generator_progress.classList.add('progress');
-        werker.postMessage([min, max]);
-        // console.log('message postete');
+        while (result[result.length - 1] > max) { // maxよりデカい素数の消去
+            result.pop();
+        }
+        while (result[0] < min) { // min未満の素数の消去
+            result.shift();
+        }
+        p_generator_progress.style.cssText = null; // "計算中……" を消す
+        p_generator_result.value = result.join(" "); // 帰ってきたnumber配列をスペース区切りにしてresultに表示
         return;
+    } else {
+        console.log("normal mode!");
+        werker.postMessage([min, max]); // werkerに計算を投げる
+        // console.log('message postete');
     }
 }
 
 if (window.Worker) {
-    werker.onmessage = (e) => {
-        p_generator_progress.classList.remove('progress');
-        p_generator_result.value = e.data.join(" ");
+    werker.onmessage = (e) => { // werkerから計算結果が帰ってきたときの処理
+        const result = e.data;
+        prim_cache = [...result.liste]; // 配列をキャッシュ
+        while (result.liste[0] < result.min) {
+            result.liste.shift(); // min未満の素数を削除
+        }
+        p_generator_progress.style.cssText = null; // "計算中……" を消す
+        p_generator_result.value = result.liste.join(" "); // 帰ってきたnumber配列をスペース区切りにしてresultに表示
     };
 
 } else {
@@ -114,13 +131,13 @@ if (window.Worker) {
 }
 
 p_generator_btn.addEventListener('click', () => {
-    p_generator_result.value = "";
+    p_generator_result.value = ""; // 結果を一旦空に
     try {
-        RSA.primListeMachen(p_generator_input_1.value, p_generator_input_2.value);
-    } catch (e) {
+        primListeKallen(p_generator_input_1.value, p_generator_input_2.value); // 計算
+    } catch (e) { // 諸々のエラー処理
         // console.error("ein Ausnahme fange: " + e);
         switch (e.message) {
-            case "überschreitet Limit":
+            case "Limit überschreitet":
                 p_generator_result.value = "最大値が大きすぎます。500000以下の値を入力して下さい。";
                 break;
             case "keine Zahl":

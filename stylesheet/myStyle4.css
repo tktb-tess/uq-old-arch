@@ -229,7 +229,7 @@ li {
     
     textarea.t-result {
         resize: none;
-        height: 8rem;
+        height: 15rem;
     }
 
     .t-inputs {
@@ -250,10 +250,6 @@ li {
         p.t-progress {
             margin: 0;
             visibility: hidden;
-
-            &.progress {
-                visibility: visible;
-            }
         }
     }
 }
