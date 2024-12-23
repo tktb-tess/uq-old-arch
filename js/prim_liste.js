@@ -1,8 +1,12 @@
 
 
 onmessage = (e) => {
-    console.log('onmessage fired');
+    console.log('message received');
     const [min, max] = e.data;
+    if(min > max) {
+        postMessage([]);
+        return;
+    }
     const prim_liste = [...Array(max)].map((_, i) => i + 2);
 
     for (let i = 0; i < prim_liste.length; i++) {
@@ -17,5 +21,7 @@ onmessage = (e) => {
         prim_liste.shift();
     }
     postMessage(prim_liste);
+    return;
 };
+
 
