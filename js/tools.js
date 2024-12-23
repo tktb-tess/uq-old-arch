@@ -12,6 +12,8 @@ const p_generator_btn = document.getElementById('p-generator-btn');
 const p_generator_result = document.getElementById('p-generator-result');
 const werker = new Worker("prim_liste.js");
 
+
+
 class Base64 {
     #str;
     #base64;
@@ -52,7 +54,7 @@ base64de_btn.addEventListener("click", () => {
         b64.decoder(base64de_input.value);
         base64de_result.value = b64.getStr();
     } catch (e) { // Base64以外が来たら警告
-        console.error(e);
+        console.error("ein Ausnahme fange: " + e);
         window.alert("Base64形式を入力してください");
     }
 }, false);
@@ -60,9 +62,10 @@ base64de_btn.addEventListener("click", () => {
 class RSA {
     #p; #q; #pq; #phi_pq;
     
-    constructor(val_p, val_q) {
-        if (typeof(val_p) !== 'number' || typeof(val_q) !== 'number') {
-            throw new TypeError("Die Argumentstypen sind keine `number`.");
+    constructor(val_p_, val_q_) {
+        const val_p = Number(val_p_), val_q = Number(val_q_);
+        if (Number.isNaN(val_p) || Number.isNaN(val_q)) {
+            throw new TypeError("keineZahl");
         }
         this.#p = val_p;
         this.#q = val_q;
@@ -71,30 +74,24 @@ class RSA {
     }
 
     static primzahlIst(n_) {
-        const n = Number(n_);
-        if (n === NaN) {
-            throw new TypeError("Der Argumentstyp ist kein `number`.");
-        }
-        if (n < 2) return false;
-        const limit = Math.floor(Math.sqrt(n));
-        return true;
+        
     }
 
     // max以下の素数の配列を返す
     static primListeMachen(min_, max_) {
         const min = Number(min_), max = Number(max_);
         
-        if (min === NaN || max === NaN) {
-            throw new TypeError("Das Argument ist kein `number`.");
+        if (Number.isNaN(min) || Number.isNaN(max)) {
+            return new Error("keine Zahl");
         }
         if (max > 500000) {
-            throw new Error("最大値が大きすぎます。\n500,000以下の値を入力してください。");
+            return new Error("Limit überschreitet");
         }
-        
-        console.log(min);console.log(max);
+
+        console.log(min); console.log(max);
 
         werker.postMessage([min, max]);
-        console.log('message posted');
+        console.log('message postete');
         return;
     }
 }
@@ -109,6 +106,40 @@ if (window.Worker) {
 }
 
 p_generator_btn.addEventListener('click', () => {
-    RSA.primListeMachen(p_generator_input_1.value, p_generator_input_2.value);
+    try {
+        RSA.primListeMachen(p_generator_input_1.value, p_generator_input_2.value);
+    } catch (e) {
+        console.error("ein Ausnahme fange: " + e);
+        switch (e.message) {
+            case "Limit überschreitet":
+                break;
+            case "keineZahl":
+                break;
+        }
+        
+    }
+    
 }, false);
+
+
+
+function primListeMachen_1(min, max) {
+    if(min > max) {
+        return [];
+    }
+    const prim_liste = [...Array(max - 1)].map((_, i) => i + 2);
+
+    for (let i = 0; i < prim_liste.length; i++) {
+        const p_ = prim_liste[i];
+        for (let j = i + 1; j < prim_liste.length; j++) {
+            if (prim_liste[j] % p_ === 0) {
+                prim_liste.splice(j, 1);
+            }
+        }
+    }
+    while (prim_liste[0] < min) {
+        prim_liste.shift();
+    }
+    return prim_liste;
+}
 
