@@ -94,7 +94,7 @@ class RSA {
             return;
         }
 
-        console.log(min); console.log(max);
+        // console.log(min); console.log(max);
 
         p_generator_progress.classList.add('progress');
         werker.postMessage([min, max]);
