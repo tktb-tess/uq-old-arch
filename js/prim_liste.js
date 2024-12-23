@@ -1,7 +1,7 @@
 
 
 onmessage = (e) => {
-    console.log('message received');
+    // console.log('message received');
     const [min, max] = e.data;
     if(min > max) {
         postMessage([]);
