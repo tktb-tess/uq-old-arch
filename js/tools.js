@@ -83,12 +83,16 @@ class RSA {
     // max以下の素数の配列を返す
     static primListeMachen(min_, max_) {
         const min = Number(min_), max = Number(max_);
+        
         if (min === NaN || max === NaN) {
             throw new TypeError("Das Argument ist kein `number`.");
         }
         if (max > 500000) {
             throw new Error("最大値が大きすぎます。\n500,000以下の値を入力してください。");
         }
+        
+        console.log(min);console.log(max);
+
         werker.postMessage([min, max]);
         console.log('message posted');
         return;
