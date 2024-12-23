@@ -82,10 +82,13 @@ class RSA {
         const min = Number(min_), max = Number(max_);
         
         if (Number.isNaN(min) || Number.isNaN(max)) {
-            return new Error("keine Zahl");
+            throw new Error("keine Zahl");
         }
         if (max > 500000) {
-            return new Error("Limit überschreitet");
+            throw new Error("überschreitet Limit");
+        }
+        if (min > max) {
+            return;
         }
 
         console.log(min); console.log(max);
@@ -111,9 +114,11 @@ p_generator_btn.addEventListener('click', () => {
     } catch (e) {
         console.error("ein Ausnahme fange: " + e);
         switch (e.message) {
-            case "Limit überschreitet":
+            case "überschreitet Limit":
+                p_generator_result.value = "最大値が大きすぎます。500000以下の値を入力して下さい。";
                 break;
-            case "keineZahl":
+            case "keine Zahl":
+                p_generator_result.value = "数値を入力して下さい。";
                 break;
         }
         
