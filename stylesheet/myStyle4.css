@@ -241,6 +241,23 @@ li {
             margin: 0;
         }
     }
+
+    
+
+    .t-result-labels {
+        display: flex;
+        justify-content: space-between;
+        margin: 0;
+
+        p.t-progress {
+            margin: 0;
+            visibility: hidden;
+
+            &.progress {
+                visibility: visible;
+            }
+        }
+    }
 }
 
 #page-top-button {

@@ -10,7 +10,8 @@ const p_generator_input_1 = document.getElementById('p-generator-input-1');
 const p_generator_input_2 = document.getElementById('p-generator-input-2');
 const p_generator_btn = document.getElementById('p-generator-btn');
 const p_generator_result = document.getElementById('p-generator-result');
-const werker = new Worker("prim_liste.js");
+const p_generator_progress = document.getElementById('p-generator-progress');
+const werker = new Worker("/js/prim_liste.js");
 
 
 
@@ -79,9 +80,11 @@ class RSA {
 
     // max以下の素数の配列を返す
     static primListeMachen(min_, max_) {
+        if (min_ === "" || max_ === "") {
+            throw new Error("keine Zahl");
+        }
         const min = Number(min_), max = Number(max_);
-        
-        if (Number.isNaN(min) || Number.isNaN(max)) {
+        if (isNaN(min) || Number.isNaN(max)) {
             throw new Error("keine Zahl");
         }
         if (max > 500000) {
@@ -93,15 +96,17 @@ class RSA {
 
         console.log(min); console.log(max);
 
+        p_generator_progress.classList.add('progress');
         werker.postMessage([min, max]);
-        console.log('message postete');
+        // console.log('message postete');
         return;
     }
 }
 
 if (window.Worker) {
     werker.onmessage = (e) => {
-        console.log(e.data);
+        p_generator_progress.classList.remove('progress');
+        p_generator_result.value = e.data.join(" ");
     };
 
 } else {
@@ -109,10 +114,11 @@ if (window.Worker) {
 }
 
 p_generator_btn.addEventListener('click', () => {
+    p_generator_result.value = "";
     try {
         RSA.primListeMachen(p_generator_input_1.value, p_generator_input_2.value);
     } catch (e) {
-        console.error("ein Ausnahme fange: " + e);
+        // console.error("ein Ausnahme fange: " + e);
         switch (e.message) {
             case "überschreitet Limit":
                 p_generator_result.value = "最大値が大きすぎます。500000以下の値を入力して下さい。";
@@ -128,23 +134,4 @@ p_generator_btn.addEventListener('click', () => {
 
 
 
-function primListeMachen_1(min, max) {
-    if(min > max) {
-        return [];
-    }
-    const prim_liste = [...Array(max - 1)].map((_, i) => i + 2);
-
-    for (let i = 0; i < prim_liste.length; i++) {
-        const p_ = prim_liste[i];
-        for (let j = i + 1; j < prim_liste.length; j++) {
-            if (prim_liste[j] % p_ === 0) {
-                prim_liste.splice(j, 1);
-            }
-        }
-    }
-    while (prim_liste[0] < min) {
-        prim_liste.shift();
-    }
-    return prim_liste;
-}
 
