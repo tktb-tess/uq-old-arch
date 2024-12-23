@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg viewBox="0 0 317.5 317.5" version="1.1" id="svg1" inkscape:version="1.4 (86a8ad7, 2024-10-11)" sodipodi:docname="logo.svg" xml:space="preserve"
+    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:svg="http://www.w3.org/2000/svg">
+    <style type="text/css">
+        <![CDATA[
+            #path30 {
+                fill: none;
+                stroke: black;
+                stroke-width: 3.96875;
+                stroke-opacity: 1;
+            }
+        ]]>
+    </style>
+    <sodipodi:namedview id="namedview1" pagecolor="#ffffff" bordercolor="#000000" borderopacity="0.25" inkscape:showpageshadow="2" inkscape:pageopacity="0.0" inkscape:pagecheckerboard="0" inkscape:deskcolor="#d1d1d1" inkscape:document-units="px" inkscape:zoom="1" inkscape:cx="675.5" inkscape:cy="706.5" inkscape:window-width="1920" inkscape:window-height="1017" inkscape:window-x="1358" inkscape:window-y="-8" inkscape:window-maximized="1" inkscape:current-layer="layer1" showgrid="true">
+        <inkscape:grid id="grid30" units="px" originx="0" originy="0" spacingx="2.6458333" spacingy="2.6458333" empcolor="#0099e5" empopacity="0.30196078" color="#0099e5" opacity="0.14901961" empspacing="5" enabled="true" visible="true" />
+        <inkscape:grid id="grid31" units="px" originx="0" originy="0" spacingx="0.26458333" spacingy="0.26458333" empcolor="#0099e5" empopacity="0.30196078" color="#0099e5" opacity="0.14901961" empspacing="5" enabled="false" visible="true" />
+        <inkscape:grid type="modular" id="grid32" units="px" originx="0" originy="0" spacingx="40" spacingy="40" empcolor="#0047cb" empopacity="0.30196078" color="#0099e5" opacity="0.14901961" empspacing="0" marginx="0" marginy="0" gapx="10" gapy="10" enabled="false" visible="true" />
+        <inkscape:grid type="axonomgrid" id="grid33" units="px" originx="0" originy="0" spacingx="1" spacingy="1" empcolor="#0099e5" empopacity="0.30196078" color="#0099e5" opacity="0.14901961" empspacing="5" dotted="false" gridanglex="30" gridanglez="30" enabled="false" visible="true" />
+        <inkscape:grid type="axonomgrid" id="grid34" units="px" originx="0" originy="0" spacingx="1" spacingy="1" empcolor="#0099e5" empopacity="0.30196078" color="#0099e5" opacity="0.14901961" empspacing="5" dotted="false" gridanglex="30" gridanglez="30" enabled="false" visible="true" />
+        <inkscape:grid type="modular" id="grid35" units="px" originx="0" originy="0" spacingx="40" spacingy="40" empcolor="#0047cb" empopacity="0.30196078" color="#0099e5" opacity="0.14901961" empspacing="0" marginx="0" marginy="0" gapx="10" gapy="10" enabled="false" visible="true" />
+        <inkscape:grid type="modular" id="grid36" units="px" originx="0" originy="0" spacingx="40" spacingy="40" empcolor="#0047cb" empopacity="0.30196078" color="#0099e5" opacity="0.14901961" empspacing="0" marginx="0" marginy="0" gapx="10" gapy="10" enabled="false" visible="true" />
+    </sodipodi:namedview>
+    <defs id="defs1" />
+    <g inkscape:label="Layer 1" inkscape:groupmode="layer" id="layer1" transform="translate(-28.440367,-66.341643)">
+        <g id="g30" style="" transform="matrix(1.7391919,0,0,1.7391919,-14.302708,-30.403225)">
+            <path id="path30" style="" d="m 131.74059,138.21177 a 18.086634,18.087482 89.998949 0 1 -2.46461,21.27513 18.086634,18.087482 89.998949 0 1 -21.04019,4.00704 m 13.71926,-10.40513 -11.94902,-11.95625 z m 0.61169,1.47238 0.007,-25.60748 z m -13.15287,10.80457 0.007,-25.69684 z m 38.41604,-91.6925 -33.20153,19.14936 z M 69.344717,175.39772 36.54299,156.43249 Z m 94.440393,36.986 0.0247,-38.74733 z m -61.60757,-57.25578 -34.907374,20.26285 z m 30.32067,1.60992 32.34746,18.6898 z m -16.83265,-63.623514 -1.6e-4,35.650624 0.33703,1.7e-4 1.7e-4,-35.650627 z m -14.58318,64.243714 a 18.086634,18.087482 89.998949 0 1 1.19612,-21.93647 18.086634,18.087482 89.998949 0 1 21.48309,-4.59985" />
+        </g>
+    </g>
+</svg>
