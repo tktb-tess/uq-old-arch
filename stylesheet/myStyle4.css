@@ -250,7 +250,12 @@ li {
         p.t-progress {
             margin: 0;
             visibility: hidden;
+
+            &[data-visible="true"] {
+                visibility: visible;
+            }
         }
+
     }
 }
 

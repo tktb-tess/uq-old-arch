@@ -26,7 +26,7 @@
         <main>
             <p><a href="../../">← 戻る</a></p>
             <div id="base64" class="tool-container">
-                <h3 id="base64-title" class="t-title">テキスト → Base64 エンコーダー</h3>
+                <h3 id="base64-title" class="t-title">テキスト(UTF-8) → Base64 エンコーダー</h3>
                 <div>
                     <input id="base64-input" class="t-input" type="text" placeholder="変換したい文字列を入力">
                 </div>
@@ -37,7 +37,7 @@
                 </div>
             </div>
             <div id="base64de" class="tool-container">
-                <h3 id="base64de-title" class="t-title">Base64 → テキスト デコーダー</h3>
+                <h3 id="base64de-title" class="t-title">Base64 → テキスト(UTF-8) デコーダー</h3>
                 <div>
                     <input id="base64de-input" class="t-input" type="text" placeholder="Base64形式を入力">
                 </div>
@@ -48,13 +48,11 @@
                 </div>
             </div>
             <div id="p-generator" class="tool-container">
-                <h3 id="p-generator-title" class="t-title">素数ジェネレーター</h3>
+                <h3 id="p-generator-title" class="t-title">素数ジェネレーター（1,000,000まで）</h3>
                 <p id="p-generator-summery" class="t-summery">
-                    説明: 「最小値」「最大値」に入力された範囲内の素数を全列挙します。<br>
-                    最大値は500000以下にしてください。<br>
-                    ※最大値が大きいと結構時間が掛かります
+                    説明:「最小値」「最大値」に入力された範囲内の素数を全列挙します。<br>
+                    最大値は1000000以下にしてください。
                 </p>
-                
                 <div class="t-inputs">
                     <div>
                         <label class="t-input-1-label" for="p-generator-input-1">最小値:</label>
@@ -67,10 +65,7 @@
                 </div>
                 <button id="p-generator-btn" class="t-btn" type="button">生成</button>
                 <div>
-                    <div class="t-result-labels">
-                        <label class="t-result-label" for="p-generator-result">結果:</label>
-                        <p id="p-generator-progress" class="t-progress">計算中……</p>
-                    </div>
+                    <label class="t-result-label" for="p-generator-result">結果:</label>
                     <textarea id="p-generator-result" class="t-result" readonly></textarea>
                 </div>
             </div>
