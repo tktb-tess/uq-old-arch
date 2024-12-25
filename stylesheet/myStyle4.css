@@ -259,6 +259,16 @@ li {
     }
 }
 
+hr {
+    margin: 2.5rem 0;
+    text-align: center;
+
+    &::after {
+        content: "〜〜〜";
+        color: var(--grau-1);
+    }
+}
+
 #page-top-button {
     margin: 0;
     position: fixed;
@@ -313,5 +323,10 @@ li {
 
 .d-none {
     display: none;
+}
+
+#tess-logo {
+    width: 256px;
+    margin: 2rem auto;
 }
 
