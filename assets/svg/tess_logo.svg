@@ -33,7 +33,15 @@
             }
 
             #svg1 {
-                animation: 30s linear infinite rainbow;
+                transition: ease-out 2s;
+            
+            }
+
+            @media (hover: hover) and (pointer: fine) {
+                #svg1:hover {
+                    animation: 20s linear infinite rainbow;
+                    transform: rotate(1080deg);
+                }
             }
         ]]>
     </style>

@@ -124,6 +124,13 @@ a {
     color: var(--farbe-link);
     transition: opacity var(--transition-link);
 
+    &.ext-link::after {
+        content: url('/assets/svg/box-arrow-up-right.svg');
+        display: inline-block;
+        width: .8rem;
+        height: auto;
+    }
+
     @media (hover: hover) and (pointer: fine) {
         &:hover {
             opacity: 0.6;
@@ -202,8 +209,6 @@ li {
         text-align: center;
         margin-inline: 0;
     }
-
-    
 
     button.t-btn {
         margin: .5rem auto;
@@ -323,6 +328,18 @@ hr {
 
 .d-none {
     display: none;
+}
+
+@keyframes rotate1 {
+    0% {
+        transform: rotate(0);
+    }
+    50% {
+        transform: rotate(180deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 #tess-logo {
