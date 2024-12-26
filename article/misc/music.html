@@ -9,7 +9,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <!-- Import my stylesheet -->
-    <link href="../../stylesheet/myStyle.css" type="text/css" rel="stylesheet">
+    <link href="/stylesheet/myStyle.css" type="text/css" rel="stylesheet">
     <link rel="icon" href="/assets/favicon/favicon.ico">
     <!-- OGP -->
 	<meta property="og:type" content="article" />
@@ -17,7 +17,7 @@
 	<meta property="og:description" content="作曲は楽しい" />
 	<meta property="og:url" content="https://tktb-tess.github.io" />
 	<meta property="og:site_name" content="悠久肆方体" />
-	<meta property="og:image" content="https://tktb-tess.github.io/tktb-source/image/link-card.jpg" />
+	<meta property="og:image" content="/assets/image/link-card.jpg" />
 	<!-- Twitter card -->
 	<meta name="twitter:card" content="summary" />
 	<meta name="twitter:site" content="@triethylamineq" />
@@ -45,7 +45,7 @@
                 <h4 class="card-title">Tessyrrhaqt - Welcome</h4>
                 <p class="ms-1 card-text">軽く作ったPsytranceもどきのBGM。</p>
             </div>
-            <audio src="https://tktb-tess.github.io/tktb-source/audio/welcome.m4a" id="wlcm" preload="metadata"></audio>
+            <audio src="/assets/audio/welcome.m4a" id="wlcm" preload="metadata"></audio>
             <div class="card-body">
                 <button role="button" class="btn-audio-controls" id="wlcm-play" onclick="musicPlayPause('wlcm')">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
@@ -57,7 +57,7 @@
                         <path d="M5 3.5h6A1.5 1.5 0 0 1 12.5 5v6a1.5 1.5 0 0 1-1.5 1.5H5A1.5 1.5 0 0 1 3.5 11V5A1.5 1.5 0 0 1 5 3.5z"/>
                     </svg>
                 </button>
-                <button role="button" class="btn-audio-controls" id="wlcm-loop" onclick="toggleLoop('wlcm')">
+                <button role="button" class="btn-audio-controls" id="wlcm-loop" data-active="false" onclick="toggleLoop('wlcm')">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
                         <path d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z"/>
                         <path fill-rule="evenodd" d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z"/>
@@ -74,7 +74,7 @@
                 <h4 class="card-title">Tessyrrhaqt - Celeste (short ver.)</h4>
                 <p class="ms-1 card-text">YouTubeのエンディングで使いそうな爽快系の曲。long ver. はまだない。</p>
             </div>
-            <audio src="https://tktb-tess.github.io/tktb-source/audio/celeste.m4a" id="celes" preload="metadata"></audio>
+            <audio src="/assets/audio/celeste.m4a" id="celes" preload="metadata"></audio>
             <div class="card-body">
                 <button role="button" class="btn-audio-controls" id="celes-play" onclick="musicPlayPause('celes')">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
@@ -86,7 +86,7 @@
                         <path d="M5 3.5h6A1.5 1.5 0 0 1 12.5 5v6a1.5 1.5 0 0 1-1.5 1.5H5A1.5 1.5 0 0 1 3.5 11V5A1.5 1.5 0 0 1 5 3.5z"/>
                     </svg>
                 </button>
-                <button role="button" class="btn-audio-controls" id="celes-loop" onclick="toggleLoop('celes')">
+                <button role="button" class="btn-audio-controls" id="celes-loop" data-active="false" onclick="toggleLoop('celes')">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
                         <path d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z"/>
                         <path fill-rule="evenodd" d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z"/>
@@ -107,7 +107,7 @@
 
     <!-- Bootstrap v5.3.3 JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <script src="../../js/pagetopbutton.js"></script>
+    <script src="/js/pagetopbutton.js"></script>
 
     <script>
         const audioList = document.getElementsByTagName('audio');
@@ -120,14 +120,14 @@
                 const musicID = this.id;
                 const timeE = document.getElementById(musicID + '-time');
                 const dur = toTime(document.getElementById(musicID).duration);
-                timeE.innerHTML = toTime(this.currentTime) + ' / ' + dur;
+                timeE.textContent = toTime(this.currentTime) + ' / ' + dur;
                 // console.log('timeupdate listener fired, ' + this.id);
             }, false);
             audioList[i].addEventListener('ended', function() { // 最後まで再生された場合の処理
                 const musicID = this.id;
                 const playBtn = document.getElementById(musicID + '-play');
                 const playTime = document.getElementById(musicID + '-time');
-                playTime.innerHTML = '0:00 / ' + toTime(this.duration);
+                playTime.textContent = '0:00 / ' + toTime(this.duration);
                 currentPlayAudio = null;
                 playBtn.innerHTML = playBtnSvg;
                 // console.log('ended listener fired, ' + this.id);
@@ -169,7 +169,7 @@
                 playBtn.innerHTML = playBtnSvg;
 
             } else {
-                console.log('unidentified error');
+                console.error('unidentified error');
             }
         }
 
@@ -190,7 +190,7 @@
 
         const toggleLoop = (musicID) => { // ループ再生のトグル
             const loopBtn = document.getElementById(musicID + '-loop');
-            loopBtn.classList.toggle('active');
+            loopBtn.dataset.active = !toBool(loopBtn.dataset.active);
             document.getElementById(musicID).loop = !document.getElementById(musicID).loop;
         }
         
@@ -199,6 +199,14 @@
             const min = Math.trunc(time / 60);
             const sec_str = (sec < 10) ? '0' + sec.toString() : sec.toString();
             return min.toString() + ':' + sec_str;
+        }
+
+        const toBool = (str) => {
+            if (str === 'false') {
+                return false;
+            } else {
+                return Boolean(str);
+            }
         }
         
     </script>

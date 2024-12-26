@@ -2,14 +2,14 @@
     font-family: 'InterVar';
     font-style: normal;
     src: local("Inter"),
-        url("https://tktb-tess.github.io/tktb-source/font/Inter/Inter-Variable.woff2") format("woff2");
+        url("/assets/font/Inter/Inter-Variable.woff2") format("woff2");
 }
 
 @font-face {
     font-family: 'InterVar';
     font-style: italic;
     src: local("Inter Italic"),
-        url("https://tktb-tess.github.io/tktb-source/font/Inter/Inter-Italic-Variable.woff2") format("woff2");
+        url("/assets/font/Inter/Inter-Italic-Variable.woff2") format("woff2");
 }
 
 @font-face {
@@ -17,7 +17,7 @@
     font-style: normal;
     font-weight: 100 500;
     src: local("Charis SIL"),
-        url("https://tktb-tess.github.io/tktb-source/font/CharisSIL/CharisSIL-Regular.woff2") format("woff2");
+        url("/assets/font/CharisSIL/CharisSIL-Regular.woff2") format("woff2");
 }
 
 @font-face {
@@ -25,7 +25,7 @@
     font-style: italic;
     font-weight: 100 500;
     src: local("Charis SIL Italic"),
-        url("https://tktb-tess.github.io/tktb-source/font/CharisSIL/CharisSIL-Italic.woff2") format("woff2");
+        url("/assets/font/CharisSIL/CharisSIL-Italic.woff2") format("woff2");
 }
 
 @font-face {
@@ -33,7 +33,7 @@
     font-style: normal;
     font-weight: 600 900;
     src: local("Charis SIL Bold"),
-        url("https://tktb-tess.github.io/tktb-source/font/CharisSIL/CharisSIL-Bold.woff2") format("woff2");
+        url("/assets/font/CharisSIL/CharisSIL-Bold.woff2") format("woff2");
 }
 
 @font-face {
@@ -41,7 +41,7 @@
     font-style: italic;
     font-weight: 600 900;
     src: local("Charis SIL Bold Italic"),
-        url("https://tktb-tess.github.io/tktb-source/font/CharisSIL/CharisSIL-BoldItalic.woff2") format("woff2");
+        url("/assets/font/CharisSIL/CharisSIL-BoldItalic.woff2") format("woff2");
 }
 
 
