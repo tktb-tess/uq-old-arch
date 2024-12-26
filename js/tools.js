@@ -13,6 +13,19 @@ const p_generator_result = document.getElementById('p-generator-result');
 const p_generator_progress = document.getElementById('p-generator-progress'); // "計算中……" の表示
 const prim_liste = [];
 
+async function primListeHolen() {
+    try {
+        const geholt = await fetch("/assets/json/prim_liste.json");
+        if (!geholt.ok) {
+            throw new Error(`response status: ${geholt.status}`)
+        }
+        const json = await geholt.json();
+        return json;
+    } catch (e) {
+        console.error(e.message);
+    }
+}
+
 primListeHolen().then((json) => {
     const p_list = json.list;
     for (const p of p_list) {
@@ -79,19 +92,6 @@ class RSA {
         this.#q = val_q;
         this.#pq = val_p * val_q;
         this.#phi_pq = (val_p - 1) * (val_q - 1);
-    }
-}
-
-async function primListeHolen() {
-    try {
-        const geholt = await fetch("/assets/prime_list.json");
-        if (!geholt.ok) {
-            throw new Error(`response status: ${geholt.status}`)
-        }
-        const json = await geholt.json();
-        return json;
-    } catch (e) {
-        console.error(e.message);
     }
 }
 
