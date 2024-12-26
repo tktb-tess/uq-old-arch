@@ -90,7 +90,7 @@ a {
     }
 
     &.ext-link::after {
-        content: url('../svg/box-arrow-up-right.svg');
+        content: url('/assets/svg/box-arrow-up-right.svg');
         display: inline-block;
         margin-right: 0.1rem;
         width: 0.75rem;
