@@ -1,0 +1,27 @@
+@keyframes rainbow {
+    0% {
+        fill: #f00;
+    }
+    16.67% {
+        fill: #ff0;
+    }
+    33.33% {
+        fill: #0f0;
+    }
+    50% {
+        fill: #0ff;
+    }
+    66.67% {
+        fill: #00f;
+    }
+    83.33% {
+        fill: #f0f;
+    }
+    100% {
+        fill: #f00;
+    }
+}
+
+#svg1 {
+    animation: 30s linear infinite rainbow;
+}
