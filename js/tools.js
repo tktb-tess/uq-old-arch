@@ -33,7 +33,6 @@ async function primListeHolen() {
 
 primListeHolen().then((result) => {
     console.log(result);
-    console.log(prim_liste.join(" "));
 })
 
 
