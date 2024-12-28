@@ -16,37 +16,39 @@
 
 :root {
     scroll-behavior: smooth;
-    --lila-2: #322549;
-    --lila-1: #f8efff;
-    --weiss-1: #f8f9fa;
-    --schwarz-lichtdurchlaessig-1: #00000077;
-    --blau-1: #0040b6;
-    --grau-1: #868686;
-    --farbe-bg: var(--weiss-1);
-    --farbe-seite: var(--lila-1);
-    --farbe-highlight: var(--lila-2);
-    --farbe-link: var(--blau-1);
-    --farbe-schatten: var(--schwarz-lichtdurchlaessig-1);
-    --farbe-rand-1: var(--schwarz-lichtdurchlaessig-1);
-    --farbe-pfeil-oben: var(--grau-1);
-    --font-sans: 'InterVar', 'Arial', 'Helvetica Neue', 'Noto Sans JP', 'Source Han Sans', 'Noto Sans CJK JP', 'Yu Gothic UI', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', sans-serif;
-    --font-serif: 'CharisSIL', 'Times New Roman', 'Noto Serif JP', 'Source Han Serif', 'Noto Serif CJK JP', 'Yu Mincho', 'Hiragino Serif', 'Hiragino Mincho ProN', serif;
-    --graben-behaelter: .75rem;
-    --groesse-h1: calc(1.375rem + .9vw);
-    --groesse-h2: calc(1.325rem + .5vw);
-    --groesse-h3: calc(1.3rem + .2vw);
-    --groesse-h4: 1.25rem;
-    --groesse-h5: 1.125rem;
-    --groesse-h6: 1rem;
-    --transition-btn-hover: 100ms ease-in-out;
-    --transition-btn-visibility: 250ms ease-in-out;
-    --transition-link: 60ms ease-in-out;
+    --murasaki-1: #f8efff;
+    --murasaki-2: #322549;
+    --xiro-1: #f8f9fa;
+    --kuro-hantoomee-1: #00000077;
+    --ao-1: #124ae6;
+    --ao-2: #d7e1ff;
+    --hai-1: #868686;
+    --iro-kontenaa: var(--xiro-1);
+    --iro-haikee: var(--murasaki-1);
+    --iro-midaxi: var(--murasaki-2);
+    --iro-rinku: var(--ao-1);
+    --iro-rinku-hobaa: var(--ao-2);
+    --iro-kage: var(--kuro-hantoomee-1);
+    --iro-fqidori: var(--kuro-hantoomee-1);
+    --iro-yajiruxi-ue: var(--hai-1);
+    --fonto-san: 'InterVar', 'Arial', 'Helvetica Neue', 'Noto Sans JP', 'Source Han Sans', 'Noto Sans CJK JP', 'Yu Gothic UI', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', sans-serif;
+    --fonto-serifu: 'CharisSIL', 'Times New Roman', 'Noto Serif JP', 'Source Han Serif', 'Noto Serif CJK JP', 'Yu Mincho', 'Hiragino Serif', 'Hiragino Mincho ProN', serif;
+    --mizo-kontenaa: .75rem;
+    --ookysa-h1: calc(1.375rem + .9vw);
+    --ookysa-h2: calc(1.325rem + .5vw);
+    --ookysa-h3: calc(1.3rem + .2vw);
+    --ookysa-h4: 1.25rem;
+    --ookysa-h5: 1.125rem;
+    --ookysa-h6: 1rem;
+    --henka-btn-hobaa: 100ms ease-in-out;
+    --henka-btn-xinindo: 250ms ease-in-out;
+    --henka-rinku: 60ms ease-in-out;
 }
 
 body {
-    font-family: var(--font-sans);
+    font-family: var(--fonto-san);
     font-optical-sizing: auto;
-    background-color: var(--lila-1);
+    background-color: var(--murasaki-1);
 }
 
 img {
@@ -55,12 +57,12 @@ img {
 
 #_container {
     display: flow-root;
-    background-color: var(--farbe-bg);
+    background-color: var(--iro-kontenaa);
     width: 100%;
     margin: 0 auto;
-    padding: 0 var(--graben-behaelter);
+    padding: 0 var(--mizo-kontenaa);
     min-height: 100vh;
-    box-shadow: 0 0 5px var(--farbe-schatten);
+    box-shadow: 0 0 5px var(--iro-kage);
 
     @media (min-width: 1200px) {
         max-width: 1140px;
@@ -72,57 +74,66 @@ img {
 }
 
 .font-serif {
-    font-family: var(--font-serif);
+    font-family: var(--fonto-serifu);
 }
 
-div {
-    margin-block-end: 1.2rem;
+p, ul, ol, dl, pre, blockquote, div {
+    margin-block-end: 1rem;
 }
 
-p, ul, ol, dl, pre {
-    margin-inline-start: 1rem;
-    margin-block-end: 1.2rem;
+main {
+    > p, ul, ol, dl, pre, blockquote {
+        margin-inline-start: 1rem;
+    }
+    > h3 {
+        margin-inline-start: .25rem;
+    }
+    > h4 {
+        margin-inline-start: .375rem;
+    }
+    > h5 {
+        margin-inline-start: .5rem;
+    }
+    > h6 {
+        margin-inline-start: .75rem;
+    }
 }
 
 h1, h2, h3, h4, h5, h6 {
     margin-block-end: .8rem;
     font-weight: 500;
-    color: var(--farbe-highlight);
-    font-family: var(--font-serif);
+    color: var(--iro-midaxi);
+    font-family: var(--fonto-serifu);
 }
 
 h1 {
-    font-size: var(--groesse-h1);
+    font-size: var(--ookysa-h1);
 }
 
 h2 {
-    font-size: var(--groesse-h2);
+    font-size: var(--ookysa-h2);
 }
 
 h3 {
-    font-size: var(--groesse-h3);
-    margin-inline-start: .25rem;
+    font-size: var(--ookysa-h3);
 }
 
 h4 {
-    font-size: var(--groesse-h4);
-    margin-inline-start: .375rem;
+    font-size: var(--ookysa-h4);
 }
 
 h5 {
-    font-size: var(--groesse-h5);
-    margin-inline-start: .5rem;
+    font-size: var(--ookysa-h5);
 }
 
 h6 {
-    font-size: var(--groesse-h6);
-    margin-inline-start: .75rem;
+    font-size: var(--ookysa-h6);
 }
 
 a {
     text-decoration: none;
-    color: var(--farbe-link);
-    transition: opacity var(--transition-link);
+    color: var(--iro-rinku);
+    transition: opacity var(--henka-rinku);
 
     &.ext-link::after {
         content: url('/assets/svg/box-arrow-up-right.svg');
@@ -133,7 +144,7 @@ a {
 
     @media (hover: hover) and (pointer: fine) {
         &:hover {
-            opacity: 0.6;
+            opacity: .5;
         }
     }
 }
@@ -157,19 +168,19 @@ button {
     width: max-content;
     max-width: 100%;
     background: transparent;
-    color: var(--lila-2);
-    border: solid 1px var(--lila-2);
+    color: var(--murasaki-2);
+    border: solid 1px var(--murasaki-2);
     padding: .1rem .5rem;
     font-size: 1rem;
     border-radius: 5px;
     background-clip: border-box;
-    transition: color var(--transition-btn-hover), background-color var(--transition-btn-hover);
+    transition: color var(--henka-btn-hobaa), background-color var(--henka-btn-hobaa);
     cursor: pointer;
 
     @media (hover: hover) and (pointer: fine) {
         &:hover {
-            background-color: var(--lila-2);
-            color: var(--weiss-1);
+            background-color: var(--murasaki-2);
+            color: var(--xiro-1);
         }
 
         &:active {
@@ -186,13 +197,17 @@ ul, ol, dl {
 }
 
 li {
-    > * {
+
+    > p, ul, ol, dl, pre, blockquote, div {
         margin: 0;
-        padding: 0;
     }
 
     > p:not(:first-child) {
-        margin: .3rem 0 1.75rem .8rem;
+        margin-inline-start: .5rem;
+    }
+
+    > p:last-child {
+        margin-block-end: .375rem;
     }
 
     > ul, ol, dl {
@@ -215,7 +230,7 @@ li {
     }
 
     input.t-input, textarea.t-result, input.t-input-1 {
-        border: solid 1px var(--farbe-rand-1);
+        border: solid 1px var(--iro-fqidori);
         border-radius: 5px;
         padding-inline: .25rem;
     }
@@ -270,7 +285,7 @@ hr {
 
     &::after {
         content: "〜〜〜";
-        color: var(--grau-1);
+        color: var(--hai-1);
     }
 }
 
@@ -282,14 +297,14 @@ hr {
     padding: 15px;
     border-radius: 50%;
     border: none;
-    transition: color var(--transition-btn-hover),
-        background-color var(--transition-btn-hover),
-        opacity var(--transition-btn-visibility),
-        visibility var(--transition-btn-visibility);
+    transition: color var(--henka-btn-hobaa),
+        background-color var(--henka-btn-hobaa),
+        opacity var(--henka-btn-xinindo),
+        visibility var(--henka-btn-xinindo);
     visibility: hidden;
     opacity: 0;
 
-    &.visible {
+    &[data-visible="true"] {
         visibility: visible;
         opacity: 1;
     }
@@ -344,6 +359,7 @@ hr {
 
 #tess-logo {
     width: 256px;
+    height: auto;
     margin: 2rem auto;
 }
 

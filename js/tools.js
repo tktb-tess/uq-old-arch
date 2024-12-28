@@ -20,17 +20,19 @@ async function primListeHolen() {
             throw new Error(`response status: ${geholt.status}`)
         }
         const json = await geholt.json();
-        return json;
+        const p_list = json.list;
+
+        for (const p of p_list) {
+            prim_liste.push(p);
+        }
+        return "fetch \'prim_liste.json\' successful";
     } catch (e) {
         console.error(e.message);
     }
 }
 
-primListeHolen().then((json) => {
-    const p_list = json.list;
-    for (const p of p_list) {
-        prim_liste.push(p);
-    }
+primListeHolen().then((result) => {
+    console.log(result);
 })
 
 
@@ -75,7 +77,7 @@ base64de_btn.addEventListener("click", () => {
         b64.decoder(base64de_input.value);
         base64de_result.value = b64.getStr();
     } catch (e) { // Base64以外が来たら警告
-        console.error(`ein Ausnahme fange: ${e}`);
+        console.error(`ein Ausnahme fange: ${e.message}`);
         base64de_result.value = "Error: Base64形式を入力してください";
     }
 }, false);
@@ -127,7 +129,7 @@ p_generator_btn.addEventListener('click', () => {
     try {
         p_generator_result.value =  primListeKallen(p_generator_input_1.value, p_generator_input_2.value).join(" "); // 計算
     } catch (e) { // 諸々のエラー処理
-        console.error(`ein Ausnahme fange: ${e}`);
+        console.error(`ein Ausnahme fange: ${e.message}`);
 
         switch (e.message) {
             case "Limit überschreitet":

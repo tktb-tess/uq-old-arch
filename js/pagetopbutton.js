@@ -2,10 +2,11 @@ const pageTopBtn = document.getElementById('page-top-button');
 
 window.addEventListener('scroll', function() {
     if (window.scrollY > 500) {
-        pageTopBtn.classList.add('visible');
+        pageTopBtn.dataset.visible = true;
     } else {
-        pageTopBtn.classList.remove('visible');
+        delete pageTopBtn.dataset.visible;
     }
+    
 }, false);
 
 pageTopBtn.addEventListener('click', function() {
