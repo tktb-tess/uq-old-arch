@@ -357,9 +357,10 @@ hr {
     }
 }
 
-#tess-logo {
-    width: 256px;
-    height: auto;
-    margin: 2rem auto;
+#tess-logo object { 
+    display: block;
+    width: 100%;
+    max-width: 500px;
+    margin-inline: auto;
 }
 
