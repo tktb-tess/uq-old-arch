@@ -270,7 +270,7 @@ figure > figcaption {
     opacity: 0;
     visibility: hidden;
 
-    &.visible {
+    &[data-visible="true"] {
         opacity: 1;
         visibility: visible;
     }
