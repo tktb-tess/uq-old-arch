@@ -27,14 +27,11 @@ async function primListeHolen() {
         }
         return "fetch \'prim_liste.json\' successful";
     } catch (e) {
-        console.error(e.message);
+        throw new Error(e.message);
     }
 }
 
-primListeHolen().then((result) => {
-    console.log(result);
-})
-
+primListeHolen().catch((err) => console.error(err.message));
 
 class Base64 {
     #str; // テキスト

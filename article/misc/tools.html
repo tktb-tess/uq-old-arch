@@ -30,7 +30,7 @@
                 <div>
                     <input id="base64-input" class="t-input" type="text" placeholder="変換したい文字列を入力">
                 </div>
-                <button id="base64-btn" class="t-btn" type="button">変換</button>
+                <button id="base64-btn" class="t-btn" type="button" role="button">変換</button>
                 <div>
                     <label class="t-result-label" for="base64-result">結果:</label>
                     <textarea id="base64-result" class="t-result" readonly></textarea>
@@ -41,7 +41,7 @@
                 <div>
                     <input id="base64de-input" class="t-input" type="text" placeholder="Base64形式を入力">
                 </div>
-                <button id="base64de-btn" class="t-btn" type="button">変換</button>
+                <button id="base64de-btn" class="t-btn" type="button" role="button">変換</button>
                 <div>
                     <label class="t-result-label" for="base64de-result">結果:</label>
                     <textarea id="base64de-result" class="t-result" readonly></textarea>
@@ -50,7 +50,7 @@
             <hr>
             <div id="p-generator" class="tool-container">
                 <h3 id="p-generator-title" class="t-title">素数ジェネレーター（1,000,000まで）</h3>
-                <p id="p-generator-summery" class="t-summery">
+                <p id="p-generator-summary" class="t-summary">
                     説明:「最小値」「最大値」に入力された範囲内の素数を全列挙します。<br>
                     最大値は1000000以下にしてください。
                 </p>
@@ -64,17 +64,41 @@
                         <input id="p-generator-input-2" class="t-input-1" type="text" placeholder="" />
                     </div>
                 </div>
-                <button id="p-generator-btn" class="t-btn" type="button">生成</button>
+                <button id="p-generator-btn" class="t-btn" type="button" role="button">表示</button>
                 <div>
                     <label class="t-result-label" for="p-generator-result">結果:</label>
                     <textarea id="p-generator-result" class="t-result" readonly></textarea>
                 </div>
             </div>
             <hr>
-            
-            <div id="tess-logo" class="tool-container">
+            <div class="tool-container">
                 <h3 class="t-title">?</h3>
-                <object data="/assets/svg/tess_logo.svg" type="text/svg+xml">tess_logo.svg</object>
+                <p class="t-summary">↓ ↓ ↓ ↓ ↓</p>
+                <object id="tess-logo" data="/assets/svg/tess_logo.svg" type="text/svg+xml">tess_logo.svg</object>
+                <p class="t-summary">↑ ↑ ↑ ↑ ↑</p>
+            </div>
+            <hr>
+            <div id="factori" class="tool-container">
+                <h3 id="factori-title" class="t-title">素因数分解チャレンジ（準備中）</h3>
+                <p class="t-summary">
+                    説明:「最小値」「最大値」に入力された範囲内から、ランダムに2つ素数を抽出し、積を表示します。<br />
+                    頑張って素因数分解してみよう！
+                </p>
+                <div class="t-inputs">
+                    <div>
+                        <label class="t-input-1-label" for="factori-input-1">最小値:</label>
+                        <input id="factori-input-1" class="t-input-1" type="text" placeholder="" />
+                    </div>
+                    <div>
+                        <label class="t-input-1-label" for="factori-input-2">最大値:</label>
+                        <input id="factori-input-2" class="t-input-1" type="text" placeholder="" />
+                    </div>
+                </div>
+                <button id="factori-btn" class="t-btn" type="button" role="button">抽出</button>
+                <div class="t-results">
+                    <p id="factori-result-label" class="t-result-1">結果:</p>
+                    <p id="factori-result" class="t-result-1">-</p>
+                </div>
             </div>
         </main>
     </div>

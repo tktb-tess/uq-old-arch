@@ -39,11 +39,17 @@
             }
 
             @keyframes rot {
-                from {
+                0% {
                     transform: rotate(0);
                 }
-                to {
-                    transform: rotate(18000deg);
+                0.5% {
+                    transform: rotate(-5deg);
+                }
+                99.5% {
+                    transform: rotate(54005deg);
+                }
+                100% {
+                    transform: rotate(54000deg);
                 }
             }
 
@@ -52,7 +58,7 @@
                 cursor: pointer;
 
                 &.clicked {
-                    animation: 10s linear rainbow, 10s ease-in-out rot;
+                    animation: 20s linear rainbow, 20s ease-in-out rot;
                 }
             }
         ]]>
