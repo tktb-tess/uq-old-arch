@@ -142,11 +142,14 @@ p_generator_btn.addEventListener('click', () => {
 
 factori_btn.addEventListener('click', () => {
     const factori_result = document.getElementById('factori-result');
-    const min = document.getElementById('factori-input-1');
-    const max = document.getElementById('factori-input-2');
+    const input_min = document.getElementById('factori-input-1');
+    const input_max = document.getElementById('factori-input-2');
     
     try {
-        const array = primListeKallen(min, max);
+        const array = primListeKallen(input_min.value, input_max.value);
+        const p = array[getRandomInt(0, array.length - 1)]
+        const q = array[getRandomInt(0, array.length - 1)]
+        factori_result.textContent = p * q;
     } catch (e) {
         console.error(`ein Ausnahme fange: ${e.message}`);
 
@@ -161,3 +164,8 @@ factori_btn.addEventListener('click', () => {
     }
 }, false);
 
+function getRandomInt(min, max) {
+  const minCeiled = Math.ceil(min);
+  const maxCeiled = Math.ceil(max);
+  return Math.floor(Math.random() * (maxCeiled - minCeiled) + minCeiled);
+}
