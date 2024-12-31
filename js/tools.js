@@ -151,6 +151,8 @@ class Cached {
 
 
 factori_btn.addEventListener('click', () => { // 素数生成
+    const factori_seego = document.getElementById('factori-seego');
+    factori_seego.style.display = null;
     Cached.p = null, Cached.q = null;
     const factori_result_2 = document.getElementById('factori-result-2');
     factori_result_2.textContent = "-";
@@ -170,6 +172,9 @@ factori_btn.addEventListener('click', () => { // 素数生成
         }
         factori_result.textContent = p * q;
         Cached.p = p, Cached.q = q;
+
+        
+        factori_seego.style.display = "block";
     } catch (e) {
         console.error(`ein Ausnahme fange: ${e.message}`);
 
@@ -190,6 +195,7 @@ factori_btn.addEventListener('click', () => { // 素数生成
 
 factori_btn_2.addEventListener('click', () => {
     const factori_result_2 = document.getElementById('factori-result-2');
+
     try {
         if (Cached.p === null || Cached.q === null) {
             factori_result_2.textContent = "-";
@@ -197,14 +203,16 @@ factori_btn_2.addEventListener('click', () => {
         } else {
             const pred_p_elem = document.getElementById('factori-input-3');
             const pred_q_elem = document.getElementById('factori-input-4');
-    
+
+            if (pred_p_elem.value === "" || pred_q_elem.value === "") {
+                throw new Error("keine Zahl");
+            }
             const pred_p = Number(pred_p_elem.value);
             const pred_q = Number(pred_q_elem.value);
     
             if (isNaN(pred_p) || isNaN(pred_q)) {
                 throw new Error("keine Zahl");
             }
-    
             if ((pred_p === Cached.p && pred_q === Cached.q) || (pred_p === Cached.q && pred_q === Cached.p)) {
                 factori_result_2.textContent = "〇";
                 factori_result_2.style.color = "red";

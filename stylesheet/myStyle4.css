@@ -342,6 +342,11 @@ table {
         max-width: 100%;
         text-wrap: balance;
     }
+
+    #factori-seego {
+        margin: 0;
+        display: none;
+    }
     
 }
 
