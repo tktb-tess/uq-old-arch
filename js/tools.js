@@ -11,6 +11,7 @@ const p_generator_input_2 = document.getElementById('p-generator-input-2');
 const p_generator_btn = document.getElementById('p-generator-btn');
 const p_generator_result = document.getElementById('p-generator-result');
 const p_generator_progress = document.getElementById('p-generator-progress'); // "計算中……" の表示
+const factori_btn = document.getElementById('factori-btn');
 const prim_liste = [];
 
 async function primListeHolen() {
@@ -94,7 +95,7 @@ class RSA {
     }
 }
 
-// max以下の素数の配列を返す
+// min以上max以下の素数の配列を返す
 function primListeKallen(min_, max_) {
     if (min_ === "" || max_ === "") { // 空文字は弾く
         throw new Error("keine Zahl");
@@ -139,7 +140,24 @@ p_generator_btn.addEventListener('click', () => {
     }
 }, false);
 
+factori_btn.addEventListener('click', () => {
+    const factori_result = document.getElementById('factori-result');
+    const min = document.getElementById('factori-input-1');
+    const max = document.getElementById('factori-input-2');
+    
+    try {
+        const array = primListeKallen(min, max);
+    } catch (e) {
+        console.error(`ein Ausnahme fange: ${e.message}`);
 
-
-
+        switch (e.message) {
+            case "Limit überschreitet":
+                factori_result.textContent = "エラー: 最大値が大きすぎます。1,000,000以下の値を入力して下さい。";
+                break;
+            case "keine Zahl":
+                factori_result.textContent = "エラー: 数値を入力して下さい。";
+                break;
+        }
+    }
+}, false);
 

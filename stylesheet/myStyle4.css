@@ -332,6 +332,17 @@ table {
             }
         }
     }
+
+    .t-results {
+        display: flex;
+        justify-content: center;
+        column-gap: 2px;
+
+        > p.t-result-1 {
+            min-width: 0;
+            margin: 0;
+        }
+    }
 }
 
 hr {
