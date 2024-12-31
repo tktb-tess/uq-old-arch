@@ -57,7 +57,7 @@
                 transition: transform 2s ease-out;
                 cursor: pointer;
 
-                &.clicked {
+                &[data-clicked="true"] {
                     animation: 20s linear rainbow, 20s ease-in-out rot;
                 }
             }
@@ -67,13 +67,20 @@
     <script>
         <![CDATA[
             const svg = document.getElementById('svg-tess-logo');
-            const delay = 10000; // アニメーション時間
+            const delay = 20000;
+            let is_rotating = false;
 
             svg.addEventListener('click', () => {
-                svg.classList.remove('clicked');
-                setTimeout(() => {
-                    svg.classList.add('clicked');
-                }, 1);
+                if (!is_rotating) {
+                    svg.dataset.clicked = true;
+
+                    setTimeout(() => {
+                        delete svg.dataset.clicked;
+                        is_rotating = false;
+                    }, delay);
+
+                    is_rotating = true;
+                }
             }, false);
         ]]>
     </script>
