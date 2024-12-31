@@ -2,15 +2,7 @@
 
 const base64_btn = document.getElementById("base64-btn"); // ボタン共
 const base64de_btn = document.getElementById("base64de-btn");
-const base64_input = document.getElementById("base64-input"); // 入力欄
-const base64_result = document.getElementById("base64-result"); // 結果欄
-const base64de_input = document.getElementById("base64de-input");
-const base64de_result = document.getElementById("base64de-result");
-const p_generator_input_1 = document.getElementById('p-generator-input-1');
-const p_generator_input_2 = document.getElementById('p-generator-input-2');
 const p_generator_btn = document.getElementById('p-generator-btn');
-const p_generator_result = document.getElementById('p-generator-result');
-const p_generator_progress = document.getElementById('p-generator-progress'); // "計算中……" の表示
 const factori_btn = document.getElementById('factori-btn');
 const prim_liste = [];
 
@@ -64,6 +56,8 @@ class Base64 {
 }
 
 base64_btn.addEventListener("click", () => {
+    const base64_input = document.getElementById('base64-input');
+    const base64_result = document.getElementById('base64-result');
     const b64 = new Base64();
     b64.encoder(base64_input.value);
     base64_result.value = b64.getBase64();
@@ -71,12 +65,14 @@ base64_btn.addEventListener("click", () => {
 
 base64de_btn.addEventListener("click", () => {
     const b64 = new Base64();
+    const base64de_input = document.getElementById('base64de-input');
+    const base64de_result = document.getElementById('base64de-result');
     try {
         b64.decoder(base64de_input.value);
         base64de_result.value = b64.getStr();
     } catch (e) { // Base64以外が来たら警告
         console.error(`ein Ausnahme fange: ${e.message}`);
-        base64de_result.value = "Error: Base64形式を入力してください";
+        base64de_result.value = "エラー: Base64形式を入力してください";
     }
 }, false);
 
@@ -122,8 +118,15 @@ function primListeKallen(min_, max_) {
     return p_list_itibu;
 }
 
+function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min) + min);
+}
+
 p_generator_btn.addEventListener('click', () => {
-    delete p_generator_result.value; // 結果を一旦空に
+    const p_generator_result = document.getElementById('p-generator-result');
+    const p_generator_input_1 = document.getElementById('p-generator-input-1');
+    const p_generator_input_2 = document.getElementById('p-generator-input-2');
+
     try {
         p_generator_result.value =  primListeKallen(p_generator_input_1.value, p_generator_input_2.value).join(" "); // 計算
     } catch (e) { // 諸々のエラー処理
@@ -146,9 +149,13 @@ factori_btn.addEventListener('click', () => {
     const input_max = document.getElementById('factori-input-2');
     
     try {
-        const array = primListeKallen(input_min.value, input_max.value);
-        const p = array[getRandomInt(0, array.length - 1)]
-        const q = array[getRandomInt(0, array.length - 1)]
+        const p_list = primListeKallen(input_min.value, input_max.value);
+        const p = p_list[getRandomInt(0, p_list.length - 1)];
+        const q = p_list[getRandomInt(0, p_list.length - 1)];
+
+        if (isNaN(p) || isNaN(q)) {
+            throw new Error("Out of range");
+        }
         factori_result.textContent = p * q;
     } catch (e) {
         console.error(`ein Ausnahme fange: ${e.message}`);
@@ -160,12 +167,12 @@ factori_btn.addEventListener('click', () => {
             case "keine Zahl":
                 factori_result.textContent = "エラー: 数値を入力して下さい。";
                 break;
+            case "Out of range":
+                factori_result.textContent = "エラー: 範囲内に素数がありません。";
+                break;
+
         }
     }
 }, false);
 
-function getRandomInt(min, max) {
-  const minCeiled = Math.ceil(min);
-  const maxCeiled = Math.ceil(max);
-  return Math.floor(Math.random() * (maxCeiled - minCeiled) + minCeiled);
-}
+
