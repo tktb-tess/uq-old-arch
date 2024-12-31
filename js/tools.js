@@ -225,3 +225,5 @@ factori_btn_2.addEventListener('click', () => {
 }, false);
 
 
+
+
