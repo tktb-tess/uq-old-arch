@@ -11,6 +11,7 @@ const p_generator_input_2 = document.getElementById('p-generator-input-2');
 const p_generator_btn = document.getElementById('p-generator-btn');
 const p_generator_result = document.getElementById('p-generator-result');
 const p_generator_progress = document.getElementById('p-generator-progress'); // "計算中……" の表示
+const factori_btn = document.getElementById('factori-btn');
 const prim_liste = [];
 
 async function primListeHolen() {
@@ -27,14 +28,11 @@ async function primListeHolen() {
         }
         return "fetch \'prim_liste.json\' successful";
     } catch (e) {
-        console.error(e.message);
+        throw new Error(e.message);
     }
 }
 
-primListeHolen().then((result) => {
-    console.log(result);
-})
-
+primListeHolen().catch((err) => console.error(err.message));
 
 class Base64 {
     #str; // テキスト
@@ -97,7 +95,7 @@ class RSA {
     }
 }
 
-// max以下の素数の配列を返す
+// min以上max以下の素数の配列を返す
 function primListeKallen(min_, max_) {
     if (min_ === "" || max_ === "") { // 空文字は弾く
         throw new Error("keine Zahl");
@@ -142,7 +140,32 @@ p_generator_btn.addEventListener('click', () => {
     }
 }, false);
 
+factori_btn.addEventListener('click', () => {
+    const factori_result = document.getElementById('factori-result');
+    const input_min = document.getElementById('factori-input-1');
+    const input_max = document.getElementById('factori-input-2');
+    
+    try {
+        const array = primListeKallen(input_min.value, input_max.value);
+        const p = array[getRandomInt(0, array.length - 1)]
+        const q = array[getRandomInt(0, array.length - 1)]
+        factori_result.textContent = p * q;
+    } catch (e) {
+        console.error(`ein Ausnahme fange: ${e.message}`);
 
+        switch (e.message) {
+            case "Limit überschreitet":
+                factori_result.textContent = "エラー: 最大値が大きすぎます。1,000,000以下の値を入力して下さい。";
+                break;
+            case "keine Zahl":
+                factori_result.textContent = "エラー: 数値を入力して下さい。";
+                break;
+        }
+    }
+}, false);
 
-
-
+function getRandomInt(min, max) {
+  const minCeiled = Math.ceil(min);
+  const maxCeiled = Math.ceil(max);
+  return Math.floor(Math.random() * (maxCeiled - minCeiled) + minCeiled);
+}
