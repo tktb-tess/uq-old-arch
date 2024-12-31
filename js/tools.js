@@ -4,6 +4,7 @@ const base64_btn = document.getElementById("base64-btn"); // ボタン共
 const base64de_btn = document.getElementById("base64de-btn");
 const p_generator_btn = document.getElementById('p-generator-btn');
 const factori_btn = document.getElementById('factori-btn');
+const factori_btn_2 = document.getElementById('factori-btn-2');
 const prim_liste = [];
 
 async function primListeHolen() {
@@ -119,7 +120,7 @@ function primListeKallen(min_, max_) {
 }
 
 function getRandomInt(min, max) {
-    return Math.floor(Math.random() * (max - min) + min);
+    return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
 p_generator_btn.addEventListener('click', () => {
@@ -143,7 +144,18 @@ p_generator_btn.addEventListener('click', () => {
     }
 }, false);
 
-factori_btn.addEventListener('click', () => {
+class Cached {
+    static p = null;
+    static q = null;
+}
+
+
+factori_btn.addEventListener('click', () => { // 素数生成
+    Cached.p = null, Cached.q = null;
+    const factori_result_2 = document.getElementById('factori-result-2');
+    factori_result_2.textContent = "-";
+    factori_result_2.style.color = null;
+
     const factori_result = document.getElementById('factori-result');
     const input_min = document.getElementById('factori-input-1');
     const input_max = document.getElementById('factori-input-2');
@@ -157,6 +169,7 @@ factori_btn.addEventListener('click', () => {
             throw new Error("Out of range");
         }
         factori_result.textContent = p * q;
+        Cached.p = p, Cached.q = q;
     } catch (e) {
         console.error(`ein Ausnahme fange: ${e.message}`);
 
@@ -171,6 +184,42 @@ factori_btn.addEventListener('click', () => {
                 factori_result.textContent = "エラー: 範囲内に素数がありません。";
                 break;
 
+        }
+    }
+}, false);
+
+factori_btn_2.addEventListener('click', () => {
+    const factori_result_2 = document.getElementById('factori-result-2');
+    try {
+        if (Cached.p === null || Cached.q === null) {
+            factori_result_2.textContent = "-";
+            factori_result_2.style.color = null;
+        } else {
+            const pred_p_elem = document.getElementById('factori-input-3');
+            const pred_q_elem = document.getElementById('factori-input-4');
+    
+            const pred_p = Number(pred_p_elem.value);
+            const pred_q = Number(pred_q_elem.value);
+    
+            if (isNaN(pred_p) || isNaN(pred_q)) {
+                throw new Error("keine Zahl");
+            }
+    
+            if ((pred_p === Cached.p && pred_q === Cached.q) || (pred_p === Cached.q && pred_q === Cached.p)) {
+                factori_result_2.textContent = "〇";
+                factori_result_2.style.color = "red";
+            } else {
+                factori_result_2.textContent = "×";
+                factori_result_2.style.color = "blue";
+            }
+        }
+    } catch (e) {
+        console.error(`ein Ausnahme fange: ${e.message}`);
+        switch (e.message) {
+            case "keine Zahl":
+                factori_result_2.textContent = "エラー: 数値を入力して下さい。";
+                factori_result_2.style.color = null;
+                break;
         }
     }
 }, false);
