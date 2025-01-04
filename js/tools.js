@@ -54,6 +54,16 @@ class Base64 {
     getBase64() {
         return this.#base64;
     }
+
+    static hexToBase64(_hex) {
+        const hex = String(_hex);
+        const check = Number.parseInt(hex, 16);
+        if (Number.isNaN(check)) throw new Error("keine Zahl");
+        const chars = hex.match(/.{2}/g);
+        const parsed = Uint8Array.from(chars, (char) => Number.parseInt(char, 16));
+        const binStr = Array.from(parsed, (bin) => String.fromCodePoint(bin)).join('');
+        return btoa(binStr);
+    }
 }
 
 base64_btn.addEventListener("click", () => {
@@ -149,18 +159,19 @@ class Cached {
     static q = null;
 }
 
-
 factori_btn.addEventListener('click', () => { // 素数生成
     const factori_seego = document.getElementById('factori-seego');
-    factori_seego.style.display = null;
-    Cached.p = null, Cached.q = null;
-    const factori_result_2 = document.getElementById('factori-result-2');
-    factori_result_2.textContent = "-";
-    factori_result_2.style.color = null;
-
     const factori_result = document.getElementById('factori-result');
+    const factori_result_2 = document.getElementById('factori-result-2');
     const input_min = document.getElementById('factori-input-1');
     const input_max = document.getElementById('factori-input-2');
+
+    factori_seego.style.visibility = null;
+    factori_result.style.fontSize = null;
+    Cached.p = null, Cached.q = null;
+    
+    factori_result_2.textContent = "-";
+    factori_result_2.style.color = null;
     
     try {
         const p_list = primListeKallen(input_min.value, input_max.value);
@@ -172,21 +183,22 @@ factori_btn.addEventListener('click', () => { // 素数生成
         }
         factori_result.textContent = p * q;
         Cached.p = p, Cached.q = q;
-
-        
-        factori_seego.style.display = "block";
+        factori_seego.style.visibility = "visible";
     } catch (e) {
         console.error(`ein Ausnahme fange: ${e.message}`);
 
         switch (e.message) {
             case "Limit überschreitet":
                 factori_result.textContent = "エラー: 最大値が大きすぎます。1,000,000以下の値を入力して下さい。";
+                factori_result.style.fontSize = "1em";
                 break;
             case "keine Zahl":
                 factori_result.textContent = "エラー: 数値を入力して下さい。";
+                factori_result.style.fontSize = "1em";
                 break;
             case "Out of range":
                 factori_result.textContent = "エラー: 範囲内に素数がありません。";
+                factori_result.style.fontSize = "1em";
                 break;
 
         }
@@ -195,6 +207,7 @@ factori_btn.addEventListener('click', () => { // 素数生成
 
 factori_btn_2.addEventListener('click', () => {
     const factori_result_2 = document.getElementById('factori-result-2');
+    factori_result_2.style.fontSize = null;
 
     try {
         if (Cached.p === null || Cached.q === null) {
@@ -226,6 +239,7 @@ factori_btn_2.addEventListener('click', () => {
         switch (e.message) {
             case "keine Zahl":
                 factori_result_2.textContent = "エラー: 数値を入力して下さい。";
+                factori_result_2.style.fontSize = "1em";
                 factori_result_2.style.color = null;
                 break;
         }

@@ -319,15 +319,6 @@ table {
         display: flex;
         justify-content: space-between;
         margin: 0;
-
-        p.t-progress {
-            margin: 0;
-            visibility: hidden;
-
-            &[data-visible="true"] {
-                visibility: visible;
-            }
-        }
     }
 
     #factori-result, #factori-result-2 {
@@ -345,7 +336,7 @@ table {
 
     #factori-seego {
         margin: 0;
-        display: none;
+        visibility: hidden;
     }
     
 }
