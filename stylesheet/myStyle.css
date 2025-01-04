@@ -7,6 +7,8 @@
 @import url("myStyle-font-face.css");
 
 :root {
+    --red-1: #f00;
+    --red-1-rgb: 255, 0, 0;
     --blue-1: #0040b6;
     --blue-1-rgb: 0, 64, 182;
     --blue-2: #1a3658;
@@ -21,8 +23,8 @@
     --bs-link-color-rgb: var(--blue-1-rgb);
     --bs-heading-color: var(--lila-1);
     --bs-heading-color-rgb: var(--lila-1-rgb);
-    --bs-danger-rgb: 255, 0, 0;
-
+    --bs-danger: var(--red-1);
+    --bs-danger-rgb: var(--red-1-rgb);
 
     --font-serif: 'CharisSIL', 'Times New Roman', 'Noto Serif JP', 'Source Han Serif', 'Noto Serif CJK JP', 'Yu Mincho', 'Hiragino Serif', 'Hiragino Mincho ProN', serif;
     --font-serif-latn: 'CharisSIL', 'Brill', 'Times New Roman', serif;
