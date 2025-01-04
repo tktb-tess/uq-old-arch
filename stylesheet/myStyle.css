@@ -11,7 +11,7 @@
     --blue-1-rgb: 0, 64, 182;
     --blue-2: #1a3658;
     --blue-2-rgb: 26, 54, 88;
-    --lila-1: #44225f;
+    --lila-1: #3d1e57;
     --lila-1-rgb: 50, 37, 73;
     --black-1: var(--bs-body-color);
     --weiss-1: var(--bs-light);
@@ -23,12 +23,13 @@
     --bs-heading-color-rgb: var(--lila-1-rgb);
     --bs-danger-rgb: 255, 0, 0;
 
+
     --font-serif: 'CharisSIL', 'Times New Roman', 'Noto Serif JP', 'Source Han Serif', 'Noto Serif CJK JP', 'Yu Mincho', 'Hiragino Serif', 'Hiragino Mincho ProN', serif;
     --font-serif-latn: 'CharisSIL', 'Brill', 'Times New Roman', serif;
     --font-ipa: 'CharisSIL', 'Times New Roman', serif;
     --font-sans: 'InterVar', 'Arial', 'Helvetica Neue', 'Noto Sans JP', 'Source Han Sans', 'Noto Sans CJK JP', 'Yu Gothic UI', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', sans-serif;
-    --bs-font-sans-serif: var(--font-sans);
     --font-sans-latn: 'InterVar', 'Arial', 'Helvetica Neue', sans-serif;
+    --bs-font-sans-serif: var(--font-sans);
 
     --transition-1: 150ms ease-in-out;
     --transition-2: 70ms ease-in-out;
@@ -147,7 +148,7 @@ table > * > * > td {
     position: fixed;
     right: 25px;
     bottom: 25px;
-    transition: var(--transition-3);
+    transition: opacity var(--transition-3), visibility var(--transition-3);
     opacity: 0;
     visibility: hidden;
 
@@ -162,25 +163,22 @@ table > * > * > td {
         background-color: transparent;
         border: none;
         border-radius: 50%;
-        padding: 12px;
-        transition: var(--transition-1);
+        padding: 14px;
+        transition: background-color var(--transition-1), color var(--transition-1);
+        color: var(--gray-1);
 
         #page-top-arrow {
             padding: 8px;
-            border-top: solid 2px var(--gray-1);
-            border-right: solid 2px var(--gray-1);
+            border-top: solid 2px;
+            border-right: solid 2px;
             transform: translateY(4px) rotate(-45deg);
-            transition: var(--transition-1);
+            border-color: inherit;
         }
 
         @media (hover: hover) and (pointer: fine) {
             &:hover {
                 background-color: var(--gray-1);
                 color: var(--bs-light);
-
-                #page-top-arrow {
-                    border-color: var(--bs-light);
-                }
             }
         }
     }
