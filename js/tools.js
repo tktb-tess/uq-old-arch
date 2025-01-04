@@ -55,7 +55,8 @@ class Base64 {
         return this.#base64;
     }
 
-    static hexToBase64(hex) {
+    static hexToBase64(_hex) {
+        const hex = String(_hex);
         const check = Number.parseInt(hex, 16);
         if (Number.isNaN(check)) throw new Error("keine Zahl");
         const chars = hex.match(/.{2}/g);
