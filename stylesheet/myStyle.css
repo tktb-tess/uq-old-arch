@@ -7,9 +7,15 @@
 @import url("myStyle-font-face.css");
 
 :root {
-    --my-heading-color-rgb: 26, 54, 88;
-    --my-link-color-rgb: 0, 64, 182;
-    --color-blue: #0040b6;
+    
+    --blue-1: #0040b6;
+    --blue-1-rgb: 0, 64, 182;
+    --blue-2: #1a3658;
+    --blue-2-rgb: 26, 54, 88;
+    --bs-link-color: var(--blue-1);
+    --bs-link-color-rgb: var(--blue-1-rgb);
+    --bs-heading-color: var(--blue-2);
+    --bs-heading-color-rgb: var(--blue-2-rgb);
     --my-dark-color: var(--bs-body-color);
     --my-light-color: var(--bs-light);
     --my-gray: var(--bs-secondary);
@@ -43,7 +49,6 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    color: rgba(var(--my-heading-color-rgb));
     font-family: var(--serif-font);
 }
 
@@ -77,19 +82,16 @@ h6 {
     color: rgba(var(--my-heading-color-rgb))!important;
 }
 
-a {
+a, .nav-link {
     text-decoration: none;
-    transition: var(--my-transition2);
+    transition: color var(--my-transition2);
 
-    &.link-deep-blue {
-        color: rgb(var(--my-link-color-rgb))!important;
-    
-        @media (hover: hover) and (pointer: fine) {
-            &:hover {
-                color: rgb(var(--my-link-color-rgb), 0.7)!important;
-            }
+    @media (hover: hover) and (pointer: fine) {
+        &:hover {
+            color: rgba(var(--bs-link-color-rgb), .7);
         }
     }
+    
 
     &.ext-link::after {
         content: url('/assets/svg/box-arrow-up-right.svg');
@@ -182,11 +184,11 @@ table > * > * > td {
 }
 
 .bg-deep-blue {
-    background-color: rgb(var(--my-heading-color-rgb))!important;
+    background-color: var(--bs-heading-color);
 }
 
 .text-deep-blue {
-    color: rgb(var(--my-link-color-rgb))!important;
+    color: rgb(var(--my-link-color-rgb));
 }
 
 hr {
