@@ -54,6 +54,15 @@ class Base64 {
     getBase64() {
         return this.#base64;
     }
+
+    static hexToBase64(hex) {
+        const check = Number.parseInt(hex, 16);
+        if (Number.isNaN(check)) throw new Error("keine Zahl");
+        const chars = hex.match(/.{2}/g);
+        const parsed = Uint8Array.from(chars, (char) => Number.parseInt(char, 16));
+        const binStr = Array.from(parsed, (bin) => String.fromCodePoint(bin)).join('');
+        return btoa(binStr);
+    }
 }
 
 base64_btn.addEventListener("click", () => {
@@ -149,14 +158,13 @@ class Cached {
     static q = null;
 }
 
-
 factori_btn.addEventListener('click', () => { // 素数生成
     const factori_seego = document.getElementById('factori-seego');
     const factori_result = document.getElementById('factori-result');
     const factori_result_2 = document.getElementById('factori-result-2');
     const input_min = document.getElementById('factori-input-1');
     const input_max = document.getElementById('factori-input-2');
-    
+
     factori_seego.style.visibility = null;
     factori_result.style.fontSize = null;
     Cached.p = null, Cached.q = null;
