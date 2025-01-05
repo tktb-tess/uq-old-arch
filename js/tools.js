@@ -93,7 +93,7 @@ class RSA {
     constructor(val_p_, val_q_) {
         const val_p = Number(val_p_), val_q = Number(val_q_);
         if (Number.isNaN(val_p) || Number.isNaN(val_q)) {
-            throw new TypeError("keineZahl");
+            throw new Error("keine Zahl");
         }
         this.#p = val_p;
         this.#q = val_q;
@@ -118,20 +118,40 @@ function primListeKallen(min_, max_) {
         return [];
     }
 
-    let p_list_itibu = [...prim_liste];
+    let min_index = 0, max_index = prim_liste.length - 1;
 
-    while (p_list_itibu[0] < min) {
-        p_list_itibu.shift();
+    while (prim_liste[min_index] < min) {
+        min_index++;
     }
-    while (p_list_itibu[p_list_itibu.length - 1] > max) {
-        p_list_itibu.pop();
+
+    while (prim_liste[max_index] > max) {
+        max_index--;
     }
+
+    const p_list_itibu = prim_liste.slice(min_index, max_index + 1);
+
     return p_list_itibu;
 }
 
-function getRandomInt(min, max) {
-    return Math.floor(Math.random() * (max - min + 1) + min);
+class util {
+    static getRandomInt(min, max) {
+        return Math.floor(Math.random() * (max - min + 1) + min);
+    }
+
+    static isEqArray(arr1, arr2) {
+        if (arr1.length !== arr2.length) 
+            return false;
+        else {
+            for (let i = 0; i < arr1.length; i++) {
+                if (arr1[i] !== arr2[i])
+                    return false;
+            }
+            return true;
+        }
+    }
 }
+
+
 
 p_generator_btn.addEventListener('click', () => {
     const p_generator_result = document.getElementById('p-generator-result');
@@ -155,8 +175,22 @@ p_generator_btn.addEventListener('click', () => {
 }, false);
 
 class Cached {
-    static p = null;
-    static q = null;
+    static #p = NaN;
+    static #q = NaN;
+
+    static set(_p, _q) {
+        this.#p = Number(_p);
+        this.#q = Number(_q);
+        return;
+    }
+
+    static get() {
+        return [this.#p, this.#q];
+    }
+
+    static isNaN() {
+        return Number.isNaN(this.#p) || Number.isNaN(this.#q);
+    }
 }
 
 factori_btn.addEventListener('click', () => { // 素数生成
@@ -168,21 +202,22 @@ factori_btn.addEventListener('click', () => { // 素数生成
 
     factori_seego.style.visibility = null;
     factori_result.style.fontSize = null;
-    Cached.p = null, Cached.q = null;
+    Cached.set(NaN, NaN);
     
     factori_result_2.textContent = "-";
     factori_result_2.style.color = null;
+    factori_result_2.style.fontSize = null;
     
     try {
         const p_list = primListeKallen(input_min.value, input_max.value);
-        const p = p_list[getRandomInt(0, p_list.length - 1)];
-        const q = p_list[getRandomInt(0, p_list.length - 1)];
+        const p = Number(p_list[util.getRandomInt(0, p_list.length - 1)]);
+        const q = Number(p_list[util.getRandomInt(0, p_list.length - 1)]);
 
-        if (isNaN(p) || isNaN(q)) {
+        if (Number.isNaN(p) || Number.isNaN(q)) {
             throw new Error("Out of range");
         }
         factori_result.textContent = p * q;
-        Cached.p = p, Cached.q = q;
+        Cached.set(p, q);
         factori_seego.style.visibility = "visible";
     } catch (e) {
         console.error(`ein Ausnahme fange: ${e.message}`);
@@ -210,23 +245,25 @@ factori_btn_2.addEventListener('click', () => {
     factori_result_2.style.fontSize = null;
 
     try {
-        if (Cached.p === null || Cached.q === null) {
+        if (Cached.isNaN()) {
             factori_result_2.textContent = "-";
             factori_result_2.style.color = null;
         } else {
-            const pred_p_elem = document.getElementById('factori-input-3');
-            const pred_q_elem = document.getElementById('factori-input-4');
+            const pred_p_tag = document.getElementById('factori-input-3');
+            const pred_q_tag = document.getElementById('factori-input-4');
 
-            if (pred_p_elem.value === "" || pred_q_elem.value === "") {
+            if (pred_p_tag.value === "" || pred_q_tag.value === "") {
                 throw new Error("keine Zahl");
             }
-            const pred_p = Number(pred_p_elem.value);
-            const pred_q = Number(pred_q_elem.value);
+            const pred_p = Number(pred_p_tag.value);
+            const pred_q = Number(pred_q_tag.value);
     
-            if (isNaN(pred_p) || isNaN(pred_q)) {
+            if (Number.isNaN(pred_p) || Number.isNaN(pred_q)) {
                 throw new Error("keine Zahl");
             }
-            if ((pred_p === Cached.p && pred_q === Cached.q) || (pred_p === Cached.q && pred_q === Cached.p)) {
+            
+            const is_correct = util.isEqArray(Cached.get(), [pred_p, pred_q]) || util.isEqArray(Cached.get(), [pred_q, pred_p]);
+            if (is_correct) {
                 factori_result_2.textContent = "〇";
                 factori_result_2.style.color = "red";
             } else {
@@ -245,7 +282,5 @@ factori_btn_2.addEventListener('click', () => {
         }
     }
 }, false);
-
-
 
 
