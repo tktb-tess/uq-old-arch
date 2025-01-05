@@ -10,31 +10,25 @@
         <![CDATA[
             @keyframes rainbow {
                 0% {
-                    fill: #000;
-                }
-                12.5% {
                     fill: #f00;
                 }
-                25% {
+                16.67% {
                     fill: #ff0;
                 }
-                37.5% {
+                33.33% {
                     fill: #0f0;
                 }
                 50% {
                     fill: #0ff;
                 }
-                62.5% {
+                66.67% {
                     fill: #00f;
                 }
-                75% {
+                83.33% {
                     fill: #f0f;
                 }
-                87.5% {
-                    fill: #f00;
-                }
                 100% {
-                    fill: #000;
+                    fill: #f00;
                 }
             }
 
@@ -54,11 +48,10 @@
             }
 
             #svg-tess-logo {
-                transition: transform 2s ease-out;
                 cursor: pointer;
 
                 &[data-clicked="true"] {
-                    animation: 20s linear rainbow, 20s ease-in-out rot;
+                    animation: .1s linear infinite rainbow, 20s ease-in-out rot;
                 }
             }
         ]]>
