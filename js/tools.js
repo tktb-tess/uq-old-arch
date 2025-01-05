@@ -10,15 +10,15 @@ const prim_liste = [];
 async function primListeHolen() {
     try {
         const geholt = await fetch("/assets/json/prim_liste.json");
-        if (!geholt.ok) {
-            throw new Error(`response status: ${geholt.status}`)
-        }
+        if (!geholt.ok) 
+            throw new Error(`response status: ${geholt.status}`);
+        
         const json = await geholt.json();
         const p_list = json.list;
 
-        for (const p of p_list) {
+        for (const p of p_list) 
             prim_liste.push(p);
-        }
+        
         return "fetch \'prim_liste.json\' successful";
     } catch (e) {
         throw new Error(e.message);
@@ -58,15 +58,17 @@ class Base64 {
     static hexToBase64(_hex) {
         const hex = String(_hex);
         const check = Number.parseInt(hex, 16);
-        if (Number.isNaN(check)) throw new Error("keine Zahl");
-        const chars = hex.match(/.{2}/g);
-        const parsed = Uint8Array.from(chars, (char) => Number.parseInt(char, 16));
-        const binStr = Array.from(parsed, (bin) => String.fromCodePoint(bin)).join('');
-        return btoa(binStr);
+        if (Number.isNaN(check)) 
+            throw new Error("keine Zahl");
+
+        const byte_strs = hex.match(/.{2}/g);
+        const parsed = Uint8Array.from(byte_strs, (byte_str) => Number.parseInt(byte_str, 16));
+
+        return btoa(Array.from(parsed, (bin) => String.fromCodePoint(bin)).join(''));
     }
 }
 
-base64_btn.addEventListener("click", () => {
+base64_btn.addEventListener('click', () => {
     const base64_input = document.getElementById('base64-input');
     const base64_result = document.getElementById('base64-result');
     const b64 = new Base64();
@@ -74,7 +76,7 @@ base64_btn.addEventListener("click", () => {
     base64_result.value = b64.getBase64();
 }, false);
 
-base64de_btn.addEventListener("click", () => {
+base64de_btn.addEventListener('click', () => {
     const b64 = new Base64();
     const base64de_input = document.getElementById('base64de-input');
     const base64de_result = document.getElementById('base64de-result');
@@ -150,8 +152,6 @@ class util {
         }
     }
 }
-
-
 
 p_generator_btn.addEventListener('click', () => {
     const p_generator_result = document.getElementById('p-generator-result');
@@ -261,7 +261,7 @@ factori_btn_2.addEventListener('click', () => {
             if (Number.isNaN(pred_p) || Number.isNaN(pred_q)) {
                 throw new Error("keine Zahl");
             }
-            
+
             const is_correct = util.isEqArray(Cached.get(), [pred_p, pred_q]) || util.isEqArray(Cached.get(), [pred_q, pred_p]);
             if (is_correct) {
                 factori_result_2.textContent = "〇";
