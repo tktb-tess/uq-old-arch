@@ -23,7 +23,7 @@
     --kuro-hantoomee-1: #00000077;
     --kuro-hantoomee-2: #00000030;
     --kuro-hantoomee-3: #00000020;
-    --ao-1: #124ae6;
+    --ao-1: #2052db;
     --ao-2: #d7e1ff;
     --hai-1: #868686;
     --iro-kontenaa: var(--xiro-1);
@@ -323,7 +323,6 @@ table {
 
     #factori-result, #factori-result-2 {
         text-align: center;
-        font-family: var(--fonto-serifu);
         font-size: 2em;
         border: solid 2px var(--iro-fqidori);
         border-radius: 10px;
