@@ -46,20 +46,19 @@ async function fetchConlangList(_url) {
 
 async function show() {
     const containerE = document.getElementById('_container');
+    const headerE = document.createElement('header');
     const mainE = document.createElement('main');
 
     // タイトル
     const titleE = document.createElement('h1');
     titleE.id = 'title';
     titleE.textContent = ctc_metadata.title;
-    mainE.appendChild(titleE);
+    headerE.appendChild(titleE);
+    containerE.appendChild(headerE);
 
     // 戻るリンク
     const linktotopE = document.createElement('p');
-    const linktotoplinkE = document.createElement('a');
-    linktotoplinkE.href = "../../";
-    linktotoplinkE.textContent = "← 戻る";
-    linktotopE.appendChild(linktotoplinkE);
+    linktotopE.innerHTML = `<a href="../../">← 戻る</a>`;
     mainE.appendChild(linktotopE);
 
     // メタデータ
