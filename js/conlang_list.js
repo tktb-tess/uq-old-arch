@@ -46,21 +46,40 @@ async function fetchConlangList(_url) {
 
 async function show() {
     const containerE = document.getElementById('_container');
+    const headerE = document.createElement('header');
     const mainE = document.createElement('main');
 
     // タイトル
     const titleE = document.createElement('h1');
     titleE.id = 'title';
     titleE.textContent = ctc_metadata.title;
-    mainE.appendChild(titleE);
+    headerE.appendChild(titleE);
+    containerE.appendChild(headerE);
 
     // 戻るリンク
     const linktotopE = document.createElement('p');
-    const linktotoplinkE = document.createElement('a');
-    linktotoplinkE.href = "../../";
-    linktotoplinkE.textContent = "← 戻る";
-    linktotopE.appendChild(linktotoplinkE);
+    linktotopE.innerHTML = `<a href="../../">← 戻る</a>`;
     mainE.appendChild(linktotopE);
+
+    // 説明
+    const explE = document.createElement('p');
+    explE.innerHTML = `
+                        説明:<br>
+                            <a class="ext-link" href="https://kaeru2193.github.io/Conlang-List-Works/" target="_blank" rel="noreferrer">
+                                かえるさんのリポジトリ
+                            </a>
+                        からCotecファイルを引っ張ってきて表示しているだけです。クソ重いので悪しからず。<br>
+                        大人しく
+                            <a class="ext-link" href="https://wiki.conlinguistics.jp/%E6%97%A5%E6%9C%AC%E8%AA%9E%E5%9C%8F%E3%81%AE%E4%BA%BA%E5%B7%A5%E8%A8%80%E8%AA%9E%E4%B8%80%E8%A6%A7" target="_blank" rel="noreferrer">
+                                人工言語学Wiki
+                            </a>
+                        とか
+                            <a class="ext-link" href="https://tools.kaeru2193.net/Babel-Index-Viewer/" target="_blank" rel="noreferrer">
+                                Babel Index Viewer
+                            </a>
+                        見に行った方が良い。
+                    `;
+    mainE.appendChild(explE);
 
     // メタデータ
     const metadata_ulE = document.createElement('ul');
@@ -81,7 +100,7 @@ async function show() {
     mainE.appendChild(metadata_ulE);
 
     const licenseE = document.createElement('p');
-    licenseE.textContent = ctc_metadata.license.content;
+    licenseE.textContent = `ライセンス表示: ${ctc_metadata.license.content}`;
     mainE.appendChild(licenseE);
 
     const number_of_langs = document.createElement('h3');
