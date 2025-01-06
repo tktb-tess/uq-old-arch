@@ -54,6 +54,14 @@ async function show() {
     titleE.textContent = ctc_metadata.title;
     mainE.appendChild(titleE);
 
+    // 戻るリンク
+    const linktotopE = document.createElement('p');
+    const linktotoplinkE = document.createElement('a');
+    linktotoplinkE.href = "../../";
+    linktotoplinkE.textContent = "← 戻る";
+    linktotopE.appendChild(linktotoplinkE);
+    mainE.appendChild(linktotopE);
+
     // メタデータ
     const metadata_ulE = document.createElement('ul');
     metadata_ulE.classList.add('unstyled');
