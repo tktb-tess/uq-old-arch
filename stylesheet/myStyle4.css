@@ -35,6 +35,7 @@
     --iro-kage-teeburu: var(--kuro-hantoomee-2);
     --iro-fqidori: var(--kuro-hantoomee-1);
     --iro-fqidori-2: var(--kuro-hantoomee-2);
+    --iro-fqidori-3: var(--xiro-1);
     --iro-tr: var(--kuro-hantoomee-3);
     --iro-yajiruxi-ue: var(--hai-1);
     --fonto-san: 'InterVar', 'Arial', 'Helvetica Neue', 'Noto Sans JP', 'Source Han Sans', 'Noto Sans CJK JP', 'Yu Gothic UI', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', sans-serif;
@@ -240,6 +241,10 @@ li {
     overflow-x: auto;
 }
 
+#number-of-langs {
+    text-align: center;
+}
+
 table {
     background-color: white;
     border-collapse: collapse;
@@ -249,22 +254,60 @@ table {
     thead tr {
         background-color: var(--murasaki-3);
         color: white;
+        th:not(:last-child) {
+            border-inline-end: solid 1px var(--iro-fqidori-3);
+        }
     }
 
     tr:nth-child(even) {
         background-color: var(--iro-tr);
     }
 
+    th {
+        font-weight: 500;
+    }
+
     td, th {
-        font-weight: 400;
         padding: .25rem 1rem;
         text-align: center;
-
+        
         &:not(:last-child) {
             border-inline-end: solid 1px var(--iro-fqidori-2);
         }
     }
 }
+
+#conlang-list {
+    border-collapse: collapse;
+    background-color: white;
+
+    * {
+        margin: 0;
+    }
+
+    .wrapper {
+        overflow-x: auto;
+        max-width: 25rem;
+        scrollbar-width: thin;
+    }
+
+    th, td {
+        white-space: nowrap;
+        text-align: left;
+    }
+
+    thead tr {
+        th {
+            text-align: center;
+            white-space: nowrap;
+        }
+    }
+
+    tr:nth-child(even) {
+        background-color: var(--iro-tr);
+    }
+}
+
 
 .tool-container {
     margin: 2rem auto;
