@@ -32,16 +32,6 @@ class util {
     }
 }
 
-const omikuji = (_num) => {
-    const num = Number(_num);
-    if (Number.isNaN(num) || num === 0) return [];
-    const omikuji_arr = [];
-    for (let i = 0; i < num; i++) {
-        omikuji_arr.push(util.getRandomInt(1, 1000000));
-    }
-    return omikuji_arr;
-}
-
 async function primListeHolen() {
     try {
         const geholt = await fetch("/assets/json/prim_liste.json");
@@ -54,7 +44,9 @@ async function primListeHolen() {
         for (const p of p_list) 
             prim_liste.push(p);
         
-        return "fetch \'prim_liste.json\' successful";
+        console.log(`fetching \'prim_liste.json\' was successful!`);
+        
+        return;
     } catch (e) {
         throw new Error(e.message);
     }
@@ -290,5 +282,7 @@ factori_btn_2.addEventListener('click', () => {
         }
     }
 }, false);
+
+
 
 
