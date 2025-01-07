@@ -7,6 +7,41 @@ const factori_btn = document.getElementById('factori-btn');
 const factori_btn_2 = document.getElementById('factori-btn-2');
 const prim_liste = [];
 
+class util {
+    static getRandomInt(min, max) { // min以上, max未満の整数を返す
+        return Math.floor(Math.random() * (max - min) + min);
+    }
+
+    static isEqArray(arr1, arr2) {
+        if (arr1.length !== arr2.length) 
+            return false;
+        else {
+            for (let i = 0; i < arr1.length; i++) {
+                if (arr1[i] !== arr2[i])
+                    return false;
+            }
+            return true;
+        }
+    }
+
+    static async getHashb64(str) {
+        const encoded = new TextEncoder().encode(str);
+        const hash = new Uint8Array(await crypto.subtle.digest('SHA-256', encoded));
+        const binstrarr = Array.from(hash, (byte) => String.fromCodePoint(byte));
+        return btoa(binstrarr.join(''));
+    }
+}
+
+const omikuji = (_num) => {
+    const num = Number(_num);
+    if (Number.isNaN(num) || num === 0) return [];
+    const omikuji_arr = [];
+    for (let i = 0; i < num; i++) {
+        omikuji_arr.push(util.getRandomInt(1, 1000000));
+    }
+    return omikuji_arr;
+}
+
 async function primListeHolen() {
     try {
         const geholt = await fetch("/assets/json/prim_liste.json");
@@ -54,18 +89,6 @@ class Base64 {
     getBase64() {
         return this.#base64;
     }
-
-    static hexToBase64(_hex) {
-        const hex = String(_hex);
-        const check = Number.parseInt(hex, 16);
-        if (Number.isNaN(check)) 
-            throw new Error("keine Zahl");
-
-        const byte_strs = hex.match(/.{2}/g);
-        const parsed = Uint8Array.from(byte_strs, (byte_str) => Number.parseInt(byte_str, 16));
-
-        return btoa(Array.from(parsed, (bin) => String.fromCodePoint(bin)).join(''));
-    }
 }
 
 base64_btn.addEventListener('click', () => {
@@ -106,51 +129,30 @@ class RSA {
 
 // min以上max以下の素数の配列を返す
 function primListeKallen(min_, max_) {
-    if (min_ === "" || max_ === "") { // 空文字は弾く
+    if (min_ === "" || max_ === "")  // 空文字は弾く
         throw new Error("keine Zahl");
-    }
+    
     const min = Number(min_), max = Number(max_);
-    if (Number.isNaN(min) || Number.isNaN(max)) { // 非数は弾く
+    if (Number.isNaN(min) || Number.isNaN(max))  // 非数は弾く
         throw new Error("keine Zahl");
-    }
-    if (max > 1000000) { // 1,000,000より大きいのを弾く
+    
+    if (max > 1000000)  // 1,000,000より大きいのを弾く
         throw new Error("Limit überschreitet");
-    }
-    if (min > max) { // minの方がデカかったら空のままにする
+    
+    if (min > max)  // minの方がデカかったら空にする
         return [];
-    }
 
     let min_index = 0, max_index = prim_liste.length - 1;
 
-    while (prim_liste[min_index] < min) {
+    while (prim_liste[min_index] < min) 
         min_index++;
-    }
 
-    while (prim_liste[max_index] > max) {
+    while (prim_liste[max_index] > max) 
         max_index--;
-    }
 
     const p_list_itibu = prim_liste.slice(min_index, max_index + 1);
 
     return p_list_itibu;
-}
-
-class util {
-    static getRandomInt(min, max) {
-        return Math.floor(Math.random() * (max - min + 1) + min);
-    }
-
-    static isEqArray(arr1, arr2) {
-        if (arr1.length !== arr2.length) 
-            return false;
-        else {
-            for (let i = 0; i < arr1.length; i++) {
-                if (arr1[i] !== arr2[i])
-                    return false;
-            }
-            return true;
-        }
-    }
 }
 
 p_generator_btn.addEventListener('click', () => {
@@ -170,18 +172,20 @@ p_generator_btn.addEventListener('click', () => {
             case "keine Zahl":
                 p_generator_result.value = "エラー: 数値を入力して下さい。";
                 break;
+            default: 
+                p_generator_result.value = "不明なエラー";
+                break;
         }
     }
 }, false);
 
-class Cached {
+class CachedPrime {
     static #p = NaN;
     static #q = NaN;
 
     static set(_p, _q) {
         this.#p = Number(_p);
         this.#q = Number(_q);
-        return;
     }
 
     static get() {
@@ -202,7 +206,7 @@ factori_btn.addEventListener('click', () => { // 素数生成
 
     factori_seego.style.visibility = null;
     factori_result.style.fontSize = null;
-    Cached.set(NaN, NaN);
+    CachedPrime.set(NaN, NaN);
     
     factori_result_2.textContent = "-";
     factori_result_2.style.color = null;
@@ -210,32 +214,32 @@ factori_btn.addEventListener('click', () => { // 素数生成
     
     try {
         const p_list = primListeKallen(input_min.value, input_max.value);
-        const p = Number(p_list[util.getRandomInt(0, p_list.length - 1)]);
-        const q = Number(p_list[util.getRandomInt(0, p_list.length - 1)]);
+        const p = Number(p_list[util.getRandomInt(0, p_list.length)]);
+        const q = Number(p_list[util.getRandomInt(0, p_list.length)]);
 
         if (Number.isNaN(p) || Number.isNaN(q)) {
             throw new Error("Out of range");
         }
         factori_result.textContent = p * q;
-        Cached.set(p, q);
+        CachedPrime.set(p, q);
         factori_seego.style.visibility = "visible";
     } catch (e) {
         console.error(`ein Ausnahme fange: ${e.message}`);
+        factori_result.style.fontSize = "1em";
 
         switch (e.message) {
             case "Limit überschreitet":
                 factori_result.textContent = "エラー: 最大値が大きすぎます。1,000,000以下の値を入力して下さい。";
-                factori_result.style.fontSize = "1em";
                 break;
             case "keine Zahl":
                 factori_result.textContent = "エラー: 数値を入力して下さい。";
-                factori_result.style.fontSize = "1em";
                 break;
             case "Out of range":
                 factori_result.textContent = "エラー: 範囲内に素数がありません。";
-                factori_result.style.fontSize = "1em";
                 break;
-
+            default: 
+                factori_result.textContent = "不明なエラー";
+                break;
         }
     }
 }, false);
@@ -243,11 +247,11 @@ factori_btn.addEventListener('click', () => { // 素数生成
 factori_btn_2.addEventListener('click', () => {
     const factori_result_2 = document.getElementById('factori-result-2');
     factori_result_2.style.fontSize = null;
+    factori_result_2.style.color = null;
 
     try {
-        if (Cached.isNaN()) {
+        if (CachedPrime.isNaN()) {
             factori_result_2.textContent = "-";
-            factori_result_2.style.color = null;
         } else {
             const pred_p_tag = document.getElementById('factori-input-3');
             const pred_q_tag = document.getElementById('factori-input-4');
@@ -262,7 +266,7 @@ factori_btn_2.addEventListener('click', () => {
                 throw new Error("keine Zahl");
             }
 
-            const is_correct = util.isEqArray(Cached.get(), [pred_p, pred_q]) || util.isEqArray(Cached.get(), [pred_q, pred_p]);
+            const is_correct = util.isEqArray(CachedPrime.get(), [pred_p, pred_q]) || util.isEqArray(CachedPrime.get(), [pred_q, pred_p]);
             if (is_correct) {
                 factori_result_2.textContent = "〇";
                 factori_result_2.style.color = "red";
@@ -273,11 +277,15 @@ factori_btn_2.addEventListener('click', () => {
         }
     } catch (e) {
         console.error(`ein Ausnahme fange: ${e.message}`);
+        factori_result_2.style.fontSize = "1em";
+
         switch (e.message) {
             case "keine Zahl":
                 factori_result_2.textContent = "エラー: 数値を入力して下さい。";
-                factori_result_2.style.fontSize = "1em";
-                factori_result_2.style.color = null;
+                break;
+
+            default: 
+                factori_result_2.textContent = "不明なエラー";
                 break;
         }
     }
