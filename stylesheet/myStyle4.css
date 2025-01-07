@@ -241,10 +241,6 @@ li {
     overflow-x: auto;
 }
 
-#number-of-langs {
-    text-align: center;
-}
-
 table {
     background-color: white;
     border-collapse: collapse;
@@ -276,38 +272,6 @@ table {
         }
     }
 }
-
-#conlang-list {
-    border-collapse: collapse;
-    background-color: white;
-
-    * {
-        margin: 0;
-    }
-
-    .wrapper {
-        overflow-x: auto;
-        max-width: 25rem;
-        scrollbar-width: thin;
-    }
-
-    th, td {
-        white-space: nowrap;
-        text-align: left;
-    }
-
-    thead tr {
-        th {
-            text-align: center;
-            white-space: nowrap;
-        }
-    }
-
-    tr:nth-child(even) {
-        background-color: var(--iro-tr);
-    }
-}
-
 
 .tool-container {
     margin: 2rem auto;
