@@ -58,6 +58,10 @@ body {
     font-family: var(--fonto-san);
     font-optical-sizing: auto;
     background-color: var(--murasaki-1);
+
+    * {
+        font-family: inherit;
+    }
 }
 
 img {

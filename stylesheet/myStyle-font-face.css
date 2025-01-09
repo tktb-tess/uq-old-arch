@@ -16,6 +16,7 @@
     font-family: 'CharisSIL';
     font-style: normal;
     font-weight: 100 500;
+    size-adjust: 106%;
     src: local("Charis SIL"),
         url("/assets/font/CharisSIL/CharisSIL-Regular.woff2") format("woff2");
 }
@@ -24,6 +25,7 @@
     font-family: 'CharisSIL';
     font-style: italic;
     font-weight: 100 500;
+    size-adjust: 106%;
     src: local("Charis SIL Italic"),
         url("/assets/font/CharisSIL/CharisSIL-Italic.woff2") format("woff2");
 }
@@ -32,6 +34,7 @@
     font-family: 'CharisSIL';
     font-style: normal;
     font-weight: 600 900;
+    size-adjust: 106%;
     src: local("Charis SIL Bold"),
         url("/assets/font/CharisSIL/CharisSIL-Bold.woff2") format("woff2");
 }
@@ -40,6 +43,7 @@
     font-family: 'CharisSIL';
     font-style: italic;
     font-weight: 600 900;
+    size-adjust: 106%;
     src: local("Charis SIL Bold Italic"),
         url("/assets/font/CharisSIL/CharisSIL-BoldItalic.woff2") format("woff2");
 }
