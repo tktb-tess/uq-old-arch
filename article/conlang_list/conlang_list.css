@@ -1,0 +1,251 @@
+@charset "utf-8";
+
+/* Import Google Fonts: Noto Sans/Serif JP, Zen Antique */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Noto+Serif+JP:wght@200..900&family=Zen+Antique&display=swap');
+/* Import my font-faces */
+@import url('/stylesheet/myStyle-font-face.css');
+
+*, ::before, ::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    line-height: 1.4;
+    border: none;
+    overflow-wrap: anywhere;
+}
+
+:root {
+    scroll-behavior: smooth;
+    --white-1: #f8f9fa;
+    --white-trl-1: #f8f9fa7e;
+    --white-trl-2: #ffffff6b;
+    --purple-1: #3d1e57;
+    --black-trl-1: #0000005b;
+    --black-1: #000;
+    --blue-1: #20e5ff;
+
+    --color-background: var(--purple-1);
+    --color-container: var(--purple-1);
+    --color-content: var(--white-1);
+    --color-border-title: var(--white-trl-1);
+    --color-link: var(--blue-1);
+    --shadow-button: inset 0 0 3px 1px var(--purple-1);
+    --gradient-background: linear-gradient(to bottom left, var(--purple-1), black);
+    --transition-button: opacity 90ms ease-in-out;
+    --transition-gacha: opacity .4s ease-in-out, visibility .4s ease-in-out;
+    --font-sans: 'InterVar', 'Arial', 'Helvetica Neue', 'Noto Sans JP', 'Source Han Sans', 'Noto Sans CJK JP', 'Yu Gothic UI', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', sans-serif;
+    --font-serif: 'CharisSIL', 'Times New Roman', 'Noto Serif JP', 'Source Han Serif', 'Noto Serif CJK JP', 'Yu Mincho', 'Hiragino Serif', 'Hiragino Mincho ProN', serif;
+    --font-title: 'CharisSIL', 'Times New Roman', 'Zen Antique', 'Noto Serif JP', 'Source Han Serif', 'Noto Serif CJK JP', 'Yu Mincho', 'Hiragino Serif', 'Hiragino Mincho ProN', serif;
+    --gutter-container: .75rem;
+
+    --size-h1: calc(1.375rem + .9vw);
+    --size-h2: calc(1.325rem + .5vw);
+    --size-h3: calc(1.3rem + .2vw);
+    --size-h4: 1.25rem;
+    --size-h5: 1.125rem;
+    --size-h6: 1rem;
+}
+
+body {
+    background: var(--gradient-background);
+    font-family: var(--font-sans);
+    color: var(--color-content);
+    font-optical-sizing: auto;
+
+    * {
+        font-family: inherit;
+    }
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-serif);
+    font-weight: 500;
+    margin-block-end: .75rem;
+}
+
+p, ul, ol, dl, pre, blockquote, div {
+    margin-block-end: 1rem;
+}
+
+main > :is(p, ul, ol, dl, pre) {
+    margin-inline-start: 1rem;
+}
+
+ul, ol {
+    padding-inline-start: 1rem;
+
+}
+
+ul {
+    list-style-type: "\25b8  ";
+    
+    &.unstyled {
+        padding-inline-start: 0;
+        list-style: none;
+    }
+}
+
+li {
+
+    > p, ul, ol, dl, pre, blockquote, div {
+        margin: 0;
+    }
+
+    > p:not(:first-child) {
+        margin-inline-start: .5rem;
+    }
+
+    > p:last-child {
+        margin-block-end: .375rem;
+    }
+
+    > ul, ol, dl {
+        margin-block-end: .2rem;
+    }
+}
+
+h1 {
+    font-size: var(--size-h1);
+}
+
+h2 {
+    font-size: var(--size-h2);
+}
+
+h3 {
+    font-size: var(--size-h3);
+}
+
+h4 {
+    font-size: var(--size-h4);
+}
+
+h5 {
+    font-size: var(--size-h5);
+}
+
+h6 {
+    font-size: var(--size-h6);
+}
+
+#_container {
+    width: 100%;
+    margin-inline: auto;
+    display: flow-root;
+    min-height: 100vh;
+    padding-inline: var(--gutter-container);
+
+    @media (min-width: 1140px) {
+        max-width: 1140px;
+    }
+
+    @media (min-width: 1400px) {
+        max-width: 1320px;
+    }
+}
+
+header {
+    margin: 0 calc(-1 * var(--gutter-container));
+    display: flow-root;
+}
+
+#title {
+    text-align: center;
+    margin: 5rem auto;
+    width: max-content;
+    max-width: 100%;
+    text-wrap: balance;
+    font-family: var(--font-title);
+    font-weight: 400;
+}
+
+.article {
+    text-align: center;
+    border-bottom: solid 1px;
+    margin-inline: auto;
+    width: max-content;
+    max-width: 100%;
+    padding-inline: .2rem;
+}
+
+.buttons {
+    display: flex;
+    margin-block: 2rem;
+    justify-content: center;
+    column-gap: 1.5rem;
+    > * {
+        min-width: 0;
+    }
+}
+
+button {
+    border: solid 1px var(--color-button-3);
+    cursor: pointer;
+    font-size: 1.3rem;
+    padding: .5rem 1rem;
+    border-radius: 8px;
+    transition: var(--transition-button);
+    box-shadow: var(--shadow-button);
+
+    @media (hover: hover) and (pointer: fine) {
+        &:hover {
+            opacity: .6;
+        }
+    }
+}
+
+a {
+    color: var(--color-link);
+    text-decoration: none;
+
+    &.ext-link::after {
+        content: url('/assets/svg/box-arrow-up-right-1.svg');
+        display: inline-block;
+        width: .8rem;
+        height: auto;
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+        &:hover {
+            opacity: .6;
+        }
+    }
+}
+
+#lang-gacha {
+    margin-block-end: 1rem;
+    margin-inline: auto;
+    width: 600px;
+    max-width: 100%;
+}
+
+@keyframes slidein {
+    from {
+        top: 10px;
+        opacity: 0;
+    }
+    to {
+        top: 0;
+        opacity: 1;
+    }
+}
+
+#lang-gacha-result {
+    visibility: hidden;
+    opacity: 0;
+    position: relative;
+    width: max-content;
+    max-width: 100%;
+    margin-inline: auto;
+
+    &.visible {
+        visibility: visible;
+        opacity: 1;
+        animation: 400ms ease-out slidein;
+    }
+}
+
+#license {
+    text-align: end;
+}
+
