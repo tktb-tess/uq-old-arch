@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <title>conlang_list</title>
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<!-- Import my stylesheet -->
+	<link href="./conlang_list.css" type="text/css" rel="stylesheet">
+	<link rel="icon" href="/assets/favicon/favicon2.ico">
+</head>
+<body>
+    <div id="_container">
+        <header>
+            <h1 id="title">人工言語ガチャ</h1>
+        </header>
+        <main>
+            <p><a href="/.">← 戻る</a></p>
+            <h2 class="article">説明</h2>
+            <p id="description">
+                <a class="ext-link" href="https://github.com/kaeru2193/Conlang-List-Works/" target="_blank" rel="noreferrer">
+                    かえるさん (kaeru2193) のリポジトリ
+                </a>
+                で管理されている Cotec 形式ファイル “conlinguistics-wiki-list.ctc” からデータを取得し、ランダムで1つ言語を選んで情報を表示します。
+                <a class="ext-link" href="https://migdal.jp/cl_kiita/cotec-conlang-table-expression-powered-by-csv-clakis-rfc-2h86" target="_blank" rel="noreferrer">
+                    Cotec形式の詳細について
+                </a>
+                <br>
+                また、これを作るにあたって利用している、Cotec形式を独自定義のJSON形式に加工したものをダウンロードすることもできます。
+            </p>
+            <div class="buttons">
+                <button id="gacha-btn" role="button" type="button">回す！</button>
+            </div>
+            <div id="lang-gacha-result">
+                <h3 class="article">結果</h3>
+                
+            </div>
+            <h2 class="article">ダウンロード</h2>
+            <div class="buttons">
+                <button id="download-json" type="button" role="button">JSON</button>
+            </div>
+        </main>
+    </div>
+    <script src="./conlang_list.js"></script>
+</body>
+</html>
