@@ -228,6 +228,10 @@ fetchConlangList(url)
         }
         
         console.log(`fetching & parsing cotec file was successful!`);
+
+        // ライセンスを表示
+        const license_E = document.getElementById('license');
+        license_E.textContent = `Cotecファイルのライセンス表示: ${metadata.license.content}`;
 })
     .catch((e) => {
         console.error(`ein Ausnahme fange: ${e.message}`);
