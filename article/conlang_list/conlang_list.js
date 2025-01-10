@@ -125,6 +125,7 @@ fetchConlangList(url)
             cotec_one_content.creator = row[4].split(';').map((datum) => datum.trim());
             cotec_one_content.period = row[5];
 
+            // サイト
             const site_p = row[6];
             const site_p1 = [];
 
@@ -147,7 +148,7 @@ fetchConlangList(url)
                 const sliced = cat.slice(0, match.index);
                 const sliced2 = cat.slice(match.index + 1).trim();
                 return [sliced, sliced2];
-            })
+            });
 
             // 辞書・文法のサイトをパース
             cotec_one_content.site.forEach((elem) => {
@@ -367,7 +368,7 @@ gacha_btn_E.addEventListener('click', () => {
     li_twitter.id = 'json-twitter';
     li_dict.id = 'json-dict';
     li_grammar.id = 'json-grammar';
-    li_twitter.textContent = `𝕏（旧twitter）: `;
+    li_twitter.textContent = `𝕏 (旧twitter): `;
     li_dict.textContent = `辞書: `;
     li_grammar.textContent = `文法: `;
 
