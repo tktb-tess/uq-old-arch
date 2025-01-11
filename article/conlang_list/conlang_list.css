@@ -24,6 +24,8 @@
     --black-trl-1: #0000005b;
     --black-1: #000;
     --blue-1: #20e5ff;
+    --blue-2: #6193ff;
+    --blue-3: #0026ff;
 
     --color-background: var(--purple-1);
     --color-container: var(--purple-1);
@@ -243,11 +245,17 @@ a {
     width: max-content;
     max-width: 100%;
     margin-inline: auto;
+    padding: 1rem;
+    border-radius: 8px;
 
     &.visible {
         visibility: visible;
         opacity: 1;
         animation: 160ms ease-out slidein;
+    }
+    
+    &.mylang {
+        box-shadow: 0 0 12px 0 #ff0000;
     }
 }
 

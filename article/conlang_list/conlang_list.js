@@ -130,10 +130,11 @@ fetchConlangList(url)
                 if (matchurls) {
                     const urlarray = Array.from(matchurls);
                     urlarray.forEach((url) => {
-                        const lastchar = url[url.length - 1];
+                        const url_1 = url.trim();
+                        const lastchar = url_1[url_1.length - 1];
                         const cond = lastchar === ' ' || lastchar === ')' || lastchar === '(';
-                        const url_1 = cond ? url.slice(0, url.length - 1) : url;
-                        cotec_one_content.site.push(url_1);
+                        const url_2 = cond ? url_1.slice(0, url_1.length - 1) : url_1;
+                        cotec_one_content.site.push(url_2);
                     });
                 }
             }
@@ -305,7 +306,7 @@ function searchByName(name) {
         if (typeof(found) !== 'undefined') {
             // const str = JSON.stringify(lang, null, '');
             // console.log(`${str}`);
-            results.push(lang);
+            results.push({ index: i, content: lang });
             return;
         }
     })
@@ -519,12 +520,17 @@ gacha_btn_E.addEventListener('click', () => {
 
 
     const class_list = lang_gacha_result_E.classList;
+
+    li_creator.textContent.includes('斗琴庭暁響')
+        ? class_list.add('mylang')
+        : class_list.remove('mylang');
+    
     if (class_list.contains('visible')) {
         class_list.remove('visible');
     }
     setTimeout(() => {
         class_list.add('visible');
-    }, 1);
+    }, 2);
 });
 
 
