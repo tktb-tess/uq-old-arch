@@ -287,7 +287,6 @@ fetchConlangList(url)
         console.error(`ein Ausnahme fange: ${e.message}`);
 });
 
-const btn_download_ctc = document.getElementById('download-ctc');
 const btn_download_json = document.getElementById('download-json');
 
 // JSONのダウンロード
@@ -325,8 +324,6 @@ function showdataAll(key) {
     content.forEach((lang) => console.log(lang[key]));
 }
 
-
-
 function searchByName(name) {
     const results = [];
     content.forEach((lang, i) => {
@@ -350,8 +347,6 @@ const conlangGacha = () => {
     const index = Util.getRandomInt(0, content.length);
     return [index, content[index]];
 }
-
-
 
 class Util {
     static getRandomInt(min_, max_) {
@@ -550,7 +545,6 @@ gacha_btn_E.addEventListener('click', () => {
 
     lang_gacha_result_E.appendChild(result_list_E);
 
-
     const class_list = lang_gacha_result_E.classList;
 
     li_creator.textContent.includes('斗琴庭暁響')
@@ -560,43 +554,9 @@ gacha_btn_E.addEventListener('click', () => {
     if (class_list.contains('visible')) {
         class_list.remove('visible');
     }
+
     setTimeout(() => {
         class_list.add('visible');
     }, 2);
 });
-
-const _debug = () => {
-    const text = 'https://w.atwiki.jp/palams辞書: https://w.atwiki.jp/palams/pages/35.html文法: https://w.atwiki.jp/palams/pages/75.html';
-    const regex = /(?:(?:(?:\p{Script=Han}|\p{Script=Hiragana}|\p{Script=Katakana})+\d*:\s?)?https?:\/\/)|$/gu;
-    console.log(text.length);
-    const matches = text.matchAll(regex);
-    const result = [];
-    {
-        let start = 0;
-        for (const match of matches) {
-            let end = match.index;
-            if (end !== 0) {
-                const sliced = text.slice(start, end);
-                result.push(sliced.trim());
-            }
-            start = end;
-        }
-    }
-    console.log(result);
-
-    const result2 = [];
-    for (const elem of result) {
-        const regex2 = /:\s?https/u;
-        const result2_e = elem.split(regex2).map((e) => e.trim());
-        
-        if (result2_e.length > 1) {
-            result2.push(result2_e);
-        } else {
-            result2.push(result2_e[0]);
-        }
-    }
-    console.log(result2);
-}
-
-
 
