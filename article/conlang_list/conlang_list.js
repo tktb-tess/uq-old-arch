@@ -121,7 +121,23 @@ fetchConlangList(url)
             cotec_one_content.messier = row[0];
             cotec_one_content.name.normal = row[1].split(';').map((datum) => datum.trim());
             cotec_one_content.name.kanji = row[2].split(';').map((datum) => datum.trim());
-            cotec_one_content.desc = row[3].split(';').map((datum) => datum.trim());
+            const descs = row[3].split(';').map((datum) => datum.trim());
+
+            const regexurl = /http(?:s?):\/\/[^\s\)\(]+(?:\s|\)|\(|$)/g;
+            for (const desc of descs) {
+                cotec_one_content.desc.push(desc);
+                const matchurls = desc.match(regexurl);
+                if (matchurls) {
+                    const urlarray = Array.from(matchurls);
+                    urlarray.forEach((url) => {
+                        const lastchar = url[url.length - 1];
+                        const cond = lastchar === ' ' || lastchar === ')' || lastchar === '(';
+                        const url_1 = cond ? url.slice(0, url.length - 1) : url;
+                        cotec_one_content.site.push(url_1);
+                    });
+                }
+            }
+            
             cotec_one_content.creator = row[4].split(';').map((datum) => datum.trim());
             cotec_one_content.period = row[5];
 
@@ -140,15 +156,17 @@ fetchConlangList(url)
                 start = end;
             }
 
-            // ":" + ("/" 以外の文字) に一致 http":/"/ を除外
-            const regex_site2 = /:[^\/]/u;
-            cotec_one_content.site = site_p1.map((cat) => {
+            // ":" + (空白文字 or h) に一致
+            const regex_site2 = /:(?:\s|h)/u;
+            const site_p2 = site_p1.map((cat) => {
                 const match = regex_site2.exec(cat);
                 if (match === null) return cat;
                 const sliced = cat.slice(0, match.index);
                 const sliced2 = cat.slice(match.index + 1).trim();
                 return [sliced, sliced2];
             });
+
+            cotec_one_content.site = cotec_one_content.site.concat(site_p2);
 
             // 辞書・文法のサイトをパース
             cotec_one_content.site.forEach((elem) => {
@@ -164,6 +182,7 @@ fetchConlangList(url)
                 cotec_one_content.twitter = row[7].split(';').map((s) => s.trim());
             }
 
+            // 辞書
             if (row[8]) {
                 const dict_p = row[8].split(';').map((s) => s.trim());
                 cotec_one_content.dict = cotec_one_content.dict.concat(dict_p);
@@ -359,7 +378,7 @@ gacha_btn_E.addEventListener('click', () => {
     // 創作期間
     const li_period = document.createElement('li');
     li_period.id = 'json-period';
-    li_period.textContent = `創作期間: ${lang.period}`;
+    li_period.textContent = `創作時期: ${lang.period}`;
 
     // twitter,辞書,文法
     const li_twitter = document.createElement('li');
@@ -475,7 +494,7 @@ gacha_btn_E.addEventListener('click', () => {
     if (clav3.language !== '') {
         li_clav3.textContent = `CLA v3: ${clav3.dialect}_${clav3.language}_${clav3.family}_${clav3.creator}`;
     } else {
-        li_clav3.textContent = `CLA v3: `;
+        li_clav3.textContent = `CLA v3:`;
     }
     
 
