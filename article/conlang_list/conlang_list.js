@@ -125,24 +125,27 @@ fetchConlangList(url)
             cotec_one_content.name.kanji = row[2].split(';').map((datum) => datum.trim());
 
             // desc
-            const descs = row[3].split(';').map((datum) => datum.trim());
+            if (row[3]) {
+                const descs = row[3].split(';').map((datum) => datum.trim());
 
-            // urlがあったら抽出してsiteに追加
-            const regexurl = /http(?:s?):\/\/[^\s\)\(]+(?:\s|\(|\)|$)/g;
-            for (const desc of descs) {
-                cotec_one_content.desc.push(desc);
-                const matchurls = desc.match(regexurl);
-                if (matchurls) {
-                    const urlarray = Array.from(matchurls);
-                    urlarray.forEach((url) => {
-                        const url_1 = url.trim();
-                        const lastchar = url_1[url_1.length - 1];
-                        const cond = lastchar === ' ' || lastchar === ')' || lastchar === '(';
-                        const url_2 = cond ? url_1.slice(0, url_1.length - 1) : url_1;
-                        cotec_one_content.site.push(url_2);
-                    });
+                // urlがあったら抽出してsiteに追加
+                const regexurl = /http(?:s?):\/\/[^\s\)\(]+(?:\s|\(|\)|$)/g;
+                for (const desc of descs) {
+                    cotec_one_content.desc.push(desc);
+                    const matchurls = desc.match(regexurl);
+                    if (matchurls) {
+                        const urlarray = Array.from(matchurls);
+                        urlarray.forEach((url) => {
+                            const url_1 = url.trim();
+                            const lastchar = url_1[url_1.length - 1];
+                            const cond = lastchar === ' ' || lastchar === ')' || lastchar === '(';
+                            const url_2 = cond ? url_1.slice(0, url_1.length - 1) : url_1;
+                            cotec_one_content.site.push(url_2);
+                        });
+                    }
                 }
             }
+            
             
             // creator, period
             cotec_one_content.creator = row[4].split(';').map((datum) => datum.trim());
@@ -169,13 +172,17 @@ fetchConlangList(url)
 
             const site_p2 = [];
             for (const elem of site_p1) {
-                const regex2 = /:\s?https/u;
-                const result2_e = elem.split(regex2).map((e) => e.trim());
+                const regex2 = /:\s?https?/u;
+
+                const match2 = regex2.exec(elem);
                 
-                if (result2_e.length > 1) {
-                    site_p2.push(result2_e);
+                if (match2) {
+                    const sepi = match2.index;
+                    const sliced = elem.slice(0, sepi).trim();
+                    const sliced2 = elem.slice(sepi + 1, elem.length).trim();
+                    site_p2.push([sliced, sliced2]);
                 } else {
-                    site_p2.push(result2_e[0]);
+                    site_p2.push(elem);
                 }
             }
             
@@ -219,7 +226,7 @@ fetchConlangList(url)
                 })
             }
 
-            // モユネ分類・CLA v3をパース
+            // モユネ分類・CLA v3をmoyune, clav3にパース
             cotec_one_content.category.forEach((elem) => {
                 if (!Array.isArray(elem)) return;
 
@@ -242,11 +249,13 @@ fetchConlangList(url)
                 }
             })
 
+            // moyune
             if (row[12]) {
                 const parsed = Array.from(row[12].match(/[A-Z]{3}/g));
                 cotec_one_content.moyune = cotec_one_content.moyune.concat(parsed.sort());
             }
 
+            // clav3
             if (row[13]) {
                 const clav3_regex = /^(?<dialect>~|[a-z]{2})_(?<language>[a-z]{2})_(?<family>~|[a-z]{3})_(?<creator>[a-z]{3})$/;
                 const match = clav3_regex.exec(row[13]);
@@ -255,9 +264,15 @@ fetchConlangList(url)
                 }
             }
             
+            // part
             cotec_one_content.part = row[14];
-            cotec_one_content.example = row[15].split(';').map((s) => s.trim());
-            cotec_one_content.script = row[16].split(';').map((s) => s.trim());
+
+            // example, script
+            if (row[15])
+                cotec_one_content.example = row[15].split(';').map((s) => s.trim());
+
+            if (row[16])
+                cotec_one_content.script = row[16].split(';').map((s) => s.trim());
 
             content.push(cotec_one_content);
         }
@@ -272,7 +287,6 @@ fetchConlangList(url)
         console.error(`ein Ausnahme fange: ${e.message}`);
 });
 
-const btn_download_ctc = document.getElementById('download-ctc');
 const btn_download_json = document.getElementById('download-json');
 
 // JSONのダウンロード
@@ -310,8 +324,6 @@ function showdataAll(key) {
     content.forEach((lang) => console.log(lang[key]));
 }
 
-
-
 function searchByName(name) {
     const results = [];
     content.forEach((lang, i) => {
@@ -332,8 +344,8 @@ function searchByName(name) {
 }
 
 const conlangGacha = () => {
-    const result = content[Util.getRandomInt(0, content.length)];
-    return result;
+    const index = Util.getRandomInt(0, content.length);
+    return [index, content[index]];
 }
 
 class Util {
@@ -357,7 +369,8 @@ gacha_btn_E.addEventListener('click', () => {
     result_list_E.id = 'result-list';
 
     // ガチャ
-    const lang = conlangGacha();
+    const [i, lang] = conlangGacha();
+    console.log([i, lang.name.normal[0],lang]);
     
     // 名前,漢字名,説明,作者,世界,例文,使用文字
     const li_name = document.createElement('li');
@@ -532,7 +545,6 @@ gacha_btn_E.addEventListener('click', () => {
 
     lang_gacha_result_E.appendChild(result_list_E);
 
-
     const class_list = lang_gacha_result_E.classList;
 
     li_creator.textContent.includes('斗琴庭暁響')
@@ -542,43 +554,9 @@ gacha_btn_E.addEventListener('click', () => {
     if (class_list.contains('visible')) {
         class_list.remove('visible');
     }
+
     setTimeout(() => {
         class_list.add('visible');
     }, 2);
 });
-
-const _debug = () => {
-    const text = 'https://w.atwiki.jp/palams辞書: https://w.atwiki.jp/palams/pages/35.html文法: https://w.atwiki.jp/palams/pages/75.html';
-    const regex = /(?:(?:(?:\p{Script=Han}|\p{Script=Hiragana}|\p{Script=Katakana})+\d*:\s?)?https?:\/\/)|$/gu;
-    console.log(text.length);
-    const matches = text.matchAll(regex);
-    const result = [];
-    {
-        let start = 0;
-        for (const match of matches) {
-            let end = match.index;
-            if (end !== 0) {
-                const sliced = text.slice(start, end);
-                result.push(sliced.trim());
-            }
-            start = end;
-        }
-    }
-    console.log(result);
-
-    const result2 = [];
-    for (const elem of result) {
-        const regex2 = /:\s?https/u;
-        const result2_e = elem.split(regex2).map((e) => e.trim());
-        
-        if (result2_e.length > 1) {
-            result2.push(result2_e);
-        } else {
-            result2.push(result2_e[0]);
-        }
-    }
-    console.log(result2);
-}
-
-
 
