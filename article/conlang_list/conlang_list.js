@@ -133,7 +133,7 @@ fetchConlangList(url)
                         const lastchar = url[url.length - 1];
                         const cond = lastchar === ' ' || lastchar === ')' || lastchar === '(';
                         const url_1 = cond ? url.slice(0, url.length - 1) : url;
-                        cotec_one_content.site.push(url_1)
+                        cotec_one_content.site.push(url_1);
                     });
                 }
             }
@@ -166,7 +166,7 @@ fetchConlangList(url)
                 return [sliced, sliced2];
             });
 
-            site_p2.forEach((site) => cotec_one_content.site.push(site));
+            cotec_one_content.site = cotec_one_content.site.concat(site_p2);
 
             // 辞書・文法のサイトをパース
             cotec_one_content.site.forEach((elem) => {
