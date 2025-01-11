@@ -53,6 +53,7 @@
 
 body {
     background: var(--gradient-background);
+    background-attachment: fixed;
     font-family: var(--font-sans);
     color: var(--color-content);
     font-optical-sizing: auto;
