@@ -1,6 +1,6 @@
 "use strict";
 
-const url = "https://kaeru2193.github.io/Conlang-List-Works/conlinguistics-wiki-list.ctc";
+const ctcurl = "https://kaeru2193.github.io/Conlang-List-Works/conlinguistics-wiki-list.ctc";
 let cotec_raw = '';
 const metadata = {
     datasize: [NaN],
@@ -66,7 +66,7 @@ function parseCSV(csvString) {
     return rows;
 }
 
-fetchConlangList(url)
+fetchConlangList(ctcurl)
     .then((result) => {
         const parsed_data = result;
 
@@ -282,15 +282,18 @@ fetchConlangList(url)
         // ライセンスを表示
         const license_E = document.getElementById('license');
         license_E.textContent = `Cotecファイルのライセンス表示: ${metadata.license.content}`;
+
+        // 最終更新日時を表示
+        const last_update_E = document.getElementById('last-update');
+        const last_update = new Date(metadata.last_updated);
+        last_update_E.textContent = `Cotecファイルの最終更新日時: ${last_update.toLocaleString("ja-JP")}`;
 })
     .catch((e) => {
         console.error(`ein Ausnahme fange: ${e.message}`);
 });
 
-const btn_download_json = document.getElementById('download-json');
-
 // JSONのダウンロード
-btn_download_json.addEventListener('click', () => {
+const downloadJSON = () => {
     const json_obj = JSON.stringify({ metadata, content }, null);
     const url = URL.createObjectURL(new Blob([json_obj], { type: 'application/json' }));
     const anchorE = document.createElement('a');
@@ -299,7 +302,15 @@ btn_download_json.addEventListener('click', () => {
     anchorE.click();
     anchorE.remove();
     URL.revokeObjectURL(url);
-});
+};
+
+// CTCのダウンロード
+const downloadCTC = () => {
+    const anchorE = document.createElement('a');
+    anchorE.href = ctcurl;
+    anchorE.click();
+    anchorE.remove();
+};
 
 // デバッグ用
 function showdata(key) {
