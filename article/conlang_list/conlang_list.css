@@ -255,7 +255,3 @@ a {
     text-align: end;
 }
 
-#json-desc > p:not(:first-child) {
-    text-wrap: balance;
-}
-
