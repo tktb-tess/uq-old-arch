@@ -72,6 +72,7 @@ fetchConlangList(url)
 
         const row_meta = parsed_data[0];
 
+        // メタデータ
         metadata.datasize = row_meta[0].split('x').map((size) => Number.parseInt(size));
         metadata.title = row_meta[1];
         metadata.author = row_meta[2].split(',').map((str) => str.trim());
@@ -80,7 +81,7 @@ fetchConlangList(url)
         metadata.license = { name: row_meta[5], content: row_meta[6] };
         metadata.advanced = Number.parseInt(row_meta[7]);
 
-        if (metadata.advanced === 0) {}
+        if (metadata.advanced !== 0) {}
 
         metadata.label = parsed_data[1];
         metadata.type = parsed_data[2];
@@ -107,7 +108,7 @@ fetchConlangList(url)
                 world: [],
                 category: [],
                 moyune: [],
-                cla_v3: {
+                clav3: {
                     dialect: '',
                     language: '',
                     family: '',
@@ -118,12 +119,16 @@ fetchConlangList(url)
                 script: [],
             }
             
+            // messier, name, kanji
             cotec_one_content.messier = row[0];
             cotec_one_content.name.normal = row[1].split(';').map((datum) => datum.trim());
             cotec_one_content.name.kanji = row[2].split(';').map((datum) => datum.trim());
+
+            // desc
             const descs = row[3].split(';').map((datum) => datum.trim());
 
-            const regexurl = /http(?:s?):\/\/[^\s\)\(]+(?:\s|\)|\(|$)/g;
+            // urlがあったら抽出してsiteに追加
+            const regexurl = /http(?:s?):\/\/[^\s\)\(]+(?:\s|\(|\)|$)/g;
             for (const desc of descs) {
                 cotec_one_content.desc.push(desc);
                 const matchurls = desc.match(regexurl);
@@ -139,63 +144,72 @@ fetchConlangList(url)
                 }
             }
             
+            // creator, period
             cotec_one_content.creator = row[4].split(';').map((datum) => datum.trim());
             cotec_one_content.period = row[5];
 
-            // サイト
+            // site
             const site_p = row[6];
             const site_p1 = [];
 
-            // "サイト" or "辞書" or "文法" + (0~1個の数字) + ":" に一致
-            const regex_site = /(?:サイト|辞書|文法)(?:\d?):/gu;
+            const regex_site = /(?:(?:(?:\p{Script=Han}|\p{Script=Hiragana}|\p{Script=Katakana})+\d*:\s?)?https?:\/\/)|$/gu;
             const matches = site_p.matchAll(regex_site);
-            let start = 0;
-            for (const ma of matches) {
-                let end = ma.index;
-                const sliced = site_p.slice(start, end);
-                site_p1.push(sliced.trim());
-                start = end;
+            
+            {
+                let start = 0;
+                for (const match of matches) {
+                    let end = match.index;
+                    if (end !== 0) {
+                        const sliced = site_p.slice(start, end);
+                        site_p1.push(sliced.trim());
+                    }
+                    start = end;
+                }
             }
 
-            // ":" + (空白文字 or h) に一致
-            const regex_site2 = /:(?:\s|h)/u;
-            const site_p2 = site_p1.map((cat) => {
-                const match = regex_site2.exec(cat);
-                if (match === null) return cat;
-                const sliced = cat.slice(0, match.index);
-                const sliced2 = cat.slice(match.index + 1).trim();
-                return [sliced, sliced2];
-            });
-
+            const site_p2 = [];
+            for (const elem of site_p1) {
+                const regex2 = /:\s?https/u;
+                const result2_e = elem.split(regex2).map((e) => e.trim());
+                
+                if (result2_e.length > 1) {
+                    site_p2.push(result2_e);
+                } else {
+                    site_p2.push(result2_e[0]);
+                }
+            }
+            
             cotec_one_content.site = cotec_one_content.site.concat(site_p2);
 
-            // 辞書・文法のサイトをパース
+            // 辞書・文法のsiteをdict, grammarにパース
             cotec_one_content.site.forEach((elem) => {
                 if (!Array.isArray(elem)) return;
 
-                if (elem[0].includes("文法"))
-                    cotec_one_content.grammar.push(elem[1]);
+                if (elem[0].includes("文法")) cotec_one_content.grammar.push(elem[1]);
 
-                if (elem[0].includes("辞書"))
-                    cotec_one_content.dict.push(elem[1]);
-            })
-            if (row[7]) {
-                cotec_one_content.twitter = row[7].split(';').map((s) => s.trim());
-            }
+                if (elem[0].includes("辞書")) cotec_one_content.dict.push(elem[1]);
+            });
 
-            // 辞書
+            // twitter
+            if (row[7]) cotec_one_content.twitter = row[7].split(';').map((s) => s.trim());
+            
+
+            // dict
             if (row[8]) {
                 const dict_p = row[8].split(';').map((s) => s.trim());
                 cotec_one_content.dict = cotec_one_content.dict.concat(dict_p);
             }
 
+            // grammar
             if (row[9]) {
                 const grammar_p = row[9].split(';').map((s) => s.trim());
                 cotec_one_content.grammar = cotec_one_content.grammar.concat(grammar_p);
             }
             
-            cotec_one_content.world = row[10].split(';').map((s) => s.trim());
+            // world
+            if (row[10]) cotec_one_content.world = row[10].split(';').map((s) => s.trim());
             
+
             if (row[11]) {
                 const category_a = row[11].split(';').map((s) => s.trim());
                 cotec_one_content.category = category_a.map((elem) => {
@@ -211,11 +225,11 @@ fetchConlangList(url)
 
                 switch (elem[0]) {
                     case "CLA v3":
-                        const cla_arr = elem[1].split('_');
-                        cotec_one_content.cla_v3.dialect = cla_arr[0];
-                        cotec_one_content.cla_v3.language = cla_arr[1];
-                        cotec_one_content.cla_v3.family = cla_arr[2];
-                        cotec_one_content.cla_v3.creator = cla_arr[3];
+                        const clav3_regex = /^(?<dialect>~|[a-z]{2})_(?<language>[a-z]{2})_(?<family>~|[a-z]{3})_(?<creator>[a-z]{3})$/;
+                        const match = clav3_regex.exec(elem[1]);
+                        if (match) {
+                            cotec_one_content.clav3 = match.groups;
+                        }
                         break;
                     
                     case "モユネ分類":
@@ -234,10 +248,10 @@ fetchConlangList(url)
             }
 
             if (row[13]) {
-                const clav3_regex = /(?<dialect>~|[a-z]{2})_(?<language>[a-z]{2})_(?<family>~|[a-z]{3})_(?<creator>[a-z]{3})/;
+                const clav3_regex = /^(?<dialect>~|[a-z]{2})_(?<language>[a-z]{2})_(?<family>~|[a-z]{3})_(?<creator>[a-z]{3})$/;
                 const match = clav3_regex.exec(row[13]);
                 if (match) {
-                    cotec_one_content.cla_v3 = match.groups;
+                    cotec_one_content.clav3 = match.groups;
                 }
             }
             
@@ -491,7 +505,7 @@ gacha_btn_E.addEventListener('click', () => {
     // CLA v3
     const li_clav3 = document.createElement('li');
     li_clav3.id = 'json-clav3';
-    const clav3 = lang.cla_v3;
+    const clav3 = lang.clav3;
     if (clav3.language !== '') {
         li_clav3.textContent = `CLA v3: ${clav3.dialect}_${clav3.language}_${clav3.family}_${clav3.creator}`;
     } else {
@@ -532,5 +546,39 @@ gacha_btn_E.addEventListener('click', () => {
         class_list.add('visible');
     }, 2);
 });
+
+const _debug = () => {
+    const text = 'https://w.atwiki.jp/palams辞書: https://w.atwiki.jp/palams/pages/35.html文法: https://w.atwiki.jp/palams/pages/75.html';
+    const regex = /(?:(?:(?:\p{Script=Han}|\p{Script=Hiragana}|\p{Script=Katakana})+\d*:\s?)?https?:\/\/)|$/gu;
+    console.log(text.length);
+    const matches = text.matchAll(regex);
+    const result = [];
+    {
+        let start = 0;
+        for (const match of matches) {
+            let end = match.index;
+            if (end !== 0) {
+                const sliced = text.slice(start, end);
+                result.push(sliced.trim());
+            }
+            start = end;
+        }
+    }
+    console.log(result);
+
+    const result2 = [];
+    for (const elem of result) {
+        const regex2 = /:\s?https/u;
+        const result2_e = elem.split(regex2).map((e) => e.trim());
+        
+        if (result2_e.length > 1) {
+            result2.push(result2_e);
+        } else {
+            result2.push(result2_e[0]);
+        }
+    }
+    console.log(result2);
+}
+
 
 
