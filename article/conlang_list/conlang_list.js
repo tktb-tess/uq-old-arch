@@ -129,7 +129,7 @@ fetchConlangList(ctcurl)
                 const descs = row[3].split(';').map((datum) => datum.trim());
 
                 // urlがあったら抽出してsiteに追加
-                const regexurl = /http(?:s?):\/\/[^\s\)\(]+(?:\s|\(|\)|$)/g;
+                const regexurl = /http(?:s?):\/\/[^\s\(\)]+(?:\s|\(|\)|$)/g;
                 for (const desc of descs) {
                     cotec_one_content.desc.push(desc);
                     const matchurls = desc.match(regexurl);
@@ -289,7 +289,7 @@ fetchConlangList(ctcurl)
         // 最終更新日時を表示
         const last_update_E = document.getElementById('last-update');
         const last_update = new Date(metadata.last_updated);
-        last_update_E.textContent = `Cotecファイルの最終更新日時: ${last_update.toLocaleString("ja-JP")}`;
+        last_update_E.innerHTML = `Cotecファイルの最終更新日時: <code>${last_update.toLocaleString("ja-JP")}</code>`;
 })
     .catch((e) => {
         console.error(`ein Ausnahme fange: ${e.message}`);
