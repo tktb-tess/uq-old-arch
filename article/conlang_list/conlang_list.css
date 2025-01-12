@@ -180,7 +180,6 @@ header {
 
 .article {
     text-align: center;
-    border-bottom: solid 1px;
     margin-inline: auto;
     width: max-content;
     max-width: 100%;
