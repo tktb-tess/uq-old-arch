@@ -212,6 +212,10 @@ button {
     }
 }
 
+#gacha-btn {
+    font-family: 'Zen Antique', serif;
+}
+
 a {
     color: var(--color-link);
     text-decoration: none;
@@ -240,7 +244,7 @@ a {
 
 @keyframes slidein {
     from {
-        top: 10px;
+        top: 40px;
         opacity: 0;
     }
     to {
@@ -262,7 +266,7 @@ a {
     &.visible {
         visibility: visible;
         opacity: 1;
-        animation: 160ms ease-out slidein;
+        animation: .4s ease-out slidein;
     }
     
     &.mylang {

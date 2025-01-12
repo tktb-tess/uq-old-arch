@@ -155,12 +155,13 @@ fetchConlangList(ctcurl)
             const site_p = row[6];
             const site_p1 = [];
 
-            const regex_site = /(?:(?:(?:\p{Script=Han}|\p{Script=Hiragana}|\p{Script=Katakana})+\d*:\s?)?https?:\/\/)|$/gu;
+            const regex_site = /^https?:\/\/|(?:(?:(?:\p{Script=Han}|\p{Script=Hiragana}|\p{Script=Katakana})+\d*:\s?|\s)https?:\/\/)|$/gu;
             const matches = site_p.matchAll(regex_site);
             
             {
                 let start = 0;
                 for (const match of matches) {
+                    // console.log(match);
                     let end = match.index;
                     if (end !== 0) {
                         const sliced = site_p.slice(start, end);
@@ -172,7 +173,7 @@ fetchConlangList(ctcurl)
 
             const site_p2 = [];
             for (const elem of site_p1) {
-                const regex2 = /:\s?https?/u;
+                const regex2 = /:\s?https?:\/\//u;
 
                 const match2 = regex2.exec(elem);
                 
@@ -187,6 +188,8 @@ fetchConlangList(ctcurl)
             }
             
             cotec_one_content.site = cotec_one_content.site.concat(site_p2);
+
+            // console.log(cotec_one_content.site);
 
             // 辞書・文法のsiteをdict, grammarにパース
             cotec_one_content.site.forEach((elem) => {
