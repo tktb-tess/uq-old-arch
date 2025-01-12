@@ -146,7 +146,6 @@ fetchConlangList(ctcurl)
                 }
             }
             
-            
             // creator, period
             cotec_one_content.creator = row[4].split(';').map((datum) => datum.trim());
             cotec_one_content.period = row[5];
@@ -534,7 +533,12 @@ gacha_btn_E.addEventListener('click', () => {
     li_clav3.id = 'json-clav3';
     const clav3 = lang.clav3;
     if (clav3.language !== '') {
-        li_clav3.textContent = `CLA v3: ${clav3.dialect}_${clav3.language}_${clav3.family}_${clav3.creator}`;
+        const codestr = `${clav3.dialect}_${clav3.language}_${clav3.family}_${clav3.creator}`;
+        li_clav3.textContent = `CLA v3: ${codestr}`;
+        result_list_E.dataset.claV3 = codestr;
+        const ietf = `x-v3-${clav3.creator}-${(clav3.family === '~') ? '0' : clav3.family}-${clav3.language}${(clav3.dialect === '~') ? '' : '-' + clav3.dialect}`;
+        li_name.lang = ietf;
+        li_exp.lang = ietf;
     } else {
         li_clav3.textContent = `CLA v3:`;
     }
