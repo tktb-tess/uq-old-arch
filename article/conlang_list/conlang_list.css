@@ -247,10 +247,17 @@ a {
 @keyframes slidein {
     from {
         top: 40px;
+    }
+    to {
+        top: 0px;
+    }
+}
+
+@keyframes fadein {
+    from {
         opacity: 0;
     }
     to {
-        top: 0;
         opacity: 1;
     }
 }
@@ -268,7 +275,7 @@ a {
     &.visible {
         visibility: visible;
         opacity: 1;
-        animation: .4s ease-out slidein;
+        animation: .4s cubic-bezier(0.0, 0.2, 0.0, 1.0) slidein, .25s ease-out fadein;
     }
     
     &.mylang {
