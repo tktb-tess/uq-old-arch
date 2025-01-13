@@ -129,18 +129,16 @@ fetchConlangList(ctcurl)
                 const descs = row[3].split(';').map((datum) => datum.trim());
 
                 // urlがあったら抽出してsiteに追加
-                const regexurl = /http(?:s?):\/\/[^\s\(\)]+(?:\s|\(|\)|$)/g;
+                const regexurl = /(?:https:\/\/web\.archive\.org\/web\/[0-9]+\/)?https?:\/\/[\w\.\-]+[\w\-]+(?:\/[\w\?\+\-_~=\.&@#%]*)*/gu;
                 for (const desc of descs) {
                     cotec_one_content.desc.push(desc);
                     const matchurls = desc.match(regexurl);
+                    //console.log(matchurls);
                     if (matchurls) {
                         const urlarray = Array.from(matchurls);
                         urlarray.forEach((url) => {
-                            const url_1 = url.trim();
-                            const lastchar = url_1[url_1.length - 1];
-                            const cond = lastchar === ' ' || lastchar === ')' || lastchar === '(';
-                            const url_2 = cond ? url_1.slice(0, url_1.length - 1) : url_1;
-                            cotec_one_content.site.push(url_2);
+                            const res = { name: '', url };
+                            cotec_one_content.site.push(res);
                         });
                     }
                 }
@@ -152,52 +150,29 @@ fetchConlangList(ctcurl)
 
             // site
             const site_p = row[6];
-            const site_p1 = [];
-
-            const regex_site = /^https?:\/\/|(?:(?:(?:\p{Script=Han}|\p{Script=Hiragana}|\p{Script=Katakana})+\d*:\s?|\s)https?:\/\/)|$/gu;
-            const matches = site_p.matchAll(regex_site);
             
-            {
-                let start = 0;
-                for (const match of matches) {
-                    // console.log(match);
-                    let end = match.index;
-                    if (end !== 0) {
-                        const sliced = site_p.slice(start, end);
-                        site_p1.push(sliced.trim());
-                    }
-                    start = end;
+            const regex_for_site = /(?:(?<name>(?:\p{Script=Han}|\p{Script=Hiragana}|\p{Script=Katakana})+\d*):\s?|\s|^)(?<url>(?:https:\/\/web\.archive\.org\/web\/[0-9]+\/)?https?:\/\/[\w\-\.]+[\w\-]+(?:\/[\w\?\+\-_~=\.&@#%]*)*)/gu;
+            const matches = site_p.matchAll(regex_for_site);
+            
+            for (const match of matches) {
+                const res = match.groups;
+                if (res) {
+                    if (res.name === undefined) res.name = '';
+                    // console.log(res);
+                    cotec_one_content.site.push(res);
                 }
             }
-
-            const site_p2 = [];
-            for (const elem of site_p1) {
-                const regex2 = /:\s?https?:\/\//u;
-
-                const match2 = regex2.exec(elem);
-                
-                if (match2) {
-                    const sepi = match2.index;
-                    const sliced = elem.slice(0, sepi).trim();
-                    const sliced2 = elem.slice(sepi + 1, elem.length).trim();
-                    site_p2.push([sliced, sliced2]);
-                } else {
-                    site_p2.push(elem);
-                }
-            }
-            
-            cotec_one_content.site = cotec_one_content.site.concat(site_p2);
-
-            // console.log(cotec_one_content.site);
 
             // 辞書・文法のsiteをdict, grammarにパース
             cotec_one_content.site.forEach((elem) => {
-                if (!Array.isArray(elem)) return;
+                if (typeof(elem) !== 'object' || Array.isArray(elem)) return;
 
-                if (elem[0].includes("文法")) cotec_one_content.grammar.push(elem[1]);
-
-                if (elem[0].includes("辞書")) cotec_one_content.dict.push(elem[1]);
+                if (elem.name.includes('文法')) cotec_one_content.grammar.push(elem.url);
+                if (elem.name.includes('辞書')) cotec_one_content.dict.push(elem.url);
             });
+
+            // console.log(cotec_one_content.dict);
+            // console.log(cotec_one_content.grammar);
 
             // twitter
             if (row[7]) cotec_one_content.twitter = row[7].split(';').map((s) => s.trim());
@@ -220,41 +195,52 @@ fetchConlangList(ctcurl)
             
 
             if (row[11]) {
-                const category_a = row[11].split(';').map((s) => s.trim());
-                cotec_one_content.category = category_a.map((elem) => {
-                    return (elem.includes(':'))
-                        ? elem.split(':').map((s) => s.trim())
-                        : elem;
-                })
+                const category_p = row[11].split(';').map((s) => s.trim());
+                const regex = /^(?<name>[^:]+)(?::(?<content>.+))?$/gu;
+                for (const elem of category_p) {
+                    const match = regex.exec(elem);
+                    if (match) {
+                        const cat = match.groups;
+                        if (!cat.content) cat.content = '';
+                        //console.log(cat);
+                        cotec_one_content.category.push(match.groups);
+                    }
+                }
             }
+
+            cotec_one_content.clav3 = null;
 
             // モユネ分類・CLA v3をmoyune, clav3にパース
             cotec_one_content.category.forEach((elem) => {
-                if (!Array.isArray(elem)) return;
+                if (typeof(elem) !== 'object' || Array.isArray(elem)) return;
 
-                switch (elem[0]) {
+                switch (elem.name) {
                     case "CLA v3":
                         const clav3_regex = /^(?<dialect>~|[a-z]{2})_(?<language>[a-z]{2})_(?<family>~|[a-z]{3})_(?<creator>[a-z]{3})$/;
-                        const match = clav3_regex.exec(elem[1]);
+                        const match = clav3_regex.exec(elem.content);
                         if (match) {
                             cotec_one_content.clav3 = match.groups;
                         }
                         break;
                     
                     case "モユネ分類":
-                        const parsed = Array.from(elem[1].match(/[A-Z]{3}/g));
-                        cotec_one_content.moyune = cotec_one_content.moyune.concat(parsed.sort());
+                        const parsed = Array.from(elem.content.match(/[A-Z]{3}/g));
+                        cotec_one_content.moyune = parsed;
+                        cotec_one_content.moyune.sort();
+                        // console.log(cotec_one_content.moyune);
                         break;
 
                     default:
                         break;
                 }
-            })
+            });
+
+            //console.log(cotec_one_content.category);
 
             // moyune
             if (row[12]) {
-                const parsed = Array.from(row[12].match(/[A-Z]{3}/g));
-                cotec_one_content.moyune = cotec_one_content.moyune.concat(parsed.sort());
+                cotec_one_content.moyune = Array.from(row[12].match(/[A-Z]{3}/g));
+                cotec_one_content.moyune.sort();
             }
 
             // clav3
@@ -265,16 +251,16 @@ fetchConlangList(ctcurl)
                     cotec_one_content.clav3 = match.groups;
                 }
             }
-            
+
+            // console.log(cotec_one_content.clav3);
+
             // part
-            cotec_one_content.part = row[14];
+            cotec_one_content.part = row[14].trim();
 
             // example, script
-            if (row[15])
-                cotec_one_content.example = row[15].split(';').map((s) => s.trim());
+            if (row[15]) cotec_one_content.example = row[15].split(';').map((s) => s.trim());
 
-            if (row[16])
-                cotec_one_content.script = row[16].split(';').map((s) => s.trim());
+            if (row[16]) cotec_one_content.script = row[16].split(';').map((s) => s.trim());
 
             content.push(cotec_one_content);
         }
@@ -283,7 +269,7 @@ fetchConlangList(ctcurl)
 
         // ライセンスを表示
         const license_E = document.getElementById('license');
-        license_E.textContent = `Cotecファイルのライセンス表示: ${metadata.license.content}`;
+        license_E.innerHTML = `Cotecファイルのライセンス表示<br>${metadata.license.content}`;
 
         // 最終更新日時を表示
         const last_update_E = document.getElementById('last-update');
@@ -317,18 +303,19 @@ const downloadCTC = () => {
 // デバッグ用
 function showdata(key) {
     content.forEach((lang) => {
-        if (typeof(lang[key]) === 'string') {
-            if (lang[key] === '') return;
-            console.log(lang[key]);
-            return;
-        } else if (Array.isArray(lang[key])) {
+        if (lang[key]) return;
+
+        if (Array.isArray(lang[key])) {
             if (lang[key].length === 0) return;
             if (lang[key][0] === '') return;
             console.log(lang[key]);
             return;
         } else if (typeof(lang[key]) === 'object') {
+            if (lang[key].keys().length === 0)
             console.log(lang[key]);
             return;
+        } else {
+            console.log(lang[key]);
         }
     });
 }
@@ -337,14 +324,21 @@ function showdataAll(key) {
     content.forEach((lang) => console.log(lang[key]));
 }
 
+function showsiteurl() {
+    content.forEach((lang) => {
+        for (const e of lang.site) {
+            console.log(e);
+        }
+    })
+}
+
 function searchByName(name) {
     const results = [];
     content.forEach((lang, i) => {
         const names = lang.name.normal.concat(lang.name.kanji);
         const found = names.find((n) => n === name);
         if (typeof(found) !== 'undefined') {
-            // const str = JSON.stringify(lang, null, '');
-            // console.log(`${str}`);
+            
             results.push({ index: i, content: lang });
             return;
         }
@@ -402,7 +396,7 @@ gacha_btn_E.addEventListener('click', () => {
     li_script.id = 'json-script';
     li_name.textContent = `名前: ${lang.name.normal.join(', ')}`;
     li_kanji.textContent = `漢字名: ${lang.name.kanji.join(', ')}`;
-    li_desc.innerHTML = `<p>説明: </p>`;
+    li_desc.innerHTML = `<p>説明:</p>`;
     li_creator.textContent = `作者: ${lang.creator.join(', ')}`;
     li_world.textContent = `世界: ${lang.world.join(', ')}`;
     li_exp.textContent = `例文: ${lang.example.join(', ')}`;
@@ -472,21 +466,17 @@ gacha_btn_E.addEventListener('click', () => {
     li_category.textContent = `カテゴリ: `
 
     categories.forEach((category) => {
-        if (typeof(category) === 'string') { // 文字列のとき
-            li_category.insertAdjacentText('beforeend', `${category}, `);
+        if (category.name === 'CLA v3' || category.name === 'モユネ分類') return;
 
-        } else if (Array.isArray(category)) {
-            const cond = (category[0] !== 'モユネ分類') && (category[0] !== 'CLA v3');
-
-            if (cond) {
-                li_category.insertAdjacentText('beforeend', `${category[0]}: ${category[1]}, `);
-            }
+        if (category.content) {
+            li_category.insertAdjacentText('beforeend', `${category.name}: ${category.content}, `);
+        } else {
+            li_category.insertAdjacentText('beforeend', `${category.name}, `);
         }
     });
 
-    if (li_category.textContent[li_category.textContent.length - 2] === ',') {
-        const comma = li_category.textContent.length - 2;
-        li_category.textContent = li_category.textContent.slice(0, comma);
+    if (li_category.textContent.at(-2) === ',') {
+        li_category.textContent = li_category.textContent.slice(0, -2);
     }
 
     // サイト
@@ -497,30 +487,26 @@ gacha_btn_E.addEventListener('click', () => {
 
     const innerul_site = document.createElement('ul');
     for (const site of sites) {
-        if (typeof(site) === 'string') {
+        
+        const regex = /^(?:文法|辞書)\d*$/u; // 「文法(n)」あるいは「辞書(n)」に一致
+        const regex2 = /(?:^サイト(?<number>\d*)$)|^$/u; // 「サイト(n)」あるいは空文字列に一致
+        const match2 = regex2.exec(site.name);
+
+        if (regex.exec(site.name)) continue; // regexに一致は無視
+        else if (match2) { // regex2に一致はURLのみ取り出す
             const li = document.createElement('li');
-            const anchtxt = `<a class="ext-link" href="${site}" target="_blank" rel="noreferrer">${site} </a>`;
-            li.innerHTML = anchtxt;
+            li.innerHTML = `<a class="ext-link" href="${site.url}" target="_blank" rel="noreferrer">${site.url} </a>`;
             innerul_site.appendChild(li);
-        } else if (Array.isArray(site)) {
-            const regex = /^(?:文法|辞書)\d*$/u; // 「文法(n)」あるいは「辞書(n)」に一致
-            const regex2 = /^サイト\d*$/u; // 「サイト(n)」に一致
-            if (regex.exec(site[0])) continue; // regexに一致は無視
-            else if (regex2.exec(site[0])) { // regex2に一致はURLのみ取り出す
-                const li = document.createElement('li');
-                const anchtxt = `<a class="ext-link" href="${site[1]}" target="_blank" rel="noreferrer">${site[1]} </a>`;
-                li.innerHTML = anchtxt;
-                innerul_site.appendChild(li);
-            } else { // それ以外はフルで入れる
-                const li = document.createElement('li');
-                const anchtxt = `<a class="ext-link" href="${site[1]}" target="_blank" rel="noreferrer">${site[0]}: ${site[1]} </a>`;
-                li.innerHTML = anchtxt;
-                innerul_site.appendChild(li);
-            }
+
+        } else { // それ以外はフルで入れる
+            const li = document.createElement('li');
+            li.innerHTML = `<a class="ext-link" href="${site.url}" target="_blank" rel="noreferrer">${site.name}: ${site.url} </a>`;
+            innerul_site.appendChild(li);
         }
+        
     }
 
-    li_site.insertAdjacentElement('beforeend', innerul_site);
+    if (innerul_site.firstChild) li_site.insertAdjacentElement('beforeend', innerul_site);
 
     // モユネ分類
     const li_moyune = document.createElement('li');
@@ -532,11 +518,11 @@ gacha_btn_E.addEventListener('click', () => {
     const li_clav3 = document.createElement('li');
     li_clav3.id = 'json-clav3';
     const clav3 = lang.clav3;
-    if (clav3.language !== '') {
+    if (clav3) {
         const codestr = `${clav3.dialect}_${clav3.language}_${clav3.family}_${clav3.creator}`;
         li_clav3.textContent = `CLA v3: ${codestr}`;
         result_list_E.dataset.claV3 = codestr;
-        const ietf = `x-v3-${clav3.creator}-${(clav3.family === '~') ? '0' : clav3.family}-${clav3.language}${(clav3.dialect === '~') ? '' : '-' + clav3.dialect}`;
+        const ietf = `x-v3-${clav3.creator}${(clav3.family === '~') ? '0' : clav3.family}${clav3.language}${(clav3.dialect === '~') ? '' : '-' + clav3.dialect}`;
         li_name.lang = ietf;
         li_exp.lang = ietf;
     } else {

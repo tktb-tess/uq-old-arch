@@ -104,7 +104,6 @@ ul {
 }
 
 li {
-
     > p, ul, ol, dl, pre, blockquote, div {
         margin: 0;
     }
@@ -113,7 +112,7 @@ li {
         margin-inline-start: .5rem;
     }
 
-    > p:last-child {
+    > p:last-child:not(:first-child) {
         margin-block-end: .375rem;
     }
 
