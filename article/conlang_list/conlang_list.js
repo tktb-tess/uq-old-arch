@@ -324,6 +324,14 @@ function showdataAll(key) {
     content.forEach((lang) => console.log(lang[key]));
 }
 
+function showsiteurl() {
+    content.forEach((lang) => {
+        for (const e of lang.site) {
+            console.log(e);
+        }
+    })
+}
+
 function searchByName(name) {
     const results = [];
     content.forEach((lang, i) => {
