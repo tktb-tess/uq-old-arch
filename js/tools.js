@@ -32,6 +32,14 @@ class util {
     }
 }
 
+const hashb64_btn_E = document.getElementById('hashb64-btn');
+hashb64_btn_E.addEventListener('click', async () => {
+    const hashb64_input = document.getElementById('hashb64-input');
+    const hashb64_result = document.getElementById('hashb64-result');
+    const result = await util.getHashb64(hashb64_input.value);
+    hashb64_result.value = result;
+});
+
 async function primListeHolen() {
     try {
         const geholt = await fetch("/assets/json/prim_liste.json");
