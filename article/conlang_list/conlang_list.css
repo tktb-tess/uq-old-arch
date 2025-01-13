@@ -288,3 +288,11 @@ a {
     text-align: end;
 }
 
+#totalnum {
+    text-align: center;
+    margin-inline: auto;
+    width: max-content;
+    max-width: 100%;
+    padding: .2rem .5rem;
+}
+

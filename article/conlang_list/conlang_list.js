@@ -2,6 +2,7 @@
 
 const ctcurl = "https://kaeru2193.github.io/Conlang-List-Works/conlinguistics-wiki-list.ctc";
 let cotec_raw = '';
+
 const metadata = {
     datasize: [NaN],
     title: '',
@@ -275,6 +276,10 @@ fetchConlangList(ctcurl)
         const last_update_E = document.getElementById('last-update');
         const last_update = new Date(metadata.last_updated);
         last_update_E.innerHTML = `Cotecファイルの最終更新日時: <code>${last_update.toLocaleString("ja-JP")}</code>`;
+
+        // 合計の表示
+        const totalnum_E = document.getElementById('totalnum');
+        totalnum_E.textContent = `合計 ${metadata.datasize[0]} 語`;
 })
     .catch((e) => {
         console.error(`ein Ausnahme fange: ${e.message}`);
@@ -522,7 +527,7 @@ gacha_btn_E.addEventListener('click', () => {
         const codestr = `${clav3.dialect}_${clav3.language}_${clav3.family}_${clav3.creator}`;
         li_clav3.textContent = `CLA v3: ${codestr}`;
         result_list_E.dataset.claV3 = codestr;
-        const ietf = `x-v3-${clav3.creator}${(clav3.family === '~') ? '0' : clav3.family}${clav3.language}${(clav3.dialect === '~') ? '' : '-' + clav3.dialect}`;
+        const ietf = `art-x-v3-${clav3.creator}${(clav3.family === '~') ? '0' : clav3.family}${clav3.language}${(clav3.dialect === '~') ? '' : '-' + clav3.dialect}`;
         li_name.lang = ietf;
         li_exp.lang = ietf;
     } else {
