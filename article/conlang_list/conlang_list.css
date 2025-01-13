@@ -279,8 +279,8 @@ a {
     }
     
     &.mylang {
-        box-shadow: 0 0 12px 0 #ff0000;
-        padding-inline-end: .4rem;
+        box-shadow: 0 0 12px 0 #7700ff;
+        padding: .4rem .6rem 0 0;
     }
 }
 

@@ -2,14 +2,14 @@
     font-family: 'InterVar';
     font-style: normal;
     src: local("Inter"),
-        url("/assets/font/Inter/Inter-Variable.woff2") format("woff2");
+        url("/assets/font/Inter/Inter-Variable.woff2") format("woff2-variations");
 }
 
 @font-face {
     font-family: 'InterVar';
     font-style: italic;
     src: local("Inter Italic"),
-        url("/assets/font/Inter/Inter-Italic-Variable.woff2") format("woff2");
+        url("/assets/font/Inter/Inter-Italic-Variable.woff2") format("woff2-variations");
 }
 
 @font-face {
