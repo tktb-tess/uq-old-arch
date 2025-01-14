@@ -38,7 +38,7 @@
     --transition-2: 70ms ease-in-out;
     --transition-3: 250ms ease-in-out;
 
-    --size-h1: calc(1.375rem + .9vw);
+    --size-h1: calc(1.575rem + 1.1vw);
     --size-h2: calc(1.325rem + .5vw);
     --size-h3: calc(1.3rem + .2vw);
     --size-h4: 1.25rem;
@@ -279,27 +279,24 @@ button.btn-audio-controls {
     background-image: linear-gradient(to bottom, transparent, #3d1e5718);
     
     .translation-contents {
-        display: flex;
-        justify-content: space-around;
-        margin-block-end: 1rem;
-
-        > * {
-            min-width: 0;
-        }
-    }
-
-    .column-hinshi, .column-forms {
-        display: flex;
-        flex-direction: column;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
         row-gap: 2px;
         justify-content: flex-start;
+        align-items: center;
     }
 
     .vocabulary {
-        margin: 2rem auto;
+        margin-inline: auto;
+        margin-block-start: 2rem;
+        margin-block-end: 1.0rem;
         width: max-content;
         font-size: var(--size-h1);
         font-family: var(--font-serif-latn);
+    }
+
+    .translation-title, .form {
+        font-size: 1.1rem;
     }
 
     .pronunciation {
@@ -310,18 +307,13 @@ button.btn-audio-controls {
     .hinshi {
         background-color:  var(--bs-heading-color);
         border-radius: 100px;
-        padding: .2rem .8rem;
+        padding: .25rem .8rem;
         color: white;
+        justify-self: center;
     }
 
     .form {
-        padding-block: .2rem;
-    }
-
-    .hinshi, .form {
-        margin-inline: auto;
-        width: max-content;
-        max-width: 100%;
+        justify-self: flex-start;
     }
 
     p:has(.zpdic-link) {

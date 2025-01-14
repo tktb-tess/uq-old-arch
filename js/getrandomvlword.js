@@ -63,8 +63,6 @@ fetchOTMJSON().then(async () => {
 
     today_word_E.appendChild(pronunciation_E);
 
-    today_word_E.appendChild(document.createElement('hr'));
-
     // "訳"
     const yaku_E = document.createElement('p');
     yaku_E.classList.add('translation-title');
@@ -74,43 +72,26 @@ fetchOTMJSON().then(async () => {
     const translation_contents_E = document.createElement('div');
     translation_contents_E.classList.add('translation-contents');
 
-    const column_hinshi_E = document.createElement('div');
-    const column_forms_E = document.createElement('div');
-    column_hinshi_E.classList.add('column-hinshi');
-    column_forms_E.classList.add('column-forms');
-
-    const hinshis = [], formses = [];
-
-    // 品詞, 訳語だけの配列をそれぞれ生成
+    // 品詞と訳語
     for (const translation of translations) {
-        hinshis.push(translation.title);
-        formses.push(translation.forms);
-    }
-
-    // 品詞
-    for (const hinshi of hinshis) {
         const hinshi_E = document.createElement('span');
         hinshi_E.classList.add('hinshi');
-        hinshi_E.textContent = hinshi;
-        column_hinshi_E.appendChild(hinshi_E);
-    }
+        const hinshi = translation.title;
+        hinshi_E.textContent = (hinshi) ? hinshi : '-';
 
-    // 訳語
-    for (const forms of formses) {
         const forms_E = document.createElement('span');
         forms_E.classList.add('form');
-
-        let pre = '';
+        let joined = '';
+        const forms = translation.forms;
         forms.forEach((form) => {
-            pre += `${form}, `;
+            joined += `${form}, `;
         });
 
-        forms_E.textContent = pre.slice(0, -2);
-        column_forms_E.appendChild(forms_E);
+        joined = joined.slice(0, -2);
+        forms_E.textContent = (joined) ? joined : '-';
+        translation_contents_E.appendChild(hinshi_E);
+        translation_contents_E.appendChild(forms_E);
     }
-
-    translation_contents_E.appendChild(column_hinshi_E);
-    translation_contents_E.appendChild(column_forms_E);
 
     today_word_E.appendChild(translation_contents_E);
 
