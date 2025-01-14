@@ -280,7 +280,7 @@ button.btn-audio-controls {
     
     .translation-contents {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 2fr 3fr;
         row-gap: 2px;
         justify-content: flex-start;
         align-items: center;
