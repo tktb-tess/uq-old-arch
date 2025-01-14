@@ -18,6 +18,7 @@
     --black-1: var(--bs-body-color);
     --weiss-1: var(--bs-light);
     --gray-1: var(--bs-secondary);
+    --gray-2: #636363;
 
     --bs-link-color: var(--blue-1);
     --bs-link-color-rgb: var(--blue-1-rgb);
@@ -261,6 +262,46 @@ button.btn-audio-controls {
     }
 }
 
+#today-word {
+    border: double 3px var(--bs-heading-color);
+    border-radius: 5px;
+    margin: 2rem auto;
+    box-shadow: 0 0 5px 0 #00000070;
+    width: 50%;
+    max-width: 100%;
+    text-align: center;
+    padding: .2rem .5rem;
+    background-color: white;
+    
+    .translation-row {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin-block-end: 1rem;
 
+        > * {
+            min-width: 0;
+        }
+    }
+
+    .vocabulary {
+        margin: 2rem auto;
+        width: max-content;
+        font-size: 2.5rem;
+        font-family: var(--font-serif-latn);
+    }
+
+    .pronunciation {
+        font-family: 'Charis SIL';
+        color: var(--gray-2);
+    }
+
+    .hinshi {
+        background-color:  var(--bs-heading-color);
+        border-radius: 100px;
+        padding: .2rem .8rem;
+        color: white;
+    }
+}
 
 
