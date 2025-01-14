@@ -3,7 +3,7 @@ class OTMJSON {
     static examples = [];
     static zpdic_online = {};
     static version = NaN;
-    static url = '/assets/json/vl-ja.otm.json';
+    static url = '/assets/json/vl-ja-otm.json';
 }
 
 
@@ -13,7 +13,7 @@ async function fetchOTMJSON() {
         const response = await fetch(OTMJSON.url);
 
         if (!response.ok) throw new Error(`failed to fetch!\nresponse status: ${response.status}`);
-
+        console.log(response.status);
         const parsed = await response.json();
         console.log(parsed);
 
@@ -32,7 +32,7 @@ fetchOTMJSON().then(async () => {
 
     const words = OTMJSON.words;
     if (!Array.isArray(words)) throw new Error('something wrong with fetching!');
-    console.log(`fetching 'vl-ja.otm.json' was successful!`);
+    console.log(`fetching 'vl-ja-otm.json' was successful!`);
     const random = await Util.getIntFromDate() % words.length;
     const today_word_entry = words[random];
     const vocabulary = today_word_entry.entry.form;
@@ -95,5 +95,11 @@ class Util {
 }
 
 
-
+async function __test(str) {
+    const date = new Date(str).toDateString();
+    const utf8arr = new TextEncoder().encode(today);
+    const hashed = new Uint8Array(await crypto.subtle.digest('SHA-256', utf8arr));
+    const sum = hashed.reduce((accumulator, current_value) => accumulator + current_value);
+    return sum;
+}
 
