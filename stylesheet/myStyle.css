@@ -299,7 +299,7 @@ button.btn-audio-controls {
     }
 
     .pronunciation {
-        font-family: 'Charis SIL';
+        font-family: 'CharisSIL' serif;
         font-size: 1.15rem;
         color: var(--gray-2);
     }
