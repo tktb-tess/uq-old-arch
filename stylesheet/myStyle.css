@@ -46,6 +46,10 @@
     --size-h6: 1rem;
 }
 
+*, ::before, ::after {
+    overflow-wrap: anywhere;
+}
+
 body {
     background-color: var(--weiss-1);
     font-optical-sizing: auto;
@@ -267,7 +271,7 @@ button.btn-audio-controls {
     border-radius: 5px;
     margin: 2rem auto;
     box-shadow: 0 0 2px 0 #00000080;
-    width: 650px;
+    width: 500px;
     max-width: 100%;
     text-align: center;
     padding: .2rem .5rem;
@@ -294,13 +298,12 @@ button.btn-audio-controls {
     .vocabulary {
         margin: 2rem auto;
         width: max-content;
-        font-size: 3rem;
+        font-size: var(--size-h1);
         font-family: var(--font-serif-latn);
     }
 
     .pronunciation {
         font-family: var(--font-ipa);
-        font-size: 1.15rem;
         color: var(--gray-2);
     }
 
@@ -319,6 +322,11 @@ button.btn-audio-controls {
         margin-inline: auto;
         width: max-content;
         max-width: 100%;
+    }
+
+    p:has(.zpdic-link) {
+        text-align: end;
+        margin-inline-end: .5rem;
     }
 }
 

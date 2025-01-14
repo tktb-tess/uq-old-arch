@@ -3,7 +3,7 @@ class OTMJSON {
     static examples = [];
     static zpdic_online = {};
     static version = NaN;
-    static url = '/assets/json/vl-ja-otm.json';
+    static url = '/assets/json/vl-ja.otm.json';
 }
 
 
@@ -33,18 +33,24 @@ fetchOTMJSON().then(async () => {
     const words = OTMJSON.words;
     if (!Array.isArray(words)) throw new Error('something wrong with fetching!');
     console.log(`fetching 'vl-ja-otm.json' was successful!`);
+
+    // 日替わり乱数を取得
     const random = await Util.getIntFromDate() % words.length;
+
     const today_word_entry = words[random];
     const vocabulary = today_word_entry.entry.form;
     const translations = today_word_entry.translations;
 
+    // コンテナ
     const today_word_E = document.getElementById('today-word');
 
+    // 語彙
     const vocabulary_E = document.createElement('p');
     vocabulary_E.classList.add('vocabulary');
     vocabulary_E.textContent = vocabulary;
     today_word_E.appendChild(vocabulary_E);
 
+    // 発音記号
     const pronunciation_E = document.createElement('p');
     pronunciation_E.classList.add('pronunciation');
     const pronunciation = today_word_entry.contents.find((content) => content.title === 'Pronunciation');
@@ -55,13 +61,11 @@ fetchOTMJSON().then(async () => {
         pronunciation_E.textContent = `/${pronunciation.text}/`;
     }
 
-    
-
-
     today_word_E.appendChild(pronunciation_E);
 
     today_word_E.appendChild(document.createElement('hr'));
 
+    // "訳"
     const yaku_E = document.createElement('p');
     yaku_E.classList.add('translation-title');
     yaku_E.textContent = `訳`;
@@ -69,6 +73,7 @@ fetchOTMJSON().then(async () => {
 
     const translation_contents_E = document.createElement('div');
     translation_contents_E.classList.add('translation-contents');
+
     const column_hinshi_E = document.createElement('div');
     const column_forms_E = document.createElement('div');
     column_hinshi_E.classList.add('column-hinshi');
@@ -76,6 +81,7 @@ fetchOTMJSON().then(async () => {
 
     const hinshis = [], formses = [];
 
+    // 品詞, 訳語だけの配列をそれぞれ生成
     for (const translation of translations) {
         hinshis.push(translation.title);
         formses.push(translation.forms);
@@ -107,6 +113,20 @@ fetchOTMJSON().then(async () => {
     translation_contents_E.appendChild(column_forms_E);
 
     today_word_E.appendChild(translation_contents_E);
+
+    const query = `?text=${encodeURI(vocabulary)}&mode=name&type=exact`;
+    const zpdicurl = 'https://zpdic.ziphil.com/dictionary/633' + query;
+    const zpdic_link_E = document.createElement('a');
+    const zpdic_link_wrap_E = document.createElement('p');
+    zpdic_link_E.href = zpdicurl;
+    zpdic_link_E.target = '_blank';
+    zpdic_link_E.rel = 'noreferrer';
+    zpdic_link_E.classList.add('ext-link');
+    zpdic_link_E.classList.add('zpdic-link');
+    zpdic_link_E.textContent = '辞書 ';
+
+    zpdic_link_wrap_E.appendChild(zpdic_link_E);
+    today_word_E.appendChild(zpdic_link_wrap_E);
 
 }).catch((err) => console.error(`caught a exception: ${err.message}`));
 
