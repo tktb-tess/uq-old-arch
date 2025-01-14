@@ -13,9 +13,9 @@ async function fetchOTMJSON() {
         const response = await fetch(OTMJSON.url);
 
         if (!response.ok) throw new Error(`failed to fetch!\nresponse status: ${response.status}`);
-        console.log(response.status);
+        //console.log(response.status);
         const parsed = await response.json();
-        console.log(parsed);
+        //console.log(parsed);
 
         OTMJSON.words = parsed.words;
         OTMJSON.examples = parsed.examples;
@@ -117,21 +117,15 @@ class Util {
         const today = new Date().toDateString();
         const utf8arr = new TextEncoder().encode(today);
         const hashed = new Uint8Array(await crypto.subtle.digest('SHA-256', utf8arr)).slice(0, 4);
-        const partialstr = Array.from(hashed, (e) => e.toString(16)).join('');
+
+        const partialstr = Array.from(hashed, (e) => {
+            const str = e.toString(16);
+            return (e < 16) ? `0${str}` : str;
+        }).join('');
         const parsed = Number.parseInt(partialstr, 16);
+
         return parsed;
     }
 }
 
-
-async function __test(str) {
-    const date = new Date(str).toDateString();
-    console.log(date);
-    const utf8arr = new TextEncoder().encode(date);
-    const hashed = new Uint8Array(await crypto.subtle.digest('SHA-256', utf8arr)).slice(0, 4);
-    const partialstr = Array.from(hashed, (e) => e.toString(16)).join('');
-    const parsed = Number.parseInt(partialstr, 16);
-    console.log(hashed, partialstr, parsed);
-    return parsed;
-}
 
