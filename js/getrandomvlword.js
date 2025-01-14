@@ -48,7 +48,16 @@ fetchOTMJSON().then(async () => {
     const pronunciation_E = document.createElement('p');
     pronunciation_E.classList.add('pronunciation');
     const pronunciation = today_word_entry.contents.find((content) => content.title === 'Pronunciation');
-    pronunciation_E.textContent = `/${pronunciation.text}/`;
+
+    if (pronunciation.text.includes('/')) {
+        pronunciation_E.textContent = pronunciation.text;
+    } else {
+        pronunciation_E.textContent = `/${pronunciation.text}/`;
+    }
+
+    
+
+
     today_word_E.appendChild(pronunciation_E);
 
     today_word_E.appendChild(document.createElement('hr'));
@@ -58,27 +67,46 @@ fetchOTMJSON().then(async () => {
     yaku_E.textContent = `訳`;
     today_word_E.appendChild(yaku_E);
 
+    const translation_contents_E = document.createElement('div');
+    translation_contents_E.classList.add('translation-contents');
+    const column_hinshi_E = document.createElement('div');
+    const column_forms_E = document.createElement('div');
+    column_hinshi_E.classList.add('column-hinshi');
+    column_forms_E.classList.add('column-forms');
+
+    const hinshis = [], formses = [];
+
     for (const translation of translations) {
-        const translation_row_E = document.createElement('div');
-        translation_row_E.classList.add('translation-row');
+        hinshis.push(translation.title);
+        formses.push(translation.forms);
+    }
+
+    // 品詞
+    for (const hinshi of hinshis) {
         const hinshi_E = document.createElement('span');
         hinshi_E.classList.add('hinshi');
-        hinshi_E.textContent = translation.title;
+        hinshi_E.textContent = hinshi;
+        column_hinshi_E.appendChild(hinshi_E);
+    }
 
-        const forms = translation.forms;
+    // 訳語
+    for (const forms of formses) {
         const forms_E = document.createElement('span');
         forms_E.classList.add('form');
+
         let pre = '';
-        for (const form of forms) {
+        forms.forEach((form) => {
             pre += `${form}, `;
-        }
-        pre = pre.slice(0, -2);
-        forms_E.textContent = pre;
-        
-        translation_row_E.appendChild(hinshi_E);
-        translation_row_E.appendChild(forms_E);
-        today_word_E.appendChild(translation_row_E);
+        });
+
+        forms_E.textContent = pre.slice(0, -2);
+        column_forms_E.appendChild(forms_E);
     }
+
+    translation_contents_E.appendChild(column_hinshi_E);
+    translation_contents_E.appendChild(column_forms_E);
+
+    today_word_E.appendChild(translation_contents_E);
 
 }).catch((err) => console.error(`caught a exception: ${err.message}`));
 
@@ -88,18 +116,22 @@ class Util {
     static async getIntFromDate() {
         const today = new Date().toDateString();
         const utf8arr = new TextEncoder().encode(today);
-        const hashed = new Uint8Array(await crypto.subtle.digest('SHA-256', utf8arr));
-        const sum = hashed.reduce((accumulator, current_value) => accumulator + current_value);
-        return sum;
+        const hashed = new Uint8Array(await crypto.subtle.digest('SHA-256', utf8arr)).slice(0, 4);
+        const partialstr = Array.from(hashed, (e) => e.toString(16)).join('');
+        const parsed = Number.parseInt(partialstr, 16);
+        return parsed;
     }
 }
 
 
 async function __test(str) {
     const date = new Date(str).toDateString();
-    const utf8arr = new TextEncoder().encode(today);
-    const hashed = new Uint8Array(await crypto.subtle.digest('SHA-256', utf8arr));
-    const sum = hashed.reduce((accumulator, current_value) => accumulator + current_value);
-    return sum;
+    console.log(date);
+    const utf8arr = new TextEncoder().encode(date);
+    const hashed = new Uint8Array(await crypto.subtle.digest('SHA-256', utf8arr)).slice(0, 4);
+    const partialstr = Array.from(hashed, (e) => e.toString(16)).join('');
+    const parsed = Number.parseInt(partialstr, 16);
+    console.log(hashed, partialstr, parsed);
+    return parsed;
 }
 
