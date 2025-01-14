@@ -263,15 +263,16 @@ button.btn-audio-controls {
 }
 
 #today-word {
-    border: double 3px var(--bs-heading-color);
+    border: solid 1px var(--bs-heading-color);
     border-radius: 5px;
     margin: 2rem auto;
-    box-shadow: 0 0 5px 0 #00000070;
+    box-shadow: 0 0 2px 0 #00000080;
     width: 50%;
     max-width: 100%;
     text-align: center;
     padding: .2rem .5rem;
     background-color: white;
+    background-image: linear-gradient(to bottom, transparent, #3d1e5718);
     
     .translation-row {
         display: flex;
