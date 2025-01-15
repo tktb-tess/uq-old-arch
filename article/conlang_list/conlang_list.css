@@ -193,13 +193,6 @@ a {
     text-decoration: none;
     transition: var(--transition-link);
 
-    &.ext-link::after {
-        content: url('/assets/svg/box-arrow-up-right-1.svg');
-        display: inline-block;
-        width: .8rem;
-        height: auto;
-    }
-
     @media (hover: hover) and (pointer: fine) {
         &:hover {
             opacity: .6;

@@ -371,6 +371,7 @@ const gacha_btn_E = document.getElementById('gacha-button');
 
 gacha_btn_E.addEventListener('click', () => {
     const gacha_result_E = document.getElementById('gacha-result');
+    const svg_external_link = `<svg xmlns="http://www.w3.org/2000/svg" class="bi bi-box-arrow-up-right" style="fill: currentColor; display: inline-block; width: .8rem; height: auto;" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5"/><path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0z"/></svg>`;
 
     const prev_result = document.getElementById('result-list');
     if (prev_result) 
@@ -442,21 +443,21 @@ gacha_btn_E.addEventListener('click', () => {
 
     for (const twitter of twitters) {
         const li = document.createElement('li');
-        const anchtxt = `<a class="ext-link" href="${twitter}" target="_blank" rel="noreferrer">${twitter} </a>`;
+        const anchtxt = `<a class="ext-link" href="${twitter}" target="_blank" rel="noreferrer">${twitter} ${svg_external_link}</a>`;
         li.innerHTML = anchtxt;
         innerul_twitter.appendChild(li);
     }
 
     for (const dict of dicts) {
         const li = document.createElement('li');
-        const anchtxt = `<a class="ext-link" href="${dict}" target="_blank" rel="noreferrer">${dict} </a>`;
+        const anchtxt = `<a class="ext-link" href="${dict}" target="_blank" rel="noreferrer">${dict} ${svg_external_link}</a>`;
         li.innerHTML = anchtxt;
         innerul_dict.appendChild(li);
     }
 
     for (const grammar of grammars) {
         const li = document.createElement('li');
-        const anchtxt = `<a class="ext-link" href="${grammar}" target="_blank" rel="noreferrer">${grammar} </a>`;
+        const anchtxt = `<a class="ext-link" href="${grammar}" target="_blank" rel="noreferrer">${grammar} ${svg_external_link}</a>`;
         li.innerHTML = anchtxt;
         innerul_grammar.appendChild(li);
     }
@@ -501,12 +502,12 @@ gacha_btn_E.addEventListener('click', () => {
         if (regex.exec(site.name)) continue; // regexに一致は無視
         else if (match2) { // regex2に一致はURLのみ取り出す
             const li = document.createElement('li');
-            li.innerHTML = `<a class="ext-link" href="${site.url}" target="_blank" rel="noreferrer">${site.url} </a>`;
+            li.innerHTML = `<a class="ext-link" href="${site.url}" target="_blank" rel="noreferrer">${site.url} ${svg_external_link}</a>`;
             innerul_site.appendChild(li);
 
         } else { // それ以外はフルで入れる
             const li = document.createElement('li');
-            li.innerHTML = `<a class="ext-link" href="${site.url}" target="_blank" rel="noreferrer">${site.name}: ${site.url} </a>`;
+            li.innerHTML = `<a class="ext-link" href="${site.url}" target="_blank" rel="noreferrer">${site.name}: ${site.url} ${svg_external_link}</a>`;
             innerul_site.appendChild(li);
         }
         
@@ -563,8 +564,6 @@ gacha_btn_E.addEventListener('click', () => {
         : class_list.remove('--mylang');
     
     if (data.visible) delete data.visible;
-        
-    
 
     setTimeout(() => {
         data.visible = true;
