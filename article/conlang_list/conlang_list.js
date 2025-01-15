@@ -367,10 +367,10 @@ class Util {
     }
 }
 
-const gacha_btn_E = document.getElementById('gacha-btn');
+const gacha_btn_E = document.getElementById('gacha-button');
 
 gacha_btn_E.addEventListener('click', () => {
-    const lang_gacha_result_E = document.getElementById('lang-gacha-result');
+    const gacha_result_E = document.getElementById('gacha-result');
 
     const prev_result = document.getElementById('result-list');
     if (prev_result) 
@@ -379,6 +379,7 @@ gacha_btn_E.addEventListener('click', () => {
     // 結果リスト
     const result_list_E = document.createElement('ul');
     result_list_E.id = 'result-list';
+    result_list_E.classList.add('u-ms-7');
 
     // ガチャ
     const [i, lang] = conlangGacha();
@@ -552,20 +553,21 @@ gacha_btn_E.addEventListener('click', () => {
     result_list_E.appendChild(li_exp);
     result_list_E.appendChild(li_script);
 
-    lang_gacha_result_E.appendChild(result_list_E);
+    gacha_result_E.appendChild(result_list_E);
 
-    const class_list = lang_gacha_result_E.classList;
+    const class_list = gacha_result_E.classList;
+    const data = gacha_result_E.dataset;
 
     li_creator.textContent.includes('斗琴庭暁響')
-        ? class_list.add('mylang')
-        : class_list.remove('mylang');
+        ? class_list.add('--mylang')
+        : class_list.remove('--mylang');
     
-    if (class_list.contains('visible')) {
-        class_list.remove('visible');
-    }
+    if (data.visible) delete data.visible;
+        
+    
 
     setTimeout(() => {
-        class_list.add('visible');
+        data.visible = true;
     }, 2);
 });
 
