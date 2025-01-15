@@ -44,7 +44,7 @@
     --gradient-header: linear-gradient(to bottom, #9000ff3f, transparent);
     --shadow-button: inset 0 0 3px var(--black-1);
     --color-background: var(--purple-1);
-    --transition-button: opacity 90ms ease-in-out;
+    --transition-button: opacity 80ms ease-in-out;
     --transition-link: opacity 60ms ease-in-out;
     --font-sans: 'InterVar', 'Arial', 'Helvetica Neue', 'Noto Sans Georgian', 'Noto Naskh Arabic', 'Nirmala UI', 'Noto Sans JP', 'Noto Sans TC', 'Source Han Sans', 'Noto Sans CJK JP', 'Yu Gothic UI', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Segoe UI', 'Segoe UI Historic', sans-serif;
     --font-serif: 'CharisSIL', 'Times New Roman', 'Noto Naskh Arabic', 'Nirmala UI', 'Noto Serif JP', 'Noto Serif TC', 'Source Han Serif', 'Noto Serif CJK JP', 'Yu Mincho', 'Hiragino Serif', 'Hiragino Mincho ProN', 'Segoe UI', 'Segoe UI Historic', serif;
@@ -183,7 +183,7 @@ button {
 
     @media (hover: hover) and (pointer: fine) {
         &:hover {
-            opacity: .6;
+            opacity: .8;
         }
     }
 }
