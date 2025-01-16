@@ -33,6 +33,7 @@
     --iro-rinku-hobaa: var(--ao-2);
     --iro-kage: var(--kuro-hantoomee-1);
     --iro-kage-teeburu: var(--kuro-hantoomee-2);
+    --iro-kage-botan: var(--kuro-hantoomee-2);
     --iro-fqidori: var(--kuro-hantoomee-1);
     --iro-fqidori-2: var(--kuro-hantoomee-2);
     --iro-fqidori-3: var(--xiro-1);
@@ -52,6 +53,9 @@
     --henka-rinku: 60ms ease-in-out;
     --kage-kontenaa: 0 0 5px var(--iro-kage);
     --kage-teeburu: 0px 0px 2px var(--iro-kage-teeburu);
+    --kage-botan: 0 0 3px var(--iro-kage-botan);
+    --gradient-botan: linear-gradient(to bottom, transparent, 80%, var(--kuro-hantoomee-2));
+    
 }
 
 body {
@@ -184,23 +188,24 @@ button {
     margin-inline: auto;
     width: max-content;
     max-width: 100%;
-    background: transparent;
+    background-color: white;
+    background-image: var(--gradient-botan);
+    box-shadow: var(--kage-botan);
     color: var(--murasaki-2);
     border: solid 1px var(--murasaki-2);
     padding: .1rem .5rem;
-    font-size: 1rem;
+    font-size: 1.2rem;
     border-radius: 5px;
-    transition: color var(--henka-btn-hobaa), background-color var(--henka-btn-hobaa);
+    transition: background-color var(--henka-btn-hobaa);
     cursor: pointer;
 
     @media (hover: hover) and (pointer: fine) {
         &:hover {
-            background-color: var(--murasaki-2);
-            color: var(--xiro-1);
+            background-color: #e8e8e8;
         }
 
         &:active {
-            opacity: 0.8;
+            opacity: .8;
         }
     }
 
