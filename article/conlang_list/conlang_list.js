@@ -37,7 +37,7 @@ async function fetchConlangList(_url) {
 };
 
 function parseCSV(csvString) {
-    if (typeof(csvString) !== 'string') return;
+    if (typeof (csvString) !== 'string') return;
     const rows = [];
     let row = [];
     let currentField = '';
@@ -83,7 +83,7 @@ fetchConlangList(ctcurl)
         metadata.license = { name: row_meta[5], content: row_meta[6] };
         metadata.advanced = Number.parseInt(row_meta[7]);
 
-        if (metadata.advanced !== 0) {}
+        if (metadata.advanced !== 0) { }
 
         metadata.label = parsed_data[1];
         metadata.type = parsed_data[2];
@@ -92,7 +92,7 @@ fetchConlangList(ctcurl)
 
         // messier,name,kanji,desc,creator,period,site,twitter,dict,grammar,world,category,moyune,cla,part,example,script
         for (let i = 3; i < parsed_data.length - 1; i++) {
-        
+
             const row = parsed_data[i];
             const cotec_one_content = {
                 messier: '',
@@ -120,7 +120,7 @@ fetchConlangList(ctcurl)
                 example: [],
                 script: [],
             }
-            
+
             // messier, name, kanji
             cotec_one_content.messier = row[0];
             cotec_one_content.name.normal = row[1].split(';').map((datum) => datum.trim());
@@ -145,17 +145,17 @@ fetchConlangList(ctcurl)
                     }
                 }
             }
-            
+
             // creator, period
             cotec_one_content.creator = row[4].split(';').map((datum) => datum.trim());
             cotec_one_content.period = row[5];
 
             // site
             const site_p = row[6];
-            
+
             const regex_for_site = /(?:(?<name>(?:\p{Script=Han}|\p{Script=Hiragana}|\p{Script=Katakana})+\d*):\s?|\s|^)(?<url>(?:https:\/\/web\.archive\.org\/web\/[0-9]+\/)?https?:\/\/[\w\-\.]+[\w\-]+(?:\/[\w\?\+\-_~=\.&@#%]*)*)/gu;
             const matches = site_p.matchAll(regex_for_site);
-            
+
             for (const match of matches) {
                 const res = match.groups;
                 if (res) {
@@ -167,7 +167,7 @@ fetchConlangList(ctcurl)
 
             // 辞書・文法のsiteをdict, grammarにパース
             cotec_one_content.site.forEach((elem) => {
-                if (typeof(elem) !== 'object' || Array.isArray(elem)) return;
+                if (typeof (elem) !== 'object' || Array.isArray(elem)) return;
 
                 if (elem.name.includes('文法')) cotec_one_content.grammar.push(elem.url);
                 if (elem.name.includes('辞書')) cotec_one_content.dict.push(elem.url);
@@ -178,7 +178,7 @@ fetchConlangList(ctcurl)
 
             // twitter
             if (row[7]) cotec_one_content.twitter = row[7].split(';').map((s) => s.trim());
-            
+
 
             // dict
             if (row[8]) {
@@ -191,18 +191,18 @@ fetchConlangList(ctcurl)
                 const grammar_p = row[9].split(';').map((s) => s.trim());
                 cotec_one_content.grammar = cotec_one_content.grammar.concat(grammar_p);
             }
-            
+
             // world
             if (row[10]) cotec_one_content.world = row[10].split(';').map((s) => s.trim());
-            
+
             // category
             if (row[11]) {
                 const category_p = row[11].split(';').map((s) => s.trim());
-                
+
                 const regex = /^(?<name>[^:]+)(?::(?<content>.+))?$/u;
                 for (const elem of category_p) {
                     const match = regex.exec(elem);
-                    
+
                     if (match) {
                         const cat = match.groups;
                         if (!cat.content) cat.content = '';
@@ -216,7 +216,7 @@ fetchConlangList(ctcurl)
 
             // モユネ分類・CLA v3をmoyune, clav3にパース
             cotec_one_content.category.forEach((elem) => {
-                if (typeof(elem) !== 'object' || Array.isArray(elem)) return;
+                if (typeof (elem) !== 'object' || Array.isArray(elem)) return;
 
                 switch (elem.name) {
                     case "CLA v3":
@@ -226,7 +226,7 @@ fetchConlangList(ctcurl)
                             cotec_one_content.clav3 = match.groups;
                         }
                         break;
-                    
+
                     case "モユネ分類":
                         const parsed = Array.from(elem.content.match(/[A-Z]{3}/g));
                         cotec_one_content.moyune = parsed;
@@ -268,7 +268,7 @@ fetchConlangList(ctcurl)
 
             content.push(cotec_one_content);
         }
-        
+
         console.log(`fetching & parsing cotec file was successful!`);
 
         // ライセンスを表示
@@ -283,10 +283,10 @@ fetchConlangList(ctcurl)
         // 合計の表示
         const totalnum_E = document.getElementById('totalnum');
         totalnum_E.textContent = `合計 ${metadata.datasize[0]} 語`;
-})
+    })
     .catch((e) => {
         console.error(`ein Ausnahme fange: ${e.message}`);
-});
+    });
 
 // JSONのダウンロード
 const downloadJSON = () => {
@@ -318,7 +318,7 @@ function showdata(key) {
             if (data.length === 0 || data[0] === '') return;
             console.log(result);
             return;
-        } else if (typeof(data) === 'object') {
+        } else if (typeof (data) === 'object') {
             if (Object.keys(data).length === 0) return;
             console.log(result);
             return;
@@ -343,7 +343,7 @@ function showsiteurl() {
 function showCategories() {
     content.forEach((lang) => {
         for (const elem of lang.category) {
-            console.log(`${elem.name}${(elem.content) ? `: ${elem.content}` : `` }`);
+            console.log(`${elem.name}${(elem.content) ? `: ${elem.content}` : ``}`);
         }
     });
 }
@@ -380,11 +380,6 @@ function searchByCreator(name) {
     return results;
 }
 
-const conlangGacha = () => {
-    const index = Util.getRandomInt(0, content.length);
-    return content[index];
-}
-
 class Util {
     static getRandomInt(min_, max_) {
         const min = Number(min_), max = Number(max_);
@@ -395,13 +390,20 @@ class Util {
 const gacha_btn_E = document.getElementById('gacha-button');
 
 gacha_btn_E.addEventListener('click', () => {
+    // ガチャ
+    const rand = Util.getRandomInt(0, content.length);
+    showGachaResult(rand);
+});
+
+function showGachaResult(index) {
     const gacha_result_E = document.getElementById('gacha-result');
     const svg_external_link = `<svg xmlns="http://www.w3.org/2000/svg" class="bi bi-box-arrow-up-right" style="fill: currentColor; display: inline-block; width: .8rem; height: auto;" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5"/><path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0z"/></svg>`;
+    const lang = content[index];
 
     if (gacha_result_E.dataset.visible) delete gacha_result_E.dataset.visible;
 
     const prev_result = document.getElementById('result-list');
-    if (prev_result) 
+    if (prev_result)
         prev_result.remove();
 
     // 結果リスト
@@ -409,10 +411,8 @@ gacha_btn_E.addEventListener('click', () => {
     result_list_E.id = 'result-list';
     result_list_E.classList.add('u-ms-7');
 
-    // ガチャ
-    const lang = conlangGacha();
-    console.log({name: lang.name.normal[0], lang});
-    
+
+
     // 名前,漢字名,説明,作者,世界,例文,使用文字
     const li_name = document.createElement('li');
     const li_kanji = document.createElement('li');
@@ -435,14 +435,14 @@ gacha_btn_E.addEventListener('click', () => {
     li_world.textContent = `世界: ${lang.world.join(', ')}`;
     li_exp.textContent = `例文: ${lang.example.join(', ')}`;
     li_script.textContent = `使用文字: ${lang.script.join(', ')}`;
-    
+
     const descs = lang.desc;
     for (const desc of descs) {
         const paragraph = document.createElement('p');
         paragraph.textContent = desc;
         li_desc.insertAdjacentElement('beforeend', paragraph);
     }
-    
+
 
     // 創作期間
     const li_period = document.createElement('li');
@@ -497,21 +497,20 @@ gacha_btn_E.addEventListener('click', () => {
     const li_category = document.createElement('li');
     li_category.id = 'json-category';
     const categories = lang.category;
-    li_category.textContent = `カテゴリ: `
-
+    li_category.textContent = `カテゴリ:`;
+    const innerul_cat = document.createElement('ul');
     categories.forEach((category) => {
         if (category.name === 'CLA v3' || category.name === 'モユネ分類') return;
-
+        const innerli_cat = document.createElement('li');
         if (category.content) {
-            li_category.insertAdjacentText('beforeend', `${category.name}: ${category.content}, `);
+            innerli_cat.textContent = `${category.name}: ${category.content}`;
         } else {
-            li_category.insertAdjacentText('beforeend', `${category.name}, `);
+            innerli_cat.textContent = `${category.name}`;
         }
+        innerul_cat.appendChild(innerli_cat);
     });
 
-    if (li_category.textContent.at(-2) === ',') {
-        li_category.textContent = li_category.textContent.slice(0, -2);
-    }
+    li_category.appendChild(innerul_cat);
 
     // サイト
     const li_site = document.createElement('li');
@@ -521,7 +520,7 @@ gacha_btn_E.addEventListener('click', () => {
 
     const innerul_site = document.createElement('ul');
     for (const site of sites) {
-        
+
         const regex = /^(?:文法|辞書)\d*$/u; // 「文法(n)」あるいは「辞書(n)」に一致
         const regex2 = /(?:^サイト(?<number>\d*)$)|^$/u; // 「サイト(n)」あるいは空文字列に一致
         const match2 = regex2.exec(site.name);
@@ -537,7 +536,7 @@ gacha_btn_E.addEventListener('click', () => {
             li.innerHTML = `<a class="ext-link" href="${site.url}" target="_blank" rel="noreferrer">${site.name}: ${site.url} ${svg_external_link}</a>`;
             innerul_site.appendChild(li);
         }
-        
+
     }
 
     if (innerul_site.firstChild) li_site.insertAdjacentElement('beforeend', innerul_site);
@@ -562,7 +561,7 @@ gacha_btn_E.addEventListener('click', () => {
     } else {
         li_clav3.textContent = `CLA v3:`;
     }
-    
+
 
     // 名前,漢字略称,説明,作者,創作期間,サイト,twitter,辞書文法,世界,カテゴリ,モユネ分類,CLA v3コード,例文,使用文字
     result_list_E.appendChild(li_name);
@@ -588,11 +587,10 @@ gacha_btn_E.addEventListener('click', () => {
     li_creator.textContent.includes('斗琴庭暁響')
         ? class_list.add('--mylang')
         : class_list.remove('--mylang');
-    
-    
 
     setTimeout(() => {
         gacha_result_E.dataset.visible = true;
     }, 2);
-});
+}
+
 
