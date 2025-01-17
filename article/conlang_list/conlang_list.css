@@ -25,6 +25,7 @@
     --white-trl-3: #f8f9fa21;
     --white-trl-4: #f8f9fa9c;
     --purple-1: #12061b;
+    --purple-2: #260b3d;
     --purple-trl-1: #12061b30;
     --black-trl-1: #00000041;
     --black-1: #000;
@@ -63,7 +64,7 @@
 /* reset */
 
 body {
-    background: var(--color-background);
+    background: black;
     font-family: var(--font-sans);
     color: var(--color-content);
     font-optical-sizing: auto;
@@ -155,7 +156,8 @@ h6 {
     display: flow-root;
     min-height: 100vh;
     padding-inline: var(--gutter-container);
-    border-inline: solid 1px var(--color-container-border);
+    box-shadow: inset 0 0 5px 1px #ffffff90;
+    background-image: linear-gradient(to bottom, var(--purple-2), 20%, var(--purple-1));
 
     @media (min-width: 1140px) {
         max-width: 1140px;
@@ -321,8 +323,6 @@ a {
 /* specific */
 
 .header {
-
-    background-image: var(--gradient-header);
     .header__title {
         text-align: center;
         margin: 3rem auto;
@@ -406,6 +406,7 @@ a {
 
 #license {
     text-align: end;
+    font-size: .875rem;
 }
 
 #totalnum {
