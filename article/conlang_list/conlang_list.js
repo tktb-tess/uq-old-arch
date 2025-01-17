@@ -311,24 +311,25 @@ const downloadCTC = () => {
 // デバッグ用
 function showdata(key) {
     content.forEach((lang) => {
-        if (!lang[key]) return;
-
-        if (Array.isArray(lang[key])) {
-            if (lang[key].length === 0 || lang[key][0] === '') return;
-            console.log(lang[key]);
+        const data = lang[key];
+        if (!data) return;
+        const result = { name: lang.name.normal[0], data };
+        if (Array.isArray(data)) {
+            if (data.length === 0 || data[0] === '') return;
+            console.log(result);
             return;
-        } else if (typeof(lang[key]) === 'object') {
-            if (lang[key].keys().length === 0) return;
-            console.log(lang[key]);
+        } else if (typeof(data) === 'object') {
+            if (Object.keys(data).length === 0) return;
+            console.log(result);
             return;
         } else {
-            console.log(lang[key]);
+            console.log(result);
         }
     });
 }
 
 function showdataAll(key) {
-    content.forEach((lang) => console.log(lang[key]));
+    content.forEach((lang) => console.log({ name: lang.name.normal[0], data: lang[key] }));
 }
 
 function showsiteurl() {
@@ -349,11 +350,27 @@ function showCategories() {
 
 function searchByName(name) {
     const results = [];
-    content.forEach((lang, i) => {
+    content.forEach((lang) => {
         const names = lang.name.normal.concat(lang.name.kanji);
         const found = names.find((n) => n.includes(name));
         if (found) {
-            results.push({ index: i, name: lang.name.normal[0], content: lang });
+            results.push({ name: lang.name.normal[0], content: lang });
+        }
+    });
+    if (results.length === 0) {
+        console.log('Not found!');
+        return;
+    }
+    return results;
+}
+
+function searchByCreator(name) {
+    const results = [];
+    content.forEach((lang) => {
+        const creators = lang.creator;
+        const found = creators.find((n) => n.includes(name));
+        if (found) {
+            results.push({ name: lang.name.normal[0], content: lang });
         }
     });
     if (results.length === 0) {
@@ -365,7 +382,7 @@ function searchByName(name) {
 
 const conlangGacha = () => {
     const index = Util.getRandomInt(0, content.length);
-    return [index, content[index]];
+    return content[index];
 }
 
 class Util {
@@ -381,6 +398,8 @@ gacha_btn_E.addEventListener('click', () => {
     const gacha_result_E = document.getElementById('gacha-result');
     const svg_external_link = `<svg xmlns="http://www.w3.org/2000/svg" class="bi bi-box-arrow-up-right" style="fill: currentColor; display: inline-block; width: .8rem; height: auto;" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5"/><path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0z"/></svg>`;
 
+    if (gacha_result_E.dataset.visible) delete gacha_result_E.dataset.visible;
+
     const prev_result = document.getElementById('result-list');
     if (prev_result) 
         prev_result.remove();
@@ -391,8 +410,8 @@ gacha_btn_E.addEventListener('click', () => {
     result_list_E.classList.add('u-ms-7');
 
     // ガチャ
-    const [i, lang] = conlangGacha();
-    console.log([i, lang.name.normal[0],lang]);
+    const lang = conlangGacha();
+    console.log({name: lang.name.normal[0], lang});
     
     // 名前,漢字名,説明,作者,世界,例文,使用文字
     const li_name = document.createElement('li');
@@ -565,16 +584,15 @@ gacha_btn_E.addEventListener('click', () => {
     gacha_result_E.appendChild(result_list_E);
 
     const class_list = gacha_result_E.classList;
-    const data = gacha_result_E.dataset;
 
     li_creator.textContent.includes('斗琴庭暁響')
         ? class_list.add('--mylang')
         : class_list.remove('--mylang');
     
-    if (data.visible) delete data.visible;
+    
 
     setTimeout(() => {
-        data.visible = true;
+        gacha_result_E.dataset.visible = true;
     }, 2);
 });
 
