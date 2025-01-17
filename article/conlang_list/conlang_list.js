@@ -28,6 +28,7 @@ async function fetchConlangList(_url) {
         const raw = await resp.text();
         cotec_raw = raw;
         const parsed = parseCSV(raw);
+        //console.log(parsed);
         return parsed;
 
     } catch (e) {
@@ -194,12 +195,14 @@ fetchConlangList(ctcurl)
             // world
             if (row[10]) cotec_one_content.world = row[10].split(';').map((s) => s.trim());
             
-
+            // category
             if (row[11]) {
                 const category_p = row[11].split(';').map((s) => s.trim());
-                const regex = /^(?<name>[^:]+)(?::(?<content>.+))?$/gu;
+                
+                const regex = /^(?<name>[^:]+)(?::(?<content>.+))?$/u;
                 for (const elem of category_p) {
                     const match = regex.exec(elem);
+                    
                     if (match) {
                         const cat = match.groups;
                         if (!cat.content) cat.content = '';
@@ -308,15 +311,14 @@ const downloadCTC = () => {
 // デバッグ用
 function showdata(key) {
     content.forEach((lang) => {
-        if (lang[key]) return;
+        if (!lang[key]) return;
 
         if (Array.isArray(lang[key])) {
-            if (lang[key].length === 0) return;
-            if (lang[key][0] === '') return;
+            if (lang[key].length === 0 || lang[key][0] === '') return;
             console.log(lang[key]);
             return;
         } else if (typeof(lang[key]) === 'object') {
-            if (lang[key].keys().length === 0)
+            if (lang[key].keys().length === 0) return;
             console.log(lang[key]);
             return;
         } else {
@@ -332,22 +334,28 @@ function showdataAll(key) {
 function showsiteurl() {
     content.forEach((lang) => {
         for (const e of lang.site) {
-            console.log(e);
+            console.log(`${(e.name) ? `${e.name}: ` : ``}${e.url}`);
         }
-    })
+    });
+}
+
+function showCategories() {
+    content.forEach((lang) => {
+        for (const elem of lang.category) {
+            console.log(`${elem.name}${(elem.content) ? `: ${elem.content}` : `` }`);
+        }
+    });
 }
 
 function searchByName(name) {
     const results = [];
     content.forEach((lang, i) => {
         const names = lang.name.normal.concat(lang.name.kanji);
-        const found = names.find((n) => n === name);
-        if (typeof(found) !== 'undefined') {
-            
-            results.push({ index: i, content: lang });
-            return;
+        const found = names.find((n) => n.includes(name));
+        if (found) {
+            results.push({ index: i, name: lang.name.normal[0], content: lang });
         }
-    })
+    });
     if (results.length === 0) {
         console.log('Not found!');
         return;

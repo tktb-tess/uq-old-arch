@@ -386,6 +386,7 @@ a {
     max-width: 100%;
     margin-inline: auto;
     border-radius: 8px;
+    min-height: 500px;
 
     .gacha-result__title {
         text-align: center;
