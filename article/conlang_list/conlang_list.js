@@ -210,7 +210,6 @@ fetchConlangList(ctcurl)
                         cotec_one_content.category.push(match.groups);
                     }
                 }
-                
             }
 
             cotec_one_content.clav3 = null;
