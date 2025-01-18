@@ -169,16 +169,9 @@ a {
     color: var(--iro-rinku);
     transition: opacity var(--henka-rinku);
 
-    &.ext-link::after {
-        content: url('/assets/svg/box-arrow-up-right.svg');
-        display: inline-block;
-        width: .8rem;
-        height: auto;
-    }
-
     @media (hover: hover) and (pointer: fine) {
         &:hover {
-            opacity: .5;
+            opacity: .6;
         }
     }
 }
@@ -374,10 +367,11 @@ hr {
     padding: 15px;
     border-radius: 50%;
     border: none;
-    transition: color var(--henka-btn-hobaa),
-        background-color var(--henka-btn-hobaa),
-        opacity var(--henka-btn-xinindo),
-        visibility var(--henka-btn-xinindo);
+    transition: color var(--henka-btn-hobaa), background-color var(--henka-btn-hobaa), opacity var(--henka-btn-xinindo), visibility var(--henka-btn-xinindo);
+    background-image: none;
+    box-shadow: none;
+    background-color: transparent;
+    color: var(--murasaki-2);
     visibility: hidden;
     opacity: 0;
 
@@ -386,8 +380,11 @@ hr {
         opacity: 1;
     }
 
-    &:active {
-        opacity: 1;
+    @media (hover: hover) and (pointer: fine) {
+        &:hover {
+            background-color: var(--murasaki-2);
+            color: var(--xiro-1);
+        }
     }
 
     #arrow-up {
