@@ -10,7 +10,7 @@ window.addEventListener('scroll', function() {
 }, false);
 
 pageTopBtn.addEventListener('click', function() {
-    window.scroll({top: 0});
+    window.scroll({ top: 0 });
 }, false);
 
  
