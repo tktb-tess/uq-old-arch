@@ -27,10 +27,10 @@
     --bs-danger: var(--red-1);
     --bs-danger-rgb: var(--red-1-rgb);
 
-    --font-serif: 'CharisSIL', 'Times New Roman', 'Noto Serif JP', 'Source Han Serif', 'Noto Serif CJK JP', 'Yu Mincho', 'Hiragino Serif', 'Hiragino Mincho ProN', serif;
+    --font-serif: 'CharisSIL', 'Times New Roman', 'Noto Serif JP', 'Source Han Serif', 'Noto Serif CJK JP', 'Yu Mincho', 'Hiragino Serif', 'Hiragino Mincho ProN', 'Segoe UI Emoji', serif;
     --font-serif-latn: 'CharisSIL', 'Brill', 'Times New Roman', serif;
     --font-ipa: 'CharisSIL', 'Times New Roman', serif;
-    --font-sans: 'InterVar', 'Arial', 'Helvetica Neue', 'Noto Sans JP', 'Source Han Sans', 'Noto Sans CJK JP', 'Yu Gothic UI', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', sans-serif;
+    --font-sans: 'InterVar', 'Arial', 'Helvetica Neue', 'Noto Sans JP', 'Source Han Sans', 'Noto Sans CJK JP', 'Yu Gothic UI', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Segoe UI Emoji', sans-serif;
     --font-sans-latn: 'InterVar', 'Arial', 'Helvetica Neue', sans-serif;
     --bs-font-sans-serif: var(--font-sans);
 
@@ -54,8 +54,7 @@ body {
     background-color: var(--weiss-1);
     font-optical-sizing: auto;
 
-    > .container,
-    > .container-fluid {
+    > :is(.container, .container-fluid) {
         min-height: 100vh;
         display: flow-root;
     }
@@ -63,6 +62,11 @@ body {
     * {
         font-family: inherit;
     }
+}
+
+pre, code, textarea,
+input:where([type="email"], [type="number"], [type="password"], [type="search"], [type="tel"], [type="text"], [type="url"]) {
+    font-family: monospace;
 }
 
 h1, h2, h3, h4, h5, h6 {
