@@ -68,6 +68,11 @@ body {
     }
 }
 
+pre, code, textarea,
+input:where([type="email"], [type="number"], [type="password"], [type="search"], [type="tel"], [type="text"], [type="url"]) {
+    font-family: monospace;
+}
+
 img {
     display: block;
 }

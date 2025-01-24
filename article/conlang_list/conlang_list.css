@@ -69,9 +69,14 @@ body {
     color: var(--color-content);
     font-optical-sizing: auto;
 
-    :where(:not(pre, code)) {
+    * {
         font-family: inherit;
     }
+}
+
+pre, code, textarea,
+input:where([type="email"], [type="number"], [type="password"], [type="search"], [type="tel"], [type="text"], [type="url"]) {
+    font-family: monospace;
 }
 
 :where(:not(pre)) code, pre:has(:where(code)) {
