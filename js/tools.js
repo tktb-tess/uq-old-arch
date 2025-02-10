@@ -32,15 +32,6 @@ class Queue {
     }
 }
 
-class PrivateLike {
-
-    constructor(value) {
-        this[Symbol('x')] = value;
-    }
-}
-
-Object.freeze(Queue.prototype);
-
 class util extends null {
 
     constructor() { throw TypeError('class \`util\` cannot construct!'); }
@@ -116,9 +107,9 @@ class util extends null {
 
     /**
      * 冪剰余を計算する
-     * @param {number | bigint} base_ 底
-     * @param {number | bigint} power_ 指数
-     * @param {number | bigint} mod_ 法
+     * @param {bigint} base_ 底
+     * @param {bigint} power_ 指数
+     * @param {bigint} mod_ 法
      * @returns 冪剰余
      */
     static ModPow(base_, power_, mod_) {
@@ -372,27 +363,6 @@ class util extends null {
 
 }
 
-const primListeHolen = async () => {
-    try {
-        const geholt = await fetch("/assets/misc/primzahlen.bin");
-        if (!geholt.ok) throw new Error(`response status: ${geholt.status}`);
-
-        const bin = await geholt.bytes();
-        const p_list = Array.from(bin, bit => bit.toString(16).padStart(2, '0')).join('').match(/.{6}/g).map(s => Number.parseInt(s, 16));
-
-        p_list.forEach((p) => {
-            prim_liste.push(p);
-        });
-
-        console.log(`fetching \`primzahlen.bin\` was successful!`);
-
-    } catch (e) {
-        throw new Error(e.message);
-    }
-}
-
-primListeHolen().catch((err) => console.error(err.message));
-
 class Base64 {
 
     constructor() { throw TypeError('class \`Base64\` cannot construct!'); };
@@ -503,10 +473,27 @@ class CachedPrime {
     }
 }
 
-
-/* イベントリスナー */
-
 document.addEventListener('DOMContentLoaded', () => {
+
+    // 素数表の読み込み
+    (async () => {
+        
+        const geholt = await fetch("/assets/misc/primzahlen.bin");
+        if (!geholt.ok) throw new Error(`response status: ${geholt.status}`);
+
+        const bin = await geholt.bytes();
+        const p_list = Array.from(bin, bit => bit.toString(16).padStart(2, '0')).join('').match(/.{6}/g).map(s => Number.parseInt(s, 16));
+
+        p_list.forEach((p) => {
+            prim_liste.push(p);
+        });
+
+        console.log(`fetching \`primzahlen.bin\` was successful!`);
+    })().catch((err) => {
+        console.error(`fetching failed!: ${err.stack}`);
+    });
+
+    /* イベントリスナー */
 
     const base64_btn = document.getElementById("base64-btn"); // ボタン共
     const base64de_btn = document.getElementById("base64de-btn");
@@ -689,6 +676,18 @@ document.addEventListener('DOMContentLoaded', () => {
     }, false);
 }, false);
 
+/**
+ * 
+ * @returns {bigint[]} 素数の配列
+ */
+const test = () => {
+    const arr = [...Array(2 ** 18)].map((_, i) => BigInt(i) + 2n ** 63n);
+    const res = [];
+    arr.forEach((n) => {
+        if (util.MillerRabin(n)) res.push(n);
+    });
 
+    return res;
+}
 
 
