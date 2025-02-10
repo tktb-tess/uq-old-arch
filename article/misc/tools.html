@@ -71,17 +71,10 @@
                 </div>
             </div>
             <hr>
-            <div class="tool-container">
-                <h3 class="t-title">?</h3>
-                <p class="t-summary">↓ ↓ ↓ ↓ ↓</p>
-                <object id="tess-logo" data="/assets/svg/tess_logo.svg" type="text/svg+xml">tess_logo.svg</object>
-                <p class="t-summary">↑ ↑ ↑ ↑ ↑</p>
-            </div>
-            <hr>
             <div id="factori" class="tool-container">
                 <h3 id="factori-title" class="t-title">素因数分解チャレンジ</h3>
                 <p class="t-summary">
-                    説明:「最小値」「最大値」に入力された範囲内から、ランダムに2つ素数を抽出し、積を表示します。<br />
+                    説明:「最小値」「最大値」に入力された範囲内から、ランダムに2つ素数を抽出し、積を表示します。<br>
                     頑張って素因数分解してみよう！<br>
                     最大値は1000000以下にしてください。
                 </p>
@@ -97,7 +90,7 @@
                 </div>
                 <button id="factori-btn" class="t-btn" type="button" role="button">表示</button>
                 <p id="factori-result-label" class="t-result-1">↓2つの素数の積↓</p>
-                <p id="factori-result" class="">-----</p>
+                <p id="factori-result" class="t-result-2">-----</p>
                 <div id="factori-seego">
                     <p class="t-summary">正誤判定</p>
                     <div class="t-inputs">
@@ -111,9 +104,33 @@
                         </div>
                     </div>
                     <button id="factori-btn-2" class="t-btn" type="button" role="button">判定！</button>
-                    <p id="factori-result-2" class="">-</p>
+                    <p id="factori-result-2" class="t-result-2">-</p>
                 </div>
             </div>
+            <hr>
+            <div id="miller-rabin" class="tool-container">
+                <h3 id="miller-rabin-title" class="t-title">素数判定 (Miller–Rabin)</h3>
+                <p id="miller-rabin-summary" class="t-summary">
+                    説明: Miller–Rabin テストを用いて確率的に素数判定します。<br>
+                    2<sup>64</sup> (= 18,446,744,073,709,551,616) 未満は確定的です。
+                </p>
+                <div class="t-inputs">
+                    <div>
+                        <label class="t-input-1-label" for="miller-rabin-input-1">整数:</label>
+                        <input id="miller-rabin-input" class="t-input-1" type="text" placeholder="" />
+                    </div>
+                </div>
+                <button id="miller-rabin-btn" class="t-btn" type="button" role="button">判定！</button>
+                <p id="miller-rabin-result" class="t-result-3">-</p>
+            </div>
+            <hr>
+            <div class="tool-container">
+                <h3 class="t-title">???</h3>
+                <p class="t-summary">↓ ↓ ↓ ↓ ↓</p>
+                <object id="tess-logo" data="/assets/svg/tess_logo.svg" type="text/svg+xml">tess_logo.svg</object>
+                <p class="t-summary">↑ ↑ ↑ ↑ ↑</p>
+            </div>
+            <hr>
             <div id="hashb64" class="tool-container">
                 <h3 id="hashb64-title" class="t-title">???</h3>
                 <div>
