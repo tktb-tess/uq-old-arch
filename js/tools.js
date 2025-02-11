@@ -197,7 +197,7 @@ class util extends null {
      * @description `ax - by = gcd(a, b)`
      * @param {bigint} a a
      * @param {bigint} b b
-     * @returns `[x, y, gcd(a, b)]`
+     * @returns {[bigint, bigint, bigint]} `[x, y, gcd(a, b)]`
      */
     static ExEuclidean(a, b) {
         if (typeof a !== 'bigint' || typeof b !== 'bigint') throw TypeError('type of arguments must be Bigint');
@@ -238,10 +238,10 @@ class util extends null {
         if (typeof n_ !== 'bigint') throw TypeError('引数型は \`bigint\` でなければなりません');
         if (n_ < 0n) throw Error('引数は正の整数でなければなりません');
         const n = n_;
-        
+
         if (n === 2n) return true;
         if (n === 1n || n % 2n === 0n) return false;
-        
+
         const bit_num = n.toString(2).length;
         let s = 0n, d = n - 1n;
 
@@ -277,7 +277,7 @@ class util extends null {
                 while (true) {
                     // 乱数を取得
                     const rnd_ = util.getRndBIR(1, bit_num + 1) % n;
-    
+
                     // 最大公約数を計算する。1でなかったらやりなおし
                     const gcd = util.ExEuclidean(rnd_, n)[2];
                     if (gcd === 1n) {
@@ -285,10 +285,10 @@ class util extends null {
                         break;
                     }
                 }
-    
+
                 let y = util.ModPow(a, d, n);
                 if (y === 1n) continue challenge2;
-    
+
                 for (let i = 0n; i < s; i++) {
                     if (y === n - 1n) continue challenge2;
                     y = y * y % n;
@@ -308,7 +308,7 @@ class util extends null {
         if (typeof n !== 'bigint') throw TypeError(`type must be 'bigint'`);
         if (n < 0n) throw Error('a number must not be negative');
         if (n === 0n) return 1n;
-        
+
         const two_exp = n - BigInt(n.toString(2).match(/1/g).length);
         const odd_part = util.#OddPart(n);
         return odd_part << two_exp;
@@ -363,6 +363,49 @@ class util extends null {
 
 }
 
+/**
+ * translated from C example
+ * @returns xoshiro256\*\*
+ */
+const XoshiroInit = async () => {
+    const date = new Date().toISOString();
+    const buf = new TextEncoder().encode(date).buffer;
+    const state = new BigUint64Array(await crypto.subtle.digest('SHA-256', buf));
+
+    /**
+     * 
+     * @param {bigint} x 
+     * @param {bigint} num 
+     * @returns 
+     */
+    const rol64 = (x, num) => {
+        return BigInt.asUintN(64, x << num) | (x >> (64n - num));
+    }
+
+    const xosh = Object.freeze({
+        get value() {
+            const result = rol64(state[1] * 5n, 7n) * 9n;
+            const t = BigInt.asUintN(64, state[1] << 17n);
+
+            state[2] ^= state[0];
+            state[3] ^= state[1];
+            state[1] ^= state[2];
+            state[0] ^= state[3];
+
+            state[2] ^= t;
+            state[3] = rol64(state[3], 45n);
+
+            return result;
+        },
+        toString(radix = 10) {
+            return this.value.toString(radix);
+        }
+    });
+    return xosh;
+};
+
+let xoshiro256ss = null;
+
 class Base64 {
 
     constructor() { throw TypeError('class \`Base64\` cannot construct!'); };
@@ -393,32 +436,46 @@ class Base64 {
 class RSA {
     #p = 0n;
     #q = 0n;
-    #pq = 0n;
+    #n = 0n;
+    #e = 65537n;
+    #d = 0n;
 
     /**
      * 
      * @param {number} bits 
      */
-    constructor(bits = 512) {
+    constructor(bits = 1024) {
         if (typeof bits !== 'number') throw TypeError('!');
-        let [p_, q_] = [1n, 1n];
-        while (!util.MillerRabin(p_)) {
-            p_ = util.getRndBI(bits);
-        }
-        while (!util.MillerRabin(q_)) {
-            q_ = util.getRndBI(bits);
-        }
-        this.#p = p_;
-        this.#q = q_;
-        this.#pq = p_ * q_;
-    }
 
-    getProd() {
-        return this.#pq;
+        loop: while (true) {
+            let [p_, q_] = [1n, 1n];
+            while (!util.MillerRabin(p_)) {
+                p_ = util.getRndBI(bits);
+            }
+            
+            while (!util.MillerRabin(q_)) {
+                q_ = util.getRndBI(bits);
+            }
+
+            this.#p = p_;
+            this.#q = q_;
+            this.#n = this.#p * this.#q;
+    
+            const phi = (this.#p - 1n) * (this.#q - 1n);
+            
+            const result = util.ExEuclidean(this.#e, phi);
+    
+            if (result[2] !== 1n) continue loop;
+
+            let d_ = result[0];
+            while (d_ < 0n) d_ += phi;
+            this.#d = d_;
+            break loop;
+        }
     }
 
     valueOf() {
-        return Number(this.getProd());
+        return NaN;
     }
 
     /**
@@ -427,7 +484,7 @@ class RSA {
      * @returns 
      */
     toString(radix = 10) {
-        return this.getProd().toString(radix);
+        return `n: ${this.#n.toString(radix)}\ne: ${this.#e.toString(radix)}`;
     }
 
     toBin() {
@@ -436,7 +493,69 @@ class RSA {
         const arr = str.match(/.{2}/g);
         return Uint8Array.from(arr, s => Number.parseInt(s, 16));
     }
+
+    /**
+     * 
+     * @param {string} text 
+     */
+    encrypt(text) {
+        const radix = this.#n;
+        const utf8 = new TextEncoder().encode(text);
+        const m_hexstr = Array.from(utf8, n => n.toString(16).padStart(2, '0')).join('');
+        let m_bigint = BigInt('0x' + m_hexstr);
+        
+        const c_arr = [];
+        while (m_bigint > 0n) {
+            let m_one = m_bigint % radix;
+            const c_one = util.ModPow(m_one, this.#e, radix);
+            c_arr.push(c_one);
+            m_bigint /= radix;
+        }
+        
+        let c_bigint = 0n;
+
+        for (let i = 0n; i < c_arr.length; i++) {
+            c_bigint += c_arr[i] * radix ** i;
+        }
+        
+        let c_hexstr = c_bigint.toString(16);
+        if (c_hexstr.length % 2 === 1) c_hexstr = '0' + c_hexstr;
+        const c_bin = Uint8Array.from(c_hexstr.match(/.{2}/g), n => Number.parseInt(n, 16));
+        return util.binToB64(c_bin);
+    }
+
+    /**
+     * 
+     * @param {string} base64 
+     */
+    decrypt(base64) {
+        const radix = this.#n;
+        const c_bin = util.b64ToBin(base64);
+        const c_hexstr = Array.from(c_bin, n => n.toString(16).padStart(2, '0')).join('');
+        let c_bigint = BigInt('0x' + c_hexstr);
+
+        const m_arr = [];
+        while (c_bigint > 0n) {
+            let c_one = c_bigint % radix;
+            const m_one = util.ModPow(c_one, this.#d, radix);
+            m_arr.push(m_one);
+            c_bigint /= radix;
+        }
+
+        let m_bigint = 0n;
+        for (let i = 0n; i < m_arr.length; i++) {
+            m_bigint += m_arr[i] * radix ** i;
+        }
+
+        let m_hexstr = m_bigint.toString(16);
+        if (m_hexstr.length % 2 === 1) m_hexstr = '0' + m_hexstr;
+        const utf8 = Uint8Array.from(m_hexstr.match(/.{2}/g), n => Number.parseInt(n, 16));
+
+        return new TextDecoder().decode(utf8);
+    }
 }
+
+
 
 class CachedPrime {
     /**
@@ -477,7 +596,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 素数表の読み込み
     (async () => {
-        
+
         const geholt = await fetch("/assets/misc/primzahlen.bin");
         if (!geholt.ok) throw new Error(`response status: ${geholt.status}`);
 
@@ -488,10 +607,15 @@ document.addEventListener('DOMContentLoaded', () => {
             prim_liste.push(p);
         });
 
-        console.log(`fetching \`primzahlen.bin\` was successful!`);
+        console.log(`fetching \`primzahlen.bin\` was successful`);
     })().catch((err) => {
         console.error(`fetching failed!: ${err.stack}`);
     });
+
+    (async () => {
+        xoshiro256ss = await XoshiroInit();
+        console.log(`\`xoshiro256ss\` was successfully initialized!`);
+    })();
 
     /* イベントリスナー */
 
@@ -643,18 +767,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const miller_rabin_btn_E = document.getElementById('miller-rabin-btn');
     miller_rabin_btn_E.addEventListener('click', () => {
-        
+
         const input_E = document.getElementById('miller-rabin-input');
         const result_E = document.getElementById('miller-rabin-result');
 
         try {
             if (input_E.value === '') throw Error('keine Zahl');
-            
+
             const maybe_p = BigInt(input_E.value);
             const result = util.MillerRabin(maybe_p);
             result_E.textContent = result ? '多分素数' : '合成数';
         } catch (e) {
-            
+
             switch (e.message) {
                 case 'keine Zahl':
                     result_E.textContent = "エラー: 数値を入力して下さい。";
@@ -676,18 +800,31 @@ document.addEventListener('DOMContentLoaded', () => {
     }, false);
 }, false);
 
-/**
- * 
- * @returns {bigint[]} 素数の配列
- */
-const test = () => {
-    const arr = [...Array(2 ** 18)].map((_, i) => BigInt(i) + 2n ** 63n);
-    const res = [];
-    arr.forEach((n) => {
-        if (util.MillerRabin(n)) res.push(n);
-    });
 
-    return res;
+const __test = () => {
+    const bignum = util.getRndBI(2 ** 23);
+
+    console.time('test1');
+    let str = bignum.toString(16);
+    if (str.length % 2 === 1) str = '0' + str;
+    const bin = Uint8Array.from(str.match(/.{2}/g), n => Number.parseInt(n, 16));
+    console.log(bin);
+    console.timeEnd('test1');
+
+    /*
+    console.time('test2');
+    let bignum_ = bignum;
+    let bytes = [];
+    while (bignum_ > 0n) {
+        const byte = Number(bignum_ % 256n);
+        bytes.push(byte);
+        bignum_ /= 256n;
+    }
+    const bin2 = Uint8Array.from(bytes.reverse());
+    console.log(bin2);
+    console.timeEnd('test2');
+    */
 }
+
 
 
