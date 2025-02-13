@@ -1,36 +1,13 @@
 "use strict";
 
+
 /**
- * @type {number[]}
+ * @type {{prim_liste: number[], pcg: PCG | null}}
  */
-const prim_liste = [];
-
-class Queue {
-    #stack_pop = [];
-    #stack_push = [];
-
-    constructor(...values) {
-        values.forEach((value) => {
-            this.#stack_push.push(value);
-        });
-    }
-
-    enqueue(...values) {
-        values.forEach((value) => {
-            this.#stack_push.push(value);
-        });
-    }
-
-    dequeue() {
-        if (this.#stack_pop.length === 0) {
-            while (this.#stack_push.length > 0) {
-                this.#stack_pop.push(this.#stack_push.pop());
-            }
-        }
-
-        return this.#stack_pop.pop();
-    }
-}
+const globals = {
+    prim_liste: [],
+    pcg: null,
+};
 
 class util extends null {
 
@@ -137,25 +114,7 @@ class util extends null {
     static async getHashb64(str) {
         const encoded = new TextEncoder().encode(str);
         const hash = new Uint8Array(await crypto.subtle.digest('SHA-256', encoded));
-        return util.binToB64(hash);
-    }
-
-    /**
-     * バイナリデータをBase64形式のテキストに変換する
-     * @param {Uint8Array} bin バイナリデータ
-     */
-    static binToB64(bin) {
-        if (!(bin instanceof Uint8Array)) throw TypeError('type must be \`Uint8Array\`');
-        return btoa(Array.from(bin, n => String.fromCodePoint(n)).join(''));
-    }
-
-    /**
-     * Base64テキストをバイナリデータに変換する
-     * @param {string} base64 
-     */
-    static b64ToBin(base64) {
-        if (typeof base64 !== 'string') throw TypeError('type must be \`string\`')
-        return Uint8Array.from(atob(base64), s => s.charCodeAt(0));
+        return Base64.binToB64(hash);
     }
 
     /**
@@ -179,13 +138,13 @@ class util extends null {
 
         let min_index = 0, max_index = prim_liste.length - 1;
 
-        while (prim_liste[min_index] < min)
+        while (globals.prim_liste[min_index] < min)
             min_index++;
 
-        while (prim_liste[max_index] > max)
+        while (globals.prim_liste[max_index] > max)
             max_index--;
 
-        const p_list_itibu = prim_liste.slice(min_index, max_index + 1);
+        const p_list_itibu = globals.prim_liste.slice(min_index, max_index + 1);
 
         return p_list_itibu;
     }
@@ -363,48 +322,7 @@ class util extends null {
 
 }
 
-/**
- * translated from C example
- * @returns xoshiro256\*\*
- */
-const XoshiroInit = async () => {
-    const date = new Date().toISOString();
-    const buf = new TextEncoder().encode(date).buffer;
-    const state = new BigUint64Array(await crypto.subtle.digest('SHA-256', buf));
 
-    /**
-     * 
-     * @param {bigint} x 
-     * @param {bigint} num 
-     * @returns 
-     */
-    const rol64 = (x, num) => {
-        return BigInt.asUintN(64, x << num) | (x >> (64n - num));
-    }
-
-    const xosh = Object.freeze({
-        get value() {
-            const result = rol64(state[1] * 5n, 7n) * 9n;
-            const t = BigInt.asUintN(64, state[1] << 17n);
-
-            state[2] ^= state[0];
-            state[3] ^= state[1];
-            state[1] ^= state[2];
-            state[0] ^= state[3];
-
-            state[2] ^= t;
-            state[3] = rol64(state[3], 45n);
-
-            return result;
-        },
-        toString(radix = 10) {
-            return this.value.toString(radix);
-        }
-    });
-    return xosh;
-};
-
-let xoshiro256ss = null;
 
 class Base64 {
 
@@ -417,7 +335,7 @@ class Base64 {
      */
     static encode(text) {
         const utf8Arr = new TextEncoder().encode(text); // UTF-8(整数)にエンコード
-        return util.binToB64(utf8Arr);
+        return this.binToB64(utf8Arr);
     }
 
     /**
@@ -426,8 +344,26 @@ class Base64 {
      * @returns デコードされたテキスト
      */
     static decode(base64) {
-        const binStr = util.b64ToBin(base64); // 疑似的な文字列にデコード
+        const binStr = this.b64ToBin(base64); // 疑似的な文字列にデコード
         return new TextDecoder().decode(binStr);
+    }
+
+    /**
+     * バイナリデータをBase64形式のテキストに変換する
+     * @param {Uint8Array} bin バイナリデータ
+     */
+    static binToB64(bin) {
+        if (!(bin instanceof Uint8Array)) throw TypeError('type must be \`Uint8Array\`');
+        return btoa(Array.from(bin, n => String.fromCodePoint(n)).join(''));
+    }
+
+    /**
+     * Base64テキストをバイナリデータに変換する
+     * @param {string} base64 
+     */
+    static b64ToBin(base64) {
+        if (typeof base64 !== 'string') throw TypeError('type must be \`string\`')
+        return Uint8Array.from(atob(base64), s => s.charCodeAt(0));
     }
 }
 
@@ -487,11 +423,19 @@ class RSA {
         return `n: ${this.#n.toString(radix)}\ne: ${this.#e.toString(radix)}`;
     }
 
-    toBin() {
-        let str = this.toString(16);
-        if (str.length % 2 === 1) str = '0' + str;
-        const arr = str.match(/.{2}/g);
-        return Uint8Array.from(arr, s => Number.parseInt(s, 16));
+    toJSON() {
+        let n_hexstr = this.#n.toString(16);
+        if (n_hexstr.length % 2 === 1) n_hexstr = '0' + n_hexstr;
+        const n_bin = Uint8Array.from(n_hexstr.match(/.{2}/g), d => Number.parseInt(d, 16));
+
+        let e_hexstr = this.#e.toString(16);
+        if (e_hexstr.length % 2 === 1) e_hexstr = '0' + e_hexstr;
+        const e_bin = Uint8Array.from(e_hexstr.match(/.{2}/g), d => Number.parseInt(d, 16));
+        const json = {
+            n: Base64.binToB64(n_bin),
+            e: Base64.binToB64(e_bin)
+        }
+        return json;
     }
 
     /**
@@ -521,7 +465,7 @@ class RSA {
         let c_hexstr = c_bigint.toString(16);
         if (c_hexstr.length % 2 === 1) c_hexstr = '0' + c_hexstr;
         const c_bin = Uint8Array.from(c_hexstr.match(/.{2}/g), n => Number.parseInt(n, 16));
-        return util.binToB64(c_bin);
+        return Base64.binToB64(c_bin);
     }
 
     /**
@@ -530,7 +474,7 @@ class RSA {
      */
     decrypt(base64) {
         const radix = this.#n;
-        const c_bin = util.b64ToBin(base64);
+        const c_bin = Base64.b64ToBin(base64);
         const c_hexstr = Array.from(c_bin, n => n.toString(16).padStart(2, '0')).join('');
         let c_bigint = BigInt('0x' + c_hexstr);
 
@@ -592,6 +536,64 @@ class CachedPrime {
     }
 }
 
+class PCG {
+    #state = new BigUint64Array([0x4d595df4d0f33173n]);
+    static #multiplier = 6364136223846793005n;
+    static #increment = 1442695040888963407n;
+    #max = 0;
+
+    constructor() {}
+
+    /**
+     * 
+     * @param {number} count 
+     * @returns 
+     */
+    static async init(count = 100) {
+        const pcg = new PCG();
+        pcg.#max = count;
+        const date = new Date().toISOString();
+        const seed = new BigUint64Array(await crypto.subtle.digest('SHA-256', new TextEncoder().encode(date).buffer), 0, 1);
+        
+        pcg.#state[0] = seed.at(0) + this.#increment;
+        void pcg.getRand();
+        return pcg;
+    }
+
+    /**
+     * 
+     * @param {bigint} x 
+     * @param {bigint} r 
+     * @returns 
+     */
+    #rotr32(x, r) {
+        return x >> r | BigInt.asUintN(32, x << ((2n ** 32n - r) & 0b11111n));
+    }
+
+    getRand() {
+        let x = this.#state;
+        const count = BigInt.asUintN(32, x.at(0) >> 59n);		// 59 = 64 - 5
+
+        this.#state[0] = x.at(0) * PCG.#multiplier + PCG.#increment;
+        
+        x[0] ^= x.at(0) >> 18n;								// 18 = (64 - 27)/2
+        return this.#rotr32(BigInt.asUintN(32, x.at(0) >> 27n), count);	// 27 = 32 - 5
+    }
+
+    [Symbol.iterator]() {
+        let count = 0;
+        return {
+            next: () => {
+                if (count >= this.#max) return { value: undefined, done: true };
+                count++;
+                return { value: this.getRand(), done: false }
+            }
+        }
+    }
+}
+
+Object.freeze(PCG.prototype);
+
 document.addEventListener('DOMContentLoaded', () => {
 
     // 素数表の読み込み
@@ -604,7 +606,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const p_list = Array.from(bin, bit => bit.toString(16).padStart(2, '0')).join('').match(/.{6}/g).map(s => Number.parseInt(s, 16));
 
         p_list.forEach((p) => {
-            prim_liste.push(p);
+            globals.prim_liste.push(p);
         });
 
         console.log(`fetching \`primzahlen.bin\` was successful`);
@@ -612,11 +614,21 @@ document.addEventListener('DOMContentLoaded', () => {
         console.error(`fetching failed!: ${err.stack}`);
     });
 
-    (async () => {
-        xoshiro256ss = await XoshiroInit();
-        console.log(`\`xoshiro256ss\` was successfully initialized!`);
-    })();
+    Uint8Array.prototype.toJSON = function() {
+        const value = Base64.binToB64(this);
+        return { encoding: 'Base64', type: 'Uint8Array', value }
+    };
 
+    Object.defineProperty(Uint8Array.prototype, 'toJSON', {
+        writable: false,
+        configurable: false,
+    });
+
+    (async () => {
+        globals.pcg = await PCG.init();
+        console.log(`\`PCG\` was successfully initialized`);
+    })();
+    
     /* イベントリスナー */
 
     const base64_btn = document.getElementById("base64-btn"); // ボタン共
@@ -801,30 +813,7 @@ document.addEventListener('DOMContentLoaded', () => {
 }, false);
 
 
-const __test = () => {
-    const bignum = util.getRndBI(2 ** 23);
 
-    console.time('test1');
-    let str = bignum.toString(16);
-    if (str.length % 2 === 1) str = '0' + str;
-    const bin = Uint8Array.from(str.match(/.{2}/g), n => Number.parseInt(n, 16));
-    console.log(bin);
-    console.timeEnd('test1');
-
-    /*
-    console.time('test2');
-    let bignum_ = bignum;
-    let bytes = [];
-    while (bignum_ > 0n) {
-        const byte = Number(bignum_ % 256n);
-        bytes.push(byte);
-        bignum_ /= 256n;
-    }
-    const bin2 = Uint8Array.from(bytes.reverse());
-    console.log(bin2);
-    console.timeEnd('test2');
-    */
-}
 
 
 
