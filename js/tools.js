@@ -2,11 +2,11 @@
 
 
 /**
- * @type {{prim_liste: number[], pcg: PCG | null}}
+ * @type {{prim_liste: Uint32Array | undefined, pcg: PCG | undefined}}
  */
 const globals = {
-    prim_liste: [],
-    pcg: null,
+    prim_liste: undefined,
+    pcg: undefined,
 };
 
 class util extends null {
@@ -271,60 +271,59 @@ class util extends null {
         if (n < 0n) throw Error('a number must not be negative');
         if (n === 0n) return 1n;
 
-        const two_exp = n - BigInt(n.toString(2).match(/1/g).length);
-        const odd_part = util.#OddPart(n);
-        return odd_part << two_exp;
-    }
+        /**
+         * min 以上 max 「未満」 の奇数の積を返す
+         * @param {bigint} min 最小値
+         * @param {bigint} max 最大値
+         * @returns {bigint} min 以上 max 未満 の奇数の積
+         */
+        const oddProd = (min, max) => {
+            if (min >= max) return 1n;
 
-    /**
-     * 階乗の奇数部分を計算する
-     * @param {bigint} n 整数
-     * @returns 奇数部分の積
-     */
-    static #OddPart(n) {
-
-        let L_i = 3n, m = BigInt(n.toString(2).length) - 1n, result = 1n, tmp = 1n;
-
-        for (let i = m - 1n; i > -1n; i--) {
-            let U_i = (n >> i) + 1n | 1n;
-
-            tmp *= util.#OddProd(L_i, U_i);
-            L_i = U_i;
-            result *= tmp;
-        }
-
-        return result;
-    }
-
-    /** 
-     * min 以上 max "未満" の奇数の積を返す
-     * @param {bigint} max 最大値
-     * @param {bigint} min 最小値
-     * @returns {bigint} min 以上 max 未満 の奇数の積
-    */
-    static #OddProd(min, max) {
-
-        if (min >= max) return 1n;
-
-        const max_bits = BigInt((max - 2n).toString(2).length);
-        const num_odds = (max - min) / 2n;
-
-        if (max_bits * num_odds < 63n) {
-            let result = min;
-            for (let i = min + 2n; i < max; i += 2n) {
-                result *= i;
+            const max_bits = BigInt((max - 2n).toString(2).length);
+            const num_odds = (max - min) / 2n;
+    
+            if (max_bits * num_odds < 63n) {
+                let result = min;
+                for (let i = min + 2n; i < max; i += 2n) {
+                    result *= i;
+                }
+                return result;
             }
-            return result;
-        }
+    
+            const mid = min + num_odds | 1n;
+            const lower = oddProd(min, mid);
+            const higher = oddProd(mid, max);
+            return lower * higher;
+        };
 
-        const mid = min + num_odds | 1n;
-        const lower = util.#OddProd(min, mid);
-        const higher = util.#OddProd(mid, max);
-        return lower * higher;
+        /**
+         * 階乗の奇数部分を計算する
+         * @param {bigint} n 整数
+         * @returns 奇数部の積
+         */
+        const oddPart = (n) => {
+            let L_i = 3n, m = BigInt(n.toString(2).length) - 1n, result = 1n, tmp = 1n;
+
+            for (let i = m - 1n; i > -1n; i--) {
+                let U_i = (n >> i) + 1n | 1n;
+    
+                tmp *= oddProd(L_i, U_i);
+                L_i = U_i;
+                result *= tmp;
+            }
+    
+            return result;
+        };
+
+        const two_exp = n - BigInt(n.toString(2).match(/1/g).length);
+        const odd_part = oddPart(n);
+        return odd_part << two_exp;
     }
 
 }
 
+Object.freeze(util);
 
 
 class Base64 {
@@ -660,17 +659,17 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!geholt.ok) throw new Error(`response status: ${geholt.status}`);
 
         const bin = await geholt.bytes();
-        const p_list = Array.from(bin, byte => byte.toString(16).padStart(2, '0')).join('').match(/.{6}/g).map(s => Number.parseInt(s, 16));
+        const bin_str = Array.from(bin, byte => byte.toString(16).padStart(2, '0')).join('');
+        const p_list = Uint32Array.from(bin_str.match(/.{6}/g), (s) => Number.parseInt(s, 16));
+        globals.prim_liste = p_list;
 
-        p_list.forEach((p) => {
-            globals.prim_liste.push(p);
-        });
         console.log(`fetching \`primzahlen.bin\` was successful`);
     };
 
     const pcgInit = async () => {
         const seeds = await PCG.getSeed();
         globals.pcg = new PCG(...seeds);
+        
         console.log(`\`PCG\` was successfully initialized`);
     };
 
