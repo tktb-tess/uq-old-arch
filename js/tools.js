@@ -139,7 +139,7 @@ class util extends null {
         if (min > max)  // minの方がデカかったら空にする
             return [];
 
-        let min_index = 0, max_index = prim_liste.length - 1;
+        let min_index = 0, max_index = globals.prim_liste.length - 1;
 
         while (globals.prim_liste[min_index] < min)
             min_index++;
@@ -526,8 +526,6 @@ class RSA {
         return new TextDecoder().decode(utf8);
     }
 }
-
-
 
 class CachedPrime {
     /**

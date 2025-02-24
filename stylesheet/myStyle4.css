@@ -21,7 +21,7 @@
     --murasaki-3: #775da0;
     --xiro-1: #f8f9fa;
     --kuro-hantoomee-1: #00000077;
-    --kuro-hantoomee-2: #00000030;
+    --kuro-hantoomee-2: #0000001f;
     --kuro-hantoomee-3: #00000020;
     --ao-1: #2052db;
     --ao-2: #d7e1ff;
@@ -54,7 +54,7 @@
     --kage-kontenaa: 0 0 5px var(--iro-kage);
     --kage-teeburu: 0px 0px 2px var(--iro-kage-teeburu);
     --kage-botan: 0 0 3px var(--iro-kage-botan);
-    --gradient-botan: linear-gradient(to bottom, transparent, 80%, var(--kuro-hantoomee-2));
+    --gradient-botan: linear-gradient(to bottom, transparent, 75%, var(--kuro-hantoomee-2));
     
 }
 
