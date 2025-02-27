@@ -35,7 +35,7 @@ fetchOTMJSON().then(async () => {
     console.log(`fetching 'vl-ja-otm.json' was successful!`);
 
     // 日替わり乱数を取得
-    const random = await Util.getRandIntFromDate() % words.length;
+    const random = await util.getRandIntFromDate() % words.length;
 
     const today_word_entry = words[random];
     const vocabulary = today_word_entry.entry.form;
@@ -113,16 +113,13 @@ fetchOTMJSON().then(async () => {
 
 
 
-class Util {
-    static async getRandIntFromDate() {
+const util = {
+    async getRandIntFromDate() {
         const today = new Date().toDateString();
         const utf8arr = new TextEncoder().encode(today);
-        const hashed = new Uint8Array(await crypto.subtle.digest('SHA-256', utf8arr)).slice(0, 4);
+        const hashed = new Uint32Array(await crypto.subtle.digest('SHA-256', utf8arr.buffer), 0, 1);
 
-        const partialstr = Array.from(hashed, (e) => e.toString(16).padStart(2, '0')).join('');
-        const parsed = Number.parseInt(partialstr, 16);
-
-        return parsed;
+        return hashed[0];
     }
 }
 
