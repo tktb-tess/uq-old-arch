@@ -323,8 +323,14 @@ const util = Object.freeze({
         const two_exp = n - BigInt(n.toString(2).match(/1/g).length);
         const odd_part = oddPart(n);
         return odd_part << two_exp;
+    },
+    lazy(delay = 2000) {
+        return new Promise((resolve, _) => {
+            setTimeout(() => {
+                resolve(`resolved in ${delay} ms`);
+            }, delay);
+        });
     }
-
 });
 
 
@@ -590,13 +596,13 @@ class CachedPrime {
  */
 class PCG {
     #state = new BigUint64Array(3);
-    #max = 0;
+    #max;
 
     /**
-     * @param {number} max_count イテレーターの反復回数, 指定なしの場合100
+     * @param {number} max_count イテレーターの反復回数, 指定なしの場合20
      * @param {BigUint64Array<ArrayBuffer> | null} seeds シード値, 指定なしかnullの場合自動で生成する
      */
-    constructor(max_count = 100, seeds = null) {
+    constructor(max_count = 20, seeds = null) {
         if (typeof max_count !== 'number') throw TypeError('`count` は `number` 型でなければならない');
         
         if (!seeds) {
