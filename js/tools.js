@@ -555,10 +555,10 @@ class CachedPrime {
     /**
      * @type {[number, number] | null}
      */
-    static #data = null;
+    #data;
 
     constructor() {
-        throw TypeError('Cannot construct!');
+        this.#data = null;
     }
 
     /**
@@ -566,25 +566,21 @@ class CachedPrime {
      * @param {number} p 
      * @param {number} q 
      */
-    static setValue(p, q) {
-        if (typeof p !== 'number' || typeof q !== 'number') throw TypeError('引数型は \`number\` でなければなりません。')
-            if (!Number.parseInt(p)||!Number.parseInt(q)) throw Error('keine Zahl');
+    setValue(p, q) {
+        if (typeof p !== 'number' || typeof q !== 'number') throw TypeError('引数型は \`number\` でなければなりません。');
+        if (!Number.isFinite(p)||!Number.isFinite(q)) throw Error('keine Zahl');
         this.#data = [p, q];
     }
 
-    static getValue() {
-        if (this.#data) {
-            return this.#data;
-        } else {
-            throw Error('CachedPrime is empty');
-        }
+    getValue() {
+        return this.#data ?? Error('CachedPrime is empty');
     }
 
-    static delete() {
+    delete() {
         this.#data = null;
     }
 
-    static isCached() {
+    isCached() {
         return !!this.#data;
     }
 }
@@ -598,20 +594,20 @@ class PCG {
 
     /**
      * @param {number} max_count イテレーターの反復回数, 指定なしの場合100
-     * @param {BigUint64Array | null} seeds シード値, 指定なしかnullの場合自動で生成する
+     * @param {BigUint64Array<ArrayBuffer> | null} seeds シード値, 指定なしかnullの場合自動で生成する
      */
     constructor(max_count = 100, seeds = null) {
         if (typeof max_count !== 'number') throw TypeError('`count` は `number` 型でなければならない');
         
         if (!seeds) {
             const seeds_ = crypto.getRandomValues(new BigUint64Array(3));
-
-        for (let i = 0; i < 3; i++) {
-            seeds_[i] |= 1n;
-        }
+            
+            for (let i = 0; i < 3; i++) {
+                seeds_[i] |= 1n;
+            }
             this.#state = seeds_;
         } else if (seeds instanceof BigUint64Array && seeds.length >= 3) {
-            this.#state = seeds;
+            this.#state = seeds.slice(0, 3);
         } else {
             throw TypeError('引数 `seeds` が一致しません');
         }
@@ -637,9 +633,13 @@ class PCG {
         this.#state[0] = x * this.#state.at(1) + this.#state.at(2);
         
         x ^= x >> 18n;								// 18 = (64 - 27)/2
-        return PCG.#rotr32(BigInt.asUintN(32, x >> 27n), count);	// 27 = 32 - 5
+        return Number(PCG.#rotr32(BigInt.asUintN(32, x >> 27n), count));	// 27 = 32 - 5
     }
 
+    /**
+     * 
+     * @returns {Iterator<number, undefined>}
+     */
     [Symbol.iterator]() {
         let count = 0;
         return {
@@ -695,14 +695,16 @@ document.addEventListener('DOMContentLoaded', () => {
         return p;
     };
 
-    Promise.all([fetchPrimListe(), pcgInit()]).then((result) => {
+    Promise.all([fetchPrimListe(), pcgInit()])
+    .then((result) => {
         globals.prim_liste = result[0];
         globals.pcg = result[1];
         
         Object.freeze(globals);
         console.log(`all works was successful!`);
         
-    }).catch((e) => {
+    })
+    .catch((e) => {
         console.error(`works failed: ${e.stack}`);
     });
     
@@ -713,6 +715,32 @@ document.addEventListener('DOMContentLoaded', () => {
     const p_generator_btn = document.getElementById('p-generator-btn');
     const factori_btn = document.getElementById('factori-btn');
     const factori_btn_2 = document.getElementById('factori-btn-2');
+    const hashb64_btn_E = document.getElementById('hashb64-btn');
+    const miller_rabin_btn_E = document.getElementById('miller-rabin-btn');
+    const cached_p = new CachedPrime();
+
+    if (!(base64_btn instanceof HTMLButtonElement)) {
+        console.error(TypeError(`couldn't get base64-btn`));
+        return;
+    } else if (!(base64de_btn instanceof HTMLButtonElement)) {
+        console.error(TypeError(`couldn't get base64de-btn`));
+        return;
+    } else if (!(p_generator_btn instanceof HTMLButtonElement)) {
+        console.error(TypeError(`couldn't get p-generator-btn`));
+        return;
+    } else if (!(factori_btn instanceof HTMLButtonElement)) {
+        console.error(TypeError(`couldn't get factori-btn`));
+        return;
+    } else if (!(factori_btn_2 instanceof HTMLButtonElement)) {
+        console.error(TypeError(`couldn't get factori-btn-2`));
+        return;
+    } else if (!(hashb64_btn_E instanceof HTMLButtonElement)) {
+        console.error(TypeError(`couldn't get hash64-btn`));
+        return;
+    } else if (!(miller_rabin_btn_E instanceof HTMLButtonElement)) {
+        console.error(TypeError(`couldn't get miller-rabin-btn`));
+        return;
+    }
 
     base64_btn.addEventListener('click', () => {
         const base64_input = document.getElementById('base64-input');
@@ -758,18 +786,29 @@ document.addEventListener('DOMContentLoaded', () => {
         const factori_seego = document.getElementById('factori-seego');
         const factori_result = document.getElementById('factori-result');
         const factori_result_2 = document.getElementById('factori-result-2');
-        /**
-         * @type {HTMLInputElement}
-         */
         const input_min = document.getElementById('factori-input-1');
-        /**
-         * @type {HTMLInputElement}
-         */
         const input_max = document.getElementById('factori-input-2');
+
+        if (!(factori_seego instanceof HTMLParagraphElement)) {
+            console.error(`couldn't get factori-seego`);
+            return;
+        } else if (!(factori_result instanceof HTMLParagraphElement)) {
+            console.error(`couldn't get factori-result`);
+            return;
+        } else if (!(factori_result_2 instanceof HTMLParagraphElement)) {
+            console.error(`couldn't get factori-result-2`);
+            return;
+        } else if (!(input_min instanceof HTMLInputElement)) {
+            console.error(`couldn't get factori-input-1`);
+            return;
+        } else if (!(input_max instanceof HTMLInputElement)) {
+            console.error(`couldn't get factori-input-2`);
+            return;
+        }
 
         factori_seego.style.visibility = null;
         factori_result.style.fontSize = null;
-        CachedPrime.delete();
+        cached_p.delete();
 
         factori_result_2.textContent = "-";
         factori_result_2.style.color = null;
@@ -787,7 +826,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 throw new Error("Out of range");
             }
             factori_result.textContent = p * q;
-            CachedPrime.setValue(p, q);
+            cached_p.setValue(p, q);
             factori_seego.style.visibility = "visible";
         } catch (e) {
 
@@ -812,11 +851,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     factori_btn_2.addEventListener('click', () => {
         const factori_result_2 = document.getElementById('factori-result-2');
+        if (!(factori_result_2 instanceof HTMLParagraphElement)) {
+            console.error(`couldn't get factori-result-2`);
+            return;
+        }
         factori_result_2.style.fontSize = null;
         factori_result_2.style.color = null;
 
         try {
-            if (!CachedPrime.isCached()) {
+            if (!cached_p.isCached()) {
                 factori_result_2.textContent = "-";
             } else {
                 
@@ -827,8 +870,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (!Number.isFinite(pred_p) || !Number.isFinite(pred_q)) {
                     throw new Error("keine Zahl");
                 }
-
-                const is_correct = util.isEqArray(CachedPrime.getValue(), [pred_p, pred_q]) || util.isEqArray(CachedPrime.getValue(), [pred_q, pred_p]);
+                const cache = cached_p.getValue();
+                if (cache instanceof Error) {
+                    console.error(cache.stack);
+                    return;
+                }
+                const is_correct = util.isEqArray(cache, [pred_p, pred_q]) || util.isEqArray(cache, [pred_q, pred_p]);
                 if (is_correct) {
                     factori_result_2.textContent = "〇";
                     factori_result_2.style.color = "red";
@@ -853,7 +900,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }, false);
 
-    const hashb64_btn_E = document.getElementById('hashb64-btn');
+    
     hashb64_btn_E.addEventListener('click', async () => {
         const hashb64_input = document.getElementById('hashb64-input');
         const hashb64_result = document.getElementById('hashb64-result');
@@ -861,7 +908,7 @@ document.addEventListener('DOMContentLoaded', () => {
         hashb64_result.value = result;
     });
 
-    const miller_rabin_btn_E = document.getElementById('miller-rabin-btn');
+    
     miller_rabin_btn_E.addEventListener('click', () => {
 
         const input_E = document.getElementById('miller-rabin-input');
