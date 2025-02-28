@@ -597,6 +597,10 @@ class CachedPrime {
 class PCG {
     #state = new BigUint64Array(3);
     #max;
+    /**
+     * @type {{is_ready: true, value: Uint8Array<ArrayBuffer>} | {is_ready: false, value: undefined}}
+     */
+    #hash;
 
     /**
      * @param {number} max_count イテレーターの反復回数, 指定なしの場合20
@@ -620,6 +624,21 @@ class PCG {
         
         this.#max = max_count;
         this.#state[0] = this.#state.at(0) * this.#state.at(1) + this.#state.at(2);
+        const date = new Date().toISOString();
+        const utf8 = new TextEncoder().encode(date);
+        crypto.subtle.digest('SHA-256', utf8)
+        .then((hash) => {
+            this.#hash = {
+                is_ready: true,
+                value: new Uint8Array(hash),
+            };
+            console.log(`ready`);
+        });
+
+        this.#hash = {
+            is_ready: false,
+            value: undefined,
+        };
     }
 
     /**
