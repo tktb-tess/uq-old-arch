@@ -2,7 +2,7 @@
 
 
 /**
- * @type {{prim_liste?: Uint32Array<ArrayBuffer>, pcg?: PCG}}
+ * @type {{prim_liste: Uint32Array<ArrayBuffer>, pcg: PCG}}
  * @typedef {{is_success: true, value: unknown}|{is_success: false, error: Error}} Result
  */
 const globals = {};
@@ -652,7 +652,7 @@ class PCG {
     }
 }
 
-void Object.freeze(PCG.prototype);
+Object.freeze(PCG.prototype);
 
 Uint8Array.prototype.toJSON = function() {
     return {
