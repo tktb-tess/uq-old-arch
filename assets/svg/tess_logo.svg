@@ -51,7 +51,7 @@
                 cursor: pointer;
 
                 &[data-clicked="true"] {
-                    animation: .1s linear infinite rainbow, 20s ease-in-out rot;
+                    animation: 2s linear infinite rainbow, 20s ease-in-out rot;
                 }
             }
         ]]>
