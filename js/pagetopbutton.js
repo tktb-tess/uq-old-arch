@@ -1,3 +1,5 @@
+"use strict";
+
 document.addEventListener('DOMContentLoaded', () => {
     const pageTopBtn = document.getElementById('page-top-button');
     window.addEventListener('scroll', function() {

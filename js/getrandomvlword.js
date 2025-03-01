@@ -1,37 +1,53 @@
-class OTMJSON {
-    static words = [];
-    static examples = [];
-    static zpdic_online = {};
-    static version = NaN;
-    static url = '/assets/json/vl-ja.otm.json';
-}
+"use strict";
 
+document.addEventListener('DOMContentLoaded', async () => {
+    /**
+     * @typedef {{ id: number, form: string }} Entry
+     * @typedef {{ id: number, sentence: string, translation: string, supplement: string, tags: string[], words: {id: number}[], offer: { catalog: string, number: number }}} Example
+     * @typedef {{ entry: Entry, translations: { title: string, forms: string[] }[], tags: string[], contents: { title: string, text: string }[], variations: { title: string, form: string, }[], relations: { title: string, entry: Entry }[]}} Word
+     * @typedef {{ explanation: string, punctuations: string[], pronounciationTitle: string, enableMarkdown: boolean}} ZpDICConfig
+     * @typedef {{ words: Word[], examples: Example[], zpdicOnline: ZpDICConfig, version?: 1 | 2}} OTMJSON
+     * 
+     */
 
-async function fetchOTMJSON() {
-    
-    try {
-        const response = await fetch(OTMJSON.url);
+    const util = Object.freeze({
+        async getRandIntFromDate() {
+            const today = new Date().toDateString();
+            const utf8arr = new TextEncoder().encode(today);
+            const hashed = new Uint32Array(await crypto.subtle.digest('SHA-256', utf8arr.buffer), 0, 1);
+
+            return hashed[0];
+        }
+    });
+
+    const fetchOTMJSON = async () => {
+
+        const url = '/assets/json/vl-ja.otm.json';
+
+        const response = await fetch(url);
 
         if (!response.ok) throw new Error(`failed to fetch!\nresponse status: ${response.status}`);
-        //console.log(response.status);
+
+        /**
+         * @type {OTMJSON}
+         */
         const parsed = await response.json();
-        //console.log(parsed);
 
-        OTMJSON.words = parsed.words;
-        OTMJSON.examples = parsed.examples;
-        OTMJSON.zpdic_online = parsed.zpdicOnline;
-        OTMJSON.version = parsed.version;
-
-        return;
-    } catch (e) {
-        throw new Error(e);
+        return parsed;
     }
-}
 
-fetchOTMJSON().then(async () => {
+    let otm_json;
 
-    const words = OTMJSON.words;
-    if (!Array.isArray(words)) throw new Error('something wrong with fetching!');
+    try {
+        otm_json = await fetchOTMJSON();
+    } catch (e) {
+        console.error(`CAUGHT EXCEPTION: ${e.stack}`);
+        return;
+    }
+    
+
+    const words = otm_json.words;
+
     console.log(`fetching 'vl-ja-otm.json' was successful!`);
 
     // 日替わり乱数を取得
@@ -43,6 +59,10 @@ fetchOTMJSON().then(async () => {
 
     // コンテナ
     const today_word_E = document.getElementById('today-word');
+    if (!(today_word_E instanceof HTMLDivElement)) {
+        console.error('cannot get today-word');
+        return;
+    }
 
     // 語彙
     const vocabulary_E = document.createElement('p');
@@ -109,18 +129,6 @@ fetchOTMJSON().then(async () => {
     zpdic_link_wrap_E.appendChild(zpdic_link_E);
     today_word_E.appendChild(zpdic_link_wrap_E);
 
-}).catch((err) => console.error(`caught a exception: ${err.message}`));
 
-
-
-const util = {
-    async getRandIntFromDate() {
-        const today = new Date().toDateString();
-        const utf8arr = new TextEncoder().encode(today);
-        const hashed = new Uint32Array(await crypto.subtle.digest('SHA-256', utf8arr.buffer), 0, 1);
-
-        return hashed[0];
-    }
-}
-
+}, false);
 
