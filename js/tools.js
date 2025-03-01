@@ -2,8 +2,8 @@
 
 
 /**
- * @type {{prim_liste: Uint32Array<ArrayBuffer>, pcg: PCG}}
- * @typedef {{is_success: true, value: unknown}|{is_success: false, error: Error}} Result
+ * @type {{prim_liste: Uint32Array<ArrayBuffer>, pcg: PCGMinimal}}
+ * 
  */
 const globals = {};
 
@@ -34,7 +34,7 @@ const util = Object.freeze({
      * @returns length ビットの乱数
     */
     getRndBI(length, fixed = true) {
-        
+
         if (length <= 0) throw Error('a bit length must be a positive');
         if (!Number.isFinite(length)) throw Error('a bit length is not a valid number');
         const div = Math.ceil(length / 32);
@@ -95,29 +95,6 @@ const util = Object.freeze({
     },
 
     /**
-     * 
-     * @param {bigint} base 底
-     * @param {bigint} power 指数
-     */
-    pow(base, power) {
-        if (typeof base !== 'bigint' || typeof power !== 'bigint') throw TypeError('an argument type is not `bigint`');
-        if (power < 0n) throw Error('a power must not be a negative');
-
-        if (base === 1n || base === 0n) return base;
-        if (base === -1n) return (power & 1n) ? -1n : 1n;
-
-        let result = 1n;
-        while (power > 0n) {
-            if (power & 1n) result *= base;
-            base *= base;
-            power >>= 1n;
-            // console.log(base, power, mod);
-        }
-
-        return result;
-    },
-
-    /**
      * SHA-256ハッシュのBase64
      * @param {string} str 
      * @returns 
@@ -126,39 +103,6 @@ const util = Object.freeze({
         const encoded = new TextEncoder().encode(str);
         const hash = new Uint8Array(await crypto.subtle.digest('SHA-256', encoded));
         return Base64.binToB64(hash);
-    },
-
-    /**
-     * min以上max以下の素数の配列を返す
-     * @param {number} min 
-     * @param {number} max 
-     * @returns 
-     */
-    primListeKallen(min, max) {
-        // type guard
-        if (typeof min !== 'number' || typeof max !== 'number') throw TypeError('引数は \`number\` 型でなければなりません。');
-
-        if (!Number.isFinite(min) || !Number.isFinite(max))  // 非数は弾く
-            throw new Error("keine Zahl");
-
-        if (max > 1000000)  // 1,000,000より大きいのを弾く
-            throw new Error("Limit überschreitet");
-
-        if (min > max)  // minの方がデカかったら空にする
-            return [];
-
-        if (!globals.prim_liste) throw Error('prim_liste is empty');
-        let min_index = 0, max_index = globals.prim_liste.length - 1;
-
-        while (globals.prim_liste[min_index] < min)
-            min_index++;
-
-        while (globals.prim_liste[max_index] > max)
-            max_index--;
-
-        const p_list_itibu = globals.prim_liste.slice(min_index, max_index + 1);
-
-        return p_list_itibu;
     },
 
     /**
@@ -286,7 +230,7 @@ const util = Object.freeze({
 
             const max_bits = BigInt((max - 2n).toString(2).length);
             const num_odds = (max - min) / 2n;
-    
+
             if (max_bits * num_odds < 63n) {
                 let result = min;
                 for (let i = min + 2n; i < max; i += 2n) {
@@ -294,7 +238,7 @@ const util = Object.freeze({
                 }
                 return result;
             }
-    
+
             const mid = min + num_odds | 1n;
             const lower = oddProd(min, mid);
             const higher = oddProd(mid, max);
@@ -311,12 +255,12 @@ const util = Object.freeze({
 
             for (let i = m - 1n; i > -1n; i--) {
                 let U_i = (n >> i) + 1n | 1n;
-    
+
                 tmp *= oddProd(L_i, U_i);
                 L_i = U_i;
                 result *= tmp;
             }
-    
+
             return result;
         };
 
@@ -348,7 +292,7 @@ class Base64 {
         } else if (data instanceof Uint8Array) {
             this.#value = data;
         } else {
-            throw TypeError('引数 `data` は `string` 型か `Uint8Array` 型でなければならない', { cause: '引数型エラー' });
+            throw TypeError('引数 `data` は `string` 型か `Uint8Array` 型でなければならない', { cause: (typeof data) });
         }
     };
 
@@ -361,7 +305,7 @@ class Base64 {
     }
 
     toJSON() {
-        return { 
+        return {
             value: Base64.binToB64(this.#value),
             name: 'Base64',
         };
@@ -422,7 +366,7 @@ class RSA {
      */
     constructor(bits = 128) {
         if (typeof bits !== 'number') throw TypeError('type error! `number` 型でなければいけません');
-        
+
         loop: while (true) {
             let [p_, q_] = [1n, 1n];
             let counter = 0;
@@ -447,13 +391,13 @@ class RSA {
             const lambda = phi / gcd;
 
             const result = util.exEuclidean(RSA.#e, lambda);
-    
+
             if (result[2] !== 1n) continue loop;
 
             let d_ = result[0];
             while (d_ < 0n) d_ += lambda;
             this.#d = d_;
-            
+
             break loop;
         }
     }
@@ -505,7 +449,7 @@ class RSA {
         const utf8 = new TextEncoder().encode(text);
         const m_hexstr = Array.from(utf8, n => n.toString(16).padStart(2, '0')).join('');
         let m_bigint = BigInt('0x' + m_hexstr);
-        
+
         const c_arr = [];
         while (m_bigint > 0n) {
             let m_one = m_bigint % radix;
@@ -513,13 +457,13 @@ class RSA {
             c_arr.push(c_one);
             m_bigint /= radix;
         }
-        
+
         let c_bigint = 0n;
 
         for (let i = 0n; i < c_arr.length; i++) {
             c_bigint += c_arr[i] * radix ** i;
         }
-        
+
         let c_hexstr = c_bigint.toString(16);
         if (c_hexstr.length % 2 === 1) c_hexstr = '0' + c_hexstr;
         const c_bin = Uint8Array.from(c_hexstr.match(/.{2}/g), n => Number.parseInt(n, 16));
@@ -574,12 +518,13 @@ class CachedPrime {
      */
     setValue(p, q) {
         if (typeof p !== 'number' || typeof q !== 'number') throw TypeError('引数型は \`number\` でなければなりません。');
-        if (!Number.isFinite(p)||!Number.isFinite(q)) throw Error('keine Zahl');
+        if (!Number.isFinite(p) || !Number.isFinite(q)) throw Error('keine zahl');
         this.#data = [p, q];
     }
 
     getValue() {
-        return this.#data ?? Error('CachedPrime is empty');
+        if (this.#data) return this.#data;
+        else throw Error(`CachedPrime is empty`, { cause: this });
     }
 
     delete() {
@@ -594,13 +539,10 @@ class CachedPrime {
 /**
  * PCG (Permuted congruential generator) 乱数のクラス
  */
-class PCG {
-    #state = new BigUint64Array(3);
+class PCGMinimal {
+    #state;
     #max;
-    /**
-     * @type {{is_ready: true, value: Uint8Array<ArrayBuffer>} | {is_ready: false, value: undefined}}
-     */
-    #hash;
+    
 
     /**
      * @param {number} max_count イテレーターの反復回数, 指定なしの場合20
@@ -608,10 +550,10 @@ class PCG {
      */
     constructor(max_count = 20, seeds = null) {
         if (typeof max_count !== 'number') throw TypeError('`count` は `number` 型でなければならない');
-        
+
         if (!seeds) {
             const seeds_ = crypto.getRandomValues(new BigUint64Array(3));
-            
+
             for (let i = 0; i < 3; i++) {
                 seeds_[i] |= 1n;
             }
@@ -621,25 +563,11 @@ class PCG {
         } else {
             throw TypeError('引数 `seeds` が一致しません');
         }
-        
+
         this.#max = max_count;
         this.#state[0] = this.#state.at(0) * this.#state.at(1) + this.#state.at(2);
-        const date = new Date().toISOString();
-        const utf8 = new TextEncoder().encode(date);
-        crypto.subtle.digest('SHA-256', utf8)
-        .then((hash) => {
-            this.#hash = {
-                is_ready: true,
-                value: new Uint8Array(hash),
-            };
-            console.log(`ready`);
-        });
-
-        this.#hash = {
-            is_ready: false,
-            value: undefined,
-        };
     }
+
 
     /**
      * 
@@ -653,12 +581,13 @@ class PCG {
 
     getRand() {
         let x = this.#state.at(0);
+
         const count = BigInt.asUintN(32, x >> 59n);		// 59 = 64 - 5
 
         this.#state[0] = x * this.#state.at(1) + this.#state.at(2);
-        
+
         x ^= x >> 18n;								// 18 = (64 - 27)/2
-        return Number(PCG.#rotr32(BigInt.asUintN(32, x >> 27n), count));	// 27 = 32 - 5
+        return Number(PCGMinimal.#rotr32(BigInt.asUintN(32, x >> 27n), count));	// 27 = 32 - 5
     }
 
     /**
@@ -675,29 +604,29 @@ class PCG {
             }
         }
     }
+
+    valueOf() {
+        return this.getRand();
+    }
+
+    /**
+     * 
+     * @param {number | undefined} radix
+     * @returns 
+     */
+    toString(radix) {
+        return this.getRand().toString(radix);
+    }
 }
 
-Object.freeze(PCG.prototype);
-
-Uint8Array.prototype.toJSON = function() {
-    return {
-        name: 'Base64',
-        type: 'Uint8Array',
-        value: Base64.binToB64(this),
-    };
-};
-
-Object.defineProperty(Uint8Array.prototype, 'toJSON', {
-    writable: false,
-    configurable: false,
-});
+Object.freeze(PCGMinimal.prototype);
 
 document.addEventListener('DOMContentLoaded', () => {
 
     // 素数表の読み込み
     const fetchPrimListe = async () => {
         const geholt = await fetch("/assets/bin/primzahlen.bin");
-        if (!geholt.ok) throw new Error(`response status: ${geholt.status}`);
+        if (!geholt.ok) throw Error(`failed to fetch\nresponse status: ${geholt.status}`, { cause: geholt });
 
         const bin = await geholt.bytes();
         const result = [];
@@ -715,24 +644,56 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     const pcgInit = async () => {
-        const p = new PCG();
+        const p = new PCGMinimal();
         console.log(`\`PCG\` was successfully initialized`);
         return p;
     };
 
     Promise.all([fetchPrimListe(), pcgInit()])
-    .then((result) => {
-        globals.prim_liste = result[0];
-        globals.pcg = result[1];
-        
-        Object.freeze(globals);
-        console.log(`all works was successful!`);
-        
-    })
-    .catch((e) => {
-        console.error(`works failed: ${e.stack}`);
-    });
-    
+        .then((result) => {
+            globals.prim_liste = result[0];
+            globals.pcg = result[1];
+
+            Object.freeze(globals);
+            console.log(`all works was successful!`);
+
+        })
+        .catch((e) => {
+            console.error(`works failed: ${e.stack}`, e.cause);
+            
+        });
+
+
+
+    /**
+     * min以上max以下の素数の配列を返す
+     * @param {number} min 
+     * @param {number} max 
+     * @returns 
+     */
+    const primListeKallen = (min, max) => {
+        // type guard
+        if (typeof min !== 'number' || typeof max !== 'number') throw TypeError('引数は \`number\` 型でなければなりません。');
+
+
+        if (max >= 2 ** 26)  // 1,000,000より大きいのを弾く
+            throw Error("limit überschreitet");
+
+        if (min > max)  // minの方がデカかったらエラー
+            throw Error('out of range');
+
+        let min_index = 0, max_index = globals.prim_liste.length - 1;
+        while (globals.prim_liste[min_index] < min)
+            min_index++;
+
+        while (globals.prim_liste[max_index] > max)
+            max_index--;
+
+        const p_list_itibu = globals.prim_liste.slice(min_index, max_index + 1);
+
+        return p_list_itibu;
+    };
+
     /* イベントリスナー */
 
     const base64_btn = document.getElementById("base64-btn"); // ボタン共
@@ -787,25 +748,41 @@ document.addEventListener('DOMContentLoaded', () => {
         const p_generator_result = document.getElementById('p-generator-result');
         const p_generator_input_1 = document.getElementById('p-generator-input-1');
         const p_generator_input_2 = document.getElementById('p-generator-input-2');
-        if (!(p_generator_input_1 instanceof HTMLInputElement && p_generator_input_2 instanceof HTMLInputElement)) return;
+        if (!(p_generator_input_1 instanceof HTMLInputElement && p_generator_input_2 instanceof HTMLInputElement && p_generator_result instanceof HTMLTextAreaElement)) {
+            console.error(`failed to get p-generator-input s`);
+            return;
+        }
         try {
             const value_1 = Number.parseInt(p_generator_input_1.value), value_2 = Number.parseInt(p_generator_input_2.value);
-            p_generator_result.value = util.primListeKallen(value_1, value_2).join(" "); // 計算
+            if (!Number.isFinite(value_1) || !Number.isFinite(value_2)) {
+                throw Error('keine zahl');
+            }
+            p_generator_result.value = primListeKallen(value_1, value_2).join(" "); // 計算
         } catch (e) { // 諸々のエラー処理
 
             switch (e.message) {
-            case "Limit überschreitet":
-                p_generator_result.value = "エラー: 最大値が大きすぎます。1,000,000以下の値を入力して下さい。";
-                break;
-            case "keine Zahl":
-                p_generator_result.value = "エラー: 数値を入力して下さい。";
-                break;
-            default:
-                p_generator_result.value = `不明なエラー: ${e.stack}`;
-                break;
+                case "limit überschreitet": {
+                    p_generator_result.value = "エラー: 最大値が大きすぎます。67,108,864未満の値を入力して下さい。";
+                    break;
+                }
+                    
+                case "keine zahl": {
+                    p_generator_result.value = "エラー: 数値を入力して下さい。";
+                    break;
+                }
+                case "out of range": {
+                    p_generator_result.textContent = "エラー: 範囲内に素数がありません。";
+                    break;
+                }
+                default: {
+                    console.error(`予期せぬエラー: ${e.stack}`);
+                    break;
+                }
             }
         }
     }, false);
+
+    
 
     factori_btn.addEventListener('click', () => { // 素数生成
         const factori_seego = document.getElementById('factori-seego');
@@ -814,7 +791,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const input_min = document.getElementById('factori-input-1');
         const input_max = document.getElementById('factori-input-2');
 
-        if (!(factori_seego instanceof HTMLParagraphElement)) {
+        if (!(factori_seego instanceof HTMLDivElement)) {
             console.error(`couldn't get factori-seego`);
             return;
         } else if (!(factori_result instanceof HTMLParagraphElement)) {
@@ -840,15 +817,15 @@ document.addEventListener('DOMContentLoaded', () => {
         factori_result_2.style.fontSize = null;
 
         try {
-            
+
             const min = Number.parseInt(input_min.value), max = Number.parseInt(input_max.value);
-            if (!Number.isFinite(min) || !Number.isFinite(max)) throw Error('keine Zahl');
-            const p_list = util.primListeKallen(min, max);
+            if (!Number.isFinite(min) || !Number.isFinite(max)) throw Error('keine zahl');
+            const p_list = primListeKallen(min, max);
             const p = p_list.at(util.getRndInt(0, p_list.length));
             const q = p_list.at(util.getRndInt(0, p_list.length));
 
             if (!p || !q) {
-                throw new Error("Out of range");
+                throw new Error("out of range");
             }
             factori_result.textContent = p * q;
             cached_p.setValue(p, q);
@@ -858,18 +835,18 @@ document.addEventListener('DOMContentLoaded', () => {
             factori_result.style.fontSize = "1em";
 
             switch (e.message) {
-            case "Limit überschreitet":
-                factori_result.textContent = "エラー: 最大値が大きすぎます。1,000,000以下の値を入力して下さい。";
-                break;
-            case "keine Zahl":
-                factori_result.textContent = "エラー: 数値を入力して下さい。";
-                break;
-            case "Out of range":
-                factori_result.textContent = "エラー: 範囲内に素数がありません。";
-                break;
-            default:
-                console.error(`ein Ausnahme fange: ${e.stack}`);
-                break;
+                case "limit überschreitet":
+                    factori_result.textContent = "エラー: 最大値が大きすぎます。1,000,000以下の値を入力して下さい。";
+                    break;
+                case "keine zahl":
+                    factori_result.textContent = "エラー: 数値を入力して下さい。";
+                    break;
+                case "out of range":
+                    factori_result.textContent = "エラー: 範囲内に素数がありません。";
+                    break;
+                default:
+                    console.error(`予期せぬエラー: ${e.stack}`);
+                    break;
             }
         }
     }, false);
@@ -887,19 +864,16 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!cached_p.isCached()) {
                 factori_result_2.textContent = "-";
             } else {
-                
+
                 const pred_p_tag = document.getElementById('factori-input-3');
                 const pred_q_tag = document.getElementById('factori-input-4');
 
                 const pred_p = Number.parseInt(pred_p_tag.value), pred_q = Number.parseInt(pred_q_tag.value);
                 if (!Number.isFinite(pred_p) || !Number.isFinite(pred_q)) {
-                    throw new Error("keine Zahl");
+                    throw new Error("keine zahl");
                 }
                 const cache = cached_p.getValue();
-                if (cache instanceof Error) {
-                    console.error(cache.stack);
-                    return;
-                }
+                
                 const is_correct = util.isEqArray(cache, [pred_p, pred_q]) || util.isEqArray(cache, [pred_q, pred_p]);
                 if (is_correct) {
                     factori_result_2.textContent = "〇";
@@ -913,19 +887,19 @@ document.addEventListener('DOMContentLoaded', () => {
             factori_result_2.style.fontSize = "1em";
 
             switch (e.message) {
-            case "keine Zahl":
-                factori_result_2.textContent = "エラー: 数値を入力して下さい。";
-                break;
+                case "keine zahl":
+                    factori_result_2.textContent = "エラー: 数値を入力して下さい。";
+                    break;
 
-            default:
-                factori_result_2.textContent = '';
-                console.error(`ein Ausnahme fange: ${e.stack}`);
-                break;
+                default:
+                    factori_result_2.textContent = '';
+                    console.error(`予期せぬエラー: ${e.stack}`);
+                    break;
             }
         }
     }, false);
 
-    
+
     hashb64_btn_E.addEventListener('click', async () => {
         const hashb64_input = document.getElementById('hashb64-input');
         const hashb64_result = document.getElementById('hashb64-result');
@@ -933,14 +907,14 @@ document.addEventListener('DOMContentLoaded', () => {
         hashb64_result.value = result;
     });
 
-    
+
     miller_rabin_btn_E.addEventListener('click', () => {
 
         const input_E = document.getElementById('miller-rabin-input');
         const result_E = document.getElementById('miller-rabin-result');
 
         try {
-            if (input_E.value === '') throw Error('keine Zahl');
+            if (input_E.value === '') throw Error('keine zahl');
 
             const maybe_p = BigInt(input_E.value);
             const result = util.millerRabin(maybe_p);
@@ -948,21 +922,21 @@ document.addEventListener('DOMContentLoaded', () => {
         } catch (e) {
 
             switch (e.message) {
-            case 'keine Zahl':
-                result_E.textContent = "エラー: 数値を入力して下さい。";
-                break;
-
-            case '引数は正の整数でなければなりません':
-                result_E.textContent = 'エラー: 正の整数を入力してください';
-                break;
-
-            default:
-                if (e.message.includes('Cannot convert')) {
+                case 'keine zahl':
                     result_E.textContent = "エラー: 数値を入力して下さい。";
-                } else {
-                    console.error(`ein Ausnahme fange: ${e.stack}`);
-                }
-                break;
+                    break;
+
+                case '引数は正の整数でなければなりません':
+                    result_E.textContent = 'エラー: 正の整数を入力してください';
+                    break;
+
+                default:
+                    if (e.message.includes('Cannot convert')) {
+                        result_E.textContent = "エラー: 数値を入力して下さい。";
+                    } else {
+                        console.error(`予期せぬエラー: ${e.stack}`);
+                    }
+                    break;
             }
         }
     }, false);
