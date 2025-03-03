@@ -6,7 +6,6 @@
     不定期手動更新なので、最新の情報ではない場合があります。（最終更新: 2025/03/02）
 
 
-
 [1]:https://github.com/kaeru2193/Conlang-List-Works
 [2]:https://migdal.jp/cl_kiita/cotec-conlang-table-expression-powered-by-csv-clakis-rfc-2h86
 

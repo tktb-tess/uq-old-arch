@@ -1,34 +1,39 @@
 "use strict";
 
-const ctcurl = "https://kaeru2193.github.io/Conlang-List-Works/conlinguistics-wiki-list.ctc";
+
 
 /**
- * @typedef {{ datasize: [number, number];
- *          title: string;
- *          author: string[];
- *          date_created: string;
- *          date_last_updated: string;
- *          license: { name: string, content: string };
- *          advanced: number;
- *          label: string[];
- *          type: string[] }} CotecMetadata
- * @typedef {{ messier: string;
- *          name: { normal: string[], kanji?: string[] };
- *          desc?: string[];
- *          creator: string[];
- *          period?: string;
- *          site?: { name?: string, url: string }[];
- *          twitter?: string[];
- *          dict?: string[];
- *          grammar?: string[];
- *          world?: string[];
- *          category?: { name: string, content?: string }[];
- *          moyune?: string[];
- *          clav3?: { dialect: string, language: string, family: string, creator: string };
- *          part?: string;
- *          example?: string[];
- *          script?: string[] }} CotecContent
- * @typedef {{metadata: CotecMetadata, contents: CotecContent[], util: any}} Cotec
+ * 
+ * @typedef {{
+ *              datasize: [number, number];
+ *              title: string;
+ *              author: string[];
+ *              date_created: string;
+ *              date_last_updated: string;
+ *              license: { name: string, content: string };
+ *              advanced: number;
+ *              label: string[];
+ *              type: string[]
+ *          }} CotecMetadata
+ * @typedef {{ 
+ *              messier: string;
+ *              name: { normal: string[], kanji?: string[] };
+ *              desc?: string[];
+ *              creator: string[];
+ *              period?: string;
+ *              site?: { name?: string, url: string }[];
+ *              twitter?: string[];
+ *              dict?: string[];
+ *              grammar?: string[];
+ *              world?: string[];
+ *              category?: { name: string, content?: string }[];
+ *              moyune?: string[];
+ *              clav3?: { dialect: string, language: string, family: string, creator: string };
+ *              part?: string;
+ *              example?: string[];
+ *              script?: string[] 
+ *          }} CotecContent
+ * @typedef {{ metadata: CotecMetadata, contents: CotecContent[], raw: string, util: any }} Cotec
  * 
  */
 
@@ -39,6 +44,7 @@ const cotec_json = {};
 
 
 document.addEventListener('DOMContentLoaded', async () => {
+    const ctcurl = "https://kaeru2193.github.io/Conlang-List-Works/conlinguistics-wiki-list.ctc";
     /**
      * @type {CotecMetadata}
      */
@@ -91,32 +97,22 @@ document.addEventListener('DOMContentLoaded', async () => {
      * @returns 
      */
     const fetchConlangList = async (_url) => {
-        try {
-            const resp = await fetch(_url);
-            if (!resp.ok) {
-                throw new Error(`failed to fetch!\nresponse status: ${resp.status}`, { cause: resp });
-            }
-            const raw = await resp.text();
-            const parsed = parseCSV(raw);
-            if (!parsed) throw Error(`cotec is empty`);
-            return parsed;
-
-        } catch (e) {
-            throw new Error(e);
+        
+        const resp = await fetch(_url);
+        if (!resp.ok) {
+            throw new Error(`failed to fetch!\nresponse status: ${resp.status}`, { cause: resp });
         }
+        const raw = await resp.text();
+        const parsed = parseCSV(raw);
+        if (!parsed) throw Error(`cotec is empty`);
+        return { parsed, raw };
     };
 
 
-    const parsed_data = await (async () => {
-        try {
-            const result = await fetchConlangList(ctcurl);
-            return result;
-        } catch (e) {
-            throw Error(`エラー: ${e.message}\n${e.stack}`, { cause: e });
-        }
-    })();
-
+    const fetched = await fetchConlangList(ctcurl);
+    const parsed_data = fetched.parsed;
     const row_meta = parsed_data[0];
+    
 
     // メタデータ
     metadata.datasize = row_meta[0].split('x').map((size) => Number.parseInt(size));
@@ -127,7 +123,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     metadata.license = { name: row_meta[5], content: row_meta[6] };
     metadata.advanced = Number.parseInt(row_meta[7]);
 
-    if (metadata.advanced !== 0) { }
+    if (metadata.advanced !== 0) {}
 
     metadata.label = parsed_data[1];
     metadata.type = parsed_data[2];
@@ -184,17 +180,18 @@ document.addEventListener('DOMContentLoaded', async () => {
         if (row[5]) cotec_one_content.period = row[5];
 
         // site
-        const site_p = row[6];
+        if (row[6]) {
+            const site_p = row[6];
 
-        const regex_for_site = /(?:(?<name>(?:\p{Script=Han}|\p{Script=Hiragana}|\p{Script=Katakana})+\d*):\s?|\s|^)(?<url>(?:https:\/\/web\.archive\.org\/web\/[0-9]+\/)?https?:\/\/[\w\-\.]+[\w\-]+(?:\/[\w\?\+\-_~=\.&@#%]*)*)/gu;
-        const matches = site_p.matchAll(regex_for_site);
-
-        {
+            const regex_for_site = /(?:(?<name>(?:\p{Script=Han}|\p{Script=Hiragana}|\p{Script=Katakana})+\d*):\s?|\s|^)(?<url>(?:https:\/\/web\.archive\.org\/web\/[0-9]+\/)?https?:\/\/[\w\-\.]+[\w\-]+(?:\/[\w\?\+\-_~=\.&@#%]*)*)/gu;
+            const matches = site_p.matchAll(regex_for_site);
+    
+            
             const site_ = [];
             for (const match of matches) {
                 const res = match.groups;
                 if (res) {
-                    // console.log(res);
+                    if (!res.name) delete res.name;
                     site_.push(res);
                 }
             }
@@ -203,7 +200,9 @@ document.addEventListener('DOMContentLoaded', async () => {
             } else {
                 cotec_one_content.site = site_;
             }
+            
         }
+        
 
 
         // 辞書・文法のsiteをdict, grammarにパース
@@ -264,9 +263,9 @@ document.addEventListener('DOMContentLoaded', async () => {
                 const match = regex.exec(elem);
 
                 if (match) {
-                    const cat = match.groups;
-                    //console.log(cat);
-                    category_.push(match.groups);
+                    const res = match.groups;
+                    if (!res.content) delete res.content;
+                    category_.push(res);
                 }
             }
             if (category_.length > 0) cotec_one_content.category = category_;
@@ -500,8 +499,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         if (gacha_result_E.dataset.visible) delete gacha_result_E.dataset.visible;
 
         const prev_result = document.getElementById('result-list');
-        if (prev_result)
-            prev_result.remove();
+        if (prev_result) prev_result.remove();
 
         // 結果リスト
         const result_list_E = document.createElement('ul');
