@@ -1,3 +1,4 @@
+// @ts-check
 "use strict";
 
 document.addEventListener('DOMContentLoaded', async () => {
@@ -60,8 +61,9 @@ document.addEventListener('DOMContentLoaded', async () => {
     // コンテナ
     const today_word_E = document.getElementById('today-word');
     if (!(today_word_E instanceof HTMLDivElement)) {
-        console.error('cannot get today-word');
-        return;
+        const e = Error(`type of today_word_E is not expected ${HTMLDivElement.prototype}`, { cause: today_word_E });
+        console.error(e.stack, e.cause);
+        return false;
     }
 
     // 語彙
@@ -75,10 +77,12 @@ document.addEventListener('DOMContentLoaded', async () => {
     pronunciation_E.classList.add('pronunciation');
     const pronunciation = today_word_entry.contents.find((content) => content.title === 'Pronunciation');
 
-    if (pronunciation.text.includes('/')) {
-        pronunciation_E.textContent = pronunciation.text;
-    } else {
-        pronunciation_E.textContent = `/${pronunciation.text}/`;
+    if (pronunciation) {
+        if (pronunciation.text.includes('/')) {
+            pronunciation_E.textContent = pronunciation.text;
+        } else {
+            pronunciation_E.textContent = `/${pronunciation.text}/`;
+        }
     }
 
     today_word_E.appendChild(pronunciation_E);
