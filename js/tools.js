@@ -2,7 +2,6 @@
 "use strict";
 
 document.addEventListener('DOMContentLoaded', async () => {
-
     
     const util = Object.freeze({
 
@@ -275,7 +274,6 @@ document.addEventListener('DOMContentLoaded', async () => {
             });
         }
     });
-
 
     class Base64 {
 
