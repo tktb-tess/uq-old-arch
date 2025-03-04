@@ -1,3 +1,4 @@
+// @ts-check
 "use strict";
 
 document.addEventListener('DOMContentLoaded', async () => {
@@ -113,7 +114,8 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 
         // メタデータ
-        metadata.datasize = row_meta[0].split('x').map((size) => Number.parseInt(size));
+        const datasize_ = row_meta[0].split('x').map((size) => Number.parseInt(size));
+        metadata.datasize = [datasize_[0], datasize_[1]];
         metadata.title = row_meta[1];
         metadata.author = row_meta[2].split(',').map((str) => str.trim());
         metadata.date_created = row_meta[3];
@@ -184,13 +186,17 @@ document.addEventListener('DOMContentLoaded', async () => {
                 const regex_for_site = /(?:(?<name>(?:\p{Script=Han}|\p{Script=Hiragana}|\p{Script=Katakana})+\d*):\s?|\s|^)(?<url>(?:https:\/\/web\.archive\.org\/web\/[0-9]+\/)?https?:\/\/[\w\-\.]+[\w\-]+(?:\/[\w\?\+\-_~=\.&@#%]*)*)/gu;
                 const matches = site_p.matchAll(regex_for_site);
 
-
+                
                 const site_ = [];
                 for (const match of matches) {
-                    const res = match.groups;
-                    if (res) {
-                        if (!res.name) delete res.name;
-                        site_.push(res);
+                    if (match.groups) {
+                        const res = match.groups;
+                        const name = res.name, url = res.url;
+                        if (!url) throw Error('parse error: site.url is empty', { cause: res });
+                        const s_ = (name)
+                            ? { name, url }
+                            : { url };
+                        site_.push(s_);
                     }
                 }
                 if (cotec_one_content.site) {
@@ -260,10 +266,13 @@ document.addEventListener('DOMContentLoaded', async () => {
                 for (const elem of category_p) {
                     const match = regex.exec(elem);
 
-                    if (match) {
+                    if (match && match.groups) {
                         const res = match.groups;
-                        if (!res.content) delete res.content;
-                        category_.push(res);
+                        const name = res.name, content = res.content;
+                        const c_ = content
+                            ? { name, content }
+                            : { name };
+                        category_.push(c_);
                     }
                 }
                 if (category_.length > 0) cotec_one_content.category = category_;
@@ -276,19 +285,34 @@ document.addEventListener('DOMContentLoaded', async () => {
 
                     switch (elem.name) {
                         case "CLA v3": {
+                            if (!elem.content) throw Error('');
                             const clav3_regex = /^(?<dialect>~|[a-z]{2})_(?<language>[a-z]{2})_(?<family>~|[a-z]{3})_(?<creator>[a-z]{3})$/;
                             const match = clav3_regex.exec(elem.content);
                             if (match && match.groups) {
-                                cotec_one_content.clav3 = match.groups;
+                                const res = match.groups;
+                                const dia = res.dialect;
+                                const lang = res.language;
+                                const fam = res.family;
+                                const cre = res.creator;
+                                
+                                const clav3 = {
+                                    dialect: dia,
+                                    language: lang,
+                                    family: fam,
+                                    creator: cre,
+                                };
+                                cotec_one_content.clav3 = clav3;
                             }
                             break;
                         }
                         case "モユネ分類": {
-                            const parsed = Array.from(elem.content.match(/[A-Z]{3}/g));
-                            cotec_one_content.moyune = parsed;
-                            cotec_one_content.moyune.sort();
-                            // console.log(cotec_one_content.moyune);
-                            break;
+                            if (elem.content) {
+                                const parsed = Array.from(elem.content.match(/[A-Z]{3}/g) ?? []);
+                                cotec_one_content.moyune = parsed;
+                                cotec_one_content.moyune.sort();
+                                break;
+                            }
+                            
                         }
                         default: break;
                     }
@@ -300,7 +324,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
             // moyune
             if (row[12]) {
-                cotec_one_content.moyune = Array.from(row[12].match(/[A-Z]{3}/g));
+                cotec_one_content.moyune = Array.from(row[12].match(/[A-Z]{3}/g) ?? []);
                 cotec_one_content.moyune.sort();
             }
 
@@ -309,7 +333,14 @@ document.addEventListener('DOMContentLoaded', async () => {
                 const clav3_regex = /^(?<dialect>~|[a-z]{2})_(?<language>[a-z]{2})_(?<family>~|[a-z]{3})_(?<creator>[a-z]{3})$/;
                 const match = clav3_regex.exec(row[13]);
                 if (match && match.groups) {
-                    cotec_one_content.clav3 = match.groups;
+                    const res = match.groups;
+                    const clav3 = {
+                        dialect: res.dialect,
+                        language: res.language,
+                        family: res.family,
+                        creator: res.creator,
+                    };
+                    cotec_one_content.clav3 = clav3;
                 }
             }
 
@@ -328,7 +359,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         return { metadata, contents };
     }
 
-    
+
     const cotec_json = await parseToJSON()
         .then((result) => {
             const metadata = result.metadata, contents = result.contents;
@@ -367,7 +398,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                  * @param {string} key 
                  */
                 showData(key) {
-                    cotec_json.contents.forEach((lang, index) => {
+                    contents.forEach((lang, index) => {
                         const data = lang[key];
                         if (!data) return;
                         const result = { index, name: lang.name.normal[0], data };
@@ -390,20 +421,22 @@ document.addEventListener('DOMContentLoaded', async () => {
                  * @param {string} key 
                  */
                 showdataAll(key) {
-                    cotec_json.contents.forEach((lang, index) => { console.log({ index, name: lang.name.normal[0], data: lang[key] }) });
+                    contents.forEach((lang, index) => { console.log({ index, name: lang.name.normal[0], data: lang[key] }) });
                 },
 
                 showsiteurl() {
-                    cotec_json.contents.forEach((lang, index) => {
-                        for (const e of lang.site) {
+                    contents.forEach((lang, index) => {
+                        const site = lang.site ?? [];
+                        for (const e of site) {
                             console.log(`index: ${index}, ${(e.name) ? `${e.name}: ` : ``}${e.url}`);
                         }
                     });
                 },
 
                 showCategories() {
-                    cotec_json.contents.forEach((lang, index) => {
-                        for (const elem of lang.category) {
+                    contents.forEach((lang, index) => {
+                        const cat = lang.category ?? [];
+                        for (const elem of cat) {
                             console.log(`index: ${index}, ${elem.name}${(elem.content) ? `: ${elem.content}` : ``}`);
                         }
                     });
@@ -416,8 +449,8 @@ document.addEventListener('DOMContentLoaded', async () => {
                  */
                 searchByName(name) {
                     const results = [];
-                    cotec_json.contents.forEach((lang, index) => {
-                        const names = lang.name.normal.concat(lang.name.kanji);
+                    contents.forEach((lang, index) => {
+                        const names = lang.name.normal.concat(lang.name.kanji ?? []);
                         const found = names.find((n) => n.includes(name));
                         if (found) {
                             results.push({ index, name: lang.name.normal[0], content: lang });
@@ -425,7 +458,6 @@ document.addEventListener('DOMContentLoaded', async () => {
                     });
                     if (results.length === 0) {
                         console.log('Not found!');
-                        return;
                     }
                     return results;
                 },
@@ -437,7 +469,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                  */
                 searchByCreator(name) {
                     const results = [];
-                    cotec_json.contents.forEach((lang, index) => {
+                    contents.forEach((lang, index) => {
                         const creators = lang.creator;
                         const found = creators.find((n) => n.includes(name));
                         if (found) {
@@ -446,7 +478,6 @@ document.addEventListener('DOMContentLoaded', async () => {
                     });
                     if (results.length === 0) {
                         console.log('Not found!');
-                        return;
                     }
                     return results;
                 },
@@ -491,20 +522,44 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     console.log(`fetching & parsing cotec file was successful!`);
 
+    const terminate = (str = '') => {
+        throw Error(`anomally terminated\n${str}`);
+    };
     // ライセンスを表示
     const license_E = document.getElementById('license');
+    if (!(license_E instanceof HTMLParagraphElement)) {
+        const e = Error(`type of license_E is not expected ${HTMLParagraphElement.prototype}`, { cause: license_E });
+        console.error(e.stack, e.cause);
+        return false;
+    }
+
     license_E.innerHTML = `Cotecファイルのライセンス表示<br>${cotec_json.metadata.license.content}`;
 
     // 最終更新日時を表示
     const last_update_E = document.getElementById('last-update');
+    if (!(last_update_E instanceof HTMLParagraphElement)) {
+        const e = Error(`type of last_update_E is not expected ${HTMLParagraphElement.prototype}`, { cause: last_update_E });
+        console.error(e.stack, e.cause);
+        return false;
+    }
     const last_update = new Date(cotec_json.metadata.date_last_updated);
     last_update_E.innerHTML = `Cotecファイルの最終更新日時: <code>${last_update.toLocaleString("ja-JP")}</code>`;
 
     // 合計の表示
     const totalnum_E = document.getElementById('totalnum');
+    if (!(totalnum_E instanceof HTMLHeadingElement)) {
+        const e = Error(`type of totalnum_E is not expected ${HTMLHeadingElement.prototype}`, { cause: totalnum_E });
+        console.error(e.stack, e.cause);
+        return false;
+    }
     totalnum_E.textContent = `合計 ${cotec_json.metadata.datasize[0]} 語`;
 
     const gacha_btn_E = document.getElementById('gacha-button');
+    if (!(gacha_btn_E instanceof HTMLButtonElement)) {
+        const e = Error(`type of gacha_btn_E is not expected ${HTMLButtonElement.prototype}`, { cause: gacha_btn_E });
+        console.error(e.stack, e.cause);
+        return false;
+    }
 
     gacha_btn_E.addEventListener('click', () => {
         // ガチャ
@@ -518,6 +573,11 @@ document.addEventListener('DOMContentLoaded', async () => {
      */
     const showGachaResult = (index) => {
         const gacha_result_E = document.getElementById('gacha-result');
+        if (!(gacha_result_E instanceof HTMLDivElement)) {
+            const e = Error(`type of gacha_result_E is not expected ${HTMLDivElement.prototype}`, { cause: gacha_result_E });
+            console.error(e.stack, e.cause);
+            return false;
+        }
         const svg_external_link = `<svg xmlns="http://www.w3.org/2000/svg" class="bi bi-box-arrow-up-right" style="fill: currentColor; display: inline-block; width: .8rem; height: auto; vertical-align: middle;" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5"/><path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0z"/></svg>`;
         const lang = cotec_json.contents[index];
         console.log({ index, name: lang.name.normal[0], content: lang });
@@ -591,14 +651,15 @@ document.addEventListener('DOMContentLoaded', async () => {
                 const regex = /^(?:文法|辞書)\d*$/u; // 「文法(n)」あるいは「辞書(n)」に一致
                 const regex2 = /(?:^サイト(?<number>\d*)$)|^$/u; // 「サイト(n)」に一致
 
-                const match2 = regex2.exec(site.name);
-
-                if (regex.exec(site.name)) continue; // regexに一致は無視
-                else if (!site.name || match2) { // undefinedあるいはregex2に一致はURLのみ取り出す
+                if (!site.name) { // undefinedはURLのみ取り出す
                     const li = document.createElement('li');
                     li.innerHTML = `<a class="ext-link" href="${site.url}" target="_blank" rel="noreferrer">${site.url} ${svg_external_link}</a>`;
                     innerul_site.appendChild(li);
-
+                } else if (regex.exec(site.name)) continue; // regexに一致は無視
+                else if (regex2.exec(site.name)) { // regex2に一致もURLのみ取り出す
+                    const li = document.createElement('li');
+                    li.innerHTML = `<a class="ext-link" href="${site.url}" target="_blank" rel="noreferrer">${site.url} ${svg_external_link}</a>`;
+                    innerul_site.appendChild(li);
                 } else { // それ以外はフルで入れる
                     const li = document.createElement('li');
                     li.innerHTML = `<a class="ext-link" href="${site.url}" target="_blank" rel="noreferrer">${site.name}: ${site.url} ${svg_external_link}</a>`;
@@ -742,7 +803,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             : gacha_result_E.classList.remove('--mylang');
 
         setTimeout(() => {
-            gacha_result_E.dataset.visible = true;
+            gacha_result_E.dataset.visible = String(true);
         }, 2);
     }
 
