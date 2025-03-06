@@ -125,13 +125,16 @@ document.addEventListener('DOMContentLoaded', async () => {
             }
         }, false);
     }
-    Object.defineProperty(window, 'current_playing_audio', {
+
+    Object.defineProperty(window, 'current_play', {
         get() {
             return current_play;
         },
         enumerable: true,
     });
-    console.log(`all works were successfully completed`);
+
+    console.log(`all listeners were successfully added`);
+    return true;
 }, false);
 
 
