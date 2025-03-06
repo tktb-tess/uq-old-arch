@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         const response = await fetch(url);
 
-        if (!response.ok) throw new Error(`failed to fetch!\nresponse status: ${response.status}`);
+        if (!response.ok) return Error(`failed to fetch!\nresponse status: ${response.status}`, { cause: response });
 
         /**
          * @type {OTMJSON}
@@ -37,17 +37,25 @@ document.addEventListener('DOMContentLoaded', async () => {
         return parsed;
     }
 
-    let otm_json;
+    const otm_json = await fetchOTMJSON();
 
-    try {
-        otm_json = await fetchOTMJSON();
-    } catch (e) {
-        console.error(`CAUGHT EXCEPTION: ${e.stack}`);
-        return;
+    if (otm_json instanceof Error) {
+        console.error(otm_json.stack, otm_json.cause);
+        return false;
     }
     
+    
+    
+    
+    Object.defineProperty(window, 'otm_json', {
+        get() {
+            return otm_json;
+        },
+        enumerable: true,
+    });
 
     const words = otm_json.words;
+    
 
     console.log(`fetching 'vl-ja-otm.json' was successful!`);
 
@@ -133,6 +141,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     zpdic_link_wrap_E.appendChild(zpdic_link_E);
     today_word_E.appendChild(zpdic_link_wrap_E);
 
-
+    return true;
 }, false);
 

@@ -3,7 +3,7 @@
 
 document.addEventListener('DOMContentLoaded', () => {
     const pageTopBtn = document.getElementById('page-top-button');
-    const check = pageTopBtn instanceof HTMLButtonElement;
+    const check = pageTopBtn instanceof HTMLDivElement;
     if (!check) {
         const e = TypeError('type is not expected', { cause: pageTopBtn });
         console.error(e.stack, e.cause);
