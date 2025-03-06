@@ -277,35 +277,40 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     class Base64 {
 
-        #value;
+        #data;
 
         /**
          * 
-         * @param {string | Uint8Array<ArrayBuffer>} data 
+         * @param {string | ArrayBuffer} data 
          */
         constructor(data) {
             if (typeof data === 'string') {
-                this.#value = Base64.b64ToBin(data);
-            } else if (data instanceof Uint8Array) {
-                this.#value = data;
+                this.#data = Base64.b64ToBin(data);
+            } else if (data instanceof ArrayBuffer) {
+                this.#data = data;
             } else {
                 throw TypeError('引数 `data` は `string` 型か `Uint8Array` 型でなければならない', { cause: (typeof data) });
             }
         };
 
-        toString() {
-            return Base64.binToB64(this.#value);
+        get base64() {
+            return Base64.binToB64(this.#data);
         }
 
-        getBin() {
-            return this.#value;
+        get buffer() {
+            return this.#data;
+        }
+
+        toString() {
+            return this.base64;
+        }
+
+        getUint8() {
+            return new Uint8Array(this.buffer);
         }
 
         toJSON() {
-            return {
-                value: Base64.binToB64(this.#value),
-                name: 'Base64',
-            };
+            return this.base64;
         }
 
 
@@ -316,7 +321,7 @@ document.addEventListener('DOMContentLoaded', async () => {
          */
         static encode(text) {
             const utf8Arr = new TextEncoder().encode(text); // UTF-8(整数)にエンコード
-            return this.binToB64(utf8Arr);
+            return this.binToB64(utf8Arr.buffer);
         }
 
         /**
@@ -331,11 +336,10 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         /**
          * バイナリデータをBase64形式のテキストに変換する
-         * @param {Uint8Array} bin バイナリデータ
+         * @param {ArrayBuffer} bin バイナリデータ
          */
         static binToB64(bin) {
-            if (!(bin instanceof Uint8Array)) throw TypeError('type must be \`Uint8Array\`');
-            return btoa(Array.from(bin, n => String.fromCodePoint(n)).join(''));
+            return btoa(Array.from(new Uint8Array(bin), n => String.fromCodePoint(n)).join(''));
         }
 
         /**
@@ -343,13 +347,9 @@ document.addEventListener('DOMContentLoaded', async () => {
          * @param {string} base64 
          */
         static b64ToBin(base64) {
-            if (typeof base64 !== 'string') throw TypeError('type must be \`string\`');
-            return Uint8Array.from(atob(base64), s => s.charCodeAt(0));
+            return Uint8Array.from(atob(base64), s => s.charCodeAt(0)).buffer;
         }
     }
-
-
-
 
     class RSA {
         #p = 0n;
@@ -475,7 +475,7 @@ document.addEventListener('DOMContentLoaded', async () => {
          */
         decrypt(base64) {
             const radix = this.#p * this.#q;
-            const c_bin = Base64.b64ToBin(base64);
+            const c_bin = new Uint8Array(Base64.b64ToBin(base64));
             const c_hexstr = Array.from(c_bin, n => n.toString(16).padStart(2, '0')).join('');
             let c_bigint = BigInt('0x' + c_hexstr);
 
@@ -564,10 +564,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             }
 
             this.#max = max_count;
-            const cur = this.#state.at(0), mul = this.#state.at(1), inc = this.#state.at(2);
-            if (!cur || !mul || !inc) throw Error('unidentified error!');
-            
-            this.#state[0] = cur * mul + inc;
+            this.#state[0] = this.#state[0] * this.#state[1] + this.#state[2];
             
         }
 
@@ -578,34 +575,22 @@ document.addEventListener('DOMContentLoaded', async () => {
          * @param {bigint} r 
          * @returns 
          */
-        static #rotr32(x, r) {
-            return (x >> r) | BigInt.asUintN(32, x << (-r & 31n));
+        static #rot32(x, r) {
+            return BigInt.asUintN(32, x >> (r & 31n) | x << (-r & 31n));
         }
 
         getRand() {
-            let x = this.#state.at(0);
-            if (!x) throw Error('unidentified error!');
-            const count = BigInt.asUintN(32, x >> 59n);		// 59 = 64 - 5
-            const mul = this.#state.at(1), inc = this.#state.at(2);
-            if (!mul || !inc) throw Error('unidentified error!');
-            this.#state[0] = x * mul + inc;
-
-            x ^= x >> 18n;								// 18 = (64 - 27)/2
-            return Number(PCGMinimal.#rotr32(BigInt.asUintN(32, x >> 27n), count));	// 27 = 32 - 5
+            let x = this.#state[0];
+            const count = BigInt.asUintN(32, x >> 59n);                             // 59 = 64 - 5
+            this.#state[0] = x * this.#state[1] + this.#state[2];
+            x ^= x >> 18n;                                                          // 18 = (64 - 27)/2
+            return Number(PCGMinimal.#rot32(BigInt.asUintN(32, x >> 27n), count));	// 27 = 32 - 5
         }
 
-        /**
-         * 
-         * @returns {Iterator<number, undefined>}
-         */
-        [Symbol.iterator]() {
-            let count = 0;
-            return {
-                next: () => {
-                    if (count >= this.#max) return { value: undefined, done: true };
-                    count++;
-                    return { value: this.getRand(), done: false };
-                }
+        
+        *[Symbol.iterator]() {
+            for (let count = 0; count < this.#max; count++) {
+                yield this.getRand();
             }
         }
 
@@ -624,7 +609,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 
     Object.freeze(PCGMinimal.prototype);
-
+    
     // 素数表の読み込み
     const fetchPrimListe = async () => {
         const geholt = await fetch("/assets/bin/primzahlen.bin");
@@ -644,28 +629,23 @@ document.addEventListener('DOMContentLoaded', async () => {
         console.log(`fetching \`primzahlen.bin\` was successful`);
         return Uint32Array.from(result);
     };
-
-    const pcgInit = async () => {
-        const p = new PCGMinimal();
-        console.log(`\`PCGMinimal\` was successfully initialized`);
-        return p;
-    };
-
-    const RSAInit = async () => {
-        const rsa = new RSA();
-        console.log(`\`RSA\` was successfully initialized`);
-        return rsa;
-    }
     
 
-    const tools = await Promise.all([fetchPrimListe(), pcgInit(), RSAInit()])
+    const tools = await fetchPrimListe()
         .then((result) => {
-            const prim_liste = result[0];
-            const pcg = result[1];
-            const rsa = result[2];
+            const prim_liste = result;
 
             console.log(`all works was successful!`);
-            return { prim_liste, pcg, rsa, util, Base64, }
+            return {
+                prim_liste,
+                funcs: util, 
+                classes: {
+                    Base64,
+                    CachedPrime,
+                    RSA,
+                    PCGMinimal,
+                }, 
+            }
 
         })
         .catch((e) => {

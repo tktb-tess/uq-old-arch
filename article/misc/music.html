@@ -47,17 +47,17 @@
             </div>
             <audio src="/assets/audio/welcome.m4a" id="wlcm" preload="metadata"></audio>
             <div class="card-body">
-                <button role="button" class="btn-audio-controls" id="wlcm-play" onclick="musicPlayPause('wlcm')">
+                <button role="button" class="btn-audio-controls" id="wlcm-play">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
                         <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"/>
                     </svg>
                 </button>
-                <button role="button" class="btn-audio-controls" id="wlcm-stop" onclick="musicStop('wlcm')">
+                <button role="button" class="btn-audio-controls" id="wlcm-stop">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
                         <path d="M5 3.5h6A1.5 1.5 0 0 1 12.5 5v6a1.5 1.5 0 0 1-1.5 1.5H5A1.5 1.5 0 0 1 3.5 11V5A1.5 1.5 0 0 1 5 3.5z"/>
                     </svg>
                 </button>
-                <button role="button" class="btn-audio-controls" id="wlcm-loop" data-active="false" onclick="toggleLoop('wlcm')">
+                <button role="button" class="btn-audio-controls" id="wlcm-loop">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
                         <path d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z"/>
                         <path fill-rule="evenodd" d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z"/>
@@ -74,17 +74,17 @@
             </div>
             <audio src="/assets/audio/celeste.m4a" id="celes" preload="metadata"></audio>
             <div class="card-body">
-                <button role="button" class="btn-audio-controls" id="celes-play" onclick="musicPlayPause('celes')">
+                <button role="button" class="btn-audio-controls" id="celes-play">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
                         <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"/>
                     </svg>
                 </button>
-                <button role="button" class="btn-audio-controls" id="celes-stop" onclick="musicStop('celes')">
+                <button role="button" class="btn-audio-controls" id="celes-stop">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
                         <path d="M5 3.5h6A1.5 1.5 0 0 1 12.5 5v6a1.5 1.5 0 0 1-1.5 1.5H5A1.5 1.5 0 0 1 3.5 11V5A1.5 1.5 0 0 1 5 3.5z"/>
                     </svg>
                 </button>
-                <button role="button" class="btn-audio-controls" id="celes-loop" data-active="false" onclick="toggleLoop('celes')">
+                <button role="button" class="btn-audio-controls" id="celes-loop">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
                         <path d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z"/>
                         <path fill-rule="evenodd" d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z"/>
@@ -97,118 +97,13 @@
     </div>
 
     <!-- topに戻るボタン -->
-	<div id="page-top-button">
-		<button class="" role="button">
-			<div id="page-top-arrow"></div>
-		</button>
-	</div>
+	<button id="page-top-button" type="button" role="button">
+        <div id="arrow-up"></div>
+    </button>
 
     <!-- Bootstrap v5.3.3 JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="/js/pagetopbutton.js"></script>
     <script src="/js/insertexternallinksvg.js"></script>
-
-    <script>
-        const audioList = document.getElementsByTagName('audio');
-        const playBtnSvg = "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\"><path d=\"m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z\"/></svg>";
-        const pauseBtnSvg = "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\"><path d=\"M5.5 3.5A1.5 1.5 0 0 1 7 5v6a1.5 1.5 0 0 1-3 0V5a1.5 1.5 0 0 1 1.5-1.5zm5 0A1.5 1.5 0 0 1 12 5v6a1.5 1.5 0 0 1-3 0V5a1.5 1.5 0 0 1 1.5-1.5z\"/></svg>";
-        let currentPlayAudio = null;
-        
-        for (let i = 0; i < audioList.length; i++) {
-            audioList[i].addEventListener('timeupdate', function() {
-                const musicID = this.id;
-                const timeE = document.getElementById(musicID + '-time');
-                const dur = toTime(document.getElementById(musicID).duration);
-                timeE.textContent = toTime(this.currentTime) + ' / ' + dur;
-                // console.log('timeupdate listener fired, ' + this.id);
-            }, false);
-            audioList[i].addEventListener('ended', function() { // 最後まで再生された場合の処理
-                const musicID = this.id;
-                const playBtn = document.getElementById(musicID + '-play');
-                const playTime = document.getElementById(musicID + '-time');
-                playTime.textContent = '0:00 / ' + toTime(this.duration);
-                currentPlayAudio = null;
-                playBtn.innerHTML = playBtnSvg;
-                // console.log('ended listener fired, ' + this.id);
-            }, false);
-        }
-        
-        const musicPlayPause = (musicID) => {
-            const playBtn = document.getElementById(musicID + '-play');
-            const playTime = document.getElementById(musicID + '-time');
-            const mDuration = toTime(document.getElementById(musicID).duration);
-
-            if (currentPlayAudio === null) { // 何も再生されていない場合
-                currentPlayAudio = audioList.namedItem(musicID);
-                currentPlayAudio.play();
-                playBtn.innerHTML = pauseBtnSvg;
-
-            } else if (currentPlayAudio.id !== musicID) { // 他の曲が再生されている場合
-                const prevPlayBtn = document.getElementById(currentPlayAudio.id + '-play');
-                const prevPlayTime = document.getElementById(currentPlayAudio.id + '-time');
-
-                // 前の曲を止める
-                currentPlayAudio.pause();
-                currentPlayAudio.currentTime = 0;
-                prevPlayBtn.innerHTML = playBtnSvg;
-
-                // 再生処理
-                currentPlayAudio = document.getElementById(musicID);
-                currentPlayAudio.play();
-                playBtn.innerHTML = pauseBtnSvg;
-
-                // console.log('new song started');
-
-            } else if (currentPlayAudio.paused) { // 再開
-                currentPlayAudio.play();
-                playBtn.innerHTML = pauseBtnSvg;
-
-            } else if (!currentPlayAudio.paused) { // 一時停止
-                currentPlayAudio.pause();
-                playBtn.innerHTML = playBtnSvg;
-
-            } else {
-                console.error('unidentified error');
-            }
-        }
-
-        const musicStop = (musicID) => { // 停止
-            const playBtn = document.getElementById(musicID + '-play');
-            const playTime = document.getElementById(musicID + '-time');
-
-            if (currentPlayAudio) {
-                if (currentPlayAudio.id === musicID) {
-                    currentPlayAudio.pause();
-                    currentPlayAudio.currentTime = 0;
-                    currentPlayAudio = null;
-                    playBtn.innerHTML = playBtnSvg;
-                    // console.log('music stopped');
-                }
-            }
-        }
-
-        const toggleLoop = (musicID) => { // ループ再生のトグル
-            const loopBtn = document.getElementById(musicID + '-loop');
-            loopBtn.dataset.active = !toBool(loopBtn.dataset.active);
-            document.getElementById(musicID).loop = !document.getElementById(musicID).loop;
-        }
-        
-        const toTime = (time) => { // 秒の小数表示を時刻表示に変換
-            const sec = Math.trunc(time) % 60;
-            const min = Math.trunc(time / 60);
-            const sec_str = (sec < 10) ? '0' + sec.toString() : sec.toString();
-            return min.toString() + ':' + sec_str;
-        }
-
-        const toBool = (str) => {
-            if (str === 'false') {
-                return false;
-            } else {
-                return Boolean(str);
-            }
-        }
-        
-    </script>
-
-
+    <script src="/js/music.js"></script>
 </body>

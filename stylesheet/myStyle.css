@@ -37,6 +37,8 @@
     --transition-1: 150ms ease-in-out;
     --transition-2: 70ms ease-in-out;
     --transition-3: 250ms ease-in-out;
+    --transition-4: 100ms ease-in-out;
+    
 
     --size-h1: calc(1.575rem + 1.1vw);
     --size-h2: calc(1.325rem + .5vw);
@@ -151,42 +153,39 @@ table > * > * > td {
 }
 
 #page-top-button {
+    margin: 0;
     position: fixed;
-    right: 25px;
-    bottom: 25px;
-    transition: opacity var(--transition-3), visibility var(--transition-3);
-    opacity: 0;
+    right: 20px;
+    bottom: 20px;
+    padding: 15px;
+    border-radius: 50%;
+    border: none;
+    transition: color var(--transition-4), background-color var(--transition-4), opacity var(--transition-3), visibility var(--transition-3);
+    background-image: none;
+    box-shadow: none;
+    background-color: transparent;
+    color: var(--lila-1);
     visibility: hidden;
+    opacity: 0;
 
     &[data-visible="true"] {
-        opacity: 1;
         visibility: visible;
+        opacity: 1;
     }
 
-    button {
-        display: block;
-        text-align: center;
-        background-color: transparent;
-        border: none;
-        border-radius: 50%;
-        padding: 14px;
-        transition: background-color var(--transition-1), color var(--transition-1);
-        color: var(--gray-1);
-
-        #page-top-arrow {
-            padding: 8px;
-            border-top: solid 2px;
-            border-right: solid 2px;
-            transform: translateY(4px) rotate(-45deg);
-            border-color: inherit;
+    @media (hover: hover) and (pointer: fine) {
+        &:hover {
+            background-color: var(--lila-1);
+            color: var(--weiss-1);
         }
+    }
 
-        @media (hover: hover) and (pointer: fine) {
-            &:hover {
-                background-color: var(--gray-1);
-                color: var(--bs-light);
-            }
-        }
+    #arrow-up {
+        margin: 0;
+        padding: 8px;
+        border-right: solid 2px;
+        border-top: solid 2px;
+        transform: rotate(-45deg) translate(-3px, 3px);
     }
 }
 

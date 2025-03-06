@@ -2,23 +2,22 @@
 "use strict";
 
 document.addEventListener('DOMContentLoaded', () => {
-    const pageTopBtn = document.getElementById('page-top-button');
-    const check = pageTopBtn instanceof HTMLButtonElement;
+    const page_top_btn = document.getElementById('page-top-button');
+    const check = page_top_btn instanceof HTMLButtonElement;
     if (!check) {
-        const e = TypeError('type is not expected', { cause: pageTopBtn });
+        const e = TypeError(`typeof page_top_btn is not expected ${HTMLButtonElement.prototype}`, { cause: page_top_btn });
         console.error(e.stack, e.cause);
-        return -1;
+        return false;
     }
     window.addEventListener('scroll', () => {
         if (window.scrollY > 500) {
-            pageTopBtn.dataset.visible = String(true);
+            page_top_btn.dataset.visible = String(true);
         } else {
-            delete pageTopBtn.dataset.visible;
+            delete page_top_btn.dataset.visible;
         }
-        
     }, false);
     
-    pageTopBtn.addEventListener('click', () => {
+    page_top_btn.addEventListener('click', () => {
         window.scroll({ top: 0 });
     }, false);
 }, false);
