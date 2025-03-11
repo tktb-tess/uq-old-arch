@@ -1,5 +1,4 @@
 // @ts-check
-"use strict";
 
 document.addEventListener('DOMContentLoaded', async () => {
     const audioList = document.querySelectorAll('audio');

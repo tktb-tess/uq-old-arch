@@ -1,5 +1,4 @@
 // @ts-check
-"use strict";
 
 document.addEventListener('DOMContentLoaded', () => {
     const page_top_btn = document.getElementById('page-top-button');

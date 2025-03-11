@@ -17,11 +17,9 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         const response = await fetch(url);
 
-        if (!response.ok) return Error(`failed to fetch!\nresponse status: ${response.status}`, { cause: response });
+        if (!response.ok) return Error(`failed to fetch!\nresponse status: ${response.status}`);
 
-        /**
-         * @type {OTMJSON}
-         */
+        /** @type {OTMJSON} */
         const parsed = await response.json();
 
         return parsed;
@@ -30,7 +28,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const otm_json = await fetchOTMJSON();
 
     if (otm_json instanceof Error) {
-        console.error(otm_json.stack, otm_json.cause);
+        console.error(otm_json.stack);
         return false;
     }
     

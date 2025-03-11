@@ -112,7 +112,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     Object.defineProperties(window, {
         tools: {
             value: tools,
-            enumerable: true,
         },
     });
 

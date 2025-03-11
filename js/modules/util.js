@@ -1,5 +1,4 @@
 // @ts-check
-"use strict";
 
 /**
  * min以上, max未満の整数を返す
@@ -256,9 +255,8 @@ export const factorial = (n_) => {
 
     const two_exp = n - BigInt(n.toString(2).match(/1/g)?.length ?? 0);
     const odd_part = oddPart(n);
-    const res = odd_part << two_exp;
 
-    return res;
+    return odd_part << two_exp;
 };
 
 export const lazyExec = (delay = 2000) => {

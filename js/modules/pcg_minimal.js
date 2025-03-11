@@ -6,6 +6,10 @@
 export default class PCGMinimal {
     #state;
 
+    get [Symbol.toStringTag]() {
+        return PCGMinimal.name;
+    }
+
     /**
      * シード値の配列を返す
      */
