@@ -53,7 +53,7 @@
                 <p id="p-generator-summary" class="t-summary">
                     説明:「最小値」「最大値」に入力された範囲内の素数を全列挙します。<br>
                     最大値は2<sup>26</sup> (= 67,108,864) 未満にしてください。<br>
-                    ※範囲が大きすぎると表示に時間がかかります。
+                    <span style="color: red;">※範囲が大きすぎると表示に時間がかかります。</span>
                 </p>
                 <div class="t-inputs">
                     <div>
@@ -113,7 +113,7 @@
                 <h3 id="miller-rabin-title" class="t-title">素数判定 (Miller–Rabin)</h3>
                 <p id="miller-rabin-summary" class="t-summary">
                     説明: Miller–Rabin テストを用いて確率的に素数判定します。<br>
-                    2<sup>64</sup> (= 18,446,744,073,709,551,616) 未満は確定的です。
+                    ただし、2<sup>64</sup> (= 18,446,744,073,709,551,616) 未満は確定的です。
                 </p>
                 <div class="t-inputs">
                     <div>
@@ -148,7 +148,7 @@
     <button id="page-top-button" type="button" role="button">
         <div id="arrow-up"></div>
     </button>
-    <script src="/js/tools.js"></script>
-    <script src="/js/pagetopbutton.js"></script>
+    <script src="/js/tools_main.js" type="module"></script>
+    <script src="/js/pagetopbutton.js" type="module"></script>
 </body>
 </html>

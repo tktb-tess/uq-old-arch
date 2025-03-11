@@ -3,12 +3,13 @@
 
 document.addEventListener('DOMContentLoaded', () => {
     const page_top_btn = document.getElementById('page-top-button');
-    const check = page_top_btn instanceof HTMLButtonElement;
-    if (!check) {
-        const e = TypeError(`typeof page_top_btn is not expected ${HTMLButtonElement.prototype}`, { cause: page_top_btn });
-        console.error(e.stack, e.cause);
+    const val = page_top_btn instanceof HTMLButtonElement;
+
+    if (!val) {
+        console.error(Error(`typeof page_top_btn is not expected ${HTMLButtonElement.prototype}`).stack, page_top_btn);
         return false;
     }
+
     window.addEventListener('scroll', () => {
         if (window.scrollY > 500) {
             page_top_btn.dataset.visible = String(true);

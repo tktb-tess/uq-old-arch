@@ -1,5 +1,5 @@
 // @ts-check
-"use strict";
+import { getRandIntFromDate } from "./modules/util.js";
 
 document.addEventListener('DOMContentLoaded', async () => {
     /**
@@ -10,16 +10,6 @@ document.addEventListener('DOMContentLoaded', async () => {
      * @typedef {{ words: Word[], examples: Example[], zpdicOnline: ZpDICConfig, version?: 1 | 2}} OTMJSON
      * 
      */
-
-    const util = Object.freeze({
-        async getRandIntFromDate() {
-            const today = new Date().toDateString();
-            const utf8arr = new TextEncoder().encode(today);
-            const hashed = new Uint32Array(await crypto.subtle.digest('SHA-256', utf8arr.buffer), 0, 1);
-
-            return hashed[0];
-        }
-    });
 
     const fetchOTMJSON = async () => {
 
@@ -60,7 +50,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     console.log(`fetching 'vl-ja-otm.json' was successful!`);
 
     // 日替わり乱数を取得
-    const random = await util.getRandIntFromDate() % words.length;
+    const random = await getRandIntFromDate() % words.length;
 
     const today_word_entry = words[random];
     const vocabulary = today_word_entry.entry.form;
