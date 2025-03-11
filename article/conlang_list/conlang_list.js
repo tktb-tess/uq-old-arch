@@ -809,7 +809,4 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 }, false);
 
-
-
-
-
+export {}
