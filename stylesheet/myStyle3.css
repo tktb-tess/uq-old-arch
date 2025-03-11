@@ -29,6 +29,7 @@
     --my-transition: 80ms ease-in-out;
     --my-transition2: 120ms ease-in-out;
     --my-transition3: 250ms ease-in-out;
+    --my-transition4: 100ms ease-in-out;
 }
 
 html {
@@ -256,45 +257,39 @@ figure > figcaption {
 }
 
 #page-top-button {
+    margin: 0;
     position: fixed;
-    right: 25px;
-    bottom: 25px;
-    transition: var(--my-transition3);
-    opacity: 0;
+    right: 20px;
+    bottom: 20px;
+    padding: 15px;
+    border-radius: 50%;
+    border: none;
+    transition: color var(--my-transition4), background-color var(--my-transition4), opacity var(--my-transition3), visibility var(--my-transition3);
+    background-image: none;
+    box-shadow: none;
+    background-color: transparent;
+    color: var(--mycolor-darkblue);
     visibility: hidden;
+    opacity: 0;
 
     &[data-visible="true"] {
-        opacity: 1;
         visibility: visible;
+        opacity: 1;
     }
 
-    button {
-        display: block;
-        text-align: center;
-        background-color: transparent;
-        border: none;
-        border-radius: 50%;
-        padding: 12px;
-        transition: var(--my-transition2);
-
-        #page-top-arrow {
-            padding: 8px;
-            border-top: solid 2px var(--mycolor-gray3);
-            border-right: solid 2px var(--mycolor-gray3);
-            transform: translateY(4px) rotate(-45deg);
-            transition: var(--my-transition2);
+    @media (hover: hover) and (pointer: fine) {
+        &:hover {
+            background-color: var(--mycolor-darkblue);
+            color: var(--mycolor-white);
         }
+    }
 
-        @media (hover: hover) and (pointer: fine) {
-            &:hover {
-                background-color: var(--mycolor-gray3);
-                color: var(--mycolor-white);
-
-                #page-top-arrow {
-                    border-color: var(--mycolor-white);
-                }
-            }
-        }
+    #arrow-up {
+        margin: 0;
+        padding: 8px;
+        border-right: solid 2px;
+        border-top: solid 2px;
+        transform: rotate(-45deg) translate(-3px, 3px);
     }
 }
 
