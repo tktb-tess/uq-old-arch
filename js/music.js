@@ -72,6 +72,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                 if (!(play_btn_prev_E instanceof HTMLButtonElement)) {
                     console.error(Error(`typeof ${prev_musicID}-play is not expected ${HTMLButtonElement.prototype}`).stack, prev_musicID);
                     return false;
+                    
                 } else if (!(play_time_prev_E instanceof HTMLSpanElement)) {
                     console.error(Error(`typeof ${play_time_prev_E}-play is not expected ${HTMLButtonElement.prototype}`).stack, play_time_prev_E);
                     return false;
@@ -79,6 +80,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
                 // 前の曲を止める
                 current_play_track.pause();
+                current_play_track.currentTime = 0;
                 play_btn_prev_E.innerHTML = playBtnSvg;
 
                 // 再生処理
