@@ -49,7 +49,7 @@
 }
 
 *, ::before, ::after {
-    overflow-wrap: anywhere;
+    overflow-wrap: break-word;
 }
 
 body {
@@ -318,3 +318,7 @@ button.btn-audio-controls {
     }
 }
 
+.table {
+    width: max-content !important;
+    max-width: 100%;
+}
