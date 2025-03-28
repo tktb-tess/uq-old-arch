@@ -1,5 +1,7 @@
 // @ts-check
 
+const [encoder, decoder] = [new TextEncoder(), new TextDecoder()];
+
 export default class Base64 {
     #data;
 
@@ -52,7 +54,7 @@ export default class Base64 {
      * @returns エンコードされたBase64テキスト
      */
     static encode(text) {
-        const utf8Arr = new TextEncoder().encode(text); // UTF-8(整数)にエンコード
+        const utf8Arr = encoder.encode(text); // UTF-8(整数)にエンコード
         return this.binToB64(utf8Arr.buffer);
     }
 
@@ -63,7 +65,7 @@ export default class Base64 {
      */
     static decode(base64) {
         const binStr = this.b64ToBin(base64); // 疑似的な文字列にデコード
-        return new TextDecoder().decode(binStr);
+        return decoder.decode(binStr);
     }
 
     /**
@@ -88,7 +90,7 @@ export default class Base64 {
      * @returns 
      */
     static async getHashb64(str) {
-        const encoded = new TextEncoder().encode(str);
+        const encoded = encoder.encode(str);
         const hash = new Uint8Array(await crypto.subtle.digest('SHA-256', encoded));
         return Base64.binToB64(hash);
     }

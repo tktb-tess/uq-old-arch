@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }, false);
 }, false);
 
-
+export {};
 
 
  

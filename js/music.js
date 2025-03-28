@@ -133,3 +133,5 @@ document.addEventListener('DOMContentLoaded', async () => {
     console.log(`all listeners were successfully added`);
     return true;
 }, false);
+
+export {};

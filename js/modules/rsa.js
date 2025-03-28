@@ -2,10 +2,12 @@
 import { millerRabin, getRndBI, modPow, exEuclidean } from './util.js';
 import Base64 from './base64.js';
 
+const e = 65537n;
+
 export default class RSA {
     #p;
     #q;
-    static get #e() { return 65537n };
+    
     #d;
 
     get [Symbol.toStringTag]() {
@@ -45,7 +47,7 @@ export default class RSA {
                 return phi / gcd;
             })();
             
-            const result = exEuclidean(RSA.#e, lambda);
+            const result = exEuclidean(e, lambda);
 
             if (result.gcd !== 1n) continue loop;
 
@@ -66,7 +68,7 @@ export default class RSA {
      */
     toString(radix = 10) {
         const n = this.#p * this.#q;
-        return `n: ${n.toString(radix)}\ne: ${RSA.#e.toString(radix)}`;
+        return `n: ${n.toString(radix)}\ne: ${e.toString(radix)}`;
     }
 
     toJSON() {
@@ -75,7 +77,7 @@ export default class RSA {
 
         const n_bin = Uint8Array.from(n_hexstr.match(/.{2}/g) ?? [], d => Number.parseInt(d, 16));
 
-        let e_hexstr = RSA.#e.toString(16);
+        let e_hexstr = e.toString(16);
         if (e_hexstr.length % 2 === 1) e_hexstr = '0' + e_hexstr;
         const e_bin = Uint8Array.from(e_hexstr.match(/.{2}/g) ?? [], d => Number.parseInt(d, 16));
         const json = {
@@ -89,7 +91,7 @@ export default class RSA {
         let n_hexstr = (this.#p * this.#q).toString(16);
         if (n_hexstr.length & 1) n_hexstr = '0' + n_hexstr;
 
-        let e_hexstr = RSA.#e.toString(16);
+        let e_hexstr = e.toString(16);
         if (e_hexstr.length & 1) e_hexstr = '0' + e_hexstr;
 
         const key_bin_str = n_hexstr + '0000' + e_hexstr;
@@ -112,7 +114,7 @@ export default class RSA {
         while (m_bigint > 0n) {
             const m_one = m_bigint % radix;
 
-            const c_one = modPow(m_one, RSA.#e, radix);
+            const c_one = modPow(m_one, e, radix);
 
             c_arr.push(c_one);
 

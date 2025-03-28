@@ -442,5 +442,5 @@ document.addEventListener('DOMContentLoaded', async () => {
     }, false);
 }, false);
 
-export { }
+export {};
 

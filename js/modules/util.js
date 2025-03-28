@@ -1,5 +1,7 @@
 // @ts-check
 
+const encoder = new TextEncoder();
+
 /**
  * min以上, max未満の整数を返す
  * @param {number} min 
@@ -294,7 +296,7 @@ export const typeOf = (v) => {
 
 export const getRandIntFromDate = async () => {
     const today = new Date().toDateString();
-    const utf8arr = new TextEncoder().encode(today);
+    const utf8arr = encoder.encode(today);
     const hashed = new Uint32Array(await crypto.subtle.digest('SHA-256', utf8arr.buffer), 0, 1);
 
     return hashed[0];
