@@ -1,7 +1,5 @@
-# 悠久肆方体
+# 悠久肆方体 (旧)
 
 ## About
 
-鋭意制作中。
-
-- [die Website besuchen](http://tktb-tess.github.io)
+[新ホームページ](tktb-tess.dev)
