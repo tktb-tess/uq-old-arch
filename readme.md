@@ -2,4 +2,4 @@
 
 ## About
 
-[新ホームページ](tktb-tess.dev)
+[新ホームページ](github.com/tktb-tess/uq-tess-xi)
